@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Camino</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">KKKKK</string>
+    <string name="title_activity_etapa">Etapa</string>
+    <string name="title_activity_seleccion__usuario">Seleccion_Usuario</string>
+    <string name="title_activity_camino__actual">Camino_Actual</string>
+    <string name="title_activity_formulario__nuevo__usuario">Formulario_Nuevo_Usuario</string>
+    <string name="title_activity_menu_principal">MenuPrincipal</string>
+    <string name="title_activity_nuevo__camino">Nuevo_Camino</string>
+    <string name="title_activity_sf">sf</string>
+</resources>

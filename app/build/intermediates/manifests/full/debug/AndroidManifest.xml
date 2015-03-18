@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dev.lin.camino"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.dev.lin.camino.Portada"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.dev.lin.camino.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.dev.lin.camino.Etapa"
+            android:label="@string/title_activity_etapa" >
+        </activity>
+        <activity
+            android:name="com.dev.lin.camino.Seleccion_Usuario"
+            android:label="@string/title_activity_seleccion__usuario" >
+        </activity>
+        <activity
+            android:name="com.dev.lin.camino.Camino_Actual"
+            android:label="@string/title_activity_camino__actual" >
+        </activity>
+        <activity
+            android:name="com.dev.lin.camino.Formulario_Nuevo_Usuario"
+            android:label="@string/title_activity_formulario__nuevo__usuario" >
+        </activity>
+        <activity
+            android:name="com.dev.lin.camino.MenuPrincipal"
+            android:label="@string/title_activity_menu_principal" >
+        </activity>
+        <activity
+            android:name="com.dev.lin.camino.Nuevo_Camino"
+            android:label="@string/title_activity_nuevo__camino" >
+        </activity>
+        <activity
+            android:name="com.dev.lin.camino.sf"
+            android:label="@string/title_activity_sf" >
+        </activity>
+    </application>
+
+</manifest>
