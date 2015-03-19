@@ -40,8 +40,10 @@
                         android:layout_height="wrap_content"
                         android:inputType="date"
                         android:ems="10"
-                        android:id="@+id/editText"
-                        android:layout_column="3" />
+                        android:id="@+id/editTextFecha"
+                        android:layout_column="3"
+                        android:text="dd/mm/aaaa" />
+
                 </TableRow>
 
                 <TableRow
@@ -61,7 +63,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/editText2"
+                        android:id="@+id/editTextAltura"
                         android:layout_column="3" />
                 </TableRow>
 
@@ -82,7 +84,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/editText3"
+                        android:id="@+id/editTextPeso"
                         android:layout_column="3" />
                 </TableRow>
 
@@ -101,7 +103,7 @@
                     <Spinner
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/spinner4"
+                        android:id="@+id/spinnerComplexion"
                         android:layout_column="3"
                         android:spinnerMode="dropdown" />
                 </TableRow>
@@ -120,7 +122,8 @@
                 android:layout_height="wrap_content"
                 android:text="Crear usuario"
                 android:id="@+id/button4"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:onClick="crearUsuario "/>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

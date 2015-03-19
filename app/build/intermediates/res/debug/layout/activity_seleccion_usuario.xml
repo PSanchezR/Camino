@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cargar usuario"
-            android:id="@+id/button2"
+            android:id="@+id/buttonCargarUsuario"
             android:layout_weight="0.13"
             android:layout_gravity="center_horizontal" />
 
@@ -41,8 +41,9 @@
             android:layout_width="144dp"
             android:layout_height="wrap_content"
             android:text="Nuevo Usuario"
-            android:id="@+id/button3"
-            android:layout_gravity="center_horizontal" />
+            android:id="@+id/buttonNuevoUsuario"
+            android:layout_gravity="center_horizontal"
+            android:onClick="nuevoUsuario" />
     </LinearLayout>
 </RelativeLayout>
 <!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/layout/activity_seleccion_usuario.xml -->

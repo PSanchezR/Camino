@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.util.Date;
 
 
@@ -32,7 +31,7 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity {
         Date fecha = new Date(R.id.editTextFecha);
         int altura = R.id.editTextAltura;
         int peso = R.id.editTextPeso;
-
+        Usuario user = new Usuario(peso,altura,fecha);
 
 
     }

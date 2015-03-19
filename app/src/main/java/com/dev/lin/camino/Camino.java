@@ -7,14 +7,23 @@ import java.util.List;
  */
 public class Camino
 {
+    private
     String nombre;
-    List<Etapa_Seleccionada> etapasCamino;
-    List<Etapa_Seleccionada> etapasCompletadas;
+    List<Etapa> etapasCamino;
+    List<Etapa> etapasCompletadas;
 
-    public void Camino(String nom, List<Etapa_Seleccionada>etapasCam)
+    public Camino(String nom, List<Etapa>etapasCam)
     {
         nombre = nom;
         etapasCamino = etapasCam;
     }
-    
+
+    public void setEtapaCompletada(Etapa etapa)
+    {
+        etapasCompletadas.add(etapa);
+    }
+
+    public List<Etapa> getEtapasCompletadas(){return etapasCompletadas;}
+    public List<Etapa> getEtapasCamino(){return etapasCamino;}
+
 }

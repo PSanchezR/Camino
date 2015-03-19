@@ -11,13 +11,13 @@ public class Usuario
     private
     int peso, altura;
     Date fechaNacimiento;
+    List<Camino> misCaminos;
 
-    public void Usuario(int pes, int alt, Date fecha)
+    public Usuario(int pes, int alt, Date fecha)
     {
         peso = pes;
         altura= alt;
         fechaNacimiento = fecha;
-        List<Camino> misCaminos;
     }
 
     public int getPeso(){return peso;}
@@ -27,4 +27,6 @@ public class Usuario
     public void setPeso(int pes){peso = pes;}
     public void setAltura(int alt){altura=alt;}
     public void setFechaNacimiento(Date fecha){fechaNacimiento=fecha;}
+    public void addCamino(Camino camino){misCaminos.add(camino);}
+    public List<Camino> getCaminos(){return misCaminos;}
 }
