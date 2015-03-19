@@ -1,9 +1,11 @@
 package com.dev.lin.camino;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Seleccion_Usuario extends ActionBarActivity {
@@ -12,8 +14,14 @@ public class Seleccion_Usuario extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion_usuario);
-    }
 
+
+    }
+    public void nuevoUsuario(View view)
+    {
+        Intent i = new Intent(Seleccion_Usuario.this,Formulario_Nuevo_Usuario.class);
+        startActivity(i);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
