@@ -9,12 +9,14 @@ import java.util.List;
 public class Usuario
 {
     private
+    String nombre;
     int peso, altura;
     Date fechaNacimiento;
     List<Camino> misCaminos;
 
-    public Usuario(int pes, int alt, Date fecha)
+    public Usuario(int pes, int alt, Date fecha,String nom)
     {
+        nombre= nom;
         peso = pes;
         altura= alt;
         fechaNacimiento = fecha;
@@ -23,6 +25,7 @@ public class Usuario
     public int getPeso(){return peso;}
     public int getAltura(){return altura;}
     public Date getFechaNacimiento(){return fechaNacimiento;}
+    public String getNombre(){return nombre;}
 
     public void setPeso(int pes){peso = pes;}
     public void setAltura(int alt){altura=alt;}

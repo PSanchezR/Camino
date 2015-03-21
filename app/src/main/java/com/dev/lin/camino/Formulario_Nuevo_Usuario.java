@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -28,12 +29,11 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity {
 
     public void crearUsuario()
     {
-        Date fecha = new Date(R.id.editTextFecha);
-        int altura = R.id.editTextAltura;
-        int peso = R.id.editTextPeso;
-        Usuario user = new Usuario(peso,altura,fecha);
-
-
+        Date fecha = new Date(Integer.parseInt(((EditText)findViewById(R.id.editTextFecha)).getText().toString()));
+        int altura =Integer.parseInt(((EditText)findViewById(R.id.editTextAltura)).getText().toString());
+        int peso = Integer.parseInt(((EditText)findViewById(R.id.editTextPeso)).getText().toString());
+        String nombre = ((EditText)findViewById(R.id.editTextNombre)).getText().toString();
+        Usuario user = new Usuario(peso,altura,fecha,nombre);
     }
 
     @Override
