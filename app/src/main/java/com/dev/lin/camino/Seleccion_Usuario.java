@@ -23,21 +23,24 @@ import java.util.ArrayList;
 public class Seleccion_Usuario extends ActionBarActivity {
 
     private
-    ArrayList<Usuario> usuarios;
-    ArrayList<String> users =new ArrayList<String>();
-    ArrayAdapter<String> adapter;
+    ArrayList<Usuario> usuarios;//Lista de objetos usuario que se leerán desde fichero.
+    ArrayList<String> users =new ArrayList<String>();// Lista de nombres de usuario
+    ArrayAdapter<String> adapter; //adaptador para pasar los nombres a un listview
 
+
+    //Este método lee de un fichero los objetos usuario y los añade a una lista
     public void leerFicheroUsuarios() throws ClassNotFoundException, IOException
     {
         ObjectInputStream flujo = null;
         try
         {
+            usuarios = new ArrayList<Usuario>();
             File f = new File("usuarios.obj");
             FileInputStream fis= new FileInputStream(f);
             flujo = new ObjectInputStream(fis);
-            while(true)
+            while(flujo!=null)
             {
-                Usuario us = (Usuario) flujo.readObject();
+                Usuario us = (Usuario)flujo.readObject();;
                 usuarios.add(us);
             }
         }
@@ -50,7 +53,9 @@ public class Seleccion_Usuario extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion_usuario);
-        leerFicheroUsuarios();
+
+        try{leerFicheroUsuarios();}catch(ClassNotFoundException e){Log.e("","fallo");}catch(IOException e){Log.e("","fallo");}
+
 
         if(usuarios.size()>0)
         {

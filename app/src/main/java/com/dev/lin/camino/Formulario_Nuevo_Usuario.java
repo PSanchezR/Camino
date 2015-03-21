@@ -2,6 +2,7 @@ package com.dev.lin.camino;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -9,6 +10,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Date;
 
 
@@ -27,13 +33,26 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity {
         lista.setAdapter(adaptador);
     }
 
+    public void escribirFicheroUsuarios(Usuario user)throws IOException
+    {
+        File f = new File("usuarios.obj");
+        FileOutputStream fos = new FileOutputStream(f);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(user);
+        oos.close();
+    }
+
     public void crearUsuario()
     {
         Date fecha = new Date(Integer.parseInt(((EditText)findViewById(R.id.editTextFecha)).getText().toString()));
         int altura =Integer.parseInt(((EditText)findViewById(R.id.editTextAltura)).getText().toString());
-        int peso = Integer.parseInt(((EditText)findViewById(R.id.editTextPeso)).getText().toString());
+        int peso = Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText().toString());
         String nombre = ((EditText)findViewById(R.id.editTextNombre)).getText().toString();
         Usuario user = new Usuario(peso,altura,fecha,nombre);
+
+        try{
+            escribirFicheroUsuarios(user);
+        }catch(IOException e){Log.e("","Error de IO");}
     }
 
     @Override
