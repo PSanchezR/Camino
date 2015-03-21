@@ -27,22 +27,27 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent" >
 
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Fecha de nacimiento"
-                        android:id="@+id/textView8"
+                        android:text="Nombre"
+                        android:id="@+id/textViewNombre"
                         android:layout_column="2" />
 
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="date"
+                        android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/editTextFecha"
+                        android:id="@+id/editTextNombre"
                         android:layout_column="3" />
-
                 </TableRow>
 
                 <TableRow
@@ -89,7 +94,7 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" >
+                    android:layout_height="fill_parent">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -106,6 +111,28 @@
                         android:layout_column="3"
                         android:spinnerMode="dropdown" />
                 </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Fecha de nacimiento"
+                        android:id="@+id/textView8"
+                        android:layout_column="2" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="date"
+                        android:ems="10"
+                        android:id="@+id/editTextFecha"
+                        android:layout_column="3"
+                        android:text="dd/mm/aaaa" />
+                </TableRow>
             </TableLayout>
 
             <TextView
@@ -120,7 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Crear usuario"
-                android:id="@+id/button4"
+                android:id="@+id/buttonCrearUsuario"
                 android:layout_gravity="center_horizontal"
                 android:onClick="crearUsuario "/>
         </LinearLayout>

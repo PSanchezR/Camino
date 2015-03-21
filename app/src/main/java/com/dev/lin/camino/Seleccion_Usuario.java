@@ -36,15 +36,17 @@ public class Seleccion_Usuario extends ActionBarActivity {
         {
             usuarios = new ArrayList<Usuario>();
             File f = new File("usuarios.obj");
-            FileInputStream fis= new FileInputStream(f);
-            flujo = new ObjectInputStream(fis);
-            while(flujo!=null)
-            {
-                Usuario us = (Usuario)flujo.readObject();;
-                usuarios.add(us);
-            }
+
+                FileInputStream fis= new FileInputStream(f);
+                flujo = new ObjectInputStream(fis);
+                while(flujo!=null)
+                {
+                    Usuario us = (Usuario)flujo.readObject();;
+                    usuarios.add(us);
+                }
+
         }
-        catch(Exception ex){Log.e("","Error al leer el fichero");}
+        catch(Exception ex){Log.e("",ex.getMessage());}
         finally{flujo.close();}
 
     }

@@ -91,6 +91,26 @@
                     android:id="@+id/spinner7"
                     android:layout_column="1" />
             </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Nombre:"
+                    android:id="@+id/textView16"
+                    android:layout_column="0" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editTextNombreCamino"
+                    android:layout_column="1"
+                    android:text="Introduzca un nombre para el nuevo camino" />
+            </TableRow>
         </TableLayout>
 
         <LinearLayout

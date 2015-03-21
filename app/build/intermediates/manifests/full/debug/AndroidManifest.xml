@@ -27,7 +27,7 @@
             android:label="@string/title_activity_main" >
         </activity>
         <activity
-            android:name="com.dev.lin.camino.Etapa"
+            android:name="com.dev.lin.camino.Etapa_Seleccionada"
             android:label="@string/title_activity_etapa" >
         </activity>
         <activity

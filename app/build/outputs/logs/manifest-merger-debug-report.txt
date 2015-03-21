@@ -47,7 +47,7 @@ ADDED from AndroidManifest.xml:19:9
 		ADDED from AndroidManifest.xml:21:13
 	android:name
 		ADDED from AndroidManifest.xml:20:13
-activity#com.dev.lin.camino.Etapa
+activity#com.dev.lin.camino.Etapa_Seleccionada
 ADDED from AndroidManifest.xml:23:9
 	android:label
 		ADDED from AndroidManifest.xml:25:13
