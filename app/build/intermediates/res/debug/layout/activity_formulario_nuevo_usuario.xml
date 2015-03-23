@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:weightSum="1">
 
         <LinearLayout
             android:orientation="vertical"
@@ -68,7 +69,8 @@
                         android:inputType="number"
                         android:ems="10"
                         android:id="@+id/editTextAltura"
-                        android:layout_column="3" />
+                        android:layout_column="3"
+                        android:text="(en centímetros)" />
                 </TableRow>
 
                 <TableRow
@@ -89,7 +91,8 @@
                         android:inputType="number"
                         android:ems="10"
                         android:id="@+id/editTextPeso"
-                        android:layout_column="3" />
+                        android:layout_column="3"
+                        android:text="(en kilogramos)" />
                 </TableRow>
 
                 <TableRow
@@ -120,19 +123,23 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Fecha de nacimiento"
+                        android:text="Año de nacimiento"
                         android:id="@+id/textView8"
                         android:layout_column="2" />
 
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="date"
+                        android:inputType="number"
                         android:ems="10"
                         android:id="@+id/editTextFecha"
                         android:layout_column="3"
-                        android:text="dd/mm/aaaa" />
+                        android:text="ej: 1980" />
+
+
                 </TableRow>
+
+
             </TableLayout>
 
             <TextView
@@ -151,6 +158,7 @@
                 android:layout_gravity="center_horizontal"
                 android:onClick="crearUsuario "/>
         </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>
 <!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/layout/activity_formulario_nuevo_usuario.xml -->

@@ -1,5 +1,6 @@
 package com.dev.lin.camino;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,16 +36,17 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity {
 
     public void escribirFicheroUsuarios(Usuario user)throws IOException
     {
-        File f = new File("usuarios.obj");
-        FileOutputStream fos = new FileOutputStream(f);
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(user);
-        oos.close();
+        try {
+            ObjectOutputStream oos =
+                    new ObjectOutputStream(openFileOutput("usuarios.obj", Context.MODE_PRIVATE));
+            oos.writeObject(user);
+            oos.close();
+        }catch (Exception e){ Log.e("Tratamiento de ficheros","Error de escritura");}
     }
 
     public void crearUsuario()
     {
-        Date fecha = new Date(Integer.parseInt(((EditText)findViewById(R.id.editTextFecha)).getText().toString()));
+        Date fecha = new Date(Integer.parseInt(((EditText)findViewById(R.id.editTextFecha)).getText().toString()),1,1);
         int altura =Integer.parseInt(((EditText)findViewById(R.id.editTextAltura)).getText().toString());
         int peso = Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText().toString());
         String nombre = ((EditText)findViewById(R.id.editTextNombre)).getText().toString();

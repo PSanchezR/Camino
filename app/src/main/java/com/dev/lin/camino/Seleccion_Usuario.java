@@ -8,13 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
-
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
@@ -29,35 +27,29 @@ public class Seleccion_Usuario extends ActionBarActivity {
 
 
     //Este método lee de un fichero los objetos usuario y los añade a una lista
-    public void leerFicheroUsuarios() throws ClassNotFoundException, IOException
+
+    public void leerFicheroUsuarios()
     {
         ObjectInputStream flujo = null;
         try
         {
             usuarios = new ArrayList<Usuario>();
-            File f = new File("usuarios.obj");
+            flujo = new ObjectInputStream(openFileInput("usuarios.obj"));
 
-                FileInputStream fis= new FileInputStream(f);
-                flujo = new ObjectInputStream(fis);
-                while(flujo!=null)
-                {
-                    Usuario us = (Usuario)flujo.readObject();;
-                    usuarios.add(us);
-                }
-
+            while(flujo!=null)
+            {
+                Usuario us = (Usuario)flujo.readObject();
+                usuarios.add(us);
+            }
+            flujo.close();
         }
-        catch(Exception ex){Log.e("",ex.getMessage());}
-        finally{flujo.close();}
-
+        catch(Exception ex){Log.e("Tratamiento de ficheros",ex.getMessage());}
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seleccion_usuario);
-
-        try{leerFicheroUsuarios();}catch(ClassNotFoundException e){Log.e("","fallo");}catch(IOException e){Log.e("","fallo");}
-
+    //Este método carga los usuarios leidos del fichero en la ListView
+    public void cargarUsuarios()
+    {
+        leerFicheroUsuarios();
 
         if(usuarios.size()>0)
         {
@@ -69,6 +61,13 @@ public class Seleccion_Usuario extends ActionBarActivity {
             ListView lista = (ListView) findViewById(R.id.listUsuarios);
             lista.setAdapter(adapter);
         }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_seleccion_usuario);
 
     }
     public void nuevoUsuario(View view)
