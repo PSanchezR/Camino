@@ -69,8 +69,7 @@
                         android:inputType="number"
                         android:ems="10"
                         android:id="@+id/editTextAltura"
-                        android:layout_column="3"
-                        android:text="(en centímetros)" />
+                        android:layout_column="3" />
                 </TableRow>
 
                 <TableRow
@@ -91,8 +90,7 @@
                         android:inputType="number"
                         android:ems="10"
                         android:id="@+id/editTextPeso"
-                        android:layout_column="3"
-                        android:text="(en kilogramos)" />
+                        android:layout_column="3" />
                 </TableRow>
 
                 <TableRow
@@ -133,8 +131,7 @@
                         android:inputType="number"
                         android:ems="10"
                         android:id="@+id/editTextFecha"
-                        android:layout_column="3"
-                        android:text="ej: 1980" />
+                        android:layout_column="3" />
 
 
                 </TableRow>
@@ -156,7 +153,7 @@
                 android:text="Crear usuario"
                 android:id="@+id/buttonCrearUsuario"
                 android:layout_gravity="center_horizontal"
-                android:onClick=" "/>
+                android:onClick="crearUsuario"/>
         </LinearLayout>
 
     </LinearLayout>

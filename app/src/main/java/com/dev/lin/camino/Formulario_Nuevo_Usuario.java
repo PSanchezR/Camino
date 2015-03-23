@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -41,12 +42,12 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity {
                     new ObjectOutputStream(openFileOutput("usuarios.obj", Context.MODE_PRIVATE));
             oos.writeObject(user);
             oos.close();
-        }catch (Exception e){ Log.e("Tratamiento de ficheros","Error de escritura");}
+        }catch (Exception e){ Log.e("Tratamiento de ficheros",e.getMessage());}
     }
 
-    public void crearUsuario()
+    public void crearUsuario(View view)
     {
-        Date fecha = new Date(Integer.parseInt(((EditText)findViewById(R.id.editTextFecha)).getText().toString()),1,1);
+        int fecha = Integer.parseInt(((EditText)findViewById(R.id.editTextFecha)).getText().toString());
         int altura =Integer.parseInt(((EditText)findViewById(R.id.editTextAltura)).getText().toString());
         int peso = Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText().toString());
         String nombre = ((EditText)findViewById(R.id.editTextNombre)).getText().toString();
