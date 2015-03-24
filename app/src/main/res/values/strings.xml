@@ -11,4 +11,5 @@
     <string name="title_activity_menu_principal">MenuPrincipal</string>
     <string name="title_activity_nuevo__camino">Nuevo_Camino</string>
     <string name="title_activity_sf">sf</string>
+    <string name="title_activity_datos_usuario">datos_usuario</string>
 </resources>

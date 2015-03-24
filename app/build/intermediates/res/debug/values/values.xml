@@ -165,6 +165,7 @@
     <string name="app_name">Camino</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_camino__actual">Camino_Actual</string>
+    <string name="title_activity_datos_usuario">datos_usuario</string>
     <string name="title_activity_etapa">Etapa</string>
     <string name="title_activity_formulario__nuevo__usuario">Formulario_Nuevo_Usuario</string>
     <string name="title_activity_main">KKKKK</string>

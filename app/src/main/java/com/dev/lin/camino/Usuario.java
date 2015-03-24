@@ -12,14 +12,17 @@ public class Usuario
     String nombre;
     int peso, altura;
     int añoNacimiento;
+    int complexion;
     List<Camino> misCaminos;
 
-    public Usuario(int pes, int alt, int fecha,String nom)
+    public Usuario(int pes, int alt, int fecha,int compl,String nom)
     {
         nombre= nom;
         peso = pes;
         altura= alt;
         añoNacimiento = fecha;
+        complexion = compl;
+
     }
 
     public int getPeso(){return peso;}

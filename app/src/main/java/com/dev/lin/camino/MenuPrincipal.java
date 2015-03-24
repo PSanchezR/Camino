@@ -1,10 +1,11 @@
 package com.dev.lin.camino;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.View;
 
 
 public class MenuPrincipal extends ActionBarActivity {
@@ -21,6 +22,25 @@ public class MenuPrincipal extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_menu_principal, menu);
         return true;
+    }
+
+    public void datosUsuario(View view)
+    {
+        /*Insertar activity*/
+
+    }
+
+    public void nuevoCamino(View view)
+    {
+        Intent i = new Intent(MenuPrincipal.this,Nuevo_Camino.class);
+        startActivity(i);
+
+    }
+
+    public void caminoActual(View view)
+    {
+        Intent i = new Intent(MenuPrincipal.this,Camino_Actual.class);
+        startActivity(i);
     }
 
     @Override

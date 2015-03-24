@@ -30,22 +30,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nuevo camino"
-                android:id="@+id/button5"
-                android:layout_gravity="center_horizontal" />
+                android:id="@+id/buttonNuevoCamino"
+                android:layout_gravity="center_horizontal"
+                android:onClick="nuevoCamino"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Datos usuario"
-                android:id="@+id/button5"
-                android:layout_gravity="center_horizontal" />
+                android:id="@+id/buttonDatosUsuario"
+                android:layout_gravity="center_horizontal"
+                android:onClick="datosUsuario"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Camino actual"
-                android:id="@+id/button5"
-                android:layout_gravity="center_horizontal" />
+                android:id="@+id/buttonCaminoActual"
+                android:layout_gravity="center_horizontal"
+                android:onClick="caminoActual"/>
         </LinearLayout>
 
         <LinearLayout

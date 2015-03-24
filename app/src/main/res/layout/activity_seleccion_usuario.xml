@@ -35,7 +35,8 @@
             android:text="Cargar usuario"
             android:id="@+id/buttonCargarUsuario"
             android:layout_weight="0.13"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:onClick="cargaUser"/>
 
         <Button
             android:layout_width="144dp"

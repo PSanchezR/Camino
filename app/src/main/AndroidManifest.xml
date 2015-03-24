@@ -48,6 +48,10 @@
             android:name=".sf"
             android:label="@string/title_activity_sf" >
         </activity>
+        <activity
+            android:name=".datos_usuario"
+            android:label="@string/title_activity_datos_usuario" >
+        </activity>
     </application>
 
 </manifest>

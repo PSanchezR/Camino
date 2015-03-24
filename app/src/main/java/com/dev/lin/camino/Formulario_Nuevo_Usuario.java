@@ -17,10 +17,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Date;
 
 
-public class Formulario_Nuevo_Usuario extends ActionBarActivity {
+public class Formulario_Nuevo_Usuario extends ActionBarActivity implements Serializable{
     Spinner lista;
     TextView texto;
     String[] complexiones = {"Nada deportista","Poco deportista","Deportista Amateur","Deportista profesional"};
@@ -42,7 +43,7 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity {
                     new ObjectOutputStream(openFileOutput("usuarios.obj", Context.MODE_PRIVATE));
             oos.writeObject(user);
             oos.close();
-        }catch (Exception e){ Log.e("Tratamiento de ficheros",e.getMessage());}
+        }catch (Exception e){ Log.e("Tratamiento de ficheros", e.getLocalizedMessage());}
     }
 
     public void crearUsuario(View view)
@@ -51,11 +52,12 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity {
         int altura =Integer.parseInt(((EditText)findViewById(R.id.editTextAltura)).getText().toString());
         int peso = Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText().toString());
         String nombre = ((EditText)findViewById(R.id.editTextNombre)).getText().toString();
-        Usuario user = new Usuario(peso,altura,fecha,nombre);
+        int complexion = ((Spinner)findViewById(R.id.spinnerComplexion)).getSelectedItemPosition();
+        Usuario user = new Usuario(peso,altura,fecha,complexion,nombre);
 
         try{
             escribirFicheroUsuarios(user);
-        }catch(IOException e){Log.e("","Error de IO");}
+        }catch(IOException e){Log.e("Error IO",e.getMessage());}
     }
 
     @Override

@@ -54,6 +54,10 @@
             android:name="com.dev.lin.camino.sf"
             android:label="@string/title_activity_sf" >
         </activity>
+        <activity
+            android:name="com.dev.lin.camino.datos_usuario"
+            android:label="@string/title_activity_datos_usuario" >
+        </activity>
     </application>
 
 </manifest>

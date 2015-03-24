@@ -5,5 +5,15 @@ package com.dev.lin.camino;
  */
 public class Etapa
 {
+    private
+        float kilometros;
+        String pueblo_Inicio;
+        String pueblo_fin;
 
+    public Etapa(float km, String pi, String pf)
+    {
+        kilometros=km;
+        pueblo_Inicio = pi;
+        pueblo_fin = pf;
+    }
 }

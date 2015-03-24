@@ -76,6 +76,14 @@ public class Seleccion_Usuario extends ActionBarActivity {
         startActivity(i);
     }
 
+    public void cargaUser(View view)
+    {
+        /*Insertar aqui carga del usuario de los posibles de la lista*/
+
+        Intent i = new Intent(Seleccion_Usuario.this,MenuPrincipal.class);
+        startActivity(i);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
