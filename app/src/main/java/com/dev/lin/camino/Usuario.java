@@ -21,6 +21,7 @@ public class Usuario implements Serializable{
     public static final int DEPORTISTA_AMATEUR = 2;
     public static final int DEPORTISTA_PROFESIONAL = 3;
 
+
     public Usuario(){
     }
 
