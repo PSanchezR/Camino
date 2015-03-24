@@ -9,55 +9,60 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.Date;
 
 
-public class Formulario_Nuevo_Usuario extends ActionBarActivity implements Serializable{
-    Spinner lista;
-    TextView texto;
-    String[] complexiones = {"Nada deportista","Poco deportista","Deportista Amateur","Deportista profesional"};
-
+public class Formulario_Nuevo_Usuario extends ActionBarActivity{
+    protected String archivo = "usuarios.dat";
+    protected Usuario usuario;
+    protected Spinner listaComplexion;
+    protected String[] valoresComplexion = {"Nada deportista","Poco deportista","Deportista Amateur","Deportista profesional"};
+    //TextView texto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_nuevo_usuario);
-        ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item,complexiones);
-        lista = (Spinner) findViewById(R.id.spinnerComplexion);
-        lista.setAdapter(adaptador);
+        ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, valoresComplexion);
+        listaComplexion = (Spinner) findViewById(R.id.spinnerComplexion);
+        listaComplexion.setAdapter(adaptador);
     }
 
-    public void escribirFicheroUsuarios(Usuario user)throws IOException
-    {
+    public void guardarUsuarios(Usuario usuario) {
+        FileOutputStream fos;
+
         try {
-            ObjectOutputStream oos =
-                    new ObjectOutputStream(openFileOutput("usuarios.obj", Context.MODE_PRIVATE));
-            oos.writeObject(user);
+            fos = openFileOutput(archivo, Context.MODE_PRIVATE);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(usuario);
             oos.close();
-        }catch (Exception e){ Log.e("Tratamiento de ficheros", e.getLocalizedMessage());}
+            Toast.makeText(this, "Usuario guardado correctamente.", Toast.LENGTH_SHORT).show();
+        } catch (FileNotFoundException e) {
+            System.err.println("Error: archivo no encontrado.");
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            System.err.println("Error: problema de entrada/salida.");
+            e.printStackTrace();
+        }
     }
 
-    public void crearUsuario(View view)
-    {
-        int fecha = Integer.parseInt(((EditText)findViewById(R.id.editTextFecha)).getText().toString());
+    public void crearUsuario(View view) {
+        String nombre = ((EditText)findViewById(R.id.editTextNombre)).getText().toString();
         int altura =Integer.parseInt(((EditText)findViewById(R.id.editTextAltura)).getText().toString());
         int peso = Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText().toString());
-        String nombre = ((EditText)findViewById(R.id.editTextNombre)).getText().toString();
         int complexion = ((Spinner)findViewById(R.id.spinnerComplexion)).getSelectedItemPosition();
-        Usuario user = new Usuario(peso,altura,fecha,complexion,nombre);
+        int anioDeNacimiento = Integer.parseInt(((EditText)findViewById(R.id.editTextFecha)).getText().toString());
 
-        try{
-            escribirFicheroUsuarios(user);
-        }catch(IOException e){Log.e("Error IO",e.getMessage());}
+        Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
+
+        guardarUsuarios(usuario);
     }
 
     @Override

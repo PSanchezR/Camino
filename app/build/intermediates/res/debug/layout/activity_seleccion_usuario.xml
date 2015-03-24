@@ -47,4 +47,4 @@
             android:onClick="nuevoUsuario" />
     </LinearLayout>
 </RelativeLayout>
-<!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/layout/activity_seleccion_usuario.xml -->
+<!-- From: file:/home/germaaan/AndroidStudioProjects/Camino/app/src/main/res/layout/activity_seleccion_usuario.xml -->

@@ -5,4 +5,4 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
-<!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/menu/menu_seleccion_usuario.xml -->
+<!-- From: file:/home/germaaan/AndroidStudioProjects/Camino/app/src/main/res/menu/menu_seleccion_usuario.xml -->

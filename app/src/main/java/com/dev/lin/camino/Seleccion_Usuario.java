@@ -26,7 +26,7 @@ public class Seleccion_Usuario extends ActionBarActivity {
     ArrayAdapter<String> adapter; //adaptador para pasar los nombres a un listview
 
 
-    //Este método lee de un fichero los objetos usuario y los añade a una lista
+    //Este método lee de un fichero los objetos usuario y los agrupa
 
     public void leerFicheroUsuarios()
     {
@@ -78,7 +78,7 @@ public class Seleccion_Usuario extends ActionBarActivity {
 
     public void cargaUser(View view)
     {
-        /*Insertar aqui carga del usuario de los posibles de la lista*/
+        /*Insertar aqui los usuarios*/
 
         Intent i = new Intent(Seleccion_Usuario.this,MenuPrincipal.class);
         startActivity(i);

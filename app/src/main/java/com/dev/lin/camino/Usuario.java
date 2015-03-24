@@ -1,38 +1,89 @@
 package com.dev.lin.camino;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by root on 19/03/15.
- */
-public class Usuario
-{
-    private
-    String nombre;
-    int peso, altura;
-    int añoNacimiento;
-    int complexion;
-    List<Camino> misCaminos;
+public class Usuario implements Serializable{
 
-    public Usuario(int pes, int alt, int fecha,int compl,String nom)
-    {
-        nombre= nom;
-        peso = pes;
-        altura= alt;
-        añoNacimiento = fecha;
-        complexion = compl;
+    private static final long serialVersionUID = 636161369614615L;
+    private String nombre;
+    private int altura;
+    private int peso;
+    private int complexion;
+    private int anioNacimiento;
+    private ArrayList<Camino> misCaminos;
+
+    public static final int NADA_DEPORTISTA = 0;
+    public static final int POCO_DEPORTISTA = 1;
+    public static final int DEPORTISTA_AMATEUR = 2;
+    public static final int DEPORTISTA_PROFESIONAL = 3;
+
+    public Usuario(){
+    }
+
+    public Usuario(String nombre, int altura, int peso, int complexion, int anioNacimiento){
+        super();
+        this.nombre = nombre;
+        this.altura = altura;
+        this.peso = peso;
+        this.complexion = complexion;
+        this.anioNacimiento = anioNacimiento;
 
     }
 
-    public int getPeso(){return peso;}
-    public int getAltura(){return altura;}
-    public int getañoNacimiento(){return añoNacimiento;}
-    public String getNombre(){return nombre;}
+    public String getNombre(){
+        return this.nombre;
+    }
 
-    public void setPeso(int pes){peso = pes;}
-    public void setAltura(int alt){altura=alt;}
-    public void setañoNacimiento(int fecha){añoNacimiento=fecha;}
-    public void addCamino(Camino camino){misCaminos.add(camino);}
-    public List<Camino> getCaminos(){return misCaminos;}
+    public int getAltura(){
+        return this.altura;
+    }
+
+    public int getPeso(){
+        return this.peso;
+    }
+
+    public int getComplexion(){
+        return this.complexion;
+    }
+
+    public int getAnioNacimiento(){
+        return this.anioNacimiento;
+    }
+
+    public ArrayList<Camino> getMisCaminos(){
+        return this.misCaminos;
+    }
+
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+
+    public void setAltura(int altura){
+        this.altura = altura;
+    }
+
+    public void setPeso(int peso){
+        this.peso = peso;
+    }
+
+    public void setComplexion(int complexion){
+        this.complexion = complexion;
+    }
+
+    public void setAnioNacimiento(int anioNacimiento){
+        this.anioNacimiento = anioNacimiento;
+    }
+
+    public void addCamino(Camino camino){
+        this.misCaminos.add(camino);
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario -> nombre:" + this.nombre + ", altura:" + this.altura + ", peso:" + this.peso + ", complexion:" +
+                this.complexion + ", año de nacimiento: " + this.anioNacimiento + ", caminos: " + this.misCaminos;
+    }
+
 }
