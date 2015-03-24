@@ -1,5 +1,7 @@
 package com.dev.lin.camino;
 
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

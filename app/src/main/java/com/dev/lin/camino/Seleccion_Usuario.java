@@ -17,14 +17,16 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
 
 public class Seleccion_Usuario extends ActionBarActivity {
 
+
+    static ArrayList<Usuario> usuarios;//Lista de objetos usuario que se leerán desde fichero.
     private
-    ArrayList<Usuario> usuarios;//Lista de objetos usuario que se leerán desde fichero.
     ArrayList<String> users =new ArrayList<String>();// Lista de nombres de usuario
     ArrayAdapter<String> adapter; //adaptador para pasar los nombres a un listview
 
@@ -36,6 +38,7 @@ public class Seleccion_Usuario extends ActionBarActivity {
         FileInputStream fis;
         ObjectInputStream ois = null;
         Object aux;
+        usuarios = null;
         try
         {
             fis = openFileInput("usuarios.dat");
@@ -72,7 +75,7 @@ public class Seleccion_Usuario extends ActionBarActivity {
     public void cargarUsuarios()
     {
         leerFicheroUsuarios();
-        Toast.makeText(this, "entra", Toast.LENGTH_SHORT).show();
+
         if(usuarios.size()>0)
         {
             for(int i=0; i< usuarios.size();i++)
@@ -95,6 +98,7 @@ public class Seleccion_Usuario extends ActionBarActivity {
     public void nuevoUsuario(View view)
     {
         Intent i = new Intent(Seleccion_Usuario.this,Formulario_Nuevo_Usuario.class);
+        i.putExtra("usuarios",(Serializable)usuarios);
         startActivity(i);
     }
 

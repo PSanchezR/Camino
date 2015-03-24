@@ -17,6 +17,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 
 public class Formulario_Nuevo_Usuario extends ActionBarActivity{
@@ -37,11 +38,16 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity{
 
     public void guardarUsuarios(Usuario usuario) {
         FileOutputStream fos;
-
+        ArrayList<Usuario> usuarios = (ArrayList<Usuario>)getIntent().getSerializableExtra("usuarios");
+        usuarios.add(usuario);
         try {
             fos = openFileOutput(archivo, Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(usuario);
+
+            for(int i = 0; i < usuarios.size();i++)
+            {
+                oos.writeObject(usuarios.get(i));
+            }
             oos.close();
             Toast.makeText(this, "Usuario guardado correctamente.", Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException e) {
