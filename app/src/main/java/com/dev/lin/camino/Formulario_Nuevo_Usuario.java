@@ -1,6 +1,7 @@
 package com.dev.lin.camino;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -59,12 +60,16 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity{
         int peso = Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText().toString());
         int complexion = ((Spinner)findViewById(R.id.spinnerComplexion)).getSelectedItemPosition();
         int anioDeNacimiento = Integer.parseInt(((EditText)findViewById(R.id.editTextFecha)).getText().toString());
-
         Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
-
         guardarUsuarios(usuario);
+        menuUsuarios();
     }
 
+    public void menuUsuarios()
+    {
+        Intent intent = new Intent(Formulario_Nuevo_Usuario.this, Seleccion_Usuario.class);
+        startActivity(intent);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

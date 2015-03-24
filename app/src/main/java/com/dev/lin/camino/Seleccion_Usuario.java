@@ -10,8 +10,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
@@ -30,27 +33,46 @@ public class Seleccion_Usuario extends ActionBarActivity {
 
     public void leerFicheroUsuarios()
     {
-        ObjectInputStream flujo = null;
+        FileInputStream fis;
+        ObjectInputStream ois = null;
+        Object aux;
         try
         {
+            fis = openFileInput("usuarios.dat");
             usuarios = new ArrayList<Usuario>();
-            flujo = new ObjectInputStream(openFileInput("usuarios.obj"));
-
-            while(flujo!=null)
+            ois = new ObjectInputStream(fis);
+            aux = ois.readObject();
+            while(aux!=null)
             {
-                Usuario us = (Usuario)flujo.readObject();
+                Usuario us = (Usuario)aux;
                 usuarios.add(us);
+                aux = ois.readObject();
+
             }
-            flujo.close();
+            ois.close();
         }
-        catch(Exception ex){Log.e("Tratamiento de ficheros",ex.getMessage());}
+        catch(FileNotFoundException ex){
+            System.err.println("Error: archivo no encontrado.");
+            ex.printStackTrace();
+        }
+        catch(ClassNotFoundException ex)
+        {
+            System.err.println("Error: Clase no encontrada.");
+            ex.printStackTrace();
+        }catch(IOException ex)
+        {
+            System.err.println("Error: Problema de entrada-salida");
+            ex.printStackTrace();
+        }
     }
+
+
 
     //Este método carga los usuarios leidos del fichero en la ListView
     public void cargarUsuarios()
     {
         leerFicheroUsuarios();
-
+        Toast.makeText(this, "entra", Toast.LENGTH_SHORT).show();
         if(usuarios.size()>0)
         {
             for(int i=0; i< usuarios.size();i++)
@@ -68,7 +90,7 @@ public class Seleccion_Usuario extends ActionBarActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion_usuario);
-
+        cargarUsuarios();
     }
     public void nuevoUsuario(View view)
     {
