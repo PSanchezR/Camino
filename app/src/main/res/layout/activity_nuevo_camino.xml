@@ -45,11 +45,14 @@
                     android:id="@+id/textView12"
                     android:layout_column="0" />
 
-                <Spinner
+                <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner5"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/editTextDias"
                     android:layout_column="1" />
+
             </TableRow>
 
             <TableRow
@@ -68,7 +71,7 @@
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner6"
+                    android:id="@+id/spinnerCiudadInicio"
                     android:layout_column="1" />
             </TableRow>
 
@@ -88,7 +91,7 @@
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner7"
+                    android:id="@+id/spinnerCiudadFin"
                     android:layout_column="1" />
             </TableRow>
 
@@ -108,8 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/editTextNombreCamino"
-                    android:layout_column="1"
-                    android:text="Introduzca un nombre para el nuevo camino" />
+                    android:layout_column="1" />
             </TableRow>
         </TableLayout>
 
@@ -126,7 +128,8 @@
                 android:layout_height="wrap_content"
                 android:text="Crear mi camino"
                 android:id="@+id/buttonCrearCamino"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:onClick="crearMiCamino "/>
 
         </LinearLayout>
 
@@ -145,7 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Pulse el botón &quot;camino clásico&quot; para realizar el camino francés completo con las etapas clásicas"
+                    android:text="Pulse el botón &quot;camino clásico&quot; para realizar el camino francés completo con las etapas clásicas. Son 33 etapas."
                     android:id="@+id/textView15"
                     android:layout_gravity="center_horizontal" />
 
@@ -154,7 +157,8 @@
                     android:layout_height="wrap_content"
                     android:text="Camino Clásico"
                     android:id="@+id/buttonCaminoClasico"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="caminoClasico"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

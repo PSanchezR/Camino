@@ -370,6 +370,7 @@ int id dialog 0x7f09001b
 int id disableHome 0x7f09000c
 int id dropdown 0x7f09001c
 int id editTextAltura 0x7f09004b
+int id editTextDias 0x7f09005b
 int id editTextFecha 0x7f090051
 int id editTextNombre 0x7f090049
 int id editTextNombreCamino 0x7f090063
@@ -412,9 +413,8 @@ int id shortcut 0x7f09002a
 int id showCustom 0x7f09000f
 int id showHome 0x7f090010
 int id showTitle 0x7f090011
-int id spinner5 0x7f09005b
-int id spinner6 0x7f09005e
-int id spinner7 0x7f090061
+int id spinnerCiudadFin 0x7f090061
+int id spinnerCiudadInicio 0x7f09005e
 int id spinnerComplexion 0x7f09004f
 int id split_action_bar 0x7f090007
 int id submit_area 0x7f09003c

@@ -1338,6 +1338,7 @@ containing a value of this type.
         public static final int disableHome=0x7f09000c;
         public static final int dropdown=0x7f09001c;
         public static final int editTextAltura=0x7f09004b;
+        public static final int editTextDias=0x7f09005b;
         public static final int editTextFecha=0x7f090051;
         public static final int editTextNombre=0x7f090049;
         public static final int editTextNombreCamino=0x7f090063;
@@ -1380,9 +1381,8 @@ containing a value of this type.
         public static final int showCustom=0x7f09000f;
         public static final int showHome=0x7f090010;
         public static final int showTitle=0x7f090011;
-        public static final int spinner5=0x7f09005b;
-        public static final int spinner6=0x7f09005e;
-        public static final int spinner7=0x7f090061;
+        public static final int spinnerCiudadFin=0x7f090061;
+        public static final int spinnerCiudadInicio=0x7f09005e;
         public static final int spinnerComplexion=0x7f09004f;
         public static final int split_action_bar=0x7f090007;
         public static final int submit_area=0x7f09003c;
