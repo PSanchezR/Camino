@@ -38,7 +38,6 @@ public class Seleccion_Usuario extends ActionBarActivity {
         FileInputStream fis;
         ObjectInputStream ois = null;
         Object aux;
-        usuarios = null;
         try
         {
             fis = openFileInput("usuarios.dat");
@@ -75,7 +74,7 @@ public class Seleccion_Usuario extends ActionBarActivity {
     public void cargarUsuarios()
     {
         leerFicheroUsuarios();
-
+        Toast.makeText(this, "entra", Toast.LENGTH_SHORT).show();
         if(usuarios.size()>0)
         {
             for(int i=0; i< usuarios.size();i++)
@@ -107,6 +106,7 @@ public class Seleccion_Usuario extends ActionBarActivity {
         /*Insertar aqui los usuarios*/
 
         Intent i = new Intent(Seleccion_Usuario.this,MenuPrincipal.class);
+
         startActivity(i);
     }
 

@@ -25,6 +25,7 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity{
     protected Usuario usuario;
     protected Spinner listaComplexion;
     protected String[] valoresComplexion = {"Nada deportista","Poco deportista","Deportista Amateur","Deportista profesional"};
+
     //TextView texto;
 
     @Override
@@ -67,10 +68,30 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity{
         int complexion = ((Spinner)findViewById(R.id.spinnerComplexion)).getSelectedItemPosition();
         int anioDeNacimiento = Integer.parseInt(((EditText)findViewById(R.id.editTextFecha)).getText().toString());
         Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
-        guardarUsuarios(usuario);
-        menuUsuarios();
+
+        if(existeUsuario(nombre))
+        {
+            Toast.makeText(this, "Ya existe un usuario con ese nombre. Pruebe con otro", Toast.LENGTH_SHORT).show();
+
+        }else
+        {
+            guardarUsuarios(usuario);
+            menuUsuarios();
+        }
     }
 
+    public boolean existeUsuario(String nombre)
+    {
+        ArrayList<Usuario> usuarios = (ArrayList<Usuario>)getIntent().getSerializableExtra("usuarios");
+        for (int i = 0; i < usuarios.size();i++)
+        {
+            if(usuarios.get(i).getNombre().compareTo(nombre)==0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public void menuUsuarios()
     {
         Intent intent = new Intent(Formulario_Nuevo_Usuario.this, Seleccion_Usuario.class);
