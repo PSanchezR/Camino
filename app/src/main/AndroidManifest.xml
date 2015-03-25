@@ -52,6 +52,10 @@
             android:name=".datos_usuario"
             android:label="@string/title_activity_datos_usuario" >
         </activity>
+        <activity
+            android:name=".Datos_Usuario"
+            android:label="@string/title_activity_datos__usuario" >
+        </activity>
     </application>
 
 </manifest>

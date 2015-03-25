@@ -51,7 +51,7 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity{
             }
             oos.close();
 
-            
+
             Toast.makeText(this, "Usuario guardado correctamente.", Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException e) {
             System.err.println("Error: archivo no encontrado.");
