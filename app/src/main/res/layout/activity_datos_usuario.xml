@@ -16,13 +16,6 @@
         android:layout_alignParentEnd="true">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
-
-        </LinearLayout>
-
-        <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,7 +29,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/textViewNombre"
                 android:layout_column="2"
-                android:layout_weight="0.88"
+                android:layout_weight="1.02"
                 android:text="&lt;Usuario>" />
 
             <Button
@@ -51,16 +44,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tableLayout2" >
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
-
-            </TableRow>
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -106,7 +89,8 @@
 
             <TableRow
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
+                android:layout_height="fill_parent"
+                android:id="@+id/k">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -124,12 +108,6 @@
                     android:spinnerMode="dropdown" />
             </TableRow>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/">
-
-            </TableRow>
         </TableLayout>
 
         <LinearLayout
@@ -147,7 +125,7 @@
             <ListView
                 android:layout_width="match_parent"
                 android:layout_height="189dp"
-                android:id="@+id/listView"
+                android:id="@+id/listViewMisCaminos"
                 android:layout_gravity="center_horizontal" />
 
             <Button

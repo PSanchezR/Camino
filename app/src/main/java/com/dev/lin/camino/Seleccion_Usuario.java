@@ -73,8 +73,11 @@ public class Seleccion_Usuario extends ActionBarActivity {
     //Este método carga los usuarios leidos del fichero en la ListView
     public void cargarUsuarios()
     {
-        leerFicheroUsuarios();
-        Toast.makeText(this, "entra", Toast.LENGTH_SHORT).show();
+        /*Gestion_Ficheros gf = new Gestion_Ficheros();
+        usuarios =  gf.*/
+                leerFicheroUsuarios();
+
+
         if(usuarios.size()>0)
         {
             for(int i=0; i< usuarios.size();i++)
@@ -107,7 +110,6 @@ public class Seleccion_Usuario extends ActionBarActivity {
         /*Insertar aqui los usuarios*/
 
         Intent i = new Intent(Seleccion_Usuario.this,MenuPrincipal.class);
-
         startActivity(i);
     }
 

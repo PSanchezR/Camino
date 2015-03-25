@@ -58,6 +58,10 @@
             android:name="com.dev.lin.camino.datos_usuario"
             android:label="@string/title_activity_datos_usuario" >
         </activity>
+        <activity
+            android:name="com.dev.lin.camino.Datos_Usuario"
+            android:label="@string/title_activity_datos__usuario" >
+        </activity>
     </application>
 
 </manifest>

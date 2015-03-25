@@ -95,6 +95,12 @@ ADDED from AndroidManifest.xml:51:9
 		ADDED from AndroidManifest.xml:53:13
 	android:name
 		ADDED from AndroidManifest.xml:52:13
+activity#com.dev.lin.camino.Datos_Usuario
+ADDED from AndroidManifest.xml:55:9
+	android:label
+		ADDED from AndroidManifest.xml:57:13
+	android:name
+		ADDED from AndroidManifest.xml:56:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:21.0.3:15:5
