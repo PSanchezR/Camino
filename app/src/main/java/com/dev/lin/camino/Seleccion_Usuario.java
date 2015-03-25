@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -29,8 +30,8 @@ public class Seleccion_Usuario extends ActionBarActivity {
     private
     ArrayList<String> users =new ArrayList<String>();// Lista de nombres de usuario
     ArrayAdapter<String> adapter; //adaptador para pasar los nombres a un listview
-
-
+    String seleccionado = null;
+    Usuario usuario_seleccionado = null;
     //Este método lee de un fichero los objetos usuario y los agrupa
 
     public void leerFicheroUsuarios()
@@ -104,13 +105,50 @@ public class Seleccion_Usuario extends ActionBarActivity {
         i.putExtra("usuarios",(Serializable)usuarios);
         startActivity(i);
     }
+    public void buscarUsuario()
+    {
+        for(int i = 0; i < usuarios.size();i++)
+        {
+            if(usuarios.get(i).getNombre().compareTo(seleccionado)==0)
+            {
+                usuario_seleccionado=usuarios.get(i);
+            }
+        }
+    }
 
     public void cargaUser(View view)
     {
-        /*Insertar aqui los usuarios*/
 
-        Intent i = new Intent(Seleccion_Usuario.this,MenuPrincipal.class);
-        startActivity(i);
+        usuarioSeleccionado();
+        if(seleccionado != null)
+        {
+            buscarUsuario();
+            Intent i = new Intent(Seleccion_Usuario.this,MenuPrincipal.class);
+            i.putExtra("usuario_seleccionado",(Serializable)usuario_seleccionado);
+            startActivity(i);
+
+        }else
+        {
+            Toast.makeText(this,"Seleccione un usuario o cree uno nuevo",Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void usuarioSeleccionado()
+    {
+        ListView lista = (ListView)findViewById(R.id.listUsuarios);
+        ArrayAdapter<String> adaptador;
+        adaptador= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,users);
+        lista.setAdapter(adaptador);
+
+        lista.setOnItemClickListener(
+                new AdapterView.OnItemClickListener(){
+                    public void onItemClick(AdapterView<?> a, View v,int position, long id)
+                    {
+                       seleccionado = (String)a.getItemAtPosition(position);
+                    }
+                }
+        );
     }
 
     @Override

@@ -4,14 +4,22 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class Datos_Usuario extends ActionBarActivity {
+
+    private Usuario  usuario_seleccionado = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_usuario);
+        usuario_seleccionado = (Usuario)getIntent().getSerializableExtra("usuario_seleccionado");
+        ((TextView)findViewById(R.id.textViewNombre)).setText("Usuario actual: "+usuario_seleccionado.getNombre());
+        ((EditText)findViewById(R.id.editTextAltura)).setText(usuario_seleccionado.getAltura());
+        ((EditText)findViewById(R.id.editTextPeso)).setText(usuario_seleccionado.getPeso());
     }
 
 

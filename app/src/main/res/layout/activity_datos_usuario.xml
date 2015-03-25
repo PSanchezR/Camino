@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/editText2"
+                    android:id="@+id/editTextAltura"
                     android:layout_column="3" />
             </TableRow>
 
@@ -83,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/editText3"
+                    android:id="@+id/editTextPeso"
                     android:layout_column="3" />
             </TableRow>
 

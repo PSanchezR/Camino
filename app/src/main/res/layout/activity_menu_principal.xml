@@ -19,7 +19,16 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="105dp"
-            android:layout_weight="0.65"></LinearLayout>
+            android:layout_weight="0.65">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="&lt;Usuario>"
+                android:id="@+id/textViewNombre"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"

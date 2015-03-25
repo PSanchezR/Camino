@@ -69,7 +69,7 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity{
         int peso = Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText().toString());
         int complexion = ((Spinner)findViewById(R.id.spinnerComplexion)).getSelectedItemPosition();
         int anioDeNacimiento = Integer.parseInt(((EditText)findViewById(R.id.editTextFecha)).getText().toString());
-        Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
+
 
         if(existeUsuario(nombre))
         {
@@ -77,6 +77,7 @@ public class Formulario_Nuevo_Usuario extends ActionBarActivity{
 
         }else
         {
+            Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
             guardarUsuarios(usuario);
             menuUsuarios();
         }
