@@ -15,6 +15,7 @@ public class Usuario implements Serializable{
     private int complexion;
     private int anioNacimiento;
     private ArrayList<Camino> misCaminos;
+    private Camino camino_actual;
 
     public static final int NADA_DEPORTISTA = 0;
     public static final int POCO_DEPORTISTA = 1;
@@ -32,6 +33,8 @@ public class Usuario implements Serializable{
         this.peso = peso;
         this.complexion = complexion;
         this.anioNacimiento = anioNacimiento;
+        this.camino_actual = null;
+        this.misCaminos = null;
 
     }
 
@@ -81,6 +84,17 @@ public class Usuario implements Serializable{
 
     public void addCamino(Camino camino){
         this.misCaminos.add(camino);
+    }
+
+    public void removeCamino(Camino camino)
+    {
+        for(int i = 0; i < misCaminos.size();i++)
+        {
+            if(misCaminos.get(i).getNombre().compareTo(camino.getNombre())==0)
+            {
+                misCaminos.remove(i);
+            }
+        }
     }
 
     @Override

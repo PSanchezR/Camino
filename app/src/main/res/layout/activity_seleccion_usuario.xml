@@ -30,15 +30,6 @@
             android:layout_weight="0.51" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cargar usuario"
-            android:id="@+id/buttonCargarUsuario"
-            android:layout_weight="0.13"
-            android:layout_gravity="center_horizontal"
-            android:onClick="cargaUser"/>
-
-        <Button
             android:layout_width="144dp"
             android:layout_height="wrap_content"
             android:text="Nuevo Usuario"

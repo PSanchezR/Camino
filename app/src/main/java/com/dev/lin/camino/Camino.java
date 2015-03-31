@@ -23,7 +23,8 @@ public class Camino
         etapasCompletadas.add(etapa);
     }
 
-    public List<Etapa> getEtapasCompletadas(){return etapasCompletadas;}
-    public List<Etapa> getEtapasCamino(){return etapasCamino;}
+    public List<Etapa> getEtapasCompletadas(){return this.etapasCompletadas;}
+    public List<Etapa> getEtapasCamino(){return this.etapasCamino;}
+    public String getNombre(){return this.nombre;}
 
 }

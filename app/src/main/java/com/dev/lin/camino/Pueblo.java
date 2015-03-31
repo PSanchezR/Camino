@@ -7,10 +7,10 @@ public class Pueblo
 {
     private
     String nombre;
-    float dist_anterior, dist_siguiente;
+    double dist_anterior, dist_siguiente;
     boolean comida, hotel,albergue,farmacia,banco_caja,internet;
 
-    public Pueblo(String nom, float da, float ds, boolean com, boolean
+    public Pueblo(String nom, double da, double ds, boolean com, boolean
             hot, boolean albe, boolean farm, boolean banco, boolean inter)
     {
         nombre= nom;
@@ -18,14 +18,15 @@ public class Pueblo
         dist_siguiente = ds;
         comida = com;
         hotel = hot;
+        farmacia = farm;
         albergue = albe;
         banco_caja=banco;
         internet = inter;
     }
 
     public String getNombre(){return nombre;}
-    public float getDist_anterior(){return dist_anterior;}
-    public float getDist_siguiente(){return dist_siguiente;}
+    public double getDist_anterior(){return dist_anterior;}
+    public double getDist_siguiente(){return dist_siguiente;}
     public boolean getComida(){return comida;}
     public boolean getHotel(){return hotel;}
     public boolean getAlbergue(){return albergue;}

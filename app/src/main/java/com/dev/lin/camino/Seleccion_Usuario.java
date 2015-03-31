@@ -91,13 +91,13 @@ public class Seleccion_Usuario extends ActionBarActivity {
         }
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion_usuario);
         cargarUsuarios();
+        usuarioSeleccionado();
     }
     public void nuevoUsuario(View view)
     {
@@ -116,23 +116,6 @@ public class Seleccion_Usuario extends ActionBarActivity {
         }
     }
 
-    public void cargaUser(View view)
-    {
-
-        usuarioSeleccionado();
-        if(seleccionado != null)
-        {
-            buscarUsuario();
-            Intent i = new Intent(Seleccion_Usuario.this,MenuPrincipal.class);
-            i.putExtra("usuario_seleccionado",(Serializable)usuario_seleccionado);
-            startActivity(i);
-
-        }else
-        {
-            Toast.makeText(this,"Seleccione un usuario o cree uno nuevo",Toast.LENGTH_SHORT).show();
-        }
-
-    }
 
     public void usuarioSeleccionado()
     {
@@ -146,6 +129,10 @@ public class Seleccion_Usuario extends ActionBarActivity {
                     public void onItemClick(AdapterView<?> a, View v,int position, long id)
                     {
                        seleccionado = (String)a.getItemAtPosition(position);
+                        buscarUsuario();
+                        Intent i = new Intent(Seleccion_Usuario.this,MenuPrincipal.class);
+                        i.putExtra("usuario_seleccionado",(Serializable)usuario_seleccionado);
+                        startActivity(i);
                     }
                 }
         );
