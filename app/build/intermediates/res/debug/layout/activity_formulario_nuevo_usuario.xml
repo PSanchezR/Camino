@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.dev.lin.camino.Formulario_Nuevo_Usuario">
+    tools:context="com.dev.lin.camino.FormularioNuevoUsuario">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
@@ -158,4 +158,4 @@
 
     </LinearLayout>
 </RelativeLayout>
-<!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/layout/activity_formulario_nuevo_usuario.xml -->
+<!-- From: file:/home/germaaan/AndroidStudioProjects/Camino/app/src/main/res/layout/activity_formulario_nuevo_usuario.xml -->

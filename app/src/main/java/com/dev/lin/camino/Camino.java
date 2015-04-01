@@ -3,28 +3,34 @@ package com.dev.lin.camino;
 import java.util.List;
 
 /**
- * Created by root on 19/03/15.
+ * Rutas del Camino de Santiago
+ *
+ * @author German Martínez Maldonado
+ * @author Pablo Sánchez Robles
  */
-public class Camino
-{
-    private
-    String nombre;
-    List<Etapa> etapasCamino;
-    List<Etapa> etapasCompletadas;
+public class Camino {
+    private List<Etapa> etapasCamino;
+    private List<Etapa> etapasCompletadas;
+    private String nombre;
 
-    public Camino(String nom, List<Etapa>etapasCam)
-    {
-        nombre = nom;
-        etapasCamino = etapasCam;
+    public Camino(String nombre, List<Etapa> etapasCamino) {
+        this.nombre = nombre;
+        this.etapasCamino = etapasCamino;
     }
 
-    public void setEtapaCompletada(Etapa etapa)
-    {
-        etapasCompletadas.add(etapa);
+    public void setEtapaCompletada(Etapa etapa) {
+        this.etapasCompletadas.add(etapa);
     }
 
-    public List<Etapa> getEtapasCompletadas(){return this.etapasCompletadas;}
-    public List<Etapa> getEtapasCamino(){return this.etapasCamino;}
-    public String getNombre(){return this.nombre;}
+    public List<Etapa> getEtapasCompletadas() {
+        return this.etapasCompletadas;
+    }
 
+    public List<Etapa> getEtapasCamino() {
+        return this.etapasCamino;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
 }

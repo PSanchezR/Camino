@@ -1,8 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.dev.lin.camino.Formulario_Nuevo_Usuario">
+    tools:context="com.dev.lin.camino.FormularioNuevoUsuario">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
-<!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/menu/menu_formulario_nuevo_usuario.xml -->
+<!-- From: file:/home/germaaan/AndroidStudioProjects/Camino/app/src/main/res/menu/menu_formulario_nuevo_usuario.xml -->

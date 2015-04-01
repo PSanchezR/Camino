@@ -1,25 +1,28 @@
 package com.dev.lin.camino;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
-
-public class Camino_Actual extends ActionBarActivity {
+/**
+ * Datos de la etapa seleccionada del Camino de Santiago
+ *
+ * @author German Martínez Maldonado
+ * @author Pablo Sánchez Robles
+ */
+public class EtapaSeleccionada extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camino_actual);
+        setContentView(R.layout.activity_etapa_seleccionada);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_camino_actual, menu);
+        getMenuInflater().inflate(R.menu.menu_etapa, menu);
         return true;
     }
 

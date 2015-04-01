@@ -9,21 +9,24 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-
-
+/**
+ * Datos de la portada de la aplicación
+ *
+ * @author German Martínez Maldonado
+ * @author Pablo Sánchez Robles
+ */
 public class Portada extends ActionBarActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_portada);
 
-        FrameLayout frame_fondo = (FrameLayout)findViewById(R.id.frame_fondo);
+        FrameLayout frame_fondo = (FrameLayout) findViewById(R.id.frame_fondo);
         frame_fondo.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Intent intent = new Intent(Portada.this, Seleccion_Usuario.class);
+                Intent intent = new Intent(Portada.this, SeleccionUsuario.class);
                 startActivity(intent);
                 return false;
             }
@@ -31,14 +34,12 @@ public class Portada extends ActionBarActivity {
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_portada, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

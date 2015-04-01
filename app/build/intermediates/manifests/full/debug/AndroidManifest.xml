@@ -27,19 +27,19 @@
             android:label="@string/title_activity_main" >
         </activity>
         <activity
-            android:name="com.dev.lin.camino.Etapa_Seleccionada"
+            android:name="com.dev.lin.camino.EtapaSeleccionada"
             android:label="@string/title_activity_etapa" >
         </activity>
         <activity
-            android:name="com.dev.lin.camino.Seleccion_Usuario"
+            android:name="com.dev.lin.camino.SeleccionUsuario"
             android:label="@string/title_activity_seleccion__usuario" >
         </activity>
         <activity
-            android:name="com.dev.lin.camino.Camino_Actual"
+            android:name="com.dev.lin.camino.CaminoActual"
             android:label="@string/title_activity_camino__actual" >
         </activity>
         <activity
-            android:name="com.dev.lin.camino.Formulario_Nuevo_Usuario"
+            android:name="com.dev.lin.camino.FormularioNuevoUsuario"
             android:label="@string/title_activity_formulario__nuevo__usuario" >
         </activity>
         <activity
@@ -47,7 +47,7 @@
             android:label="@string/title_activity_menu_principal" >
         </activity>
         <activity
-            android:name="com.dev.lin.camino.Nuevo_Camino"
+            android:name="com.dev.lin.camino.NuevoCamino"
             android:label="@string/title_activity_nuevo__camino" >
         </activity>
         <activity
@@ -59,7 +59,7 @@
             android:label="@string/title_activity_datos_usuario" >
         </activity>
         <activity
-            android:name="com.dev.lin.camino.Datos_Usuario"
+            android:name="com.dev.lin.camino.DatosUsuario"
             android:label="@string/title_activity_datos__usuario" >
         </activity>
     </application>

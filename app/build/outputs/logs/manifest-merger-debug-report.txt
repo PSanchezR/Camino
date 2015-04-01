@@ -1,6 +1,8 @@
 -- Merging decision tree log ---
 manifest
 ADDED from AndroidManifest.xml:2:1
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
 	package
 		ADDED from AndroidManifest.xml:3:5
 		INJECTED from AndroidManifest.xml:0:0
@@ -8,8 +10,6 @@ ADDED from AndroidManifest.xml:2:1
 	android:versionName
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
-	xmlns:android
-		ADDED from AndroidManifest.xml:2:11
 	android:versionCode
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
@@ -47,25 +47,25 @@ ADDED from AndroidManifest.xml:19:9
 		ADDED from AndroidManifest.xml:21:13
 	android:name
 		ADDED from AndroidManifest.xml:20:13
-activity#com.dev.lin.camino.Etapa_Seleccionada
+activity#com.dev.lin.camino.EtapaSeleccionada
 ADDED from AndroidManifest.xml:23:9
 	android:label
 		ADDED from AndroidManifest.xml:25:13
 	android:name
 		ADDED from AndroidManifest.xml:24:13
-activity#com.dev.lin.camino.Seleccion_Usuario
+activity#com.dev.lin.camino.SeleccionUsuario
 ADDED from AndroidManifest.xml:27:9
 	android:label
 		ADDED from AndroidManifest.xml:29:13
 	android:name
 		ADDED from AndroidManifest.xml:28:13
-activity#com.dev.lin.camino.Camino_Actual
+activity#com.dev.lin.camino.CaminoActual
 ADDED from AndroidManifest.xml:31:9
 	android:label
 		ADDED from AndroidManifest.xml:33:13
 	android:name
 		ADDED from AndroidManifest.xml:32:13
-activity#com.dev.lin.camino.Formulario_Nuevo_Usuario
+activity#com.dev.lin.camino.FormularioNuevoUsuario
 ADDED from AndroidManifest.xml:35:9
 	android:label
 		ADDED from AndroidManifest.xml:37:13
@@ -77,7 +77,7 @@ ADDED from AndroidManifest.xml:39:9
 		ADDED from AndroidManifest.xml:41:13
 	android:name
 		ADDED from AndroidManifest.xml:40:13
-activity#com.dev.lin.camino.Nuevo_Camino
+activity#com.dev.lin.camino.NuevoCamino
 ADDED from AndroidManifest.xml:43:9
 	android:label
 		ADDED from AndroidManifest.xml:45:13
@@ -95,7 +95,7 @@ ADDED from AndroidManifest.xml:51:9
 		ADDED from AndroidManifest.xml:53:13
 	android:name
 		ADDED from AndroidManifest.xml:52:13
-activity#com.dev.lin.camino.Datos_Usuario
+activity#com.dev.lin.camino.DatosUsuario
 ADDED from AndroidManifest.xml:55:9
 	android:label
 		ADDED from AndroidManifest.xml:57:13

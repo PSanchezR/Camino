@@ -1,19 +1,19 @@
 package com.dev.lin.camino;
 
 /**
- * Created by root on 19/03/15.
+ * Datos de una etapa del Camino de Santiago
+ *
+ * @author German Martínez Maldonado
+ * @author Pablo Sánchez Robles
  */
-public class Etapa
-{
-    private
-        float kilometros;
-        String pueblo_Inicio;
-        String pueblo_fin;
+public class Etapa {
+    private String puebloInicio;
+    private String puebloFin;
+    private float kms;
 
-    public Etapa(float km, String pi, String pf)
-    {
-        kilometros=km;
-        pueblo_Inicio = pi;
-        pueblo_fin = pf;
+    public Etapa(float kms, String puebloInicio, String puebloFin) {
+        this.kms = kms;
+        this.puebloInicio = puebloInicio;
+        this.puebloFin = puebloFin;
     }
 }
