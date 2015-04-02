@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Formulario de registro de un nuevo usuario
@@ -43,32 +44,33 @@ public class FormularioNuevoUsuario extends ActionBarActivity {
         int complexion = ((Spinner) findViewById(R.id.spinnerComplexion)).getSelectedItemPosition();
         int anioDeNacimiento = Integer.parseInt(((EditText) findViewById(R.id.editTextFecha)).getText().toString());
 
-        /*
         if (existeUsuario(nombre)) {
             Toast.makeText(this, "Ya existe un usuario con ese nombre. Pruebe con otro.", Toast.LENGTH_SHORT).show();
-        }
-        */
-
-        Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
-
-        if (archivador.guardarUsuario(usuario, getBaseContext()) == 0) {
-            Toast.makeText(this, "Usuario guardado correctamente.", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "El usuario no ha sido creado.", Toast.LENGTH_SHORT).show();
+            Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
+
+            if (archivador.guardarUsuario(usuario, getBaseContext()) == 0) {
+                Toast.makeText(this, "Usuario guardado correctamente.", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "El usuario no ha sido creado.", Toast.LENGTH_SHORT).show();
+            }
         }
 
         menuUsuarios();
     }
 
     public boolean existeUsuario(String nombre) {
-        ArrayList<Usuario> usuarios = (ArrayList<Usuario>) getIntent().getSerializableExtra("usuarios");
+        boolean comp = false;
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>(archivador.recuperarUsuarios(getBaseContext()));
+        Iterator<Usuario> itr = usuarios.iterator();
 
-        for (int i = 0; i < usuarios.size(); i++) {
-            if (usuarios.get(i).getNombre().compareTo(nombre) == 0) {
-                return true;
-            }
+        while (itr.hasNext() && !comp) {
+            Usuario usuario = itr.next();
+
+            comp = (usuario.getNombre()).equals(nombre);
         }
-        return false;
+
+        return comp;
     }
 
     public void menuUsuarios() {

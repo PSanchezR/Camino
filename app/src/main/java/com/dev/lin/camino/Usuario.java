@@ -35,7 +35,6 @@ public class Usuario implements Serializable {
         this.anioNacimiento = anioNacimiento;
         this.camino_actual = null;
         this.misCaminos = null;
-
     }
 
     public String getNombre() {
@@ -87,17 +86,13 @@ public class Usuario implements Serializable {
     }
 
     public void removeCamino(Camino camino) {
-        for (int i = 0; i < misCaminos.size(); i++) {
-            if (misCaminos.get(i).getNombre().compareTo(camino.getNombre()) == 0) {
-                misCaminos.remove(i);
-            }
-        }
+        this.misCaminos.clear();
     }
 
     @Override
     public String toString() {
         return "Usuario -> nombre:" + this.nombre + ", altura:" + this.altura + ", peso:" + this.peso + ", complexion:" + this.complexion +
-                ", año de nacimiento: " + this.anioNacimiento + ", caminos: " + this.misCaminos;
+                ", año de nacimiento:" + this.anioNacimiento;
     }
 
 }
