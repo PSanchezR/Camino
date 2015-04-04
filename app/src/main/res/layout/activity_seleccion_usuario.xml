@@ -27,7 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="360dp"
             android:id="@+id/listUsuarios"
-            android:layout_weight="0.51" />
+            android:layout_weight="0.51"
+            android:choiceMode="singleChoice" />
 
         <Button
             android:layout_width="144dp"
