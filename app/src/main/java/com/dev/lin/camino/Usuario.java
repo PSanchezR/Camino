@@ -14,7 +14,7 @@ public class Usuario implements Serializable {
     public static final int POCO_DEPORTISTA = 1;
     public static final int DEPORTISTA_AMATEUR = 2;
     public static final int DEPORTISTA_PROFESIONAL = 3;
-    private static final long serialVersionUID = 636161369614615L;
+    private static final long serialVersionUID = 0L;
     private String nombre;
     private int altura;
     private int peso;

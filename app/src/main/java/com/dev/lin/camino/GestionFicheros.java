@@ -3,6 +3,7 @@ package com.dev.lin.camino;
 import android.content.Context;
 import android.util.Log;
 
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -24,14 +25,21 @@ public class GestionFicheros {
 
     public int guardarUsuario(Usuario usuario, Context ctx) {
         int res = 1;
-        FileOutputStream fos;
+        FileOutputStream fos = null;
+        File archivo = ctx.getFileStreamPath(GestionFicheros.ARCHIVO_USUARIOS);
 
         try {
             fos = ctx.openFileOutput(GestionFicheros.ARCHIVO_USUARIOS, Context.MODE_APPEND);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(usuario);
 
-            oos.close();
+            /*if (archivo.exists()) {
+                FlujoSalidaObjetoNoCabecera oos = new FlujoSalidaObjetoNoCabecera(fos);
+                oos.writeObject(usuario);
+                oos.close();
+            } else {*/
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(usuario);
+                oos.close();
+            //}
 
             res = 0;
         } catch (FileNotFoundException e) {
@@ -40,13 +48,21 @@ public class GestionFicheros {
         } catch (IOException e) {
             System.err.println("Error: problema de entrada/salida.");
             e.printStackTrace();
+        } finally {
+            try {
+                if (fos != null)
+                    fos.close();
+            } catch (IOException e) {
+                System.err.println("Error: fallo al cerrar el flujo de escritura.");
+                e.printStackTrace();
+            }
         }
 
         return res;
     }
 
     public ArrayList<Usuario> recuperarUsuarios(Context ctx) {
-        FileInputStream fis;
+        FileInputStream fis = null;
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         File archivo = ctx.getFileStreamPath(GestionFicheros.ARCHIVO_USUARIOS);
 
@@ -55,15 +71,15 @@ public class GestionFicheros {
                 fis = ctx.openFileInput(GestionFicheros.ARCHIVO_USUARIOS);
 
                 ObjectInputStream ois = new ObjectInputStream(fis);
-                Object usuario = ois.readObject();
 
-                while (usuario != null) {
+                while (true) {
+                    Object usuario = ois.readObject();
                     Log.v(GestionFicheros.TAG, ((Usuario) usuario).toString());
                     usuarios.add((Usuario) usuario);
-                    usuario = ois.readObject();
                 }
-
-                ois.close();
+            } catch (EOFException e) {
+                System.err.println("Salida de archivo.");
+                e.printStackTrace();
             } catch (FileNotFoundException e) {
                 System.err.println("Error: archivo no encontrado.");
                 e.printStackTrace();
@@ -73,6 +89,14 @@ public class GestionFicheros {
             } catch (ClassNotFoundException e) {
                 System.err.println("Error: no se han podido recuperar los usuarios.");
                 e.printStackTrace();
+            } finally {
+                try {
+                    if (fis != null)
+                        fis.close();
+                } catch (IOException e) {
+                    System.err.println("Error: fallo al cerrar el flujo de lectura.");
+                    e.printStackTrace();
+                }
             }
         }
 

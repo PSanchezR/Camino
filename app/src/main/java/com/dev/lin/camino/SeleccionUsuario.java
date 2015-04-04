@@ -10,12 +10,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Selección de usuario
@@ -26,58 +24,28 @@ import java.util.ArrayList;
 public class SeleccionUsuario extends ActionBarActivity {
     static ArrayList<Usuario> usuarios;//Lista de objetos usuario que se leerán desde fichero.
 
-    ArrayAdapter<String> adapter; //Adaptador para pasar los nombres a un listview
-    String seleccionado = null;
-    Usuario usuario_seleccionado = null;
-    private
-    ArrayList<String> users = new ArrayList<String>();// Lista de nombres de usuario
+    private ArrayAdapter<String> adapter; //Adaptador para pasar los nombres a un listview
+    private String seleccionado = null;
+    private Usuario usuarioSeleccionado = null;
+    private ArrayList<String> nombresUsuarios = new ArrayList<String>();// Lista de nombres de usuario
 
-    /**
-     * Método lee de un fichero los objetos usuario y los agrupa
-     */
-    public void leerFicheroUsuarios() {
-        FileInputStream fis;
-        ObjectInputStream ois = null;
-        Object aux;
-        try {
-            fis = openFileInput("usuarios.dat");
-            usuarios = new ArrayList<Usuario>();
-            ois = new ObjectInputStream(fis);
-            aux = ois.readObject();
-            while (aux != null) {
-                Usuario us = (Usuario) aux;
-                usuarios.add(us);
-                aux = ois.readObject();
-
-            }
-            ois.close();
-        } catch (FileNotFoundException ex) {
-            System.err.println("Error: archivo no encontrado.");
-            ex.printStackTrace();
-        } catch (ClassNotFoundException ex) {
-            System.err.println("Error: Clase no encontrada.");
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            System.err.println("Error: Problema de entrada-salida");
-            ex.printStackTrace();
-        }
-    }
-
+    private GestionFicheros archivador = new GestionFicheros();
 
     //Este método carga los usuarios leidos del fichero en la ListView
-    public void cargarUsuarios() {
-        /*GestionFicheros gf = new GestionFicheros();
-        usuarios =  gf.*/
-        leerFicheroUsuarios();
+    public void cargarUsuarios(){
+        this.usuarios = new ArrayList<Usuario>(archivador.recuperarUsuarios(getBaseContext()));
 
-        if (usuarios.size() > 0) {
-            for (int i = 0; i < usuarios.size(); i++) {
-                users.add(usuarios.get(i).getNombre());
-            }
-            adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, users);
-            ListView lista = (ListView) findViewById(R.id.listUsuarios);
-            lista.setAdapter(adapter);
+        Iterator<Usuario> itr = usuarios.iterator();
+
+        while (itr.hasNext()) {
+            Usuario usuario = itr.next();
+
+            nombresUsuarios.add(usuario.getNombre());
         }
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresUsuarios);
+        ListView lista = (ListView) findViewById(R.id.listUsuarios);
+        lista.setAdapter(adapter);
     }
 
     @Override
@@ -85,7 +53,7 @@ public class SeleccionUsuario extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion_usuario);
 
-        //cargarUsuarios();
+        cargarUsuarios();
         usuarioSeleccionado();
     }
 
@@ -96,9 +64,16 @@ public class SeleccionUsuario extends ActionBarActivity {
     }
 
     public void buscarUsuario() {
-        for (int i = 0; i < usuarios.size(); i++) {
-            if (usuarios.get(i).getNombre().compareTo(seleccionado) == 0) {
-                usuario_seleccionado = usuarios.get(i);
+        boolean comp = false;
+        Iterator<Usuario> itr = usuarios.iterator();
+
+        while (itr.hasNext() && !comp) {
+            Usuario usuario = itr.next();
+
+            comp = (usuario.getNombre()).equals(seleccionado);
+
+            if (comp) {
+                usuarioSeleccionado = usuario;
             }
         }
     }
@@ -106,7 +81,7 @@ public class SeleccionUsuario extends ActionBarActivity {
     public void usuarioSeleccionado() {
         ListView lista = (ListView) findViewById(R.id.listUsuarios);
         ArrayAdapter<String> adaptador;
-        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, users);
+        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresUsuarios);
         lista.setAdapter(adaptador);
 
         lista.setOnItemClickListener(
@@ -115,7 +90,7 @@ public class SeleccionUsuario extends ActionBarActivity {
                         seleccionado = (String) a.getItemAtPosition(position);
                         buscarUsuario();
                         Intent i = new Intent(SeleccionUsuario.this, MenuPrincipal.class);
-                        i.putExtra("usuario_seleccionado", (Serializable) usuario_seleccionado);
+                        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
                         startActivity(i);
                     }
                 }

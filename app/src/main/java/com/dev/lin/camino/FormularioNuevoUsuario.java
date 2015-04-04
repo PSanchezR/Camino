@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -37,7 +38,7 @@ public class FormularioNuevoUsuario extends ActionBarActivity {
         listaComplexion.setAdapter(adaptador);
     }
 
-    public void crearUsuario(View view) {
+    public void crearUsuario(View view){
         String nombre = ((EditText) findViewById(R.id.editTextNombre)).getText().toString();
         int altura = Integer.parseInt(((EditText) findViewById(R.id.editTextAltura)).getText().toString());
         int peso = Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText().toString());
@@ -56,10 +57,12 @@ public class FormularioNuevoUsuario extends ActionBarActivity {
             }
         }
 
+        archivador.recuperarUsuarios(getBaseContext());
+
         menuUsuarios();
     }
 
-    public boolean existeUsuario(String nombre) {
+    public boolean existeUsuario(String nombre){
         boolean comp = false;
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>(archivador.recuperarUsuarios(getBaseContext()));
         Iterator<Usuario> itr = usuarios.iterator();
