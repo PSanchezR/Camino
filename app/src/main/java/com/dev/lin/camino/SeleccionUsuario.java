@@ -102,6 +102,8 @@ public class SeleccionUsuario extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_seleccion_usuario, menu);
         return true;
+        //WAAAASAPPP
+        
     }
 
     @Override

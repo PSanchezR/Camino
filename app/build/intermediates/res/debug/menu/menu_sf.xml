@@ -4,4 +4,4 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
-<!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/menu/menu_sf.xml -->
+<!-- From: file:/home/ubuntu/Escritorio/APP/Camino/app/src/main/res/menu/menu_sf.xml -->
