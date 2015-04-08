@@ -18,14 +18,14 @@ import java.io.Serializable;
  */
 public class MenuPrincipal extends ActionBarActivity {
 
-    private Usuario usuario_seleccionado = null;
+    private Usuario usuarioSeleccionado = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
-        usuario_seleccionado = (Usuario) getIntent().getSerializableExtra("usuario_seleccionado");
-        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario actual: " + usuario_seleccionado.getNombre());
+        usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario actual: " + usuarioSeleccionado.getNombre());
     }
 
     @Override
@@ -38,19 +38,19 @@ public class MenuPrincipal extends ActionBarActivity {
     public void datosUsuario(View view) {
         /*Insertar activity*/
         Intent i = new Intent(MenuPrincipal.this, DatosUsuario.class);
-        i.putExtra("usuario_seleccionado", (Serializable) usuario_seleccionado);
+        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }
 
     public void nuevoCamino(View view) {
         Intent i = new Intent(MenuPrincipal.this, NuevoCamino.class);
-        i.putExtra("usuario_seleccionado", (Serializable) usuario_seleccionado);
+        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }
 
     public void caminoActual(View view) {
         Intent i = new Intent(MenuPrincipal.this, CaminoActual.class);
-        i.putExtra("usuario_seleccionado", (Serializable) usuario_seleccionado);
+        i.putExtra("usuarioSeleccionado", (Serializable)usuarioSeleccionado);
         startActivity(i);
     }
 

@@ -18,22 +18,22 @@ import android.widget.TextView;
 public class DatosUsuario extends ActionBarActivity {
 
     protected String[] valoresComplexion = {"Nada deportista", "Poco deportista", "Deportista Amateur", "Deportista profesional"};
-    private Usuario usuario_seleccionado = null;
+    private Usuario usuarioSeleccionado = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_usuario);
-        usuario_seleccionado = (Usuario) getIntent().getSerializableExtra("Usuario_seleccionado");
+        usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
 
-        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario actual: " + usuario_seleccionado.getNombre());
-        ((EditText) findViewById(R.id.editTextAltura)).setText("" + usuario_seleccionado.getAltura());
-        ((EditText) findViewById(R.id.editTextPeso)).setText("" + usuario_seleccionado.getPeso());
+        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario actual: " + usuarioSeleccionado.getNombre());
+        ((EditText) findViewById(R.id.editTextAltura)).setText("" + usuarioSeleccionado.getAltura());
+        ((EditText) findViewById(R.id.editTextPeso)).setText("" + usuarioSeleccionado.getPeso());
 
         ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, valoresComplexion);
         Spinner spinnerComplexion = (Spinner) findViewById(R.id.spinnerComplexion);
         spinnerComplexion.setAdapter(adaptador);
-        spinnerComplexion.setSelection(usuario_seleccionado.getComplexion());
+        spinnerComplexion.setSelection(usuarioSeleccionado.getComplexion());
     }
 
     @Override

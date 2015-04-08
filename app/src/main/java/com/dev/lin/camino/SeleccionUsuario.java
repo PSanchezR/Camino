@@ -90,6 +90,7 @@ public class SeleccionUsuario extends ActionBarActivity {
                         seleccionado = (String) a.getItemAtPosition(position);
                         buscarUsuario();
                         Intent i = new Intent(SeleccionUsuario.this, MenuPrincipal.class);
+
                         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
                         startActivity(i);
                     }
@@ -102,7 +103,7 @@ public class SeleccionUsuario extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_seleccion_usuario, menu);
         return true;
-        //WAAAASAPPP
+
         
     }
 
