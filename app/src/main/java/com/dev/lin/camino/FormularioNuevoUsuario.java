@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -50,21 +49,21 @@ public class FormularioNuevoUsuario extends ActionBarActivity {
         } else {
             Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
 
-            if (archivador.guardarUsuario(usuario, getBaseContext()) == 0) {
+            if (archivador.escribirUsuarios(usuario, getBaseContext()) == 0) {
                 Toast.makeText(this, "Usuario guardado correctamente.", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "El usuario no ha sido creado.", Toast.LENGTH_SHORT).show();
             }
         }
 
-        archivador.recuperarUsuarios(getBaseContext());
+        archivador.leerUsuarios(getBaseContext());
 
         menuUsuarios();
     }
 
     public boolean existeUsuario(String nombre){
         boolean comp = false;
-        ArrayList<Usuario> usuarios = new ArrayList<Usuario>(archivador.recuperarUsuarios(getBaseContext()));
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>(archivador.leerUsuarios(getBaseContext()));
         Iterator<Usuario> itr = usuarios.iterator();
 
         while (itr.hasNext() && !comp) {

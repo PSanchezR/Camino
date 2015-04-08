@@ -11,6 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 /**
@@ -21,85 +22,102 @@ import java.util.ArrayList;
  */
 public class GestionFicheros {
     public static final String ARCHIVO_USUARIOS = "usuarios.dat";
-    private static final String TAG = "GestionFicheros";
+    private static final String ESCRIBIR_USUARIOS = "EscribirUsuarios";
+    private static final String LEER_USUARIOS = "LeerUsuarios";
 
-    public int guardarUsuario(Usuario usuario, Context ctx) {
+    public int escribirUsuarios(Usuario usuario, Context ctx) {
         int res = 1;
-        FileOutputStream fos = null;
         File archivo = ctx.getFileStreamPath(GestionFicheros.ARCHIVO_USUARIOS);
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
 
         try {
             fos = ctx.openFileOutput(GestionFicheros.ARCHIVO_USUARIOS, Context.MODE_APPEND);
 
-            /*if (archivo.exists()) {
-                FlujoSalidaObjetoNoCabecera oos = new FlujoSalidaObjetoNoCabecera(fos);
-                oos.writeObject(usuario);
-                oos.close();
-            } else {*/
-                ObjectOutputStream oos = new ObjectOutputStream(fos);
-                oos.writeObject(usuario);
-                oos.close();
-            //}
+            if (archivo.length() == 0) {
+                oos = new ObjectOutputStream(fos);
+                Log.v(GestionFicheros.ESCRIBIR_USUARIOS, "Se ha creado un archivo nuevo.");
+            } else {
+                oos = new AppendableObjectOutputStream(fos);
+                Log.v(GestionFicheros.ESCRIBIR_USUARIOS, "No se ha creado un archivo nuevo.");
+            }
+
+            oos.writeObject(usuario);
+            oos.flush();
 
             res = 0;
         } catch (FileNotFoundException e) {
-            System.err.println("Error: archivo no encontrado.");
-            e.printStackTrace();
+            Log.e(GestionFicheros.ESCRIBIR_USUARIOS, "Error: archivo no encontrado.\n\t" + e.getMessage());
         } catch (IOException e) {
-            System.err.println("Error: problema de entrada/salida.");
-            e.printStackTrace();
+            Log.e(GestionFicheros.ESCRIBIR_USUARIOS, "Error: problema de entrada salida.\n\t" + e.getMessage());
         } finally {
             try {
-                if (fos != null)
+                if (fos != null) {
                     fos.close();
+                } else if (oos != null) {
+                    oos.close();
+                }
             } catch (IOException e) {
-                System.err.println("Error: fallo al cerrar el flujo de escritura.");
-                e.printStackTrace();
+                Log.e(GestionFicheros.ESCRIBIR_USUARIOS, "Error: fallo al cerrar el flujo de escritura.\n\t" + e.getMessage());
             }
         }
 
         return res;
     }
 
-    public ArrayList<Usuario> recuperarUsuarios(Context ctx) {
-        FileInputStream fis = null;
-        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+    public ArrayList<Usuario> leerUsuarios(Context ctx) {
         File archivo = ctx.getFileStreamPath(GestionFicheros.ARCHIVO_USUARIOS);
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
         if (archivo.exists()) {
             try {
                 fis = ctx.openFileInput(GestionFicheros.ARCHIVO_USUARIOS);
-
-                ObjectInputStream ois = new ObjectInputStream(fis);
+                ois = new ObjectInputStream(fis);
 
                 while (true) {
-                    Object usuario = ois.readObject();
-                    Log.v(GestionFicheros.TAG, ((Usuario) usuario).toString());
-                    usuarios.add((Usuario) usuario);
+                    Usuario usuario = (Usuario) ois.readObject();
+                    Log.d(GestionFicheros.LEER_USUARIOS, usuario.toString());
+                    usuarios.add(usuario);
                 }
             } catch (EOFException e) {
-                System.err.println("Salida de archivo.");
+                Log.d(GestionFicheros.LEER_USUARIOS, "Fin de archivo.\n\t" + e.getMessage());
                 e.printStackTrace();
             } catch (FileNotFoundException e) {
-                System.err.println("Error: archivo no encontrado.");
+                Log.e(GestionFicheros.LEER_USUARIOS, "Error: archivo no encontrado.\n\t" + e.getMessage());
                 e.printStackTrace();
             } catch (IOException e) {
-                System.err.println("Error: problema de entrada/salida.");
+                Log.e(GestionFicheros.LEER_USUARIOS, "Error: problema de entrada/salida.\n\t" + e.getMessage());
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {
-                System.err.println("Error: no se han podido recuperar los usuarios.");
+                Log.e(GestionFicheros.LEER_USUARIOS, "Error: no se han podido recuperar los usuarios.\n\t" + e.getMessage());
                 e.printStackTrace();
             } finally {
                 try {
-                    if (fis != null)
+                    if (fis != null) {
                         fis.close();
+                    } else if (ois != null) {
+                        ois.close();
+                    }
                 } catch (IOException e) {
-                    System.err.println("Error: fallo al cerrar el flujo de lectura.");
+                    Log.e(GestionFicheros.LEER_USUARIOS, "Error: fallo al cerrar el flujo de lectura.\n\t" + e.getMessage());
                     e.printStackTrace();
                 }
             }
         }
 
         return usuarios;
+    }
+
+    private static class AppendableObjectOutputStream extends ObjectOutputStream {
+        public AppendableObjectOutputStream(OutputStream out) throws IOException {
+            super(out);
+        }
+
+        @Override
+        protected void writeStreamHeader() throws IOException {
+            reset();
+        }
     }
 }

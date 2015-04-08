@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -33,7 +32,7 @@ public class SeleccionUsuario extends ActionBarActivity {
 
     //Este método carga los usuarios leidos del fichero en la ListView
     public void cargarUsuarios(){
-        this.usuarios = new ArrayList<Usuario>(archivador.recuperarUsuarios(getBaseContext()));
+        this.usuarios = new ArrayList<Usuario>(archivador.leerUsuarios(getBaseContext()));
 
         Iterator<Usuario> itr = usuarios.iterator();
 
