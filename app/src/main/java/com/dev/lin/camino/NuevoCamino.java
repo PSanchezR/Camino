@@ -6,6 +6,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.Toast;
+
+import java.util.List;
 
 /**
  * Datos de un nuevo camino
@@ -14,7 +22,9 @@ import android.view.View;
  * @author Pablo Sánchez Robles
  */
 public class NuevoCamino extends ActionBarActivity {
-    private Pueblo[] pueblos_camino_frances = {
+
+
+    private Pueblo[] pueblosCaminoFrances = {
             new Pueblo("Saint Jean Pied de Port", 0, 5, true, true, true, true, true, true),
             new Pueblo("Honto", 5, 2.6, true, true, true, true, true, false),
             new Pueblo("Orison", 2.6, 16.6, true, true, true, false, false, false),
@@ -207,8 +217,17 @@ public class NuevoCamino extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String[] nombresPueblos = new String[pueblosCaminoFrances.length+1];
+        nombresPueblos[0]="Sin seleccionar";
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nuevo_camino);
+        calculaNombres(nombresPueblos);
+        ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, nombresPueblos);
+        Spinner spinnerInicio = (Spinner) findViewById(R.id.spinnerCiudadInicio);
+        Spinner spinnerFin = (Spinner) findViewById(R.id.spinnerCiudadFin);
+        spinnerInicio.setAdapter(adaptador);
+        spinnerFin.setAdapter(adaptador);
     }
 
     @Override
@@ -223,7 +242,37 @@ public class NuevoCamino extends ActionBarActivity {
         startActivity(i);
     }
 
+    public void calculaNombres(String[] nombresPueblos)
+    {
+        for (int i = 0; i< pueblosCaminoFrances.length;i++)
+        {
+            nombresPueblos[i+1]=(pueblosCaminoFrances[i].getNombre());
+        }
+
+    }
     public void crearMiCamino(View view) {
+        int dias =  Integer.parseInt(""+((EditText) findViewById(R.id.editTextDias)).getText());
+        String nombre = (""+((EditText) findViewById(R.id.editTextNombreCamino)).getText());
+
+        String comienzo = (""+((Spinner) findViewById(R.id.spinnerCiudadInicio)).getSelectedItem());
+        String fin = (""+((Spinner) findViewById(R.id.spinnerCiudadFin)).getSelectedItem());
+        if(comienzo.compareTo("Sin seleccionar")==1 && fin.compareTo("Sin seleccionar")==1)
+        {
+            Toast.makeText(this, "Debe seleccionar sólo una de dos, o ciudad inicio o ciudad final",
+                    Toast.LENGTH_SHORT).show();
+        }
+        if(dias < 1)
+        {
+            Toast.makeText(this, "Debe introducir un número de dias mayor a 1",
+                    Toast.LENGTH_SHORT).show();
+        }
+        if(nombre.compareTo("")==0)
+        {
+            Toast.makeText(this, "Debe introducir un nombre para el nuevo camino",
+                    Toast.LENGTH_SHORT).show();
+        }
+        
+
         Intent i = new Intent(NuevoCamino.this, CaminoActual.class);
         startActivity(i);
     }
