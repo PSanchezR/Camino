@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -285,6 +286,45 @@ public class NuevoCamino extends ActionBarActivity {
     public void calculaEtapas(int dias,String comienzo, String fin, String nombre)
     {
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        Double kmMax = usuarioSeleccionado.getKmMaximos();
+        Pueblo aux;
+        ArrayList<Etapa> etapas = new ArrayList<Etapa>();
+        String iEtapa, fEtapa;
+        Double auxKm=0.0;
+        boolean semaforo=true;
+        int i = 0;
+        if(dias == 0){dias = 999999999;}//Cuando el usuario elige ciudad inicio y ciudad final no se calcula en función de los dias
+
+
+        while(pueblosCaminoFrances[i].getNombre().compareTo(comienzo)==1)
+        {
+            i++;
+        }
+
+
+        //Mientras queden dias o no se alcance la ciudad final
+        while(dias > 0 || pueblosCaminoFrances[i].getNombre().compareTo(fin)==1 )
+        {
+            iEtapa=pueblosCaminoFrances [i].getNombre();
+            semaforo = true;
+            while(semaforo)
+            {
+                if(pueblosCaminoFrances[i].getDist_siguiente()+auxKm<=kmMax)
+                {
+                    auxKm+=pueblosCaminoFrances[i].getDist_siguiente();
+                    i++;
+                }else
+                {
+                    semaforo=false;
+                }
+
+            }
+            fEtapa = pueblosCaminoFrances[i].getNombre();
+            etapas.add(new Etapa(auxKm,iEtapa,fEtapa));
+            auxKm=0.0;
+
+        }
+
 
 
     }

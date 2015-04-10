@@ -9,9 +9,9 @@ package com.dev.lin.camino;
 public class Etapa {
     private String puebloInicio;
     private String puebloFin;
-    private float kms;
+    private double kms;
 
-    public Etapa(float kms, String puebloInicio, String puebloFin) {
+    public Etapa(double kms, String puebloInicio, String puebloFin) {
         this.kms = kms;
         this.puebloInicio = puebloInicio;
         this.puebloFin = puebloFin;
