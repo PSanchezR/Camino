@@ -131,7 +131,7 @@
                 android:text="Crear mi camino"
                 android:id="@+id/buttonCrearCamino"
                 android:layout_gravity="center_horizontal"
-                android:onClick="crearMiCamino "/>
+                android:onClick="miCamino "/>
 
         </LinearLayout>
 
@@ -165,4 +165,4 @@
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
-<!-- From: file:/home/germaaan/AndroidStudioProjects/Camino/app/src/main/res/layout/activity_nuevo_camino.xml -->
+<!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/layout/activity_nuevo_camino.xml -->

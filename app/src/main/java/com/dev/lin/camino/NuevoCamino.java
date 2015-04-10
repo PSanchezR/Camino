@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ import java.util.List;
  * @author Pablo Sánchez Robles
  */
 public class NuevoCamino extends ActionBarActivity {
-
+    private Usuario usuarioSeleccionado = null;
 
     private Pueblo[] pueblosCaminoFrances = {
             new Pueblo("Saint Jean Pied de Port", 0, 5, true, true, true, true, true, true),
@@ -250,13 +251,17 @@ public class NuevoCamino extends ActionBarActivity {
         }
 
     }
-    public void crearMiCamino(View view) {
-        int dias =  Integer.parseInt(""+((EditText) findViewById(R.id.editTextDias)).getText());
-        String nombre = (""+((EditText) findViewById(R.id.editTextNombreCamino)).getText());
 
-        String comienzo = (""+((Spinner) findViewById(R.id.spinnerCiudadInicio)).getSelectedItem());
-        String fin = (""+((Spinner) findViewById(R.id.spinnerCiudadFin)).getSelectedItem());
-        if(comienzo.compareTo("Sin seleccionar")==1 && fin.compareTo("Sin seleccionar")==1)
+
+    public void miCamino(View view)
+    {
+         /* int dias = 0;// Integer.parseInt(""+((EditText) findViewById(R.id.editTextDias)).getText());
+        String nombre = "";//(""+((EditText) findViewById(R.id.editTextNombreCamino)).getText());
+
+        String comienzo="";// = (""+((Spinner) findViewById(R.id.spinnerCiudadInicio)).getSelectedItem());
+        String fin ="" ;//= (""+((Spinner) findViewById(R.id.spinnerCiudadFin)).getSelectedItem());
+
+       if(comienzo.compareTo("Sin seleccionar")==1 && fin.compareTo("Sin seleccionar")==1)
         {
             Toast.makeText(this, "Debe seleccionar sólo una de dos, o ciudad inicio o ciudad final",
                     Toast.LENGTH_SHORT).show();
@@ -271,10 +276,63 @@ public class NuevoCamino extends ActionBarActivity {
             Toast.makeText(this, "Debe introducir un nombre para el nuevo camino",
                     Toast.LENGTH_SHORT).show();
         }
-        
-
+        */
+        //calculaEtapas(dias,comienzo, fin, nombre);
         Intent i = new Intent(NuevoCamino.this, CaminoActual.class);
         startActivity(i);
+
+    }
+    public void calculaEtapas(int dias,String comienzo, String fin, String nombre)
+    {
+        usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        double kmBase = 0.0;
+        double multiplicador= 1.0;
+        Date fecha = new Date();
+        int complexion = usuarioSeleccionado.getComplexion();
+        Double imc = usuarioSeleccionado.getPeso()/Math.pow(usuarioSeleccionado.getAltura(),2);
+
+        //Añadiendo la edad a la ponderación
+        multiplicador+=(1/( fecha.getYear() - usuarioSeleccionado.getAnioNacimiento()));
+
+        //Creando base según la complexión
+        if(complexion == 1)
+        {
+            kmBase=8;
+        }else if(complexion == 2)
+        {
+            kmBase=15;
+        }else if(complexion == 3)
+        {
+            kmBase=18;
+        }else
+        {
+            kmBase=25;
+        }
+
+        //Añadiendo imc a la ponderación
+
+        if(imc < 18)
+        {
+            multiplicador-= 0.2;
+        }else if(imc >=18 && imc < 25)
+        {
+            multiplicador+=0.4;
+        }else if(imc >=25 && imc < 27)
+        {
+            multiplicador += 0.2;
+        }else if (imc >=27 && imc < 30)
+        {
+            multiplicador-=0.1;
+
+        }else if(imc > 30)
+        {
+            multiplicador-=0.3;
+        }
+
+        Toast.makeText(this, "La distancia máxima en cada etapa será "+ multiplicador*kmBase+" km",
+                Toast.LENGTH_SHORT).show();
+
+
     }
 
     @Override
