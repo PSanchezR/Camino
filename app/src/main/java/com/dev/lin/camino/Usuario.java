@@ -20,13 +20,15 @@ public class Usuario implements Serializable {
     private int peso;
     private int complexion;
     private int anioNacimiento;
+    private double kmMaximos;
     private ArrayList<Camino> misCaminos;
     private Camino camino_actual;
+
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, int altura, int peso, int complexion, int anioNacimiento) {
+    public Usuario(String nombre, int altura, int peso, int complexion, int anioNacimiento, double kmMax) {
         super();
         this.nombre = nombre;
         this.altura = altura;
@@ -35,6 +37,7 @@ public class Usuario implements Serializable {
         this.anioNacimiento = anioNacimiento;
         this.camino_actual = null;
         this.misCaminos = null;
+        this.kmMaximos = kmMax;
     }
 
     public String getNombre() {
@@ -86,8 +89,12 @@ public class Usuario implements Serializable {
     }
 
     public void removeCamino(Camino camino) {
-        this.misCaminos.clear();
+        this.misCaminos.remove(camino);
     }
+
+    public double getKmMaximos(){return this.kmMaximos;}
+
+    public void setKmMaximos(double km){this.kmMaximos = km;}
 
     @Override
     public String toString() {

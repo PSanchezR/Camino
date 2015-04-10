@@ -285,52 +285,6 @@ public class NuevoCamino extends ActionBarActivity {
     public void calculaEtapas(int dias,String comienzo, String fin, String nombre)
     {
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        double kmBase = 0.0;
-        double multiplicador= 1.0;
-        Date fecha = new Date();
-        int complexion = usuarioSeleccionado.getComplexion();
-        Double imc = usuarioSeleccionado.getPeso()/Math.pow(usuarioSeleccionado.getAltura(),2);
-
-        //Añadiendo la edad a la ponderación
-        multiplicador+=(1/( fecha.getYear() - usuarioSeleccionado.getAnioNacimiento()));
-
-        //Creando base según la complexión
-        if(complexion == 1)
-        {
-            kmBase=8;
-        }else if(complexion == 2)
-        {
-            kmBase=15;
-        }else if(complexion == 3)
-        {
-            kmBase=18;
-        }else
-        {
-            kmBase=25;
-        }
-
-        //Añadiendo imc a la ponderación
-
-        if(imc < 18)
-        {
-            multiplicador-= 0.2;
-        }else if(imc >=18 && imc < 25)
-        {
-            multiplicador+=0.4;
-        }else if(imc >=25 && imc < 27)
-        {
-            multiplicador += 0.2;
-        }else if (imc >=27 && imc < 30)
-        {
-            multiplicador-=0.1;
-
-        }else if(imc > 30)
-        {
-            multiplicador-=0.3;
-        }
-
-        Toast.makeText(this, "La distancia máxima en cada etapa será "+ multiplicador*kmBase+" km",
-                Toast.LENGTH_SHORT).show();
 
 
     }
