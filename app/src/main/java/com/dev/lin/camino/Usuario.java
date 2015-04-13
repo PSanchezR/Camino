@@ -40,19 +40,19 @@ public class Usuario implements Serializable {
         this.anioNacimiento = anioNacimiento;
         this.camino_actual = null;
         this.misCaminos = null;
-       calcularKmMaximos();
+        calcularKmMaximos();
     }
 
     public double calcularKmMaximos()
     {
         double kmBase = 0.0;
-        double multiplicador= 0;
+        double multiplicador= 1;
         Date fecha = new Date();
 
         Double imc = this.peso/Math.pow(this.altura/100,2);
 
-        //Añadiendo la edad a la ponderación
-        multiplicador =1 + (1/( fecha.getYear() - this.anioNacimiento));
+
+
 
         //Creando base según la complexión
         if(this.complexion == 0)
@@ -64,30 +64,35 @@ public class Usuario implements Serializable {
         }else if(this.complexion == 2)
         {
             kmBase=25;
-        }else
+        }else if(this.complexion == 3)
         {
             kmBase=30;
         }
 
         //Añadiendo imc a la ponderación
 
-        if(imc < 18)
+        if(imc < 16)
         {
-            multiplicador+= 0.1;
-        }else if(imc >=18 && imc < 25)
+            multiplicador = 1;
+        }else if(imc >=16 && imc < 25)
         {
             multiplicador+=0.4;
-        }else if(imc >=25 && imc < 27)
+        }
+        else if(imc >=25 && imc < 30)
         {
             multiplicador += 0.2;
-        }else if (imc >=27 && imc < 30)
+        }
+        else if(imc > 30 && imc <35)
         {
-            multiplicador+=0.1;
-
-        }else if(imc > 30)
+            multiplicador=1;
+        }
+        else
         {
             multiplicador-=0.2;
         }
+
+        //Añadiendo la edad a la ponderación
+        multiplicador += (1/( fecha.getYear() - this.anioNacimiento));
 
        this.kmMaximos = multiplicador*kmBase;
 
@@ -154,7 +159,7 @@ public class Usuario implements Serializable {
     @Override
     public String toString() {
         return "Usuario -> nombre:" + this.nombre + ", altura:" + this.altura + ", peso:" + this.peso + ", complexion:" + this.complexion +
-                ", año de nacimiento:" + this.anioNacimiento;
+                ", año de nacimiento:" + this.anioNacimiento+ ",distancia máxima "+this.kmMaximos;
     }
 
 }

@@ -42,7 +42,7 @@ public class DatosUsuario extends ActionBarActivity {
 
     }
 
-    //Método que edita los cambios del usuario seleccionado y guarda los cambios en el fichero de usuarios.
+    //Método que edita los cambios del usuario seleccionado y guarda los mismos en el fichero de usuarios.
     public void aplicarCambios(View view)
     {
         usuarioSeleccionado.setAltura(Integer.parseInt(((EditText) findViewById(R.id.editTextAltura)).getText() + ""));

@@ -60,9 +60,6 @@ public class FormularioNuevoUsuario extends ActionBarActivity {
         }
 
         archivador.leerUsuarios(getBaseContext());
-
-        Toast.makeText(this, "La distancia máxima en cada etapa será " + usuario.getKmMaximos()+ " km",
-                Toast.LENGTH_SHORT).show();
         menuUsuarios();
     }
 
