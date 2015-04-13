@@ -250,7 +250,6 @@ public class NuevoCamino extends ActionBarActivity {
         {
             nombresPueblos[i+1]=(pueblosCaminoFrances[i].getNombre());
         }
-
     }
 
 
@@ -322,6 +321,7 @@ public class NuevoCamino extends ActionBarActivity {
             fEtapa = pueblosCaminoFrances[i].getNombre();
             etapas.add(new Etapa(auxKm,iEtapa,fEtapa));
             auxKm=0.0;
+            dias--;
 
         }
 

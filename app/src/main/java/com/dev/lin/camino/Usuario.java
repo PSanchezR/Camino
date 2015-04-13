@@ -1,7 +1,10 @@
 package com.dev.lin.camino;
 
+import android.widget.Toast;
+
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Usuario de la aplicación
@@ -28,7 +31,7 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(String nombre, int altura, int peso, int complexion, int anioNacimiento, double kmMax) {
+    public Usuario(String nombre, int altura, int peso, int complexion, int anioNacimiento) {
         super();
         this.nombre = nombre;
         this.altura = altura;
@@ -37,7 +40,59 @@ public class Usuario implements Serializable {
         this.anioNacimiento = anioNacimiento;
         this.camino_actual = null;
         this.misCaminos = null;
-        this.kmMaximos = kmMax;
+       calcularKmMaximos();
+    }
+
+    public double calcularKmMaximos()
+    {
+        double kmBase = 0.0;
+        double multiplicador= 0;
+        Date fecha = new Date();
+
+        Double imc = this.peso/Math.pow(this.altura/100,2);
+
+        //Añadiendo la edad a la ponderación
+        multiplicador =1 + (1/( fecha.getYear() - this.anioNacimiento));
+
+        //Creando base según la complexión
+        if(this.complexion == 0)
+        {
+            kmBase=15;
+        }else if(this.complexion == 1)
+        {
+            kmBase=20;
+        }else if(this.complexion == 2)
+        {
+            kmBase=25;
+        }else
+        {
+            kmBase=30;
+        }
+
+        //Añadiendo imc a la ponderación
+
+        if(imc < 18)
+        {
+            multiplicador+= 0.1;
+        }else if(imc >=18 && imc < 25)
+        {
+            multiplicador+=0.4;
+        }else if(imc >=25 && imc < 27)
+        {
+            multiplicador += 0.2;
+        }else if (imc >=27 && imc < 30)
+        {
+            multiplicador+=0.1;
+
+        }else if(imc > 30)
+        {
+            multiplicador-=0.2;
+        }
+
+       this.kmMaximos = multiplicador*kmBase;
+
+        return this.kmMaximos;
+
     }
 
     public String getNombre() {

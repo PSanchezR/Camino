@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.16"
+            android:layout_weight="0.47"
             android:weightSum="1">
 
             <TextView
@@ -36,14 +36,16 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:id="@+id/buttonAtras"
-                android:text="volver" />
+                android:id="@+id/buttonAplicarCambios"
+                android:text="Aplicar cambios"
+                android:onClick="aplicarCambios"/>
         </LinearLayout>
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tableLayout2" >
+            android:id="@+id/tableLayout2"
+            android:layout_weight="0.38">
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -108,12 +110,32 @@
                     android:spinnerMode="dropdown" />
             </TableRow>
 
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Distancia máxima"
+                    android:id="@+id/textViewDmax"
+                    android:layout_column="2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textViewDistMax"
+                    android:layout_column="3" />
+            </TableRow>
+
         </TableLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="355dp">
+            android:layout_height="232dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -124,7 +146,7 @@
 
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="189dp"
+                android:layout_height="139dp"
                 android:id="@+id/listViewMisCaminos"
                 android:layout_gravity="center_horizontal" />
 

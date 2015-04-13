@@ -49,8 +49,8 @@ public class FormularioNuevoUsuario extends ActionBarActivity {
         if (existeUsuario(nombre)) {
             Toast.makeText(this, "Ya existe un usuario con ese nombre. Pruebe con otro.", Toast.LENGTH_SHORT).show();
         } else {
-            kmMax = calcularKmMaximos(complexion,peso,altura,anioDeNacimiento);
-            Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento, kmMax);
+
+            Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
 
             if (archivador.escribirUsuarios(usuario, getBaseContext()) == 0) {
                 Toast.makeText(this, "Usuario guardado correctamente.", Toast.LENGTH_SHORT).show();
@@ -61,61 +61,12 @@ public class FormularioNuevoUsuario extends ActionBarActivity {
 
         archivador.leerUsuarios(getBaseContext());
 
+        Toast.makeText(this, "La distancia máxima en cada etapa será " + usuario.getKmMaximos()+ " km",
+                Toast.LENGTH_SHORT).show();
         menuUsuarios();
     }
 
-    public double calcularKmMaximos(int complexion, int peso, int altura, int anio)
-    {
-        double kmBase = 0.0;
-        double multiplicador= 0;
-        Date fecha = new Date();
 
-        Double imc = peso/Math.pow(altura/100,2);
-
-        //Añadiendo la edad a la ponderación
-        multiplicador =1 + (1/( fecha.getYear() - anio));
-
-        //Creando base según la complexión
-        if(complexion == 0)
-        {
-            kmBase=15;
-        }else if(complexion == 1)
-        {
-            kmBase=20;
-        }else if(complexion == 2)
-        {
-            kmBase=25;
-        }else
-        {
-            kmBase=30;
-        }
-
-        //Añadiendo imc a la ponderación
-
-        if(imc < 18)
-        {
-            multiplicador+= 0.1;
-        }else if(imc >=18 && imc < 25)
-        {
-            multiplicador+=0.4;
-        }else if(imc >=25 && imc < 27)
-        {
-            multiplicador += 0.2;
-        }else if (imc >=27 && imc < 30)
-        {
-            multiplicador+=0.1;
-
-        }else if(imc > 30)
-        {
-            multiplicador-=0.2;
-        }
-
-        Toast.makeText(this, "La distancia máxima en cada etapa será "+ multiplicador*kmBase+" km",
-                Toast.LENGTH_SHORT).show();
-
-        return multiplicador*kmBase;
-
-    }
 
     public boolean existeUsuario(String nombre){
         boolean comp = false;

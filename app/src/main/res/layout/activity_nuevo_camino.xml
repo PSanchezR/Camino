@@ -128,11 +128,10 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Crear mi camino"
+                android:text="Crear camino"
                 android:id="@+id/buttonCrearCamino"
                 android:layout_gravity="center_horizontal"
-                android:onClick="miCamino "/>
-
+                android:onClick=" miCamino"/>
         </LinearLayout>
 
         <LinearLayout
