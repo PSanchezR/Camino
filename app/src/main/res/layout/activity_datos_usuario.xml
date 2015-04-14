@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.47"
+            android:layout_weight="0.28"
             android:weightSum="1">
 
             <TextView
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tableLayout2"
-            android:layout_weight="0.38">
+            android:layout_weight="0.71">
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -135,7 +135,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="232dp">
+            android:layout_height="232dp"
+            android:weightSum="1">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -146,9 +147,10 @@
 
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="139dp"
+                android:layout_height="83dp"
                 android:id="@+id/listViewMisCaminos"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.36" />
 
             <Button
                 android:layout_width="wrap_content"

@@ -29,7 +29,7 @@ public class DatosUsuario extends ActionBarActivity {
         setContentView(R.layout.activity_datos_usuario);
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
 
-        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario actual: " + usuarioSeleccionado.getNombre());
+        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + usuarioSeleccionado.getNombre());
         ((EditText) findViewById(R.id.editTextAltura)).setText("" + usuarioSeleccionado.getAltura());
         ((EditText) findViewById(R.id.editTextPeso)).setText("" + usuarioSeleccionado.getPeso());
         ((TextView) findViewById(R.id.textViewDistMax)).setText("   " + usuarioSeleccionado.getKmMaximos()+ " Km");

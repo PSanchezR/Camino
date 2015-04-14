@@ -25,7 +25,7 @@ public class MenuPrincipal extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario actual: " + usuarioSeleccionado.getNombre());
+        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " +" "+ usuarioSeleccionado.getNombre());
     }
 
     @Override
