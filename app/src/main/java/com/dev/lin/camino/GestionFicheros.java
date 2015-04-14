@@ -13,6 +13,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  * Gestión de los ficheros con los datos de usuario
@@ -21,26 +23,20 @@ import java.util.ArrayList;
  * @author Pablo Sánchez Robles
  */
 public class GestionFicheros {
-    public static final String ARCHIVO_USUARIOS = "usuarios.dat";
     private static final String ESCRIBIR_USUARIOS = "EscribirUsuarios";
     private static final String LEER_USUARIOS = "LeerUsuarios";
 
     public int escribirUsuarios(Usuario usuario, Context ctx) {
         int res = 1;
-        File archivo = ctx.getFileStreamPath(GestionFicheros.ARCHIVO_USUARIOS);
+        String filename = usuario.getNombre() + ".dat";
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
 
         try {
-            fos = ctx.openFileOutput(GestionFicheros.ARCHIVO_USUARIOS, Context.MODE_APPEND);
+            fos = ctx.openFileOutput(filename, Context.MODE_PRIVATE);
 
-            if (archivo.length() == 0) {
-                oos = new ObjectOutputStream(fos);
-                Log.v(GestionFicheros.ESCRIBIR_USUARIOS, "Se ha creado un archivo nuevo.");
-            } else {
-                oos = new AppendableObjectOutputStream(fos);
-                Log.v(GestionFicheros.ESCRIBIR_USUARIOS, "No se ha creado un archivo nuevo.");
-            }
+            oos = new ObjectOutputStream(fos);
+            Log.v(GestionFicheros.ESCRIBIR_USUARIOS, "Se ha creado un archivo nuevo.");
 
             oos.writeObject(usuario);
             oos.flush();
@@ -66,43 +62,49 @@ public class GestionFicheros {
     }
 
     public ArrayList<Usuario> leerUsuarios(Context ctx) {
-        File archivo = ctx.getFileStreamPath(GestionFicheros.ARCHIVO_USUARIOS);
         FileInputStream fis = null;
         ObjectInputStream ois = null;
+        ArrayList<String> archivos = new ArrayList<String>(Arrays.asList(ctx.fileList()));
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+        Iterator<String> itr = archivos.iterator();
 
-        if (archivo.exists()) {
-            try {
-                fis = ctx.openFileInput(GestionFicheros.ARCHIVO_USUARIOS);
-                ois = new ObjectInputStream(fis);
+        while (itr.hasNext()) {
+            String archivo = itr.next();
+            File acceso = ctx.getFileStreamPath(archivo);
 
-                while (true) {
-                    Usuario usuario = (Usuario) ois.readObject();
-                    Log.d(GestionFicheros.LEER_USUARIOS, usuario.toString());
-                    usuarios.add(usuario);
-                }
-            } catch (EOFException e) {
-                Log.d(GestionFicheros.LEER_USUARIOS, "Fin de archivo.\n\t" + e.getMessage());
-                e.printStackTrace();
-            } catch (FileNotFoundException e) {
-                Log.e(GestionFicheros.LEER_USUARIOS, "Error: archivo no encontrado.\n\t" + e.getMessage());
-                e.printStackTrace();
-            } catch (IOException e) {
-                Log.e(GestionFicheros.LEER_USUARIOS, "Error: problema de entrada/salida.\n\t" + e.getMessage());
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                Log.e(GestionFicheros.LEER_USUARIOS, "Error: no se han podido recuperar los usuarios.\n\t" + e.getMessage());
-                e.printStackTrace();
-            } finally {
+            if (acceso.isFile()) {
                 try {
-                    if (fis != null) {
-                        fis.close();
-                    } else if (ois != null) {
-                        ois.close();
+                    fis = ctx.openFileInput(archivo);
+                    ois = new ObjectInputStream(fis);
+
+                    while (true) {
+                        Usuario usuario = (Usuario) ois.readObject();
+                        Log.d(GestionFicheros.LEER_USUARIOS, usuario.toString());
+                        usuarios.add(usuario);
                     }
-                } catch (IOException e) {
-                    Log.e(GestionFicheros.LEER_USUARIOS, "Error: fallo al cerrar el flujo de lectura.\n\t" + e.getMessage());
+                } catch (EOFException e) {
+                    Log.d(GestionFicheros.LEER_USUARIOS, "Fin de archivo.\n\t" + e.getMessage());
                     e.printStackTrace();
+                } catch (FileNotFoundException e) {
+                    Log.e(GestionFicheros.LEER_USUARIOS, "Error: archivo no encontrado.\n\t" + e.getMessage());
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    Log.e(GestionFicheros.LEER_USUARIOS, "Error: problema de entrada/salida.\n\t" + e.getMessage());
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    Log.e(GestionFicheros.LEER_USUARIOS, "Error: no se han podido recuperar los usuarios.\n\t" + e.getMessage());
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        if (fis != null) {
+                            fis.close();
+                        } else if (ois != null) {
+                            ois.close();
+                        }
+                    } catch (IOException e) {
+                        Log.e(GestionFicheros.LEER_USUARIOS, "Error: fallo al cerrar el flujo de lectura.\n\t" + e.getMessage());
+                        e.printStackTrace();
+                    }
                 }
             }
         }

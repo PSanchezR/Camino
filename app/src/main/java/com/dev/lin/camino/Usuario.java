@@ -1,7 +1,5 @@
 package com.dev.lin.camino;
 
-import android.widget.Toast;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -43,61 +41,44 @@ public class Usuario implements Serializable {
         calcularKmMaximos();
     }
 
-    public double calcularKmMaximos()
-    {
+    public double calcularKmMaximos() {
         double kmBase = 0.0;
-        double multiplicador= 1;
+        double multiplicador = 1;
         Date fecha = new Date();
 
-        Double imc = this.peso/Math.pow(this.altura/100,2);
-
-
-
+        Double imc = this.peso / Math.pow(this.altura / 100, 2);
 
         //Creando base según la complexión
-        if(this.complexion == 0)
-        {
-            kmBase=15;
-        }else if(this.complexion == 1)
-        {
-            kmBase=20;
-        }else if(this.complexion == 2)
-        {
-            kmBase=25;
-        }else if(this.complexion == 3)
-        {
-            kmBase=30;
+        if (this.complexion == 0) {
+            kmBase = 15;
+        } else if (this.complexion == 1) {
+            kmBase = 20;
+        } else if (this.complexion == 2) {
+            kmBase = 25;
+        } else if (this.complexion == 3) {
+            kmBase = 30;
         }
 
         //Añadiendo imc a la ponderación
 
-        if(imc < 16)
-        {
+        if (imc < 16) {
             multiplicador = 1;
-        }else if(imc >=16 && imc < 25)
-        {
-            multiplicador+=0.4;
-        }
-        else if(imc >=25 && imc < 30)
-        {
+        } else if (imc >= 16 && imc < 25) {
+            multiplicador += 0.4;
+        } else if (imc >= 25 && imc < 30) {
             multiplicador += 0.2;
-        }
-        else if(imc > 30 && imc <35)
-        {
-            multiplicador=1;
-        }
-        else
-        {
-            multiplicador-=0.2;
+        } else if (imc > 30 && imc < 35) {
+            multiplicador = 1;
+        } else {
+            multiplicador -= 0.2;
         }
 
         //Añadiendo la edad a la ponderación
-        multiplicador += (1/( fecha.getYear() - this.anioNacimiento));
+        multiplicador += (1 / (fecha.getYear() - this.anioNacimiento));
 
-       this.kmMaximos = multiplicador*kmBase;
+        this.kmMaximos = multiplicador * kmBase;
 
         return this.kmMaximos;
-
     }
 
     public String getNombre() {
@@ -152,14 +133,18 @@ public class Usuario implements Serializable {
         this.misCaminos.remove(camino);
     }
 
-    public double getKmMaximos(){return this.kmMaximos;}
+    public double getKmMaximos() {
+        return this.kmMaximos;
+    }
 
-    public void setKmMaximos(double km){this.kmMaximos = km;}
+    public void setKmMaximos(double km) {
+        this.kmMaximos = km;
+    }
 
     @Override
     public String toString() {
         return "Usuario -> nombre:" + this.nombre + ", altura:" + this.altura + ", peso:" + this.peso + ", complexion:" + this.complexion +
-                ", año de nacimiento:" + this.anioNacimiento+ ",distancia máxima "+this.kmMaximos;
+                ", año de nacimiento:" + this.anioNacimiento + ",distancia máxima " + this.kmMaximos;
     }
 
 }

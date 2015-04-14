@@ -12,7 +12,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 
 /**
@@ -38,13 +37,13 @@ public class FormularioNuevoUsuario extends ActionBarActivity {
         listaComplexion.setAdapter(adaptador);
     }
 
-    public void crearUsuario(View view){
+    public void crearUsuario(View view) {
         String nombre = ((EditText) findViewById(R.id.editTextNombre)).getText().toString();
         int altura = Integer.parseInt(((EditText) findViewById(R.id.editTextAltura)).getText().toString());
         int peso = Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText().toString());
         int complexion = ((Spinner) findViewById(R.id.spinnerComplexion)).getSelectedItemPosition();
         int anioDeNacimiento = Integer.parseInt(((EditText) findViewById(R.id.editTextFecha)).getText().toString());
-        double kmMax= 0;
+        double kmMax = 0;
 
         if (existeUsuario(nombre)) {
             Toast.makeText(this, "Ya existe un usuario con ese nombre. Pruebe con otro.", Toast.LENGTH_SHORT).show();
@@ -64,8 +63,7 @@ public class FormularioNuevoUsuario extends ActionBarActivity {
     }
 
 
-
-    public boolean existeUsuario(String nombre){
+    public boolean existeUsuario(String nombre) {
         boolean comp = false;
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>(archivador.leerUsuarios(getBaseContext()));
         Iterator<Usuario> itr = usuarios.iterator();
