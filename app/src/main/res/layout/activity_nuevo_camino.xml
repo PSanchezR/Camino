@@ -131,7 +131,7 @@
                 android:text="Crear camino"
                 android:id="@+id/buttonCrearCamino"
                 android:layout_gravity="center_horizontal"
-                android:onClick=" miCamino"/>
+                android:onClick="miCamino"/>
         </LinearLayout>
 
         <LinearLayout

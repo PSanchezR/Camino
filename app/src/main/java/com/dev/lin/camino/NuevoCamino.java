@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -214,7 +215,6 @@ public class NuevoCamino extends ActionBarActivity {
             new Pueblo("San Marcos", 4.6 ,0.6,true, true,false,false, false, false),
             new Pueblo("Monte do Gozo", 0.6 ,4.8,true, false,true,false, false, false),
             new Pueblo("Santiago de Compostela", 4.8 ,0,true, true,true,true, true, true)
-
     };
 
     @Override
@@ -255,31 +255,50 @@ public class NuevoCamino extends ActionBarActivity {
 
     public void miCamino(View view)
     {
-         /* int dias = 0;// Integer.parseInt(""+((EditText) findViewById(R.id.editTextDias)).getText());
-        String nombre = "";//(""+((EditText) findViewById(R.id.editTextNombreCamino)).getText());
+        int dias = 0;
+        String nombre =     (((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString();
+        String comienzo =   (((Spinner) findViewById(R.id.spinnerCiudadInicio)).getSelectedItem()).toString();
+        String fin =        (((Spinner) findViewById(R.id.spinnerCiudadFin)).getSelectedItem()).toString();
+        boolean correcto= true;
 
-        String comienzo="";// = (""+((Spinner) findViewById(R.id.spinnerCiudadInicio)).getSelectedItem());
-        String fin ="" ;//= (""+((Spinner) findViewById(R.id.spinnerCiudadFin)).getSelectedItem());
-
-       if(comienzo.compareTo("Sin seleccionar")==1 && fin.compareTo("Sin seleccionar")==1)
+        if(((EditText) findViewById(R.id.editTextDias)).getText().toString().compareTo("")==1)
         {
-            Toast.makeText(this, "Debe seleccionar sólo una de dos, o ciudad inicio o ciudad final",
-                    Toast.LENGTH_SHORT).show();
+            dias = Integer.parseInt(((EditText) findViewById(R.id.editTextDias)).getText().toString());
         }
-        if(dias < 1)
+
+       if(comienzo.compareTo("Sin seleccionar")==1 && fin.compareTo("Sin seleccionar")==1 && dias >0)
+        {
+            Toast.makeText(this, "Si selecciona ciudad inicio y ciudad fin debe dejar el número de dias en blanco",
+                    Toast.LENGTH_SHORT).show();
+            correcto = false;
+        }
+        if(dias <= 1 )
         {
             Toast.makeText(this, "Debe introducir un número de dias mayor a 1",
                     Toast.LENGTH_SHORT).show();
+            correcto = false;
         }
         if(nombre.compareTo("")==0)
         {
             Toast.makeText(this, "Debe introducir un nombre para el nuevo camino",
                     Toast.LENGTH_SHORT).show();
+            correcto = false;
         }
-        */
-        //calculaEtapas(dias,comienzo, fin, nombre);
-        Intent i = new Intent(NuevoCamino.this, CaminoActual.class);
-        startActivity(i);
+
+        if(correcto)
+        {
+            calculaEtapas(dias,comienzo, fin, nombre);
+            Intent i = new Intent(NuevoCamino.this, CaminoActual.class);
+            startActivity(i);
+        }
+        else
+        {
+            Intent i = new Intent(NuevoCamino.this, NuevoCamino.class);
+            i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
+            startActivity(i);
+
+        }
+
 
     }
     public void calculaEtapas(int dias,String comienzo, String fin, String nombre)
@@ -302,9 +321,9 @@ public class NuevoCamino extends ActionBarActivity {
 
 
         //Mientras queden dias o no se alcance la ciudad final
-        while(dias > 0 || pueblosCaminoFrances[i].getNombre().compareTo(fin)==1 )
+        while(dias > 0 || pueblosCaminoFrances[i].getNombre().compareTo(fin)==1)
         {
-            iEtapa=pueblosCaminoFrances [i].getNombre();
+            iEtapa = pueblosCaminoFrances[i].getNombre();
             semaforo = true;
             while(semaforo)
             {
@@ -322,11 +341,7 @@ public class NuevoCamino extends ActionBarActivity {
             etapas.add(new Etapa(auxKm,iEtapa,fEtapa));
             auxKm=0.0;
             dias--;
-
         }
-
-
-
     }
 
     @Override

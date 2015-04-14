@@ -51,9 +51,10 @@ public class DatosUsuario extends ActionBarActivity {
         usuarioSeleccionado.calcularKmMaximos();
         archivador.escribirUsuarios(usuarioSeleccionado,getBaseContext());
 
-        Intent i = new Intent(DatosUsuario.this, DatosUsuario.class);
+        Intent i = new Intent(DatosUsuario.this, MenuPrincipal.class);
         i.putExtra("usuarioSeleccionado",usuarioSeleccionado);
         startActivity(i);
+
     }
 
     @Override
