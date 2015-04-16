@@ -1,5 +1,6 @@
 package com.dev.lin.camino;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,18 +10,20 @@ import java.util.List;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class Camino {
+public class Camino implements Serializable  {
     private ArrayList<Etapa> etapasCamino;
     private ArrayList<Etapa> etapasCompletadas;
     private String nombre;
     private String etapaInicial;
     private String etapaFinal;
+    private int kmDiarios;
 
-    public Camino(String nombre, ArrayList<Etapa> etapasCamino, String ini, String fin) {
+    public Camino(String nombre, ArrayList<Etapa> etapasCamino,int kmDia) {
         this.nombre = nombre;
         this.etapasCamino = etapasCamino;
-        this.etapaInicial = ini;
-        this.etapaFinal = fin;
+        this.etapaInicial = etapasCamino.get(0).getPuebloInicio();
+        this.etapaFinal =  etapasCamino.get(0).getPuebloFin();
+        this.kmDiarios = kmDia;
     }
 
     public void setEtapaCompletada(Etapa etapa) {
@@ -42,4 +45,6 @@ public class Camino {
     public String getEtapaInicial(){return  this.etapaInicial;}
 
     public String getEtapaFinal(){return this.etapaFinal;}
+
+    public int getKmDiarios(){return this.kmDiarios;}
 }

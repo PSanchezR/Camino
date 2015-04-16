@@ -36,7 +36,7 @@ public class MenuPrincipal extends ActionBarActivity {
     }
 
     public void datosUsuario(View view) {
-        /*Insertar activity*/
+
         Intent i = new Intent(MenuPrincipal.this, DatosUsuario.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);

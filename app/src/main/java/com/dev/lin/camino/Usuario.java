@@ -23,7 +23,7 @@ public class Usuario implements Serializable {
     private int anioNacimiento;
     private double kmMaximos;
     private ArrayList<Camino> misCaminos;
-    private Camino camino_actual;
+    private Camino caminoActual;
 
 
     public Usuario() {
@@ -36,12 +36,12 @@ public class Usuario implements Serializable {
         this.peso = peso;
         this.complexion = complexion;
         this.anioNacimiento = anioNacimiento;
-        this.camino_actual = null;
-        this.misCaminos = null;
+        this.caminoActual = null;
+        this.misCaminos = new ArrayList<Camino>();
         calcularKmMaximos();
     }
 
-    public double calcularKmMaximos() {
+    public void calcularKmMaximos() {
         double kmBase = 0.0;
         double multiplicador = 1;
         Date fecha = new Date();
@@ -77,8 +77,6 @@ public class Usuario implements Serializable {
         multiplicador += (1 / (fecha.getYear() - this.anioNacimiento));
 
         this.kmMaximos = multiplicador * kmBase;
-
-        return this.kmMaximos;
     }
 
     public String getNombre() {
@@ -127,8 +125,10 @@ public class Usuario implements Serializable {
 
     public void addCamino(Camino camino) {
         this.misCaminos.add(camino);
+        this.caminoActual = camino;
     }
 
+    public Camino getCaminoActual(){return caminoActual;}
     public void removeCamino(Camino camino) {
         this.misCaminos.remove(camino);
     }

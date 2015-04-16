@@ -1,9 +1,11 @@
 package com.dev.lin.camino;
 
+import java.io.Serializable;
+
 /**
  * Created by root on 21/03/15.
  */
-public class Pueblo
+public class Pueblo implements Serializable
 {
     private
     String nombre;

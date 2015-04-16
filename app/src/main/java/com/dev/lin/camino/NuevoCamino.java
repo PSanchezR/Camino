@@ -259,9 +259,18 @@ public class NuevoCamino extends ActionBarActivity {
         String nombre =     (((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString();
         String comienzo =   (((Spinner) findViewById(R.id.spinnerCiudadInicio)).getSelectedItem()).toString();
         String fin =        (((Spinner) findViewById(R.id.spinnerCiudadFin)).getSelectedItem()).toString();
+        int kmDia =         Integer.parseInt((((EditText) findViewById(R.id.editTextKMax)).getText()).toString());
         boolean correcto= true;
+        ArrayList<Etapa> etapas;
+        Camino camino;
 
-        if(((EditText) findViewById(R.id.editTextDias)).getText().toString().compareTo("")==1)
+        if(((EditText) findViewById(R.id.editTextDias)).getText().toString().compareTo("")==0)
+        {
+            correcto = false;
+            Toast.makeText(this, "Debe introducir un número de dias mayor a 1",
+                    Toast.LENGTH_SHORT).show();
+
+        }else
         {
             dias = Integer.parseInt(((EditText) findViewById(R.id.editTextDias)).getText().toString());
         }
@@ -272,27 +281,34 @@ public class NuevoCamino extends ActionBarActivity {
                     Toast.LENGTH_SHORT).show();
             correcto = false;
         }
-        if(dias <= 1 )
-        {
-            Toast.makeText(this, "Debe introducir un número de dias mayor a 1",
-                    Toast.LENGTH_SHORT).show();
-            correcto = false;
-        }
+
+
         if(nombre.compareTo("")==0)
         {
             Toast.makeText(this, "Debe introducir un nombre para el nuevo camino",
                     Toast.LENGTH_SHORT).show();
             correcto = false;
         }
+        if((((EditText) findViewById(R.id.editTextKMax)).getText()).toString().compareTo("") == 0)
+        {
+            Toast.makeText(this, "Como no ha introducido los km diarios se asignara su distancia recomendada que es "+ usuarioSeleccionado.getKmMaximos(),
+                    Toast.LENGTH_SHORT).show();
+
+        }
 
         if(correcto)
         {
-            calculaEtapas(dias,comienzo, fin, nombre);
+            etapas = calculaEtapas(dias,comienzo, fin, nombre,kmDia);
+            camino = new Camino(nombre,etapas,kmDia);
+            usuarioSeleccionado.addCamino(camino);
             Intent i = new Intent(NuevoCamino.this, CaminoActual.class);
+            i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
             startActivity(i);
         }
         else
         {
+            Toast.makeText(this, "Debe rellenar los datos del formulario correctamente.",
+                    Toast.LENGTH_SHORT).show();
             Intent i = new Intent(NuevoCamino.this, NuevoCamino.class);
             i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
             startActivity(i);
@@ -301,10 +317,9 @@ public class NuevoCamino extends ActionBarActivity {
 
 
     }
-    public void calculaEtapas(int dias,String comienzo, String fin, String nombre)
+    public ArrayList<Etapa> calculaEtapas(int dias,String comienzo, String fin, String nombre, int kmMax)
     {
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        Double kmMax = usuarioSeleccionado.getKmMaximos();
         Pueblo aux;
         ArrayList<Etapa> etapas = new ArrayList<Etapa>();
         String iEtapa, fEtapa;
@@ -342,6 +357,7 @@ public class NuevoCamino extends ActionBarActivity {
             auxKm=0.0;
             dias--;
         }
+        return etapas;
     }
 
     @Override

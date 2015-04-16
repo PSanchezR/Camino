@@ -1,9 +1,17 @@
 package com.dev.lin.camino;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Ruta del Camino de Santiago que se está realizando
@@ -12,11 +20,42 @@ import android.view.MenuItem;
  * @author Pablo Sánchez Robles
  */
 public class CaminoActual extends ActionBarActivity {
-
+    private ArrayList<String> nombresEtapas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camino_actual);
+        Usuario   user = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        ListView lista = (ListView) findViewById(R.id.listViewEtapas);
+        ArrayAdapter<String> adaptador;
+
+        buscaNombresEtapas(user.getCaminoActual());
+        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresEtapas);
+        lista.setAdapter(adaptador);
+
+        lista.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+
+                       /* Intent i = new Intent(CaminoActual.this, MenuPrincipal.class);
+
+                        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
+                        startActivity(i);*/
+                    }
+                }
+        );
+
+    }
+
+    private void buscaNombresEtapas(Camino c)
+    {
+        ArrayList<Etapa> etapas = c.getEtapasCamino();
+
+        for (int i =0 ; i< etapas.size()/2;i++)
+        {
+            nombresEtapas.add(""+etapas.get(i).getPuebloInicio()+" - "+ etapas.get(i).getPuebloFin());
+        }
+
     }
 
     @Override

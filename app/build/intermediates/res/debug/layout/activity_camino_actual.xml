@@ -45,7 +45,7 @@
             <ListView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/listView2"
+                android:id="@+id/listViewEtapas"
                 android:layout_weight="1.30" />
         </LinearLayout>
 
@@ -64,4 +64,4 @@
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
-<!-- From: file:/home/ubuntu/Escritorio/APP/Camino/app/src/main/res/layout/activity_camino_actual.xml -->
+<!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/layout/activity_camino_actual.xml -->
