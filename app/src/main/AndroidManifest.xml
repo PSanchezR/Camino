@@ -18,25 +18,25 @@
         </activity>
         <activity
             android:name=".AccionEtapaSeleccion"
-            android:label="@string/title_activity_etapa_seleccion"></activity>
+            android:label="Selección de etapa"></activity>
         <activity
             android:name=".AccionUsuarioSeleccion"
-            android:label="@string/title_activity_usuario_seleccion"></activity>
+            android:label="Selección de usuario"></activity>
         <activity
             android:name=".AccionCaminoActual"
-            android:label="@string/title_activity_camino_actual"></activity>
+            android:label="Camino actual"></activity>
         <activity
             android:name=".AccionUsuarioNuevo"
-            android:label="@string/title_activity_usuario_nuevo"></activity>
+            android:label="Nuevo usuario"></activity>
         <activity
             android:name=".AccionMenuPrincipal"
-            android:label="@string/title_activity_menu_principal"></activity>
+            android:label="Menú principal"></activity>
         <activity
             android:name=".AccionCaminoNuevo"
-            android:label="@string/title_activity_camino_nuevo"></activity>
+            android:label="Nuevo camino"></activity>
         <activity
             android:name=".AccionUsuarioDatos"
-            android:label="@string/title_activity_usuario_datos"></activity>
+            android:label="Datos de usuario"></activity>
     </application>
 
 </manifest>

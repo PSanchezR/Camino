@@ -50,7 +50,7 @@ public class AccionCaminoActual extends ActionBarActivity {
         ArrayList<Etapa> etapas = c.getEtapasCamino();
 
         for (int i = 0; i < etapas.size() / 2; i++) {
-            nombresEtapas.add("" + etapas.get(i).getPuntoInicio() + " - " + etapas.get(i).getPuntoFin());
+            nombresEtapas.add("" + etapas.get(i).getParadaInicio() + " - " + etapas.get(i).getParadaFin());
         }
 
     }

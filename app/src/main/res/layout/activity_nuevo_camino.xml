@@ -73,7 +73,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <Spinner
-                    android:id="@+id/spinnerPuntoInicio"
+                    android:id="@+id/spinnerParadaInicio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -94,7 +94,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <Spinner
-                    android:id="@+id/spinnerPuntoFin"
+                    android:id="@+id/spinnerParadaFin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1" />

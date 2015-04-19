@@ -230,8 +230,8 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         }
 
         ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, nombresListaParadas);
-        Spinner spinnerInicio = (Spinner) findViewById(R.id.spinnerPuntoInicio);
-        Spinner spinnerFin = (Spinner) findViewById(R.id.spinnerPuntoFin);
+        Spinner spinnerInicio = (Spinner) findViewById(R.id.spinnerParadaInicio);
+        Spinner spinnerFin = (Spinner) findViewById(R.id.spinnerParadaFin);
         spinnerInicio.setAdapter(adaptador);
         spinnerFin.setAdapter(adaptador);
     }
@@ -251,8 +251,8 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
     public void miCamino(View view) {
         String nombre = (((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString();
-        String comienzo = (((Spinner) findViewById(R.id.spinnerPuntoInicio)).getSelectedItem()).toString();
-        String fin = (((Spinner) findViewById(R.id.spinnerPuntoFin)).getSelectedItem()).toString();
+        String comienzo = (((Spinner) findViewById(R.id.spinnerParadaInicio)).getSelectedItem()).toString();
+        String fin = (((Spinner) findViewById(R.id.spinnerParadaFin)).getSelectedItem()).toString();
         int dias = 0;
         int kmDia = Integer.parseInt((((EditText) findViewById(R.id.editTextKmMax)).getText()).toString());
         boolean correcto = true;

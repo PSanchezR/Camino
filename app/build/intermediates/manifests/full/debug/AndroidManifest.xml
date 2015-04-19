@@ -24,25 +24,25 @@
         </activity>
         <activity
             android:name="com.dev.lin.camino.AccionEtapaSeleccion"
-            android:label="@string/title_activity_etapa_seleccion" />
+            android:label="Selección de etapa" />
         <activity
             android:name="com.dev.lin.camino.AccionUsuarioSeleccion"
-            android:label="@string/title_activity_usuario_seleccion" />
+            android:label="Selección de usuario" />
         <activity
             android:name="com.dev.lin.camino.AccionCaminoActual"
-            android:label="@string/title_activity_camino_actual" />
+            android:label="Camino actual" />
         <activity
             android:name="com.dev.lin.camino.AccionUsuarioNuevo"
-            android:label="@string/title_activity_usuario_nuevo" />
+            android:label="Nuevo usuario" />
         <activity
             android:name="com.dev.lin.camino.AccionMenuPrincipal"
-            android:label="@string/title_activity_menu_principal" />
+            android:label="Menú principal" />
         <activity
             android:name="com.dev.lin.camino.AccionCaminoNuevo"
-            android:label="@string/title_activity_camino_nuevo" />
+            android:label="Nuevo camino" />
         <activity
             android:name="com.dev.lin.camino.AccionUsuarioDatos"
-            android:label="@string/title_activity_usuario_datos" />
+            android:label="Datos de usuario" />
 
         <meta-data
             android:name="com.google.android.gms.version"

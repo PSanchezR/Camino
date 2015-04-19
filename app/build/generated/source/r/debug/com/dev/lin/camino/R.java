@@ -1807,8 +1807,8 @@ containing a value of this type.
         public static final int showTitle=0x7f0a0011;
         public static final int slide=0x7f0a0013;
         public static final int spinnerComplexion=0x7f0a0061;
-        public static final int spinnerPuntoFin=0x7f0a0082;
-        public static final int spinnerPuntoInicio=0x7f0a007f;
+        public static final int spinnerParadaFin=0x7f0a0082;
+        public static final int spinnerParadaInicio=0x7f0a007f;
         public static final int split_action_bar=0x7f0a0007;
         public static final int strict_sandbox=0x7f0a0028;
         public static final int submit_area=0x7f0a0051;

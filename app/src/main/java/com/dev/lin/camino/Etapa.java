@@ -9,22 +9,22 @@ import java.io.Serializable;
  * @author Pablo Sánchez Robles
  */
 public class Etapa implements Serializable {
-    private String puntoInicio;
-    private String puntoFin;
+    private String paradaInicio;
+    private String paradaFin;
     private double KMs;
 
-    public Etapa(double KMs, String puntoInicio, String puntoFin) {
+    public Etapa(double KMs, String paradaInicio, String paradaFin) {
         this.KMs = KMs;
-        this.puntoInicio = puntoInicio;
-        this.puntoFin = puntoFin;
+        this.paradaInicio = paradaInicio;
+        this.paradaFin = paradaFin;
     }
 
-    public String getPuntoInicio() {
-        return puntoInicio;
+    public String getParadaInicio() {
+        return paradaInicio;
     }
 
-    public String getPuntoFin() {
-        return puntoFin;
+    public String getParadaFin() {
+        return paradaFin;
     }
 
     public double getKMs() {
