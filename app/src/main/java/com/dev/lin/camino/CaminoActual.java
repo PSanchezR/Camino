@@ -1,6 +1,5 @@
 package com.dev.lin.camino;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -10,7 +9,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -21,11 +19,12 @@ import java.util.ArrayList;
  */
 public class CaminoActual extends ActionBarActivity {
     private ArrayList<String> nombresEtapas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camino_actual);
-        Usuario   user = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        Usuario user = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         ListView lista = (ListView) findViewById(R.id.listViewEtapas);
         ArrayAdapter<String> adaptador;
 
@@ -47,13 +46,11 @@ public class CaminoActual extends ActionBarActivity {
 
     }
 
-    private void buscaNombresEtapas(Camino c)
-    {
+    private void buscaNombresEtapas(Camino c) {
         ArrayList<Etapa> etapas = c.getEtapasCamino();
 
-        for (int i =0 ; i< etapas.size()/2;i++)
-        {
-            nombresEtapas.add(""+etapas.get(i).getPuebloInicio()+" - "+ etapas.get(i).getPuebloFin());
+        for (int i = 0; i < etapas.size() / 2; i++) {
+            nombresEtapas.add("" + etapas.get(i).getPuebloInicio() + " - " + etapas.get(i).getPuebloFin());
         }
 
     }

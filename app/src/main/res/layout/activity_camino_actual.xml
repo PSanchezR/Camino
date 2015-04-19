@@ -1,65 +1,67 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.dev.lin.camino.CaminoActual">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="43dp" >
+            android:layout_height="43dp"
+            android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center_horizontal"
                 android:text="Camino actual"
-                android:id="@+id/textView"
-                android:layout_gravity="center_horizontal" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="134dp"
             android:layout_weight="0.54"
-            android:weightSum="1" >
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <TextView
+                android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Etapas:"
-                android:id="@+id/textView6" />
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <ListView
+                android:id="@+id/listViewEtapas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/listViewEtapas"
                 android:layout_weight="1.30" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="172dp"
             android:layout_weight="0.36"
-            android:weightSum="1" >
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <WebView
+                android:id="@+id/webView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/webView2"
                 android:layout_weight="0.54" />
         </LinearLayout>
     </LinearLayout>

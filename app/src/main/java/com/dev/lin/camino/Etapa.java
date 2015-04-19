@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class Etapa implements Serializable{
+public class Etapa implements Serializable {
     private String puebloInicio;
     private String puebloFin;
     private double kms;
@@ -19,9 +19,15 @@ public class Etapa implements Serializable{
         this.puebloFin = puebloFin;
     }
 
-    public String getPuebloInicio(){return puebloInicio;}
+    public String getPuebloInicio() {
+        return puebloInicio;
+    }
 
-    public String getPuebloFin(){return puebloFin;}
+    public String getPuebloFin() {
+        return puebloFin;
+    }
 
-    public double getKms(){return kms;}
+    public double getKms() {
+        return kms;
+    }
 }

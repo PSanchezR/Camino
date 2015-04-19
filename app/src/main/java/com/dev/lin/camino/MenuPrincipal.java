@@ -25,7 +25,7 @@ public class MenuPrincipal extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " +" "+ usuarioSeleccionado.getNombre());
+        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + " " + usuarioSeleccionado.getNombre());
     }
 
     @Override
@@ -50,7 +50,7 @@ public class MenuPrincipal extends ActionBarActivity {
 
     public void caminoActual(View view) {
         Intent i = new Intent(MenuPrincipal.this, CaminoActual.class);
-        i.putExtra("usuarioSeleccionado", (Serializable)usuarioSeleccionado);
+        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }
 

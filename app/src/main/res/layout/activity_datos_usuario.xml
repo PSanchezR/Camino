@@ -1,111 +1,113 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.dev.lin.camino.DatosUsuario">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.28"
+            android:orientation="horizontal"
             android:weightSum="1">
 
             <TextView
+                android:id="@+id/textViewNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/textViewNombre"
                 android:layout_column="2"
                 android:layout_weight="1.02"
-                android:text="&lt;Usuario>" />
+                android:text="&lt;Usuario>"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Button
+                android:id="@+id/buttonAplicarCambios"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:id="@+id/buttonAplicarCambios"
-                android:text="Aplicar cambios"
-                android:onClick="aplicarCambios"/>
+                android:onClick="aplicarCambios"
+                android:text="Aplicar cambios" />
         </LinearLayout>
 
         <TableLayout
+            android:id="@+id/tableLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tableLayout2"
             android:layout_weight="0.71">
 
             <TableRow
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
+                android:layout_height="fill_parent">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Altura:"
                     android:id="@+id/textView18"
-                    android:layout_column="2" />
-
-                <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    android:layout_column="2"
+                    android:text="Altura:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
                     android:id="@+id/editTextAltura"
-                    android:layout_column="3" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="3"
+                    android:ems="10"
+                    android:inputType="number" />
             </TableRow>
 
             <TableRow
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
+                android:layout_height="fill_parent">
 
                 <TextView
+                    android:id="@+id/textView19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="2"
                     android:text="Peso:"
-                    android:id="@+id/textView19"
-                    android:layout_column="2" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <EditText
+                    android:id="@+id/editTextPeso"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
+                    android:layout_column="3"
                     android:ems="10"
-                    android:id="@+id/editTextPeso"
-                    android:layout_column="3" />
+                    android:inputType="number" />
             </TableRow>
 
             <TableRow
+                android:id="@+id/k"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/k">
+                android:layout_height="fill_parent">
 
                 <TextView
+                    android:id="@+id/textView20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="2"
                     android:text="Complexión:"
-                    android:id="@+id/textView20"
-                    android:layout_column="2" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <Spinner
+                    android:id="@+id/spinnerComplexion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinnerComplexion"
                     android:layout_column="3"
                     android:spinnerMode="dropdown" />
             </TableRow>
@@ -115,49 +117,49 @@
                 android:layout_height="fill_parent">
 
                 <TextView
+                    android:id="@+id/textViewDmax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="2"
                     android:text="Distancia máxima"
-                    android:id="@+id/textViewDmax"
-                    android:layout_column="2" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
+                    android:id="@+id/textViewDistMax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:id="@+id/textViewDistMax"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
             </TableRow>
 
         </TableLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="232dp"
+            android:orientation="vertical"
             android:weightSum="1">
 
             <TextView
+                android:id="@+id/textView17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Mis caminos:"
-                android:id="@+id/textView17" />
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <ListView
+                android:id="@+id/listViewMisCaminos"
                 android:layout_width="match_parent"
                 android:layout_height="83dp"
-                android:id="@+id/listViewMisCaminos"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.36" />
 
             <Button
+                android:id="@+id/buttonEliminarCamino"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Eliminar camino"
-                android:id="@+id/buttonEliminarCamino"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:text="Eliminar camino" />
         </LinearLayout>
 
     </LinearLayout>

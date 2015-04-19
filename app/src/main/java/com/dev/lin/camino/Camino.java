@@ -2,7 +2,6 @@ package com.dev.lin.camino;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Rutas del Camino de Santiago
@@ -10,7 +9,7 @@ import java.util.List;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class Camino implements Serializable  {
+public class Camino implements Serializable {
     private ArrayList<Etapa> etapasCamino;
     private ArrayList<Etapa> etapasCompletadas;
     private String nombre;
@@ -18,11 +17,11 @@ public class Camino implements Serializable  {
     private String etapaFinal;
     private int kmDiarios;
 
-    public Camino(String nombre, ArrayList<Etapa> etapasCamino,int kmDia) {
+    public Camino(String nombre, ArrayList<Etapa> etapasCamino, int kmDia) {
         this.nombre = nombre;
         this.etapasCamino = etapasCamino;
         this.etapaInicial = etapasCamino.get(0).getPuebloInicio();
-        this.etapaFinal =  etapasCamino.get(0).getPuebloFin();
+        this.etapaFinal = etapasCamino.get(0).getPuebloFin();
         this.kmDiarios = kmDia;
     }
 
@@ -42,9 +41,15 @@ public class Camino implements Serializable  {
         return this.nombre;
     }
 
-    public String getEtapaInicial(){return  this.etapaInicial;}
+    public String getEtapaInicial() {
+        return this.etapaInicial;
+    }
 
-    public String getEtapaFinal(){return this.etapaFinal;}
+    public String getEtapaFinal() {
+        return this.etapaFinal;
+    }
 
-    public int getKmDiarios(){return this.kmDiarios;}
+    public int getKmDiarios() {
+        return this.kmDiarios;
+    }
 }

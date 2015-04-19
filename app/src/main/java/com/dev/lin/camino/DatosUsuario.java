@@ -32,7 +32,7 @@ public class DatosUsuario extends ActionBarActivity {
         ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + usuarioSeleccionado.getNombre());
         ((EditText) findViewById(R.id.editTextAltura)).setText("" + usuarioSeleccionado.getAltura());
         ((EditText) findViewById(R.id.editTextPeso)).setText("" + usuarioSeleccionado.getPeso());
-        ((TextView) findViewById(R.id.textViewDistMax)).setText("   " + usuarioSeleccionado.getKmMaximos()+ " Km");
+        ((TextView) findViewById(R.id.textViewDistMax)).setText("   " + usuarioSeleccionado.getKmMaximos() + " Km");
 
 
         ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, valoresComplexion);
@@ -43,16 +43,15 @@ public class DatosUsuario extends ActionBarActivity {
     }
 
     //Método que edita los cambios del usuario seleccionado y guarda los mismos en el fichero de usuarios.
-    public void aplicarCambios(View view)
-    {
+    public void aplicarCambios(View view) {
         usuarioSeleccionado.setAltura(Integer.parseInt(((EditText) findViewById(R.id.editTextAltura)).getText() + ""));
         usuarioSeleccionado.setPeso(Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText() + ""));
         usuarioSeleccionado.setComplexion(((Spinner) findViewById(R.id.spinnerComplexion)).getSelectedItemPosition());
         usuarioSeleccionado.calcularKmMaximos();
-        archivador.escribirUsuarios(usuarioSeleccionado,getBaseContext());
+        archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
 
         Intent i = new Intent(DatosUsuario.this, MenuPrincipal.class);
-        i.putExtra("usuarioSeleccionado",usuarioSeleccionado);
+        i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
         startActivity(i);
 
     }

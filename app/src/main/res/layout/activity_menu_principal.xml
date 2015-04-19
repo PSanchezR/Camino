@@ -1,69 +1,71 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.dev.lin.camino.MenuPrincipal">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/linearLayout2"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
         android:weightSum="1">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="105dp"
-            android:layout_weight="0.65">
+            android:layout_weight="0.65"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="&lt;Usuario>"
                 android:id="@+id/textViewNombre"
-                android:layout_gravity="center_horizontal" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="&lt;Usuario>"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="161dp">
+            android:layout_height="161dp"
+            android:orientation="vertical">
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nuevo camino"
                 android:id="@+id/buttonNuevoCamino"
-                android:layout_gravity="center_horizontal"
-                android:onClick="nuevoCamino"/>
-
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Datos usuario"
+                android:layout_gravity="center_horizontal"
+                android:onClick="nuevoCamino"
+                android:text="Nuevo camino" />
+
+            <Button
                 android:id="@+id/buttonDatosUsuario"
-                android:layout_gravity="center_horizontal"
-                android:onClick="datosUsuario"/>
-
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Camino actual"
-                android:id="@+id/buttonCaminoActual"
                 android:layout_gravity="center_horizontal"
-                android:onClick="caminoActual"/>
+                android:onClick="datosUsuario"
+                android:text="Datos usuario" />
+
+            <Button
+                android:id="@+id/buttonCaminoActual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="caminoActual"
+                android:text="Camino actual" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="145dp"></LinearLayout>
+            android:layout_height="145dp"
+            android:orientation="vertical"></LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
