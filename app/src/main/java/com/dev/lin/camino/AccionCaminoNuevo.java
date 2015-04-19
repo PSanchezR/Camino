@@ -25,7 +25,7 @@ import java.util.Iterator;
 public class AccionCaminoNuevo extends ActionBarActivity {
     private Usuario usuarioSeleccionado = null;
 
-    private ArrayList<Parada> listaParadasCaminoFrances = new ArrayList<Parada>(Arrays.asList(
+    private ArrayList<Parada> listaParadas = new ArrayList<Parada>(Arrays.asList(
             new Parada(1, "Saint Jean Pied de Port", 43.1569766, -1.2337874, 0, 5, true, true, true, true, true, true),
             new Parada(2, "Honto", 43.1243525, -1.244748, 5, 2.5, true, true, true, true, true, false),
             new Parada(3, "Orisson", 43.1078991, -1.239412, 2.5, 27.9, true, true, true, false, false, false),
@@ -211,8 +211,6 @@ public class AccionCaminoNuevo extends ActionBarActivity {
             new Parada(183, "Santiago de Compostela", 42.8802049, -8.5447697, 4.9, 0, true, true, true, true, true, true)
     ));
 
-    private ArrayList<Parada> listaParadas = new ArrayList<Parada>(this.listaParadasCaminoFrances);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ArrayList<String> nombresListaParadas = new ArrayList<String>();
@@ -243,13 +241,14 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         return true;
     }
 
-    public void caminoClasico(View view) {
+    public void crearCaminoClasico(View view) {
+        //Crea camino clasico y lo pasa
+
         Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoActual.class);
         startActivity(i);
     }
 
-
-    public void miCamino(View view) {
+    public void crearCaminoNuevo(View view) {
         String nombre = (((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString();
         String comienzo = (((Spinner) findViewById(R.id.spinnerParadaInicio)).getSelectedItem()).toString();
         String fin = (((Spinner) findViewById(R.id.spinnerParadaFin)).getSelectedItem()).toString();
@@ -282,9 +281,9 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
         if (correcto) {
             //Comprobar donde recibe usuario seleccionado y como construye etapas y caminos
-            etapas = calculaEtapas(dias, comienzo, fin, nombre, kmDia);
-            camino = new Camino(nombre, etapas, kmDia);
-            usuarioSeleccionado.addCamino(camino);
+            //etapas = crearEtapasCaminoPersonal(dias, comienzo, fin, nombre, kmDia);
+            //camino = new Camino(nombre, etapas, kmDia);
+            //usuarioSeleccionado.addCamino(camino);
             Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoActual.class);
             i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
             startActivity(i);
@@ -296,7 +295,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         }
     }
 
-    public ArrayList<Etapa> calculaEtapas(int dias, String comienzoCamino, String finCamino, String nombreCamino, int kmMax) {
+    public ArrayList<Etapa> crearEtapasCaminoPersonal(int dias, String comienzoCamino, String finCamino, String nombreCamino, int kmMax) {
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         String inicioEtapa, finEtapa;
         ArrayList<Etapa> listaEtapas = new ArrayList<Etapa>();
@@ -337,10 +336,16 @@ public class AccionCaminoNuevo extends ActionBarActivity {
             }
 
             finEtapa = this.listaParadas.get(ordenParada).getNombre();
-            listaEtapas.add(new Etapa(km, inicioEtapa, finEtapa));
+            //listaEtapas.add(new Etapa(km, inicioEtapa, finEtapa));
             km = 0.0;
             dias--;
         }
+
+        return listaEtapas;
+    }
+
+    public ArrayList<Etapa> crearEtapasCaminoFrances(){
+        ArrayList<Etapa> listaEtapas = new ArrayList<Etapa>();
 
         return listaEtapas;
     }

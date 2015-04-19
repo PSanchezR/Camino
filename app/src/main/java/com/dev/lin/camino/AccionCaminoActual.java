@@ -47,7 +47,7 @@ public class AccionCaminoActual extends ActionBarActivity {
     }
 
     private void buscaNombresEtapas(Camino c) {
-        ArrayList<Etapa> etapas = c.getEtapasCamino();
+        ArrayList<Etapa> etapas = c.getListaEtapas();
 
         for (int i = 0; i < etapas.size() / 2; i++) {
             nombresEtapas.add("" + etapas.get(i).getParadaInicio() + " - " + etapas.get(i).getParadaFin());

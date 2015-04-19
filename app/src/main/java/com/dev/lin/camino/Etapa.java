@@ -1,6 +1,8 @@
 package com.dev.lin.camino;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Datos de una etapa del Camino de Santiago
@@ -9,22 +11,56 @@ import java.io.Serializable;
  * @author Pablo Sánchez Robles
  */
 public class Etapa implements Serializable {
-    private String paradaInicio;
-    private String paradaFin;
+    private int orden;
+    private String nombre;
+    private Parada paradaInicio;
+    private Parada paradaFin;
     private double KMs;
+    private ArrayList<Parada> listaParadas;
 
-    public Etapa(double KMs, String paradaInicio, String paradaFin) {
-        this.KMs = KMs;
-        this.paradaInicio = paradaInicio;
-        this.paradaFin = paradaFin;
+    public Etapa(int orden, ArrayList<Parada> listaParadas) {
+        this.orden = orden;
+        this.listaParadas = new ArrayList<Parada>(listaParadas);
+        this.paradaInicio = this.listaParadas.get(0);
+        this.paradaFin = this.listaParadas.get(this.listaParadas.size() - 1);
+        this.nombre = this.paradaInicio.getNombre() + " - " + this.paradaFin.getNombre();
+        this.KMs = 0;
+
+        Iterator<Parada> itr = listaParadas.iterator();
+        Parada parada = itr.next();
+
+        while (itr.hasNext()) {
+            parada = itr.next();
+            this.KMs += parada.getDistAnterior();
+        }
     }
 
-    public String getParadaInicio() {
-        return paradaInicio;
+    public int getOrden() {
+        return this.orden;
     }
 
-    public String getParadaFin() {
-        return paradaFin;
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public ArrayList<Parada> getListaParadas() {
+        return this.listaParadas;
+    }
+
+    public Parada getParadaInicio() {
+        return this.paradaInicio;
+    }
+
+    public Parada getParadaFin() {
+        return this.paradaFin;
+    }
+
+    public String getNombreParadaInicio() {
+        return this.paradaInicio.getNombre();
+    }
+
+    public String getNombreParadaFin() {
+        return this.paradaFin.getNombre();
     }
 
     public double getKMs() {
