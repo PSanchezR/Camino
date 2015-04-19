@@ -1750,7 +1750,7 @@ containing a value of this type.
         public static final int editTextAltura=0x7f0a005c;
         public static final int editTextDias=0x7f0a007c;
         public static final int editTextFecha=0x7f0a0071;
-        public static final int editTextKMax=0x7f0a0086;
+        public static final int editTextKmMax=0x7f0a0086;
         public static final int editTextNombre=0x7f0a006c;
         public static final int editTextNombreCamino=0x7f0a0084;
         public static final int editTextPeso=0x7f0a005e;
@@ -1806,9 +1806,9 @@ containing a value of this type.
         public static final int showHome=0x7f0a0010;
         public static final int showTitle=0x7f0a0011;
         public static final int slide=0x7f0a0013;
-        public static final int spinnerCiudadFin=0x7f0a0082;
-        public static final int spinnerCiudadInicio=0x7f0a007f;
         public static final int spinnerComplexion=0x7f0a0061;
+        public static final int spinnerPuntoFin=0x7f0a0082;
+        public static final int spinnerPuntoInicio=0x7f0a007f;
         public static final int split_action_bar=0x7f0a0007;
         public static final int strict_sandbox=0x7f0a0028;
         public static final int submit_area=0x7f0a0051;
@@ -1964,16 +1964,16 @@ containing a value of this type.
         public static final int hello_world=0x7f0c0035;
         public static final int store_picture_message=0x7f0c0036;
         public static final int store_picture_title=0x7f0c0037;
-        public static final int title_activity_camino__actual=0x7f0c0038;
-        public static final int title_activity_datos__usuario=0x7f0c0039;
-        public static final int title_activity_datos_usuario=0x7f0c003a;
-        public static final int title_activity_etapa=0x7f0c003b;
-        public static final int title_activity_formulario__nuevo__usuario=0x7f0c003c;
-        public static final int title_activity_main=0x7f0c003d;
-        public static final int title_activity_menu_principal=0x7f0c003e;
-        public static final int title_activity_nuevo__camino=0x7f0c003f;
-        public static final int title_activity_seleccion__usuario=0x7f0c0040;
-        public static final int title_activity_sf=0x7f0c0041;
+        public static final int title_activity_camino_actual=0x7f0c0038;
+        public static final int title_activity_camino_nuevo=0x7f0c0039;
+        public static final int title_activity_datos__usuario=0x7f0c003a;
+        public static final int title_activity_etapa_seleccion=0x7f0c003b;
+        public static final int title_activity_main=0x7f0c003c;
+        public static final int title_activity_menu_principal=0x7f0c003d;
+        public static final int title_activity_sf=0x7f0c003e;
+        public static final int title_activity_usuario_datos=0x7f0c003f;
+        public static final int title_activity_usuario_nuevo=0x7f0c0040;
+        public static final int title_activity_usuario_seleccion=0x7f0c0041;
         public static final int wallet_buy_button_place_holder=0x7f0c0042;
     }
     public static final class style {

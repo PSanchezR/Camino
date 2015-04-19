@@ -20,7 +20,7 @@ import java.util.Iterator;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class FormularioNuevoUsuario extends ActionBarActivity {
+public class AccionUsuarioNuevo extends ActionBarActivity {
     protected String archivo = "usuarios.dat";
     protected Usuario usuario;
     protected Spinner listaComplexion;
@@ -78,7 +78,7 @@ public class FormularioNuevoUsuario extends ActionBarActivity {
     }
 
     public void menuUsuarios() {
-        Intent intent = new Intent(FormularioNuevoUsuario.this, SeleccionUsuario.class);
+        Intent intent = new Intent(AccionUsuarioNuevo.this, AccionUsuarioSeleccion.class);
         startActivity(intent);
     }
 

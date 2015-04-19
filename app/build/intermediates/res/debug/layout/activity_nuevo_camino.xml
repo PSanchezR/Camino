@@ -1,32 +1,34 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.dev.lin.camino.NuevoCamino"
-    android:id="@+id/rlay">
+    tools:context="com.dev.lin.camino.AccionCaminoNuevo">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true">
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="40dp" >
+            android:layout_height="40dp"
+            android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center_horizontal"
                 android:text="Introduzca los datos:"
-                android:id="@+id/textView2"
-                android:layout_gravity="center_horizontal" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
         </LinearLayout>
 
         <TableLayout
@@ -35,66 +37,66 @@
             android:layout_weight="0.67">
 
             <TableRow
+                android:id="@+id/tableRowTiempo"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/tableRowTiempo">
+                android:layout_height="fill_parent">
 
                 <TextView
+                    android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
                     android:text="¿Cuántos dias quiere estar?"
-                    android:id="@+id/textView12"
-                    android:layout_column="0" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <EditText
+                    android:id="@+id/editTextDias"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
+                    android:layout_column="1"
                     android:ems="10"
-                    android:id="@+id/editTextDias"
-                    android:layout_column="1" />
+                    android:inputType="number" />
 
             </TableRow>
 
             <TableRow
+                android:id="@+id/TableRowComienzo"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/TableRowComienzo">
+                android:layout_height="fill_parent">
 
                 <TextView
+                    android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
                     android:text="Ciudad de comienzo:"
-                    android:id="@+id/textView13"
-                    android:layout_column="0" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <Spinner
+                    android:id="@+id/spinnerPuntoInicio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinnerCiudadInicio"
                     android:layout_column="1"
                     android:spinnerMode="dropdown" />
             </TableRow>
 
             <TableRow
+                android:id="@+id/TableRowFin"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/TableRowFin">
+                android:layout_height="fill_parent">
 
                 <TextView
+                    android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
                     android:text="Ciudad de finalización:"
-                    android:id="@+id/textView14"
-                    android:layout_column="0" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <Spinner
+                    android:id="@+id/spinnerPuntoFin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinnerCiudadFin"
                     android:layout_column="1" />
             </TableRow>
 
@@ -103,17 +105,17 @@
                 android:layout_height="fill_parent">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Nombre:"
                     android:id="@+id/textView16"
-                    android:layout_column="0" />
-
-                <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Nombre:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
                     android:id="@+id/editTextNombreCamino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_column="1" />
             </TableRow>
 
@@ -122,65 +124,65 @@
                 android:layout_height="fill_parent">
 
                 <TextView
+                    android:id="@+id/textView21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
                     android:text="¿Cuántos km diarios?"
-                    android:id="@+id/textView21"
-                    android:layout_column="0" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <EditText
+                    android:id="@+id/editTextKmMax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
+                    android:layout_column="1"
                     android:ems="10"
-                    android:id="@+id/editTextKMax"
-                    android:layout_column="1" />
+                    android:inputType="number" />
             </TableRow>
         </TableLayout>
 
         <LinearLayout
-            android:orientation="vertical"
+            android:id="@+id/LinearCrear"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:weightSum="1"
-            android:id="@+id/LinearCrear">
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <Button
+                android:id="@+id/buttonCrearCamino"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Crear camino"
-                android:id="@+id/buttonCrearCamino"
                 android:layout_gravity="center_horizontal"
-                android:onClick="miCamino"/>
+                android:onClick="miCamino"
+                android:text="Crear camino" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="130dp">
+            android:layout_height="130dp"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="vertical"
+                android:id="@+id/LinearClasico"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/LinearClasico">
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/textView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_gravity="center_horizontal"
                     android:text="Pulse el botón &quot;camino clásico&quot; para realizar el camino francés completo con las etapas clásicas. Son 33 etapas."
-                    android:id="@+id/textView15"
-                    android:layout_gravity="center_horizontal" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <Button
+                    android:id="@+id/buttonCaminoClasico"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Camino Clásico"
-                    android:id="@+id/buttonCaminoClasico"
                     android:layout_gravity="center_horizontal"
-                    android:onClick="caminoClasico"/>
+                    android:onClick="caminoClasico"
+                    android:text="Camino Clásico" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

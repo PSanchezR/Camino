@@ -103,7 +103,7 @@ MERGED from com.android.support:support-v4:22.0.0:22:5
 		ADDED from AndroidManifest.xml:7:9
 	android:theme
 		ADDED from AndroidManifest.xml:9:9
-activity#com.dev.lin.camino.Portada
+activity#com.dev.lin.camino.AccionPortada
 ADDED from AndroidManifest.xml:10:9
 	android:label
 		ADDED from AndroidManifest.xml:12:13
@@ -119,66 +119,48 @@ category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:16:17
 	android:name
 		ADDED from AndroidManifest.xml:16:27
-activity#com.dev.lin.camino.MainActivity
+activity#com.dev.lin.camino.AccionEtapaSeleccion
 ADDED from AndroidManifest.xml:19:9
 	android:label
 		ADDED from AndroidManifest.xml:21:13
 	android:name
 		ADDED from AndroidManifest.xml:20:13
-activity#com.dev.lin.camino.EtapaSeleccionada
-ADDED from AndroidManifest.xml:23:9
+activity#com.dev.lin.camino.AccionUsuarioSeleccion
+ADDED from AndroidManifest.xml:22:9
 	android:label
-		ADDED from AndroidManifest.xml:25:13
-	android:name
 		ADDED from AndroidManifest.xml:24:13
-activity#com.dev.lin.camino.SeleccionUsuario
-ADDED from AndroidManifest.xml:27:9
-	android:label
-		ADDED from AndroidManifest.xml:29:13
 	android:name
-		ADDED from AndroidManifest.xml:28:13
-activity#com.dev.lin.camino.CaminoActual
+		ADDED from AndroidManifest.xml:23:13
+activity#com.dev.lin.camino.AccionCaminoActual
+ADDED from AndroidManifest.xml:25:9
+	android:label
+		ADDED from AndroidManifest.xml:27:13
+	android:name
+		ADDED from AndroidManifest.xml:26:13
+activity#com.dev.lin.camino.AccionUsuarioNuevo
+ADDED from AndroidManifest.xml:28:9
+	android:label
+		ADDED from AndroidManifest.xml:30:13
+	android:name
+		ADDED from AndroidManifest.xml:29:13
+activity#com.dev.lin.camino.AccionMenuPrincipal
 ADDED from AndroidManifest.xml:31:9
 	android:label
 		ADDED from AndroidManifest.xml:33:13
 	android:name
 		ADDED from AndroidManifest.xml:32:13
-activity#com.dev.lin.camino.FormularioNuevoUsuario
-ADDED from AndroidManifest.xml:35:9
+activity#com.dev.lin.camino.AccionCaminoNuevo
+ADDED from AndroidManifest.xml:34:9
 	android:label
-		ADDED from AndroidManifest.xml:37:13
-	android:name
 		ADDED from AndroidManifest.xml:36:13
-activity#com.dev.lin.camino.MenuPrincipal
-ADDED from AndroidManifest.xml:39:9
-	android:label
-		ADDED from AndroidManifest.xml:41:13
 	android:name
-		ADDED from AndroidManifest.xml:40:13
-activity#com.dev.lin.camino.NuevoCamino
-ADDED from AndroidManifest.xml:43:9
+		ADDED from AndroidManifest.xml:35:13
+activity#com.dev.lin.camino.AccionUsuarioDatos
+ADDED from AndroidManifest.xml:37:9
 	android:label
-		ADDED from AndroidManifest.xml:45:13
+		ADDED from AndroidManifest.xml:39:13
 	android:name
-		ADDED from AndroidManifest.xml:44:13
-activity#com.dev.lin.camino.sf
-ADDED from AndroidManifest.xml:47:9
-	android:label
-		ADDED from AndroidManifest.xml:49:13
-	android:name
-		ADDED from AndroidManifest.xml:48:13
-activity#com.dev.lin.camino.datos_usuario
-ADDED from AndroidManifest.xml:51:9
-	android:label
-		ADDED from AndroidManifest.xml:53:13
-	android:name
-		ADDED from AndroidManifest.xml:52:13
-activity#com.dev.lin.camino.DatosUsuario
-ADDED from AndroidManifest.xml:55:9
-	android:label
-		ADDED from AndroidManifest.xml:57:13
-	android:name
-		ADDED from AndroidManifest.xml:56:13
+		ADDED from AndroidManifest.xml:38:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:21.0.3:15:5

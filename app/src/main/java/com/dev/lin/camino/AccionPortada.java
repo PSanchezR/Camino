@@ -15,7 +15,7 @@ import android.widget.FrameLayout;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class Portada extends ActionBarActivity {
+public class AccionPortada extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class Portada extends ActionBarActivity {
         frame_fondo.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Intent intent = new Intent(Portada.this, SeleccionUsuario.class);
+                Intent intent = new Intent(AccionPortada.this, AccionUsuarioSeleccion.class);
                 startActivity(intent);
                 return false;
             }

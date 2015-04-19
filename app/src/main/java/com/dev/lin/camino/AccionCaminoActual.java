@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class CaminoActual extends ActionBarActivity {
+public class AccionCaminoActual extends ActionBarActivity {
     private ArrayList<String> nombresEtapas;
 
     @Override
@@ -36,7 +36,7 @@ public class CaminoActual extends ActionBarActivity {
                 new AdapterView.OnItemClickListener() {
                     public void onItemClick(AdapterView<?> a, View v, int position, long id) {
 
-                       /* Intent i = new Intent(CaminoActual.this, MenuPrincipal.class);
+                       /* Intent i = new Intent(AccionCaminoActual.this, AccionMenuPrincipal.class);
 
                         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
                         startActivity(i);*/
@@ -50,7 +50,7 @@ public class CaminoActual extends ActionBarActivity {
         ArrayList<Etapa> etapas = c.getEtapasCamino();
 
         for (int i = 0; i < etapas.size() / 2; i++) {
-            nombresEtapas.add("" + etapas.get(i).getPuebloInicio() + " - " + etapas.get(i).getPuebloFin());
+            nombresEtapas.add("" + etapas.get(i).getPuntoInicio() + " - " + etapas.get(i).getPuntoFin());
         }
 
     }

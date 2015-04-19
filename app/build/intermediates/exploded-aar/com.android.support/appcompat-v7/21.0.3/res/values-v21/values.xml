@@ -131,15 +131,12 @@
 
         <!-- General view attributes -->
         <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
-        <item name="selectableItemBackgroundBorderless">
-            ?android:attr/selectableItemBackgroundBorderless
-        </item>
+        <item name="selectableItemBackgroundBorderless">?android:attr/selectableItemBackgroundBorderless</item>
         <item name="dividerHorizontal">?android:attr/dividerHorizontal</item>
         <item name="dividerVertical">?android:attr/dividerVertical</item>
         <item name="editTextBackground">?android:attr/editTextBackground</item>
         <item name="editTextColor">?android:attr/editTextColor</item>
-        <item name="listChoiceBackgroundIndicator">?android:attr/listChoiceBackgroundIndicator
-        </item>
+        <item name="listChoiceBackgroundIndicator">?android:attr/listChoiceBackgroundIndicator</item>
 
         <!-- Copy our color theme attributes to the framework -->
         <item name="android:colorPrimary">?attr/colorPrimary</item>
@@ -172,15 +169,12 @@
 
         <!-- General view attributes -->
         <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
-        <item name="selectableItemBackgroundBorderless">
-            ?android:attr/selectableItemBackgroundBorderless
-        </item>
+        <item name="selectableItemBackgroundBorderless">?android:attr/selectableItemBackgroundBorderless</item>
         <item name="dividerHorizontal">?android:attr/dividerHorizontal</item>
         <item name="dividerVertical">?android:attr/dividerVertical</item>
         <item name="editTextBackground">?android:attr/editTextBackground</item>
         <item name="editTextColor">?android:attr/editTextColor</item>
-        <item name="listChoiceBackgroundIndicator">?android:attr/listChoiceBackgroundIndicator
-        </item>
+        <item name="listChoiceBackgroundIndicator">?android:attr/listChoiceBackgroundIndicator</item>
 
         <!-- Copy our color theme attributes to the framework -->
         <item name="android:colorPrimary">?attr/colorPrimary</item>
@@ -213,15 +207,12 @@
 
         <!-- General view attributes -->
         <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
-        <item name="selectableItemBackgroundBorderless">
-            ?android:attr/selectableItemBackgroundBorderless
-        </item>
+        <item name="selectableItemBackgroundBorderless">?android:attr/selectableItemBackgroundBorderless</item>
         <item name="dividerHorizontal">?android:attr/dividerHorizontal</item>
         <item name="dividerVertical">?android:attr/dividerVertical</item>
         <item name="editTextBackground">?android:attr/editTextBackground</item>
         <item name="editTextColor">?android:attr/editTextColor</item>
-        <item name="listChoiceBackgroundIndicator">?android:attr/listChoiceBackgroundIndicator
-        </item>
+        <item name="listChoiceBackgroundIndicator">?android:attr/listChoiceBackgroundIndicator</item>
 
         <!-- Copy our color theme attributes to the framework -->
         <item name="android:colorPrimary">?attr/colorPrimary</item>
@@ -254,15 +245,12 @@
 
         <!-- General view attributes -->
         <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
-        <item name="selectableItemBackgroundBorderless">
-            ?android:attr/selectableItemBackgroundBorderless
-        </item>
+        <item name="selectableItemBackgroundBorderless">?android:attr/selectableItemBackgroundBorderless</item>
         <item name="dividerHorizontal">?android:attr/dividerHorizontal</item>
         <item name="dividerVertical">?android:attr/dividerVertical</item>
         <item name="editTextBackground">?android:attr/editTextBackground</item>
         <item name="editTextColor">?android:attr/editTextColor</item>
-        <item name="listChoiceBackgroundIndicator">?android:attr/listChoiceBackgroundIndicator
-        </item>
+        <item name="listChoiceBackgroundIndicator">?android:attr/listChoiceBackgroundIndicator</item>
 
         <!-- Copy our color theme attributes to the framework -->
         <item name="android:colorPrimary">?attr/colorPrimary</item>

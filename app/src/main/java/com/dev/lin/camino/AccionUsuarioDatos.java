@@ -17,7 +17,7 @@ import android.widget.TextView;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class DatosUsuario extends ActionBarActivity {
+public class AccionUsuarioDatos extends ActionBarActivity {
 
     protected String[] valoresComplexion = {"Nada deportista", "Poco deportista", "Deportista Amateur", "Deportista profesional"};
     private Usuario usuarioSeleccionado = null;
@@ -50,7 +50,7 @@ public class DatosUsuario extends ActionBarActivity {
         usuarioSeleccionado.calcularKmMaximos();
         archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
 
-        Intent i = new Intent(DatosUsuario.this, MenuPrincipal.class);
+        Intent i = new Intent(AccionUsuarioDatos.this, AccionMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
         startActivity(i);
 

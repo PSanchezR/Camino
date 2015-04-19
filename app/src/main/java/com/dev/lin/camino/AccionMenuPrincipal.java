@@ -16,7 +16,7 @@ import java.io.Serializable;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class MenuPrincipal extends ActionBarActivity {
+public class AccionMenuPrincipal extends ActionBarActivity {
 
     private Usuario usuarioSeleccionado = null;
 
@@ -36,20 +36,19 @@ public class MenuPrincipal extends ActionBarActivity {
     }
 
     public void datosUsuario(View view) {
-
-        Intent i = new Intent(MenuPrincipal.this, DatosUsuario.class);
+        Intent i = new Intent(AccionMenuPrincipal.this, AccionUsuarioDatos.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }
 
     public void nuevoCamino(View view) {
-        Intent i = new Intent(MenuPrincipal.this, NuevoCamino.class);
+        Intent i = new Intent(AccionMenuPrincipal.this, AccionCaminoNuevo.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }
 
     public void caminoActual(View view) {
-        Intent i = new Intent(MenuPrincipal.this, CaminoActual.class);
+        Intent i = new Intent(AccionMenuPrincipal.this, AccionCaminoActual.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }

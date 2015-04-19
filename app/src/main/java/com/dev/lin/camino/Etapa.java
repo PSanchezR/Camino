@@ -9,25 +9,25 @@ import java.io.Serializable;
  * @author Pablo Sánchez Robles
  */
 public class Etapa implements Serializable {
-    private String puebloInicio;
-    private String puebloFin;
-    private double kms;
+    private String puntoInicio;
+    private String puntoFin;
+    private double KMs;
 
-    public Etapa(double kms, String puebloInicio, String puebloFin) {
-        this.kms = kms;
-        this.puebloInicio = puebloInicio;
-        this.puebloFin = puebloFin;
+    public Etapa(double KMs, String puntoInicio, String puntoFin) {
+        this.KMs = KMs;
+        this.puntoInicio = puntoInicio;
+        this.puntoFin = puntoFin;
     }
 
-    public String getPuebloInicio() {
-        return puebloInicio;
+    public String getPuntoInicio() {
+        return puntoInicio;
     }
 
-    public String getPuebloFin() {
-        return puebloFin;
+    public String getPuntoFin() {
+        return puntoFin;
     }
 
-    public double getKms() {
-        return kms;
+    public double getKMs() {
+        return KMs;
     }
 }

@@ -20,7 +20,7 @@ import java.util.Iterator;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class SeleccionUsuario extends ActionBarActivity {
+public class AccionUsuarioSeleccion extends ActionBarActivity {
     static ArrayList<Usuario> usuarios;//Lista de objetos usuario que se leerán desde fichero.
 
     private ArrayAdapter<String> adapter; //Adaptador para pasar los nombres a un listview
@@ -57,7 +57,7 @@ public class SeleccionUsuario extends ActionBarActivity {
     }
 
     public void nuevoUsuario(View view) {
-        Intent i = new Intent(SeleccionUsuario.this, FormularioNuevoUsuario.class);
+        Intent i = new Intent(AccionUsuarioSeleccion.this, AccionUsuarioNuevo.class);
         i.putExtra("usuarios", (Serializable) usuarios);
         startActivity(i);
     }
@@ -88,7 +88,7 @@ public class SeleccionUsuario extends ActionBarActivity {
                     public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                         seleccionado = (String) a.getItemAtPosition(position);
                         buscarUsuario();
-                        Intent i = new Intent(SeleccionUsuario.this, MenuPrincipal.class);
+                        Intent i = new Intent(AccionUsuarioSeleccion.this, AccionMenuPrincipal.class);
 
                         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
                         startActivity(i);

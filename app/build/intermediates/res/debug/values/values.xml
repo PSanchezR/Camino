@@ -256,16 +256,16 @@ available. Please contact the developer for assistance.</string>
     <string name="store_picture_title">Save image</string>
     <!-- From: file:/home/germaaan/AndroidStudioProjects/Camino/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="title_activity_camino__actual">Camino_Actual</string>
+    <string name="title_activity_camino_actual">Camino_Actual</string>
+    <string name="title_activity_camino_nuevo">Nuevo_Camino</string>
     <string name="title_activity_datos__usuario">Datos_Usuario</string>
-    <string name="title_activity_datos_usuario">datos_usuario</string>
-    <string name="title_activity_etapa">Etapa</string>
-    <string name="title_activity_formulario__nuevo__usuario">Formulario_Nuevo_Usuario</string>
+    <string name="title_activity_etapa_seleccion">Etapa</string>
     <string name="title_activity_main">KKKKK</string>
     <string name="title_activity_menu_principal">MenuPrincipal</string>
-    <string name="title_activity_nuevo__camino">Nuevo_Camino</string>
-    <string name="title_activity_seleccion__usuario">Seleccion_Usuario</string>
     <string name="title_activity_sf">sf</string>
+    <string name="title_activity_usuario_datos">datos_usuario</string>
+    <string name="title_activity_usuario_nuevo">Formulario_Nuevo_Usuario</string>
+    <string name="title_activity_usuario_seleccion">Seleccion_Usuario</string>
     <!-- From: file:/home/germaaan/AndroidStudioProjects/Camino/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/res/values/wallet_strings.xml -->
     <eat-comment/>
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>

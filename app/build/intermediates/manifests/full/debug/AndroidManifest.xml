@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.dev.lin.camino.Portada"
+            android:name="com.dev.lin.camino.AccionPortada"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,45 +23,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.dev.lin.camino.MainActivity"
-            android:label="@string/title_activity_main" >
-        </activity>
+            android:name="com.dev.lin.camino.AccionEtapaSeleccion"
+            android:label="@string/title_activity_etapa_seleccion" />
         <activity
-            android:name="com.dev.lin.camino.EtapaSeleccionada"
-            android:label="@string/title_activity_etapa" >
-        </activity>
+            android:name="com.dev.lin.camino.AccionUsuarioSeleccion"
+            android:label="@string/title_activity_usuario_seleccion" />
         <activity
-            android:name="com.dev.lin.camino.SeleccionUsuario"
-            android:label="@string/title_activity_seleccion__usuario" >
-        </activity>
+            android:name="com.dev.lin.camino.AccionCaminoActual"
+            android:label="@string/title_activity_camino_actual" />
         <activity
-            android:name="com.dev.lin.camino.CaminoActual"
-            android:label="@string/title_activity_camino__actual" >
-        </activity>
+            android:name="com.dev.lin.camino.AccionUsuarioNuevo"
+            android:label="@string/title_activity_usuario_nuevo" />
         <activity
-            android:name="com.dev.lin.camino.FormularioNuevoUsuario"
-            android:label="@string/title_activity_formulario__nuevo__usuario" >
-        </activity>
+            android:name="com.dev.lin.camino.AccionMenuPrincipal"
+            android:label="@string/title_activity_menu_principal" />
         <activity
-            android:name="com.dev.lin.camino.MenuPrincipal"
-            android:label="@string/title_activity_menu_principal" >
-        </activity>
+            android:name="com.dev.lin.camino.AccionCaminoNuevo"
+            android:label="@string/title_activity_camino_nuevo" />
         <activity
-            android:name="com.dev.lin.camino.NuevoCamino"
-            android:label="@string/title_activity_nuevo__camino" >
-        </activity>
-        <activity
-            android:name="com.dev.lin.camino.sf"
-            android:label="@string/title_activity_sf" >
-        </activity>
-        <activity
-            android:name="com.dev.lin.camino.datos_usuario"
-            android:label="@string/title_activity_datos_usuario" >
-        </activity>
-        <activity
-            android:name="com.dev.lin.camino.DatosUsuario"
-            android:label="@string/title_activity_datos__usuario" >
-        </activity>
+            android:name="com.dev.lin.camino.AccionUsuarioDatos"
+            android:label="@string/title_activity_usuario_datos" />
 
         <meta-data
             android:name="com.google.android.gms.version"

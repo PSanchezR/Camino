@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class Pueblo implements Serializable {
+public class Parada implements Serializable {
     private int orden;
     private String nombre;
     private double latitud;
@@ -22,7 +22,7 @@ public class Pueblo implements Serializable {
     private boolean banco;
     private boolean internet;
 
-    public Pueblo(int orden, String nombre, double latitud, double longitud, double distAnterior,
+    public Parada(int orden, String nombre, double latitud, double longitud, double distAnterior,
                   double distSiguiente, boolean comida, boolean hotel, boolean albergue,
                   boolean farmacia, boolean banco, boolean internet) {
         this.orden = orden;

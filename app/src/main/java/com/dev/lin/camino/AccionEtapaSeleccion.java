@@ -11,7 +11,7 @@ import android.view.MenuItem;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class EtapaSeleccionada extends ActionBarActivity {
+public class AccionEtapaSeleccion extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
