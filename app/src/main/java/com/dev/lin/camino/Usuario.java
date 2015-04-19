@@ -25,7 +25,6 @@ public class Usuario implements Serializable {
     private ArrayList<Camino> misCaminos;
     private Camino caminoActual;
 
-
     public Usuario() {
     }
 
@@ -83,10 +82,6 @@ public class Usuario implements Serializable {
         return this.nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public int getAltura() {
         return this.altura;
     }
@@ -126,6 +121,10 @@ public class Usuario implements Serializable {
     public void addCamino(Camino camino) {
         this.misCaminos.add(camino);
         this.caminoActual = camino;
+    }
+
+    public void setCaminoActual(Camino caminoActual) {
+        this.caminoActual = caminoActual;
     }
 
     public Camino getCaminoActual() {
