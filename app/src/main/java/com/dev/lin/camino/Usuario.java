@@ -11,10 +11,6 @@ import java.util.Date;
  * @author Pablo Sánchez Robles
  */
 public class Usuario implements Serializable {
-    public static final int NADA_DEPORTISTA = 0;
-    public static final int POCO_DEPORTISTA = 1;
-    public static final int DEPORTISTA_AMATEUR = 2;
-    public static final int DEPORTISTA_PROFESIONAL = 3;
     private static final long serialVersionUID = 0L;
     private String nombre;
     private int altura;
@@ -25,9 +21,6 @@ public class Usuario implements Serializable {
     private ArrayList<Camino> misCaminos;
     private Camino caminoActual;
 
-    public Usuario() {
-    }
-
     public Usuario(String nombre, int altura, int peso, int complexion, int anioNacimiento) {
         super();
         this.nombre = nombre;
@@ -37,7 +30,7 @@ public class Usuario implements Serializable {
         this.anioNacimiento = anioNacimiento;
         this.caminoActual = null;
         this.misCaminos = new ArrayList<Camino>();
-        calcularKmMaximos();
+        this.calcularKmMaximos();
     }
 
     public void calcularKmMaximos() {
@@ -141,6 +134,10 @@ public class Usuario implements Serializable {
 
     public void setKmMaximos(double km) {
         this.kmMaximos = km;
+    }
+
+    public String getNombreCaminoActual() {
+        return this.caminoActual.getNombre();
     }
 
     @Override

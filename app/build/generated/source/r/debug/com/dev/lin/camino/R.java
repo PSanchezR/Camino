@@ -1889,17 +1889,14 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f04001f;
     }
     public static final class menu {
-        public static final int menu_camino_actual=0x7f0e0000;
-        public static final int menu_datos__usuario=0x7f0e0001;
-        public static final int menu_datos_usuario=0x7f0e0002;
-        public static final int menu_etapa=0x7f0e0003;
-        public static final int menu_formulario_nuevo_usuario=0x7f0e0004;
-        public static final int menu_main=0x7f0e0005;
-        public static final int menu_menu_principal=0x7f0e0006;
-        public static final int menu_nuevo_camino=0x7f0e0007;
-        public static final int menu_portada=0x7f0e0008;
-        public static final int menu_seleccion_usuario=0x7f0e0009;
-        public static final int menu_sf=0x7f0e000a;
+        public static final int menu_accion_camino_actual=0x7f0e0000;
+        public static final int menu_accion_camino_nuevo=0x7f0e0001;
+        public static final int menu_accion_etapa_seleccion=0x7f0e0002;
+        public static final int menu_accion_menu_principal=0x7f0e0003;
+        public static final int menu_accion_portada=0x7f0e0004;
+        public static final int menu_accion_usuario_datos=0x7f0e0005;
+        public static final int menu_accion_usuario_nuevo=0x7f0e0006;
+        public static final int menu_accion_usuario_seleccion=0x7f0e0007;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;

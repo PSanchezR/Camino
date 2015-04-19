@@ -3,6 +3,7 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,7 +24,9 @@ import java.util.Iterator;
  * @author Pablo Sánchez Robles
  */
 public class AccionCaminoNuevo extends ActionBarActivity {
-    private Usuario usuarioActual = null;
+    private static final String DATOS_USUARIO = "DatosUsuario";
+
+    private Usuario usuarioSeleccionado = null;
 
     private ArrayList<Parada> listaParadas = new ArrayList<Parada>(Arrays.asList(
             new Parada(0, "SIN SELECCIONAR", 37.197003, -3.624251, 0, 0, false, false, false, false, false, false),
@@ -214,11 +217,13 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ArrayList<String> nombresListaParadas = new ArrayList<String>();
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nuevo_camino);
 
+        usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        Log.d(AccionCaminoNuevo.DATOS_USUARIO, usuarioSeleccionado.toString());
+
+        ArrayList<String> nombresListaParadas = new ArrayList<String>();
         Iterator<Parada> itr = this.listaParadas.iterator();
 
         while (itr.hasNext()) {
@@ -234,17 +239,23 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         spinnerFin.setAdapter(adaptador);
     }
 
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_nuevo_camino, menu);
+        getMenuInflater().inflate(R.menu.menu_accion_camino_nuevo, menu);
         return true;
     }
+    */
 
-    public void crearCaminoClasico(View view) {
-        //Crea camino clasico y lo pasa
+    public void crearCaminoFrances(View view) {
+        Camino camino = new Camino("Camino franćes de " + this.usuarioSeleccionado.getNombre(), this.crearEtapasCaminoFrances());
+        this.usuarioSeleccionado.setCaminoActual(camino);
 
-        Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoActual.class);
+        Toast.makeText(this, "Añadido el camino francés.", Toast.LENGTH_SHORT).show();
+
+        Intent i = new Intent(AccionCaminoNuevo.this, AccionMenuPrincipal.class);
+        i.putExtra("usuarioSeleccionado", this.usuarioSeleccionado);
         startActivity(i);
     }
 
@@ -278,7 +289,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         }
 
         if (kmDia <= 0) {
-            Toast.makeText(this, "Sin número de KMs diarios introducido. Distancia recomendada: " + this.usuarioActual.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sin número de KMs diarios introducido. Distancia recomendada: " + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
         }
 
         if (correcto) {
@@ -286,21 +297,21 @@ public class AccionCaminoNuevo extends ActionBarActivity {
             etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, finCamino, nombre, kmDia);
             camino = new Camino(nombre, etapas);
             //Primera prueba estableciendo un único camino
-            //this.usuarioActual.addCamino(camino);
-            this.usuarioActual.setCaminoActual(camino);
+            //this.usuarioSeleccionado.addCamino(camino);
+            this.usuarioSeleccionado.setCaminoActual(camino);
             Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoActual.class);
-            i.putExtra("this.usuarioActual", (Serializable) this.usuarioActual);
+            i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         } else {
             Toast.makeText(this, "Introduzca todos los datos del formulario correctamente.", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoNuevo.class);
-            i.putExtra("this.usuarioActual", (Serializable) this.usuarioActual);
+            i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         }
     }
 
     public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String comienzoCamino, String finCamino, String nombreCamino, int kmMax) {
-        this.usuarioActual = (Usuario) getIntent().getSerializableExtra("this.usuarioActual");
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         String inicioEtapa, finEtapa;
         ArrayList<Etapa> listaEtapas = new ArrayList<Etapa>();
         ArrayList<Parada> paradasEtapa = new ArrayList<Parada>();

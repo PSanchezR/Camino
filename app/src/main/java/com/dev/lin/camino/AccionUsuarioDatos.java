@@ -3,6 +3,7 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,22 +19,24 @@ import android.widget.TextView;
  * @author Pablo Sánchez Robles
  */
 public class AccionUsuarioDatos extends ActionBarActivity {
-
     protected String[] valoresComplexion = {"Nada deportista", "Poco deportista", "Deportista Amateur", "Deportista profesional"};
     private Usuario usuarioSeleccionado = null;
     private GestionFicheros archivador = new GestionFicheros();
+    private static final String DATOS_USUARIO = "DatosUsuario";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_usuario);
+
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        Log.d(AccionUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.toString());
+        Log.d(AccionUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.getNombreCaminoActual());
 
         ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + usuarioSeleccionado.getNombre());
         ((EditText) findViewById(R.id.editTextAltura)).setText("" + usuarioSeleccionado.getAltura());
         ((EditText) findViewById(R.id.editTextPeso)).setText("" + usuarioSeleccionado.getPeso());
         ((TextView) findViewById(R.id.textViewDistMax)).setText("   " + usuarioSeleccionado.getKmMaximos() + " Km");
-
 
         ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, valoresComplexion);
         Spinner spinnerComplexion = (Spinner) findViewById(R.id.spinnerComplexion);
@@ -53,13 +56,12 @@ public class AccionUsuarioDatos extends ActionBarActivity {
         Intent i = new Intent(AccionUsuarioDatos.this, AccionMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
         startActivity(i);
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_datos__usuario, menu);
+        getMenuInflater().inflate(R.menu.menu_accion_usuario_datos, menu);
         return true;
     }
 
