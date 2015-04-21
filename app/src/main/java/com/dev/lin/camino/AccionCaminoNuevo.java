@@ -249,12 +249,11 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
     public void crearCaminoFrances(View view) {
         Camino camino = new Camino("Camino franćes de " + this.usuarioSeleccionado.getNombre(), this.crearEtapasCaminoFrances());
-        this.usuarioSeleccionado.setCaminoActual(camino);
-
+        this.usuarioSeleccionado.addCamino(camino);
         Toast.makeText(this, "Añadido el camino francés.", Toast.LENGTH_SHORT).show();
 
         archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
-        Intent i = new Intent(AccionCaminoNuevo.this, AccionMenuPrincipal.class);
+        Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoActual.class);
         i.putExtra("usuarioSeleccionado", this.usuarioSeleccionado);
         startActivity(i);
     }
@@ -335,9 +334,6 @@ public class AccionCaminoNuevo extends ActionBarActivity {
             startActivity(i);
 
         }
-        Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoNuevo.class);
-        i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
-        startActivity(i);
     }
 
     public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String comienzoCamino, String nombreCamino, int kmMax) {
