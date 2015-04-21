@@ -7,10 +7,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Datos del usuario de la aplicación
@@ -24,25 +31,57 @@ public class AccionUsuarioDatos extends ActionBarActivity {
     private GestionFicheros archivador = new GestionFicheros();
     private static final String DATOS_USUARIO = "DatosUsuario";
 
+    private ArrayAdapter<String> adapter;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_usuario);
 
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        Log.d(AccionUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.toString());
-        Log.d(AccionUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.getNombreCaminoActual());
+ //       Log.d(AccionUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.toString());
+//        Log.d(AccionUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.getNombreCaminoActual());
 
         ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + usuarioSeleccionado.getNombre());
         ((EditText) findViewById(R.id.editTextAltura)).setText("" + usuarioSeleccionado.getAltura());
         ((EditText) findViewById(R.id.editTextPeso)).setText("" + usuarioSeleccionado.getPeso());
-        ((TextView) findViewById(R.id.textViewDistMax)).setText("   " + usuarioSeleccionado.getKmMaximos() + " Km");
+        ((TextView) findViewById(R.id.textViewDistMax)).setText("   " + usuarioSeleccionado.getKmMaximos() + " Kms");
 
         ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, valoresComplexion);
         Spinner spinnerComplexion = (Spinner) findViewById(R.id.spinnerComplexion);
         spinnerComplexion.setAdapter(adaptador);
         spinnerComplexion.setSelection(usuarioSeleccionado.getComplexion());
 
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cargarCaminos());
+        ListView lista = (ListView) findViewById(R.id.listViewMisCaminos);
+        lista.setAdapter(adapter);
+        lista.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+
+                       /* Cuando se seleccione un camino pasa a ser el actual. */
+                    }
+                }
+        );
+    }
+
+    public ArrayList<String> cargarCaminos()
+    {
+        ArrayList<String> nombresCaminos = new ArrayList<String>();
+        ArrayList<Camino> caminos = usuarioSeleccionado.getMisCaminos();
+        /*Iterator<Camino> itr = caminos.iterator();
+        while (itr.hasNext()) {
+            Camino camino = itr.next();
+            nombresCaminos.add(camino.getNombre());
+        }*/
+
+        for(int i = 0; i<caminos.size();i++)
+        {
+            nombresCaminos.add(caminos.get(i).getNombre());
+        }
+
+
+        return nombresCaminos;
     }
 
     //Método que edita los cambios del usuario seleccionado y guarda los mismos en el fichero de usuarios.

@@ -24,7 +24,7 @@ import java.util.Iterator;
  */
 public class AccionCaminoNuevo extends ActionBarActivity {
     private static final String DATOS_USUARIO = "DatosUsuario";
-
+    private GestionFicheros archivador = new GestionFicheros();
     private Usuario usuarioSeleccionado = null;
 
     private ArrayList<Parada> listaParadas = new ArrayList<Parada>(Arrays.asList(
@@ -253,6 +253,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
         Toast.makeText(this, "Añadido el camino francés.", Toast.LENGTH_SHORT).show();
 
+        archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
         Intent i = new Intent(AccionCaminoNuevo.this, AccionMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", this.usuarioSeleccionado);
         startActivity(i);
@@ -298,11 +299,13 @@ public class AccionCaminoNuevo extends ActionBarActivity {
             //Primera prueba estableciendo un único camino
             //this.usuarioSeleccionado.addCamino(camino);
             this.usuarioSeleccionado.setCaminoActual(camino);
+            archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
             Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoActual.class);
             i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         } else {
             Toast.makeText(this, "Introduzca todos los datos del formulario correctamente.", Toast.LENGTH_SHORT).show();
+            archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
             Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoNuevo.class);
             i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);

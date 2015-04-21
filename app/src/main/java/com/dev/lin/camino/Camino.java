@@ -31,7 +31,7 @@ public class Camino implements Serializable {
 
     public Camino(String nombre, ArrayList<Etapa> listaEtapas) {
         this.nombre = nombre;
-        this.listaEtapas = new ArrayList<Etapa>(listaEtapas);
+        this.listaEtapas = listaEtapas;
         this.etapaInicio = this.listaEtapas.get(0);
         this.etapaFin = this.listaEtapas.get(this.listaEtapas.size() - 1);
         this.KMs = 0;

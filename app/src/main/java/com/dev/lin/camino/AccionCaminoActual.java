@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * @author Pablo Sánchez Robles
  */
 public class AccionCaminoActual extends ActionBarActivity {
-    private ArrayList<String> nombresEtapas;
+    private ArrayList<String> nombresEtapas = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +48,11 @@ public class AccionCaminoActual extends ActionBarActivity {
 
     private void buscaNombresEtapas(Camino c) {
         ArrayList<Etapa> etapas = c.getListaEtapas();
-
-        for (int i = 0; i < etapas.size() / 2; i++) {
-            nombresEtapas.add("" + etapas.get(i).getParadaInicio() + " - " + etapas.get(i).getParadaFin());
+        Etapa et;
+        for (int i = 0; i < etapas.size(); i++) {
+            et = etapas.get(i);
+            nombresEtapas.add(et.getNombre());
         }
-
     }
 
     @Override
