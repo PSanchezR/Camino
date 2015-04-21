@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -60,11 +61,31 @@ public class AccionUsuarioDatos extends ActionBarActivity {
                     public void onItemClick(AdapterView<?> a, View v, int position, long id) {
 
                        /* Cuando se seleccione un camino pasa a ser el actual. */
+                        String seleccionado = (String) a.getItemAtPosition(position);
+                        usuarioSeleccionado.setCaminoActual(buscarCamino(seleccionado));
+                        archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+                        Intent i = new Intent(AccionUsuarioDatos.this, AccionCaminoActual.class);
+                        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
+                        startActivity(i);
                     }
                 }
         );
     }
+    public Camino buscarCamino(String nombre)
+    {
+        Camino c;
 
+        Iterator<Camino> itr = this.usuarioSeleccionado.getMisCaminos().iterator();
+        while(itr.hasNext())
+        {
+            c = itr.next();
+            if(c.getNombre().equals(nombre))
+            {
+                return c;
+            }
+        }
+        return null;
+    }
     public ArrayList<String> cargarCaminos()
     {
         ArrayList<String> nombresCaminos = new ArrayList<String>();

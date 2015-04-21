@@ -17,7 +17,7 @@
         android:orientation="vertical"
         android:weightSum="1">
 
-        <LinearLayout
+        <GridLayout
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:orientation="vertical">
@@ -29,7 +29,17 @@
                 android:layout_gravity="center_horizontal"
                 android:text="Introduzca los datos:"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
-        </LinearLayout>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="Menu"
+                android:id="@+id/buttonMenu"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:onClick="menuPrincipal"/>
+        </GridLayout>
 
         <TableLayout
             android:layout_width="match_parent"

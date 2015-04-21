@@ -258,6 +258,12 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         startActivity(i);
     }
 
+    public void menuPrincipal(View view)
+    {
+        Intent i = new Intent(AccionCaminoNuevo.this, AccionMenuPrincipal.class);
+        i.putExtra("usuarioSeleccionado", this.usuarioSeleccionado);
+        startActivity(i);
+    }
     public void crearCaminoNuevo(View view) {
 
         String nombre="" ;

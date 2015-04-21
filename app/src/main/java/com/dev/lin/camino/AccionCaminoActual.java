@@ -1,5 +1,6 @@
 package com.dev.lin.camino;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -44,6 +45,14 @@ public class AccionCaminoActual extends ActionBarActivity {
                 }
         );
 
+    }
+
+    public void menuPrincipal(View view)
+    {
+        Usuario usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        Intent i = new Intent(AccionCaminoActual.this, AccionMenuPrincipal.class);
+        i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
+        startActivity(i);
     }
 
     private void buscaNombresEtapas(Camino c) {
