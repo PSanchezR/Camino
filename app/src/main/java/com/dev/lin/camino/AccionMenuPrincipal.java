@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.Serializable;
 
@@ -48,9 +49,20 @@ public class AccionMenuPrincipal extends ActionBarActivity {
     }
 
     public void caminoActual(View view) {
-        Intent i = new Intent(AccionMenuPrincipal.this, AccionCaminoActual.class);
-        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
-        startActivity(i);
+        if(usuarioSeleccionado.getCaminoActual() != null)
+        {
+            Intent i = new Intent(AccionMenuPrincipal.this, AccionCaminoActual.class);
+            i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
+            startActivity(i);
+        }else
+        {
+            Toast.makeText(this, "No tiene asignado un camino actual", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(AccionMenuPrincipal.this, AccionMenuPrincipal.class);
+            i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
+            startActivity(i);
+        }
+
+
     }
 
     public void mapaPrueba(View view) {

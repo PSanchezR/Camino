@@ -233,9 +233,9 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
         ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, nombresListaParadas);
         Spinner spinnerInicio = (Spinner) findViewById(R.id.spinnerParadaInicio);
-        Spinner spinnerFin = (Spinner) findViewById(R.id.spinnerParadaFin);
+        //Spinner spinnerFin = (Spinner) findViewById(R.id.spinnerParadaFin);
         spinnerInicio.setAdapter(adaptador);
-        spinnerFin.setAdapter(adaptador);
+        //spinnerFin.setAdapter(adaptador);
     }
 
     /*
@@ -260,59 +260,87 @@ public class AccionCaminoNuevo extends ActionBarActivity {
     }
 
     public void crearCaminoNuevo(View view) {
-        String nombre = (((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString();
-        String comienzoCamino = (((Spinner) findViewById(R.id.spinnerParadaInicio)).getSelectedItem()).toString();
-        String finCamino = (((Spinner) findViewById(R.id.spinnerParadaFin)).getSelectedItem()).toString();
-        int dias = Integer.parseInt(((EditText) findViewById(R.id.editTextDias)).getText().toString());
-        int kmDia = Integer.parseInt((((EditText) findViewById(R.id.editTextKmMax)).getText()).toString());
+
+        String nombre="" ;
+        String comienzoCamino="";
+        int dias =0;
+        int kmDia=0;
         boolean correcto = true;
-        ArrayList<Etapa> etapas;
-        Camino camino;
+        ArrayList<Etapa> etapas= new ArrayList<Etapa>();
+        Camino camino = null;
 
-        if (dias <= 1) {
-            Toast.makeText(this, "El número de días para hacer el camino tiene que ser mayor que 1.", Toast.LENGTH_SHORT).show();
-            dias = 0;
-            correcto = false;
-        }
-
-        if (comienzoCamino.equals("SIN SELECCIONAR")) {
-            Toast.makeText(this, "Seleccione una parada de inicio para su camino.", Toast.LENGTH_SHORT).show();
-            correcto = false;
-        } else if (!finCamino.equals("SIN SELECCIONAR") && dias > 1) {
-            Toast.makeText(this, "Si selecciona el inicio y el fin del camino no seleccione número de días, se calcularán automáticamente.", Toast.LENGTH_SHORT).show();
-            correcto = false;
-        }
-
-        if (nombre.isEmpty() || nombre.equals(" ")) {
+        if((((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString().equals("SIN SELECCIONAR"))
+        {
             Toast.makeText(this, "Introduzca un nombre para su nuevo camino.", Toast.LENGTH_SHORT).show();
             correcto = false;
+        }else
+        {
+            nombre = (((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString();
+        }
+        if((((Spinner) findViewById(R.id.spinnerParadaInicio)).getSelectedItem()).toString().equals(""))
+        {
+            Toast.makeText(this, "Seleccione una parada de inicio para su camino.", Toast.LENGTH_SHORT).show();
+            correcto = false;
+        }else
+        {
+            comienzoCamino = (((Spinner) findViewById(R.id.spinnerParadaInicio)).getSelectedItem()).toString();
         }
 
-        if (kmDia <= 0) {
-            Toast.makeText(this, "Sin número de KMs diarios introducido. Distancia recomendada: " + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
+        if(((EditText) findViewById(R.id.editTextDias)).getText().toString().equals("") || Integer.parseInt(((EditText) findViewById(R.id.editTextDias)).getText().toString()) <2)
+        {
+            Toast.makeText(this, "El número de días para hacer el camino tiene que ser mayor que 1.", Toast.LENGTH_SHORT).show();
+            correcto = false;
         }
+        else
+        {
+            dias = Integer.parseInt(((EditText) findViewById(R.id.editTextDias)).getText().toString());
+        }
+
+        if((((EditText) findViewById(R.id.editTextKmMax)).getText()).toString().equals(""))
+        {
+            Toast.makeText(this, "Sin número de KMs diarios introducido. Distancia recomendada: " + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
+            correcto = false;
+
+        }else
+        {
+
+            kmDia = Integer.parseInt((((EditText) findViewById(R.id.editTextKmMax)).getText()).toString());
+            if(kmDia > usuarioSeleccionado.getKmMaximos())
+            {
+                Toast.makeText(this, "Distancia diaria mayor que la recomendada. Distancia recomendada: " + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
+            }
+        }
+
 
         if (correcto) {
+
             //Comprobar donde recibe usuario seleccionado y como construye etapas y caminos
-            etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, finCamino, nombre, kmDia);
+
+            etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, nombre, kmDia);
             camino = new Camino(nombre, etapas);
+
             //Primera prueba estableciendo un único camino
-            //this.usuarioSeleccionado.addCamino(camino);
-            this.usuarioSeleccionado.setCaminoActual(camino);
+
+            this.usuarioSeleccionado.addCamino(camino);
             archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
             Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoActual.class);
             i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         } else {
             Toast.makeText(this, "Introduzca todos los datos del formulario correctamente.", Toast.LENGTH_SHORT).show();
-            archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+            //archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+
             Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoNuevo.class);
             i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
+
         }
+        Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoNuevo.class);
+        i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
+        startActivity(i);
     }
 
-    public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String comienzoCamino, String finCamino, String nombreCamino, int kmMax) {
+    public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String comienzoCamino, String nombreCamino, int kmMax) {
         this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         String inicioEtapa, finEtapa;
         ArrayList<Etapa> listaEtapas = new ArrayList<Etapa>();
@@ -321,15 +349,16 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         boolean semaforo = true;
         int ordenParada = 1;
         int ordenEtapa = 1;
+        boolean comp = false;
+        Iterator<Parada> itr = this.listaParadas.iterator();
 
         //Cuando el usuario elige ciudad inicio y ciudad final no se calcula en función de los dias
         if (dias == 0) {
             dias = 999999999;
         }
 
-        boolean comp = false;
-        Iterator<Parada> itr = this.listaParadas.iterator();
 
+        // Llevamos el iterador de la lista de paradas hasta la inicial del camino
         while (itr.hasNext() && !comp) {
             Parada parada = itr.next();
 
@@ -341,7 +370,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         }
 
         //Mientras queden dias o no se alcance la ciudad final
-        while (dias > 0 || !this.listaParadas.get(ordenParada).getNombre().equals(finCamino)) {
+        while (dias > 0 ) {
             semaforo = true;
             paradasEtapa.clear();
 
@@ -358,6 +387,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                     semaforo = false;
                 }
             }
+            Toast.makeText(this, "ENTRO."+ordenEtapa, Toast.LENGTH_SHORT).show();
         }
 
         return listaEtapas;

@@ -32,8 +32,8 @@ public class AccionUsuarioDatos extends ActionBarActivity {
     private static final String DATOS_USUARIO = "DatosUsuario";
 
     private ArrayAdapter<String> adapter;
-    @Override
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_usuario);
