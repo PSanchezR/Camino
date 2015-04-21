@@ -34,7 +34,7 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="161dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <Button
@@ -60,12 +60,22 @@
                 android:layout_gravity="center_horizontal"
                 android:onClick="caminoActual"
                 android:text="Camino actual" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="mapaPrueba"
+                android:text="Mapa prueba" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="145dp"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical">
+
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

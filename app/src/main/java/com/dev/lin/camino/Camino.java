@@ -44,7 +44,7 @@ public class Camino implements Serializable {
         }
     }
 
-    public String getNombre(){
+    public String getNombre() {
         return this.nombre;
     }
 
@@ -60,15 +60,15 @@ public class Camino implements Serializable {
         return this.etapaFin;
     }
 
-    public String getNombreEtapaInicio(){
+    public String getNombreEtapaInicio() {
         return this.etapaInicio.getNombre();
     }
 
-    public String getNombreEtapaFin(){
+    public String getNombreEtapaFin() {
         return this.etapaFin.getNombre();
     }
 
-    public double getKMs(){
+    public double getKMs() {
         return this.KMs;
     }
 
