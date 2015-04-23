@@ -16,7 +16,7 @@ public class Etapa implements Serializable {
     private Parada paradaInicio;
     private Parada paradaFin;
     private double KMs;
-    private ArrayList<Parada> listaParadas;
+    private ArrayList<Parada> listaParadas = null;
 
     public Etapa(int orden, ArrayList<Parada> listaParadas) {
         this.orden = orden;

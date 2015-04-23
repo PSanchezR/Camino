@@ -60,7 +60,7 @@ public class AccionCaminoActual extends ActionBarActivity {
         Etapa et;
         for (int i = 0; i < etapas.size(); i++) {
             et = etapas.get(i);
-            nombresEtapas.add(et.getNombre());
+            nombresEtapas.add(et.getNombre()+": "+ et.getKMs()+" kms.");
         }
     }
 

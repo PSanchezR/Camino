@@ -320,7 +320,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         if (correcto) {
 
             //Comprobar donde recibe usuario seleccionado y como construye etapas y caminos
-
+            Toast.makeText(this, "ENTRO.", Toast.LENGTH_SHORT).show();
             etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, nombre, kmDia);
             camino = new Camino(nombre, etapas);
 
@@ -354,11 +354,6 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         boolean comp = false;
         Iterator<Parada> itr = this.listaParadas.iterator();
 
-        //Cuando el usuario elige ciudad inicio y ciudad final no se calcula en función de los dias
-        if (dias == 0) {
-            dias = 999999999;
-        }
-
 
         // Llevamos el iterador de la lista de paradas hasta la inicial del camino
         while (itr.hasNext() && !comp) {
@@ -389,7 +384,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                     semaforo = false;
                 }
             }
-            Toast.makeText(this, "ENTRO."+ordenEtapa, Toast.LENGTH_SHORT).show();
+
         }
 
         return listaEtapas;
