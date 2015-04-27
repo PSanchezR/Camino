@@ -343,7 +343,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         }
     }
 
-    ///////////////////////////////////
+    ///////////////////Prueba para ver las distancias entre paradas////////////////
     public ArrayList<Etapa> pruebaETAPAS()
     {
         ArrayList<Etapa> etapas = new ArrayList<Etapa>();
@@ -358,7 +358,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         }
         return etapas;
     }
-    ///////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
 
     public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String comienzoCamino, String nombreCamino, int kmMax) {
         this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
