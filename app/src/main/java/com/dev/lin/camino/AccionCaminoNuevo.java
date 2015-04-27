@@ -321,7 +321,8 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
             //Comprobar donde recibe usuario seleccionado y como construye etapas y caminos
             Toast.makeText(this, "ENTRO.", Toast.LENGTH_SHORT).show();
-            etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, nombre, kmDia);
+           // etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, nombre, kmDia);
+           etapas = pruebaETAPAS();
             camino = new Camino(nombre, etapas);
 
             //Primera prueba estableciendo un único camino
@@ -341,6 +342,23 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
         }
     }
+
+    ///////////////////////////////////
+    public ArrayList<Etapa> pruebaETAPAS()
+    {
+        ArrayList<Etapa> etapas = new ArrayList<Etapa>();
+        ArrayList<Parada> par;
+        for(int i =0; i < listaParadas.size()-1;i++)
+        {
+            par = new ArrayList<Parada>();
+            par.add(listaParadas.get(i));
+            par.add(listaParadas.get(i+1));
+
+            etapas.add(new Etapa(i,par));
+        }
+        return etapas;
+    }
+    ///////////////////////////////////
 
     public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String comienzoCamino, String nombreCamino, int kmMax) {
         this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
