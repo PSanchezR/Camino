@@ -1718,7 +1718,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0a0043;
         public static final int action_mode_bar_stub=0x7f0a0042;
         public static final int action_mode_close_button=0x7f0a0035;
-        public static final int action_settings=0x7f0a0093;
+        public static final int action_settings=0x7f0a0092;
         public static final int activity_chooser_view_content=0x7f0a0036;
         public static final int adjust_height=0x7f0a0017;
         public static final int adjust_width=0x7f0a0018;
@@ -1736,7 +1736,7 @@ containing a value of this type.
         public static final int buttonMenu=0x7f0a007e;
         public static final int buttonMenuPrincipal=0x7f0a0055;
         public static final int buttonNuevoCamino=0x7f0a0078;
-        public static final int buttonNuevoUsuario=0x7f0a0092;
+        public static final int buttonNuevoUsuario=0x7f0a0091;
         public static final int buyButton=0x7f0a0029;
         public static final int buy_now=0x7f0a002d;
         public static final int buy_with_google=0x7f0a002e;
@@ -1775,7 +1775,7 @@ containing a value of this type.
         public static final int linearLayout=0x7f0a006a;
         public static final int linearLayout2=0x7f0a0077;
         public static final int listMode=0x7f0a0009;
-        public static final int listUsuarios=0x7f0a0091;
+        public static final int listUsuarios=0x7f0a0090;
         public static final int listViewEtapas=0x7f0a0057;
         public static final int listViewMisCaminos=0x7f0a0066;
         public static final int list_item=0x7f0a003a;
@@ -1819,7 +1819,6 @@ containing a value of this type.
         public static final int tableLayout2=0x7f0a005b;
         public static final int tableRowTiempo=0x7f0a007f;
         public static final int terrain=0x7f0a001b;
-        public static final int textPortada=0x7f0a0090;
         public static final int textView=0x7f0a0054;
         public static final int textView10=0x7f0a0070;
         public static final int textView11=0x7f0a0071;
@@ -1902,7 +1901,9 @@ containing a value of this type.
         public static final int menu_accion_usuario_seleccion=0x7f0e0008;
     }
     public static final class mipmap {
-        public static final int ic_launcher=0x7f030000;
+        public static final int fondodefault=0x7f030000;
+        public static final int fondoportada=0x7f030001;
+        public static final int ic_launcher=0x7f030002;
     }
     public static final class raw {
         public static final int gtm_analytics=0x7f060000;

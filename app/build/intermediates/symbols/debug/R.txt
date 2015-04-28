@@ -446,7 +446,7 @@ int id action_menu_presenter 0x7f0a0003
 int id action_mode_bar 0x7f0a0043
 int id action_mode_bar_stub 0x7f0a0042
 int id action_mode_close_button 0x7f0a0035
-int id action_settings 0x7f0a0093
+int id action_settings 0x7f0a0092
 int id activity_chooser_view_content 0x7f0a0036
 int id adjust_height 0x7f0a0017
 int id adjust_width 0x7f0a0018
@@ -464,7 +464,7 @@ int id buttonEliminarCamino 0x7f0a0067
 int id buttonMenu 0x7f0a007e
 int id buttonMenuPrincipal 0x7f0a0055
 int id buttonNuevoCamino 0x7f0a0078
-int id buttonNuevoUsuario 0x7f0a0092
+int id buttonNuevoUsuario 0x7f0a0091
 int id buyButton 0x7f0a0029
 int id buy_now 0x7f0a002d
 int id buy_with_google 0x7f0a002e
@@ -503,7 +503,7 @@ int id layportada 0x7f0a008e
 int id linearLayout 0x7f0a006a
 int id linearLayout2 0x7f0a0077
 int id listMode 0x7f0a0009
-int id listUsuarios 0x7f0a0091
+int id listUsuarios 0x7f0a0090
 int id listViewEtapas 0x7f0a0057
 int id listViewMisCaminos 0x7f0a0066
 int id list_item 0x7f0a003a
@@ -547,7 +547,6 @@ int id tableLayout 0x7f0a006d
 int id tableLayout2 0x7f0a005b
 int id tableRowTiempo 0x7f0a007f
 int id terrain 0x7f0a001b
-int id textPortada 0x7f0a0090
 int id textView 0x7f0a0054
 int id textView10 0x7f0a0070
 int id textView11 0x7f0a0071
@@ -622,7 +621,9 @@ int menu menu_accion_portada 0x7f0e0005
 int menu menu_accion_usuario_datos 0x7f0e0006
 int menu menu_accion_usuario_nuevo 0x7f0e0007
 int menu menu_accion_usuario_seleccion 0x7f0e0008
-int mipmap ic_launcher 0x7f030000
+int mipmap fondodefault 0x7f030000
+int mipmap fondoportada 0x7f030001
+int mipmap ic_launcher 0x7f030002
 int raw gtm_analytics 0x7f060000
 int string abc_action_bar_home_description 0x7f0c0000
 int string abc_action_bar_home_description_format 0x7f0c0001

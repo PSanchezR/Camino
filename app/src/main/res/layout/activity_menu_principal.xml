@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.dev.lin.camino.AccionMenuPrincipal">
+    tools:context="com.dev.lin.camino.AccionMenuPrincipal"
+    android:background="@mipmap/fondodefault">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/linearLayout2"
