@@ -382,6 +382,15 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                     km += this.listaParadas.get(ordenParada).getDistSiguiente();
                     ordenParada++;
                 } else {
+
+                   /* //Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la parada mas cercana que sí tenga alojamientos.
+                    while(!paradasEtapa.get(paradasEtapa.size()-1).getHotel() && !paradasEtapa.get(paradasEtapa.size()-1).getAlbergue())
+                    {
+                        km-= this.listaParadas.get(ordenParada).getDistAnterior();
+                        paradasEtapa.remove(paradasEtapa.size()-1);
+                        ordenParada--;
+                    }
+                    */
                     listaEtapas.add(new Etapa(ordenEtapa, paradasEtapa));
                     ordenEtapa++;
                     km = 0.0;
