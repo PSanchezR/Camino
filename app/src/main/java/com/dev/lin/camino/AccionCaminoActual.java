@@ -47,8 +47,7 @@ public class AccionCaminoActual extends ActionBarActivity {
 
     }
 
-    public void menuPrincipal(View view)
-    {
+    public void menuPrincipal(View view) {
         Usuario usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         Intent i = new Intent(AccionCaminoActual.this, AccionMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
@@ -60,7 +59,7 @@ public class AccionCaminoActual extends ActionBarActivity {
         Etapa et;
         for (int i = 0; i < etapas.size(); i++) {
             et = etapas.get(i);
-            nombresEtapas.add(et.getNombre()+": "+ et.getKMs()+" kms.");
+            nombresEtapas.add(et.getNombre() + ": " + et.getKMs() + " kms.");
         }
     }
 

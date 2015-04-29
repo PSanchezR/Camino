@@ -23,6 +23,7 @@ public class AccionPortada extends ActionBarActivity {
         setContentView(R.layout.activity_portada);
 
         FrameLayout frame_fondo = (FrameLayout) findViewById(R.id.frame_fondo);
+
         frame_fondo.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -31,7 +32,6 @@ public class AccionPortada extends ActionBarActivity {
                 return false;
             }
         });
-
     }
 
     @Override

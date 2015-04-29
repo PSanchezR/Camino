@@ -29,77 +29,77 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
     private ArrayList<Parada> listaParadas = new ArrayList<Parada>(Arrays.asList(
             new Parada(0, "SIN SELECCIONAR", 37.197003, -3.624251, 0, 0, false, false, false, false, false, false),
-            new Parada(1, "Saint Jean Pied de Port", 43.1569766, -1.2337874, 0, 5, true, true, true, true, true, true),
-            new Parada(2, "Honto", 43.1243525, -1.244748, 5, 2.5, true, true, true, true, true, false),
-            new Parada(3, "Orisson", 43.1078991, -1.239412, 2.5, 27.9, true, true, true, false, false, false),
-            new Parada(4, "Roncesvalles", 43.0092949, -1.319693, 27.9, 2.8, true, true, true, true, true, true),
-            new Parada(5, "Burguete", 42.9891494, -1.3349746, 2.8, 3.7, true, true, false, false, false, false),
-            new Parada(6, "Espinal", 42.9784853, -1.3689033, 3.7, 6.2, true, true, true, false, false, false),
-            new Parada(7, "Bizkarreta", 42.967821, -1.41761, 6.2, 1.9, true, true, false, false, false, false),
-            new Parada(8, "Lintzoain", 42.9622941, -1.4374914, 1.9, 8.4, true, true, false, false, false, false),
-            new Parada(9, "Zubiri", 42.9311744, -1.5031652, 8.4, 4.9, true, true, true, false, false, false),
-            new Parada(10, "Larrasoaña", 42.901110, -1.542937, 4.9, 3.2, true, true, true, false, false, false),
-            new Parada(11, "Zuriaín", 42.8794971, -1.5658047, 3.2, 3.2, false, false, false, false, false, false),
-            new Parada(12, "Zabaldika", 42.8560356, -1.5821676, 3.2, 4.4, false, false, true, false, false, false),
-            new Parada(13, "Arre", 42.8422961, -1.6115911, 4.4, 1.9, false, false, true, false, false, false),
-            new Parada(14, "Villava/Atarrabia", 42.8317741, -1.610218, 1.9, 0.8, true, true, true, false, false, false),
-            new Parada(15, "Burlada", 42.826559, -1.6149977, 0.8, 3.8, false, false, false, false, false, false),
-            new Parada(16, "Pamplona", 42.815766, -1.6500216, 3.8, 4.4, true, true, true, true, true, true),
-            new Parada(17, "Cizur Menor", 42.7876245, -1.6788998, 4.4, 6.4, true, false, true, false, false, false),
-            new Parada(18, "Zariquiegui", 42.7478004, -1.7229047, 6.4, 8.1, true, false, true, false, false, false),
-            new Parada(19, "Uterga", 42.7088268, -1.759921, 8.1, 2.6, true, true, true, false, false, false),
-            new Parada(20, "Muruzábal", 42.6894469, -1.7700646, 2.6, 1.8, false, false, false, false, false, false),
-            new Parada(21, "Óbanos", 42.6813332, -1.7869176, 1.8, 2.7, true, true, true, false, false, false),
-            new Parada(22, "Puente la Reina", 42.6719605, -1.8136042, 2.7, 4.9, true, true, true, true, true, true),
-            new Parada(23, "Mañeru", 42.669889, -1.8626504, 4.9, 2.5, false, false, true, false, false, false),
-            new Parada(24, "Cirauqui", 42.6755693, -1.8896709, 2.5, 5.5, false, false, true, false, false, false),
-            new Parada(25, "Lorca", 42.6720822, -1.945259, 5.5, 4.6, false, false, true, false, false, false),
-            new Parada(26, "Villatuerta", 42.6607176, -1.9931451, 4.6, 4.7, true, true, true, false, false, false),
-            new Parada(27, "Estella", 42.6713975, -2.0372037, 4.7, 2.2, true, true, true, true, true, true),
-            new Parada(28, "Ayegui", 42.6575097, -2.0383751, 2.2, 1, false, false, true, false, false, false),
-            new Parada(29, "Monasterio de Irache", 42.650065, -2.043214, 1, 0.05, false, false, false, false, false, false),
-            new Parada(30, "Irache", 42.650119, -2.044350, 0.05, 4.3, true, true, false, false, false, false),
-            new Parada(31, "Azqueta", 42.6347917, -2.0876089, 4.3, 1.8, false, false, false, false, false, false),
-            new Parada(32, "Villamayor de Monjardín", 42.629572, -2.104846, 1.8, 11.7, true, true, true, false, false, false),
-            new Parada(33, "Los Arcos", 42.5699556, -2.1924701, 11.7, 6.5, true, true, true, true, true, true),
+            new Parada(1, "Saint-Jean-Pied-de-Port",43.163559,-1.235662, 0, 5, true, true, true, true, true, true),
+            new Parada(2, "Huntto",43.124447,-1.24476, 5, 2.5, true, true, true, true, true, false),
+            new Parada(3, "Orisson",43.10899321682584,-1.239052481080165, 2.5, 27.9, true, true, true, false, false, false),
+            new Parada(4, "Roncesvalles",43.00954730092566,-1.319763812529985, 27.9, 2.8, true, true, true, true, true, true),
+            new Parada(5, "Burguete",42.990768,-1.33473, 2.8, 3.7, true, true, false, false, false, false),
+            new Parada(6, "Espinal",42.981289,-1.37163, 3.7, 6.2, true, true, true, false, false, false),
+            new Parada(7, "Viscarret-Guerendiain",42.96769,-1.41792, 6.2, 1.9, true, true, false, false, false, false),
+            new Parada(8, "Lintzoain",42.96286,-1.4377, 1.9, 8.4, true, true, false, false, false, false),
+            new Parada(9, "Zubiri",42.93036118544159,-1.50466604700992, 8.4, 4.9, true, true, true, false, false, false),
+            new Parada(10, "Larrasoaña",42.900879,-1.5404, 4.9, 3.2, true, true, true, false, false, false),
+            new Parada(11, "Zuriaín",42.878681,-1.56608, 3.2, 3.2, false, false, false, false, false, false),
+            new Parada(12, "Zabaldika",42.85474,-1.58113, 3.2, 4.4, false, false, true, false, false, false),
+            new Parada(13, "Santísima Trinidad de Arre",42.836189,-1.60428, 4.4, 1.9, false, false, true, false, false, false),
+            new Parada(14, "Villava",42.829681,-1.61037, 1.9, 0.8, true, true, true, false, false, false),
+            new Parada(15, "Burlada",42.824631,-1.61765, 0.8, 3.8, false, false, false, false, false, false),
+            new Parada(16, "Pamplona",42.818851,-1.64269, 3.8, 4.4, true, true, true, true, true, true),
+            new Parada(17, "Cizur Menor",42.786346,-1.677024, 4.4, 6.4, true, false, true, false, false, false),
+            new Parada(18, "Zariquiegui",42.74791,-1.723008, 6.4, 8.1, true, false, true, false, false, false),
+            new Parada(19, "Uterga",42.709103,-1.76101, 8.1, 2.6, true, true, true, false, false, false),
+            new Parada(20, "Muruzábal",42.68969,-1.771202, 2.6, 1.8, false, false, false, false, false, false),
+            new Parada(21, "Obanos",42.680275,-1.785729, 1.8, 2.7, true, true, true, false, false, false),
+            new Parada(22, "Puente la Reina",42.673096,-1.810405, 2.7, 4.9, true, true, true, true, true, true),
+            new Parada(23, "Mañeru",42.669022,-1.86209, 4.9, 2.5, false, false, true, false, false, false),
+            new Parada(24, "Cirauqui",42.675789,-1.89142, 2.5, 5.5, false, false, true, false, false, false),
+            new Parada(25, "Villatuerta",42.659447,-1.992731, 4.6, 4.7, true, true, true, false, false, false),
+            new Parada(26, "Estella",42.66983,-2.027471, 4.7, 2.2, true, true, true, true, true, true),
+            new Parada(27, "Lorca",42.663738,-2.032793, 5.5, 4.6, false, false, true, false, false, false),
+            new Parada(28, "Ayegui",42.657784,-2.038736, 2.2, 1, false, false, true, false, false, false),
+            new Parada(29, "Monasterio de Irache",42.650002,-2.044283, 1, 0.05, false, false, false, false, false, false),
+            new Parada(30, "Irache",42.646317,-2.056932, 0.05, 4.3, true, true, false, false, false, false),
+            new Parada(31, "Azqueta",42.635578,-2.087016, 4.3, 1.8, false, false, false, false, false, false),
+            new Parada(32, "Villamayor de Monjardín",42.629475,-2.105427, 1.8, 11.7, true, true, true, false, false, false),
+            new Parada(33, "Los Arcos",42.568855,-2.193596, 11.7, 6.5, true, true, true, true, true, true),
             new Parada(34, "Sansol", 42.5536319, -2.2669663, 6.5, 0.9, true, true, true, false, false, false),
-            new Parada(35, "Torres del Río", 42.5519077, -2.2731861, 0.9, 9.3, true, true, true, false, false, false),
-            new Parada(36, "Viana", 42.5210758, -2.3536715, 9.3, 10.2, true, true, true, false, false, false),
-            new Parada(37, "Logroño", 42.4744512, -2.4416829, 10.2, 13.1, true, true, true, true, true, true),
-            new Parada(38, "Navarrete", 42.4290518, -2.5614262, 13.1, 6.6, true, true, true, true, true, false),
-            new Parada(39, "Ventosa", 42.4039922, -2.6252376, 6.6, 10, true, true, true, false, false, false),
-            new Parada(40, "Nájera", 42.415757, -2.7303652, 10, 6.1, true, true, true, true, true, true),
-            new Parada(41, "Azofra", 42.4235785, -2.8004563, 6.1, 9.2, true, true, true, false, false, false),
-            new Parada(42, "Cirueña", 42.4117011, -2.8954536, 9.2, 5.5, true, true, true, false, false, false),
-            new Parada(43, "Santo Domingo de la Calzada", 42.4396185, -2.9461281, 5.5, 7.4, true, true, true, true, true, true),
-            new Parada(44, "Grañón", 42.449244, -3.0269819, 7.4, 3.9, true, true, true, false, false, false),
-            new Parada(45, "Redecilla del Camino", 42.4376438, -3.065428, 3.9, 1.6, true, true, true, false, false, false),
-            new Parada(46, "Castildelgado", 42.4369635, -3.08408362, 1.6, 2.1, true, true, false, false, false, false),
-            new Parada(47, "Viloria de Rioja", 42.4258371, -3.1012088, 2.1, 3.4, true, true, true, false, false, false),
-            new Parada(48, "Villamayor del Rio", 42.427197, -3.1370531, 3.4, 4.8, false, false, true, false, false, false),
-            new Parada(49, "Belorado", 42.4207075, -3.1898083, 4.8, 4.7, true, true, true, true, true, true),
-            new Parada(50, "Tosantos", 42.4135369, -3.2434293, 4.7, 2.1, false, false, true, false, false, false),
-            new Parada(51, "Villambistia", 42.4052679, -3.261524, 2.1, 1.7, false, false, true, false, false, false),
-            new Parada(52, "Espinosa del Camino", 42.4060392, -3.2805126, 1.7, 3.5, false, false, true, false, false, false),
-            new Parada(53, "Villafranca Montes de Oca", 42.3869408, -3.3091994, 3.5, 12.4, true, true, true, true, true, false),
-            new Parada(54, "San Juan de Ortega", 42.377565, -3.437642, 12.4, 3.6, true, true, true, false, false, false),
-            new Parada(55, "Agés", 42.3695982, -3.4794578, 3.6, 2.5, false, false, true, false, false, false),
-            new Parada(56, "Atapuerca", 42.3764085, -3.5080555, 2.5, 6, true, true, true, false, false, false),
-            new Parada(57, "Cardeñuela Riopico", 42.359341, -3.5596227, 6, 2.2, true, false, true, false, false, false),
-            new Parada(58, "Orbaneja Riopico", 42.3603006, -3.5853513, 2.2, 3.8, true, true, false, false, false, false),
-            new Parada(59, "Villafría", 42.3654699, -3.616125, 3.8, 7.1, true, true, false, false, false, false),
-            new Parada(60, "Burgos", 42.344126, -3.694693, 7.1, 11.2, true, true, false, false, false, false),
-            new Parada(61, "Tardajos", 42.3489175, -3.8176709, 11.2, 2.1, true, true, true, false, false, false),
-            new Parada(62, "Rabé de las Calzadas", 42.3403421, -3.8355013, 2.1, 7.7, false, false, true, false, false, false),
-            new Parada(63, "Hornillos del Camino", 42.3388769, -3.9263121, 7.7, 10.1, true, true, true, false, false, false),
-            new Parada(64, "San Bol", 42.2866317, -3.9889174, 10.1, 7.9, false, false, true, false, false, false),
-            new Parada(65, "Hontanas", 42.3123792, -4.0448338, 7.9, 5.4, true, true, true, false, false, false),
-            new Parada(66, "Convento de San Antón", 42.2925216, -4.0991801, 5.4, 3.3, false, false, true, false, false, false),
-            new Parada(67, "Castrojeriz", 42.2897829, -4.1366422, 3.3, 9.1, true, true, true, true, true, true),
-            new Parada(68, "Ermita de San Nicolás", 42.281539, -4.239780, 9.1, 2.4, false, false, true, false, false, false),
-            new Parada(69, "Itero de la Vega", 42.2874443, -4.2584075, 2.4, 8.1, true, true, true, false, false, false),
-            new Parada(70, "Boadilla del Camino", 42.2589581, -4.3466966, 8.1, 5.9, true, true, true, true, false, false),
-            new Parada(71, "Frómista", 42.2670503, -4.405248, 5.9, 3.7, true, true, true, true, true, false),
+            new Parada(35, "Torres del Río",42.552006,-2.271295, 0.9, 9.3, true, true, true, false, false, false),
+            new Parada(36, "Viana",42.51554261904568,-2.37181831350982, 9.3, 10.2, true, true, true, false, false, false),
+            new Parada(37, "Logroño",42.46837095429641,-2.444684460353869, 10.2, 13.1, true, true, true, true, true, true),
+            new Parada(38, "Navarrete",42.429539,-2.56221, 13.1, 6.6, true, true, true, true, true, false),
+            new Parada(39, "Ventosa",42.411743,-2.627728, 6.6, 10, true, true, true, false, false, false),
+            new Parada(40, "Nájera",42.416634,-2.735177, 10, 6.1, true, true, true, true, true, true),
+            new Parada(41, "Azofra",42.424026,-2.800612, 6.1, 9.2, true, true, true, false, false, false),
+            new Parada(42, "Cirueña",42.412827,-2.896335, 9.2, 5.5, true, true, true, false, false, false),
+            new Parada(43, "Santo Domingo de la Calzada",42.440861,-2.952554, 5.5, 7.4, true, true, true, true, true, true),
+            new Parada(44, "Grañón",42.450569,-3.026948, 7.4, 3.9, true, true, true, false, false, false),
+            new Parada(45, "Redecilla del Camino",42.438267,-3.064091, 3.9, 1.6, true, true, true, false, false, false),
+            new Parada(46, "Castildelgado",42.436775,-3.083575000000001, 1.6, 2.1, true, true, false, false, false, false),
+            new Parada(47, "Viloria de Rioja",42.426086,-3.101664, 2.1, 3.4, true, true, true, false, false, false),
+            new Parada(48, "Villamayor del Rio",42.427448,-3.136146, 3.4, 4.8, false, false, true, false, false, false),
+            new Parada(49, "Belorado",42.420841,-3.188653, 4.8, 4.7, true, true, true, true, true, true),
+            new Parada(50, "Tosantos",42.413208,-3.243971, 4.7, 2.1, false, false, true, false, false, false),
+            new Parada(51, "Villambistia",42.40451,-3.261695, 2.1, 1.7, false, false, true, false, false, false),
+            new Parada(52, "Espinosa del Camino",42.405842,-3.280984999999999, 1.7, 3.5, false, false, true, false, false, false),
+            new Parada(53, "Villafranca Montes de Oca",42.390217,-3.308172, 3.5, 12.4, true, true, true, true, true, false),
+            new Parada(54, "San Juan de Ortega",42.375759,-3.436747, 12.4, 3.6, true, true, true, false, false, false),
+            new Parada(55, "Agés",42.369926,-3.478975, 3.6, 2.5, false, false, true, false, false, false),
+            new Parada(56, "Atapuerca",42.376682,-3.507922000000001, 2.5, 6, true, true, true, false, false, false),
+            new Parada(57, "Cardeñuela Riopico",42.367485,-3.571179, 6, 2.2, true, false, true, false, false, false),
+            new Parada(58, "Orbaneja Riopico",42.360191,-3.584225, 2.2, 3.8, true, true, false, false, false, false),
+            new Parada(59, "Villafría",42.364311,-3.618218999999999, 3.8, 7.1, true, true, false, false, false, false),
+            new Parada(60, "Burgos",42.340927,-3.704876, 7.1, 11.2, true, true, false, false, false, false),
+            new Parada(61, "Tardajos",42.348377,-3.818028, 11.2, 2.1, true, true, true, false, false, false),
+            new Parada(62, "Rabé de las Calzadas",42.34026,-3.834314, 2.1, 7.7, false, false, true, false, false, false),
+            new Parada(63, "Hornillos del Camino",42.338593,-3.926411, 7.7, 10.1, true, true, true, false, false, false),
+            new Parada(64, "Arroyo Penillas O de San Bol",42.326096,-3.990548, 10.1, 7.9, false, false, true, false, false, false),
+            new Parada(65, "Hontanas",42.312737,-4.045115, 7.9, 5.4, true, true, true, false, false, false),
+            new Parada(66, "Monasterio de San Antón",42.292816,-4.099081, 5.4, 3.3, false, false, true, false, false, false),
+            new Parada(67, "Castrojeriz",42.288216,-4.137597, 3.3, 9.1, true, true, true, true, true, true),
+            new Parada(68, "Ermita de San Nicolás",42.280941,-4.23919, 9.1, 2.4, false, false, true, false, false, false),
+            new Parada(69, "Itero de la Vega",42.287369,-4.25801, 2.4, 8.1, true, true, true, false, false, false),
+            new Parada(70, "Boadilla del Camino",42.260681,-4.34762, 8.1, 5.9, true, true, true, true, false, false),
+            new Parada(71, "Frómista",42.26604401852833,-4.406116165294307, 5.9, 3.7, true, true, true, true, true, false),
             new Parada(72, "Población de Campos", 42.2699296, -4.4464623, 3.7, 3.7, true, true, false, false, false, false),
             new Parada(73, "Revenga de Campos", 42.284053, -4.4825627, 3.7, 2.2, false, false, false, false, false, false),
             new Parada(74, "Villarmentero de Campo", 42.2975476, -4.499834, 2.2, 4.5, true, true, true, false, false, false),
@@ -258,75 +258,64 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         startActivity(i);
     }
 
-    public void menuPrincipal(View view)
-    {
+    public void menuPrincipal(View view) {
         Intent i = new Intent(AccionCaminoNuevo.this, AccionMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", this.usuarioSeleccionado);
         startActivity(i);
     }
+
     public void crearCaminoNuevo(View view) {
 
-        String nombre="" ;
-        String comienzoCamino="";
-        int dias =0;
-        int kmDia=0;
+        String nombre = "";
+        String comienzoCamino = "";
+        int dias = 0;
+        int kmDia = 0;
         boolean correcto = true;
-        ArrayList<Etapa> etapas= new ArrayList<Etapa>();
+        ArrayList<Etapa> etapas = new ArrayList<Etapa>();
         Camino camino = null;
 
-        if((((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString().equals("SIN SELECCIONAR"))
-        {
+        if ((((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString().equals("SIN SELECCIONAR")) {
             Toast.makeText(this, "Introduzca un nombre para su nuevo camino.", Toast.LENGTH_SHORT).show();
             correcto = false;
-        }else
-        {
+        } else {
             nombre = (((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString();
         }
-        if((((Spinner) findViewById(R.id.spinnerParadaInicio)).getSelectedItem()).toString().equals(""))
-        {
+
+        if ((((Spinner) findViewById(R.id.spinnerParadaInicio)).getSelectedItem()).toString().equals("")) {
             Toast.makeText(this, "Seleccione una parada de inicio para su camino.", Toast.LENGTH_SHORT).show();
             correcto = false;
-        }else
-        {
+        } else {
             comienzoCamino = (((Spinner) findViewById(R.id.spinnerParadaInicio)).getSelectedItem()).toString();
         }
 
-        if(((EditText) findViewById(R.id.editTextDias)).getText().toString().equals("") || Integer.parseInt(((EditText) findViewById(R.id.editTextDias)).getText().toString()) <2)
-        {
+        if (((EditText) findViewById(R.id.editTextDias)).getText().toString().equals("") || Integer.parseInt(((EditText) findViewById(R.id.editTextDias)).getText().toString()) < 2) {
             Toast.makeText(this, "El número de días para hacer el camino tiene que ser mayor que 1.", Toast.LENGTH_SHORT).show();
             correcto = false;
-        }
-        else
-        {
+        } else {
             dias = Integer.parseInt(((EditText) findViewById(R.id.editTextDias)).getText().toString());
         }
 
-        if((((EditText) findViewById(R.id.editTextKmMax)).getText()).toString().equals(""))
-        {
+        if ((((EditText) findViewById(R.id.editTextKmMax)).getText()).toString().equals("")) {
             Toast.makeText(this, "Sin número de KMs diarios introducido. Distancia recomendada: " + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
             correcto = false;
 
-        }else
-        {
-
+        } else {
             kmDia = Integer.parseInt((((EditText) findViewById(R.id.editTextKmMax)).getText()).toString());
-            if(kmDia > usuarioSeleccionado.getKmMaximos())
-            {
+
+            if (kmDia > usuarioSeleccionado.getKmMaximos()) {
                 Toast.makeText(this, "Distancia diaria mayor que la recomendada. Distancia recomendada: " + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
             }
         }
 
 
         if (correcto) {
-
             //Comprobar donde recibe usuario seleccionado y como construye etapas y caminos
             Toast.makeText(this, "ENTRO.", Toast.LENGTH_SHORT).show();
-           // etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, nombre, kmDia);
-           etapas = pruebaETAPAS();
+            // etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, nombre, kmDia);
+            etapas = pruebaETAPAS();
             camino = new Camino(nombre, etapas);
 
             //Primera prueba estableciendo un único camino
-
             this.usuarioSeleccionado.addCamino(camino);
             archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
             Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoActual.class);
@@ -339,23 +328,22 @@ public class AccionCaminoNuevo extends ActionBarActivity {
             Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoNuevo.class);
             i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
-
         }
     }
 
     ///////////////////Prueba para ver las distancias entre paradas////////////////
-    public ArrayList<Etapa> pruebaETAPAS()
-    {
+    public ArrayList<Etapa> pruebaETAPAS() {
         ArrayList<Etapa> etapas = new ArrayList<Etapa>();
         ArrayList<Parada> par;
-        for(int i =0; i < listaParadas.size()-1;i++)
-        {
+
+        for (int i = 0; i < listaParadas.size() - 1; i++) {
             par = new ArrayList<Parada>();
             par.add(listaParadas.get(i));
-            par.add(listaParadas.get(i+1));
+            par.add(listaParadas.get(i + 1));
 
-            etapas.add(new Etapa(i,par));
+            etapas.add(new Etapa(i, par));
         }
+
         return etapas;
     }
     ////////////////////////////////////////////////////////////////////////////////
@@ -372,7 +360,6 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         boolean comp = false;
         Iterator<Parada> itr = this.listaParadas.iterator();
 
-
         // Llevamos el iterador de la lista de paradas hasta la inicial del camino
         while (itr.hasNext() && !comp) {
             Parada parada = itr.next();
@@ -385,7 +372,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         }
 
         //Mientras queden dias o no se alcance la ciudad final
-        while (dias > 0 ) {
+        while (dias > 0) {
             semaforo = true;
             paradasEtapa.clear();
 
@@ -402,7 +389,6 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                     semaforo = false;
                 }
             }
-
         }
 
         return listaEtapas;

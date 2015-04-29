@@ -3,11 +3,9 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -16,7 +14,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -40,7 +37,7 @@ public class AccionUsuarioDatos extends ActionBarActivity {
         setContentView(R.layout.activity_datos_usuario);
 
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
- //       Log.d(AccionUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.toString());
+        //       Log.d(AccionUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.toString());
 //        Log.d(AccionUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.getNombreCaminoActual());
 
         ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + usuarioSeleccionado.getNombre());
@@ -71,23 +68,21 @@ public class AccionUsuarioDatos extends ActionBarActivity {
                 }
         );
     }
-    public Camino buscarCamino(String nombre)
-    {
+
+    public Camino buscarCamino(String nombre) {
         Camino c;
 
         Iterator<Camino> itr = this.usuarioSeleccionado.getMisCaminos().iterator();
-        while(itr.hasNext())
-        {
+        while (itr.hasNext()) {
             c = itr.next();
-            if(c.getNombre().equals(nombre))
-            {
+            if (c.getNombre().equals(nombre)) {
                 return c;
             }
         }
         return null;
     }
-    public ArrayList<String> cargarCaminos()
-    {
+
+    public ArrayList<String> cargarCaminos() {
         ArrayList<String> nombresCaminos = new ArrayList<String>();
         ArrayList<Camino> caminos = usuarioSeleccionado.getMisCaminos();
         /*Iterator<Camino> itr = caminos.iterator();
@@ -96,11 +91,9 @@ public class AccionUsuarioDatos extends ActionBarActivity {
             nombresCaminos.add(camino.getNombre());
         }*/
 
-        for(int i = 0; i<caminos.size();i++)
-        {
+        for (int i = 0; i < caminos.size(); i++) {
             nombresCaminos.add(caminos.get(i).getNombre());
         }
-
 
         return nombresCaminos;
     }
@@ -122,6 +115,7 @@ public class AccionUsuarioDatos extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_accion_usuario_datos, menu);
+
         return true;
     }
 
