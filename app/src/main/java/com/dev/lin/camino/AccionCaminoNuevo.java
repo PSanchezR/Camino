@@ -28,6 +28,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
     private Usuario usuarioSeleccionado = null;
 
     private ArrayList<Parada> listaParadas = new ArrayList<Parada>(Arrays.asList(
+            new Parada(0, "SIN SELECCIONAR", 37.197003, -3.624251, 0, 0, false, false, false, false, false, false),
             new Parada(1,"Saint-Jean-Pied-de-Port",43.163559,-1.235662,0,5, true, true, true, true, true, true),
             new Parada(2,"Huntto",43.124447,-1.24476,5, 2.5, true, true, true, true, true, false),
             new Parada(3,"Orisson",43.10899321682584,-1.239052481080165, 2.5, 27.9, true, true, true, false, false, false),
