@@ -624,6 +624,7 @@ int menu menu_accion_usuario_seleccion 0x7f0e0008
 int mipmap fondodefault 0x7f030000
 int mipmap fondoportada 0x7f030001
 int mipmap ic_launcher 0x7f030002
+int mipmap poratada300 0x7f030003
 int raw gtm_analytics 0x7f060000
 int string abc_action_bar_home_description 0x7f0c0000
 int string abc_action_bar_home_description_format 0x7f0c0001
