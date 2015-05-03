@@ -443,23 +443,22 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 this.listaParadas.get(23),
                 this.listaParadas.get(24),
                 this.listaParadas.get(25),
-                this.listaParadas.get(26),
-                this.listaParadas.get(27)
+                this.listaParadas.get(26)
         ))));
 
         listaEtapas.add(new Etapa(6, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(27),
+                this.listaParadas.get(26),
                 this.listaParadas.get(28),
                 this.listaParadas.get(29),
                 this.listaParadas.get(30),
                 this.listaParadas.get(31),
                 this.listaParadas.get(32),
-                this.listaParadas.get(33),
-                this.listaParadas.get(34),
-                this.listaParadas.get(35)
+                this.listaParadas.get(33)
         ))));
 
         listaEtapas.add(new Etapa(7, new ArrayList<Parada>(Arrays.asList(
+                this.listaParadas.get(33),
+                this.listaParadas.get(34),
                 this.listaParadas.get(35),
                 this.listaParadas.get(36),
                 this.listaParadas.get(37)
@@ -495,12 +494,11 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 this.listaParadas.get(51),
                 this.listaParadas.get(52),
                 this.listaParadas.get(53),
-                this.listaParadas.get(54),
-                this.listaParadas.get(55)
+                this.listaParadas.get(54)
         ))));
 
         listaEtapas.add(new Etapa(12, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(55),
+                this.listaParadas.get(54),
                 this.listaParadas.get(56),
                 this.listaParadas.get(57),
                 this.listaParadas.get(58),
@@ -512,22 +510,26 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 this.listaParadas.get(60),
                 this.listaParadas.get(61),
                 this.listaParadas.get(62),
-                this.listaParadas.get(63),
-                this.listaParadas.get(64),
-                this.listaParadas.get(65)
+                this.listaParadas.get(63)
         ))));
 
         listaEtapas.add(new Etapa(14, new ArrayList<Parada>(Arrays.asList(
+                this.listaParadas.get(63),
+                this.listaParadas.get(64),
                 this.listaParadas.get(65),
                 this.listaParadas.get(66),
-                this.listaParadas.get(67),
-                this.listaParadas.get(68),
-                this.listaParadas.get(69),
-                this.listaParadas.get(70)
+                this.listaParadas.get(67)
         ))));
 
         listaEtapas.add(new Etapa(15, new ArrayList<Parada>(Arrays.asList(
+                this.listaParadas.get(67),
+                this.listaParadas.get(68),
+                this.listaParadas.get(69),
                 this.listaParadas.get(70),
+                this.listaParadas.get(71)
+        ))));
+
+        listaEtapas.add(new Etapa(16, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(71),
                 this.listaParadas.get(72),
                 this.listaParadas.get(73),
@@ -536,25 +538,33 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 this.listaParadas.get(76)
         ))));
 
-        listaEtapas.add(new Etapa(16, new ArrayList<Parada>(Arrays.asList(
+        listaEtapas.add(new Etapa(17, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(76),
                 this.listaParadas.get(77),
-                this.listaParadas.get(78),
-                this.listaParadas.get(79)
+                this.listaParadas.get(78)
         ))));
 
-        listaEtapas.add(new Etapa(17, new ArrayList<Parada>(Arrays.asList(
+        listaEtapas.add(new Etapa(18, new ArrayList<Parada>(Arrays.asList(
+                this.listaParadas.get(78),
                 this.listaParadas.get(79),
                 this.listaParadas.get(80),
                 this.listaParadas.get(81),
+                this.listaParadas.get(82)
+        ))));
+
+        listaEtapas.add(new Etapa(19, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(82),
                 this.listaParadas.get(83),
                 this.listaParadas.get(84)
         ))));
 
-        listaEtapas.add(new Etapa(18, new ArrayList<Parada>(Arrays.asList(
+        listaEtapas.add(new Etapa(20, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(84),
                 this.listaParadas.get(85),
+                this.listaParadas.get(86)
+        ))));
+
+        listaEtapas.add(new Etapa(21, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(86),
                 this.listaParadas.get(87),
                 this.listaParadas.get(88),
@@ -562,17 +572,17 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 this.listaParadas.get(90)
         ))));
 
-        listaEtapas.add(new Etapa(19, new ArrayList<Parada>(Arrays.asList(
+        listaEtapas.add(new Etapa(22, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(90),
                 this.listaParadas.get(91),
                 this.listaParadas.get(92),
                 this.listaParadas.get(93),
                 this.listaParadas.get(94),
-                this.listaParadas.get(95),
-                this.listaParadas.get(96)
+                this.listaParadas.get(95)
         ))));
 
-        listaEtapas.add(new Etapa(20, new ArrayList<Parada>(Arrays.asList(
+        listaEtapas.add(new Etapa(23, new ArrayList<Parada>(Arrays.asList(
+                this.listaParadas.get(95),
                 this.listaParadas.get(96),
                 this.listaParadas.get(97),
                 this.listaParadas.get(98),
@@ -581,17 +591,17 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 this.listaParadas.get(101)
         ))));
 
-        listaEtapas.add(new Etapa(21, new ArrayList<Parada>(Arrays.asList(
+        listaEtapas.add(new Etapa(24, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(101),
                 this.listaParadas.get(102),
                 this.listaParadas.get(103),
                 this.listaParadas.get(104),
                 this.listaParadas.get(105),
-                this.listaParadas.get(106),
-                this.listaParadas.get(107)
+                this.listaParadas.get(106)
         ))));
 
-        listaEtapas.add(new Etapa(22, new ArrayList<Parada>(Arrays.asList(
+        listaEtapas.add(new Etapa(25, new ArrayList<Parada>(Arrays.asList(
+                this.listaParadas.get(106),
                 this.listaParadas.get(107),
                 this.listaParadas.get(108),
                 this.listaParadas.get(109),
@@ -602,7 +612,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 this.listaParadas.get(114)
         ))));
 
-        listaEtapas.add(new Etapa(23, new ArrayList<Parada>(Arrays.asList(
+        listaEtapas.add(new Etapa(26, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(114),
                 this.listaParadas.get(115),
                 this.listaParadas.get(116),
@@ -613,7 +623,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 this.listaParadas.get(121)
         ))));
 
-        listaEtapas.add(new Etapa(24, new ArrayList<Parada>(Arrays.asList(
+        listaEtapas.add(new Etapa(27, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(121),
                 this.listaParadas.get(122),
                 this.listaParadas.get(123),
@@ -627,7 +637,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 this.listaParadas.get(131)
         ))));
 
-        listaEtapas.add(new Etapa(25, new ArrayList<Parada>(Arrays.asList(
+        listaEtapas.add(new Etapa(28, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(131),
                 this.listaParadas.get(132),
                 this.listaParadas.get(133),
@@ -635,59 +645,55 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 this.listaParadas.get(135),
                 this.listaParadas.get(136),
                 this.listaParadas.get(137),
-                this.listaParadas.get(138)
+                this.listaParadas.get(138),
+                this.listaParadas.get(139)
         ))));
 
-        listaEtapas.add(new Etapa(26, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(138),
+        listaEtapas.add(new Etapa(29, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(139),
                 this.listaParadas.get(140),
                 this.listaParadas.get(141),
                 this.listaParadas.get(142),
                 this.listaParadas.get(143),
                 this.listaParadas.get(144),
-                this.listaParadas.get(145)
-        ))));
-
-        listaEtapas.add(new Etapa(27, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(145),
                 this.listaParadas.get(146),
                 this.listaParadas.get(147),
+                this.listaParadas.get(148)
+        ))));
+
+        listaEtapas.add(new Etapa(30, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(148),
                 this.listaParadas.get(149),
                 this.listaParadas.get(150),
                 this.listaParadas.get(151),
                 this.listaParadas.get(152),
-                this.listaParadas.get(153)
-        ))));
-
-        listaEtapas.add(new Etapa(28, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(153),
                 this.listaParadas.get(154),
                 this.listaParadas.get(155),
+                this.listaParadas.get(156)
+        ))));
+
+        listaEtapas.add(new Etapa(31, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(156),
                 this.listaParadas.get(157),
                 this.listaParadas.get(158),
                 this.listaParadas.get(159),
                 this.listaParadas.get(160),
-                this.listaParadas.get(161)
-        ))));
-
-        listaEtapas.add(new Etapa(29, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(161),
                 this.listaParadas.get(162),
                 this.listaParadas.get(163),
                 this.listaParadas.get(164),
                 this.listaParadas.get(165),
+                this.listaParadas.get(166)
+        ))));
+
+        listaEtapas.add(new Etapa(32, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(166),
                 this.listaParadas.get(167),
                 this.listaParadas.get(168),
                 this.listaParadas.get(169),
                 this.listaParadas.get(170),
-                this.listaParadas.get(171)
-        ))));
-
-        listaEtapas.add(new Etapa(30, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(171),
                 this.listaParadas.get(172),
                 this.listaParadas.get(173),
@@ -697,14 +703,9 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 this.listaParadas.get(177)
         ))));
 
-        listaEtapas.add(new Etapa(31, new ArrayList<Parada>(Arrays.asList(
+        listaEtapas.add(new Etapa(32, new ArrayList<Parada>(Arrays.asList(
                 this.listaParadas.get(177),
-                this.listaParadas.get(178),
-                this.listaParadas.get(179),
-                this.listaParadas.get(180),
-                this.listaParadas.get(181),
-                this.listaParadas.get(182),
-                this.listaParadas.get(183)
+                this.listaParadas.get(178)
         ))));
 
         return listaEtapas;
