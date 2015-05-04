@@ -13,6 +13,7 @@ import java.util.Iterator;
  * @author Pablo Sánchez Robles
  */
 public class Parada implements Serializable {
+    private static final long serialVersionUID = 3L;
     private int orden;
     private String nombre;
     private ArrayList<LatLng> listaCoords;

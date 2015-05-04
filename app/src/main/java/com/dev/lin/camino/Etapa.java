@@ -11,6 +11,7 @@ import java.util.Iterator;
  * @author Pablo Sánchez Robles
  */
 public class Etapa implements Serializable {
+    private static final long serialVersionUID = 2L;
     private int orden;
     private String nombre;
     private Parada paradaInicio;
