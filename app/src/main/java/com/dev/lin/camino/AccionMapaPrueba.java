@@ -27,7 +27,7 @@ public class AccionMapaPrueba extends ActionBarActivity {
         Marker inicio = map.addMarker(new MarkerOptions().position(SAINT_JEAN_PIED_DE_PORT).title("Saint Jean Pied de Port"));
         Marker fin = map.addMarker(new MarkerOptions().position(SANTIAGO_DE_COMPOSTELA).title("Santiago de Compostela"));
 
-        // Move the camera instantly to Saint Jean Pied de Port with a zoom of 2000.
+        // Move the camera instantly to Saint Jean Pied de Port with caminoFrances.xml zoom of 2000.
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(SAINT_JEAN_PIED_DE_PORT, 2000));
 
         // Zoom in, animating the camera.
@@ -45,7 +45,7 @@ public class AccionMapaPrueba extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement

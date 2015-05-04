@@ -11,6 +11,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,6 +30,7 @@ import java.util.Iterator;
  */
 public class AccionCaminoNuevo extends ActionBarActivity {
     private static final String DATOS_USUARIO = "DatosUsuario";
+    private static final String DATOS_PARADA = "DatosParada";
     private GestionFicheros archivador = new GestionFicheros();
     private Usuario usuarioSeleccionado = null;
 
@@ -214,6 +221,24 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nuevo_camino);
 
+        XmlPullParserFactory pullParserFactory;
+
+        try {
+            InputStream istr = getApplicationContext().getAssets().open("caminoFrances.xml");
+
+            pullParserFactory = XmlPullParserFactory.newInstance();
+            XmlPullParser parser = pullParserFactory.newPullParser();
+
+            parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
+            parser.setInput(istr, null);
+
+            parseXML(parser);
+        } catch (XmlPullParserException e) {
+            Log.e(AccionCaminoNuevo.DATOS_PARADA, "Error en el procesador del archivo XML: " + e.getMessage());
+        } catch (IOException e) {
+            Log.e(AccionCaminoNuevo.DATOS_PARADA, "Error de entrada/salida en el archivo XML: " + e.getMessage());
+        }
+
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         Log.d(AccionCaminoNuevo.DATOS_USUARIO, usuarioSeleccionado.toString());
 
@@ -231,6 +256,74 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         //Spinner spinnerFin = (Spinner) findViewById(R.id.spinnerParadaFin);
         spinnerInicio.setAdapter(adaptador);
         //spinnerFin.setAdapter(adaptador);
+    }
+
+    private void parseXML(XmlPullParser parser) throws XmlPullParserException, IOException {
+        int eventType = parser.getEventType();
+        ArrayList<Parada> paradas = null;
+        Parada parada = new Parada();
+        float latitud;
+        float longitud;
+
+        while (eventType != XmlPullParser.END_DOCUMENT) {
+            String etiqueta = null;
+            switch (eventType) {
+                case XmlPullParser.START_DOCUMENT:
+                    paradas = new ArrayList();
+                    break;
+                case XmlPullParser.START_TAG:
+                    etiqueta = parser.getName();
+
+                    switch (etiqueta){
+                        case "orden":
+                            parada.setOrden(Integer.parseInt(parser.nextText()));
+                            break;
+                        case "nombre":
+                            parada.setNombre(parser.nextText());
+                            break;
+                        case "coords":
+                            String[] parts = parser.nextText().split(",");
+                            latitud = Float.parseFloat(parts[0]);
+                            longitud = Float.parseFloat(parts[1]);
+                            parada.addCoords(latitud, longitud);
+                            break;
+                        case "distAnterior":
+                            parada.setDistAnterior(Float.parseFloat(parser.nextText()));
+                            break;
+                        case "distSiguiente":
+                            parada.setDistSiguiente(Float.parseFloat(parser.nextText()));
+                            break;
+                        case "comida":
+                            parada.setComida(Boolean.parseBoolean(parser.nextText()));
+                            break;
+                        case "hotel":
+                            parada.setHotel(Boolean.parseBoolean(parser.nextText()));
+                            break;
+                        case "albergue":
+                            parada.setAlbergue(Boolean.parseBoolean(parser.nextText()));
+                            break;
+                        case "farmacia":
+                            parada.setFarmacia(Boolean.parseBoolean(parser.nextText()));
+                            break;
+                        case "banco":
+                            parada.setBanco(Boolean.parseBoolean(parser.nextText()));
+                            break;
+                        case "internet":
+                            parada.setInternet(Boolean.parseBoolean(parser.nextText()));
+                            break;
+                    }
+
+                    break;
+                case XmlPullParser.END_TAG:
+                    etiqueta = parser.getName();
+                    if (etiqueta.equalsIgnoreCase("parada") && parada != null) {
+                        Log.d(AccionCaminoNuevo.DATOS_PARADA, parada.toString());
+                        paradas.add(parada);
+                        parada.remCoords();
+                    }
+            }
+            eventType = parser.next();
+        }
     }
 
     /*
@@ -715,7 +808,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement

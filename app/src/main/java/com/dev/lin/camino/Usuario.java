@@ -51,7 +51,7 @@ public class Usuario implements Serializable {
             kmBase = 30;
         }
 
-        //Añadiendo imc a la ponderación
+        //Añadiendo imc caminoFrances.xml la ponderación
 
         if (imc < 16) {
             multiplicador = 1;
@@ -65,7 +65,7 @@ public class Usuario implements Serializable {
             multiplicador -= 0.2;
         }
 
-        //Añadiendo la edad a la ponderación
+        //Añadiendo la edad caminoFrances.xml la ponderación
         multiplicador += (1 / (fecha.getYear() - this.anioNacimiento));
 
         this.kmMaximos = multiplicador * kmBase;

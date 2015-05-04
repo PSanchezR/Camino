@@ -23,7 +23,7 @@ import java.util.Iterator;
 public class AccionUsuarioSeleccion extends ActionBarActivity {
     static ArrayList<Usuario> usuarios;//Lista de objetos usuario que se leerán desde fichero.
 
-    private ArrayAdapter<String> adapter; //Adaptador para pasar los nombres a un listview
+    private ArrayAdapter<String> adapter; //Adaptador para pasar los nombres caminoFrances.xml un listview
     private String seleccionado = null;
     private Usuario usuarioSeleccionado = null;
     private ArrayList<String> nombresUsuarios = new ArrayList<String>();// Lista de nombres de usuario
@@ -108,7 +108,7 @@ public class AccionUsuarioSeleccion extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement

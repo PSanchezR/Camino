@@ -4,7 +4,7 @@ import android.app.Application;
 import android.test.ApplicationTestCase;
 
 /**
- * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
+ * <caminoFrances.xml href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</caminoFrances.xml>
  */
 public class ApplicationTest extends ApplicationTestCase<Application> {
     public ApplicationTest() {
