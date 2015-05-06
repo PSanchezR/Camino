@@ -112,4 +112,3664 @@
         <banco>true</banco>
         <internet>false</internet>
     </parada>
+    <parada>
+        <orden>3</orden>
+        <nombre>Orisson</nombre>
+        <coords>43.10899321682584, -1.239052481080165</coords>
+        <coords>43.10807718570941, -1.239426821923104</coords>
+        <coords>43.1071995598619, -1.239428727435936</coords>
+        <coords>43.10660161653743, -1.239504489750473</coords>
+        <coords>43.10642919815458, -1.238175100082145</coords>
+        <coords>43.10584079631099, -1.237942346694325</coords>
+        <coords>43.10551474297454, -1.238070723788908</coords>
+        <coords>43.10480886724444, -1.238838203556696</coords>
+        <coords>43.10387793418314, -1.239755067569305</coords>
+        <coords>43.10321019057446, -1.239916073633737</coords>
+        <coords>43.1025731658743, -1.239779162975523</coords>
+        <coords>43.10101597862321, -1.240193928419387</coords>
+        <coords>43.10027079989804, -1.240557192828405</coords>
+        <coords>43.09933905904426, -1.24078256560432</coords>
+        <coords>43.09871618233115, -1.241103010873161</coords>
+        <coords>43.09768354990758, -1.241392405389405</coords>
+        <coords>43.0969123386874, -1.241758892782002</coords>
+        <coords>43.09586433113113, -1.242186573548807</coords>
+        <coords>43.09516985245148, -1.242507131015429</coords>
+        <coords>43.09444742712687, -1.242391669378179</coords>
+        <coords>43.09358561213865, -1.242638119449794</coords>
+        <coords>43.09258864495958, -1.243257093583253</coords>
+        <coords>43.09179713368655, -1.243864979690216</coords>
+        <coords>43.08962503594718, -1.244424361758632</coords>
+        <coords>43.08913622468948, -1.244861418934363</coords>
+        <coords>43.08857786520679, -1.245617658043145</coords>
+        <coords>43.08901320754162, -1.245988982246743</coords>
+        <coords>43.08933197761262, -1.246296739578042</coords>
+        <coords>43.08949558904386, -1.246764342652853</coords>
+        <coords>43.0893432531146, -1.247092014461956</coords>
+        <coords>43.08866839306462, -1.247859105433335</coords>
+        <coords>43.08812558268367, -1.248647180561136</coords>
+        <coords>43.08774599971216, -1.249562532532323</coords>
+        <coords>43.08745509889259, -1.250024815053209</coords>
+        <coords>43.08650015624063, -1.250356394263164</coords>
+        <coords>43.08583367986427, -1.251729553423218</coords>
+        <coords>43.08494669478154, -1.252137513210471</coords>
+        <coords>43.08408458411031, -1.252139215340648</coords>
+        <coords>43.0835174724085, -1.252002090457182</coords>
+        <coords>43.08263985496021, -1.252014453239326</coords>
+        <coords>43.08135773992042, -1.251995704920432</coords>
+        <coords>43.08113390423098, -1.253335975706122</coords>
+        <coords>43.08056852116531, -1.254868289540312</coords>
+        <coords>43.07969247079707, -1.256422442200687</coords>
+        <coords>43.07964937753285, -1.256804493729248</coords>
+        <coords>43.08014696731279, -1.257324590346741</coords>
+        <coords>43.08024109099137, -1.258249522344116</coords>
+        <coords>43.07972979596831, -1.259569009275211</coords>
+        <coords>43.07910147033513, -1.260357026228448</coords>
+        <coords>43.07801577968426, -1.262049694132529</coords>
+        <coords>43.07762748616411, -1.262725828519166</coords>
+        <coords>43.07669590929095, -1.263174070242613</coords>
+        <coords>43.075787325942, -1.263292646112205</coords>
+        <coords>43.07508164075205, -1.264431588028941</coords>
+        <coords>43.07444453112657, -1.265587139964282</coords>
+        <coords>43.07418119684292, -1.266374393861312</coords>
+        <coords>43.07335831919832, -1.26679047570029</coords>
+        <coords>43.07269819573804, -1.266834144557322</coords>
+        <coords>43.07189817702093, -1.26662635519348</coords>
+        <coords>43.07114506631498, -1.266904081128757</coords>
+        <coords>43.0712238816482, -1.268158507307405</coords>
+        <coords>43.07106152555161, -1.268977441578016</coords>
+        <coords>43.0702351481943, -1.269467925497324</coords>
+        <coords>43.06826983230175, -1.269099097297357</coords>
+        <coords>43.06751542133617, -1.267941556546887</coords>
+        <coords>43.06703362100448, -1.267644706774917</coords>
+        <coords>43.06572509055938, -1.267317385166848</coords>
+        <coords>43.0635411660009, -1.266481321856588</coords>
+        <coords>43.06187767082756, -1.267005077057092</coords>
+        <coords>43.06166077106052, -1.267622000623049</coords>
+        <coords>43.06147476024624, -1.268047525964477</coords>
+        <coords>43.06124988555465, -1.268441225679652</coords>
+        <coords>43.0599215994479, -1.268230885810922</coords>
+        <coords>43.05896735659593, -1.267562832725332</coords>
+        <coords>43.0558595203692, -1.266271387007393</coords>
+        <coords>43.05527704920387, -1.266304283509697</coords>
+        <coords>43.05484430763912, -1.266827250495268</coords>
+        <coords>43.05317509244581, -1.267499735622764</coords>
+        <coords>43.05102260030871, -1.268013579310974</coords>
+        <coords>43.05052332480067, -1.268482072845146</coords>
+        <coords>43.0498625266637, -1.267781736195559</coords>
+        <coords>43.04868980722957, -1.265987620246932</coords>
+        <coords>43.04709653283437, -1.264789454482028</coords>
+        <coords>43.0458662496057, -1.264834124946276</coords>
+        <coords>43.04517518967489, -1.265016005678646</coords>
+        <coords>43.04488047563859, -1.265462869926509</coords>
+        <coords>43.04472568725729, -1.266047639495355</coords>
+        <coords>43.04469498484036, -1.266440900409421</coords>
+        <coords>43.04459428388383, -1.266728008937889</coords>
+        <coords>43.04400505386865, -1.267855497578978</coords>
+        <coords>43.04331332315236, -1.269819860443377</coords>
+        <coords>43.04238540478979, -1.274484230667824</coords>
+        <coords>43.0417663813684, -1.277228467355769</coords>
+        <coords>43.04125036243115, -1.278130731963188</coords>
+        <coords>43.04051449432321, -1.280544094898673</coords>
+        <coords>43.04012331586232, -1.2814373029926</coords>
+        <coords>43.03961909008246, -1.282203149050972</coords>
+        <coords>43.03902936408931, -1.282409618521697</coords>
+        <coords>43.0386957230137, -1.282824538733252</coords>
+        <coords>43.03837026108094, -1.283770753230854</coords>
+        <coords>43.03806097281673, -1.285567014172159</coords>
+        <coords>43.03764091043012, -1.287458962515188</coords>
+        <coords>43.03724904512288, -1.288751095667436</coords>
+        <coords>43.03700859687883, -1.289187091506463</coords>
+        <coords>43.03681491597936, -1.289856789164617</coords>
+        <coords>43.03649704161789, -1.290632903039167</coords>
+        <coords>43.0361249225543, -1.291589716042708</coords>
+        <coords>43.03568073083588, -1.291853698905499</coords>
+        <coords>43.03540891198751, -1.291875310010056</coords>
+        <coords>43.03490349773195, -1.291047174343959</coords>
+        <coords>43.03472487227111, -1.291058038216491</coords>
+        <coords>43.03449238196071, -1.29178088896515</coords>
+        <coords>43.03420512905458, -1.291940649866874</coords>
+        <coords>43.03396436418458, -1.291940965963235</coords>
+        <coords>43.03291894041053, -1.291772326639219</coords>
+        <coords>43.03095547271944, -1.293921140895819</coords>
+        <coords>43.0306728252437, -1.295109539282265</coords>
+        <coords>43.03010645065398, -1.296002736466662</coords>
+        <coords>43.02976485887812, -1.296215656101509</coords>
+        <coords>43.02935329116902, -1.296311789254233</coords>
+        <coords>43.02743832093193, -1.295570469521806</coords>
+        <coords>43.02684014965254, -1.295358737758335</coords>
+        <coords>43.02630434740528, -1.295497524332319</coords>
+        <coords>43.02658542033078, -1.297730519361394</coords>
+        <coords>43.02750166785524, -1.29897402037723</coords>
+        <coords>43.02754125539407, -1.30015328489425</coords>
+        <coords>43.0274797299534, -1.301120169242623</coords>
+        <coords>43.02728615571488, -1.302076574287682</coords>
+        <coords>43.02696866045302, -1.303517749060205</coords>
+        <coords>43.02684468807202, -1.304006601490642</coords>
+        <coords>43.02671290901969, -1.304431714205933</coords>
+        <coords>43.02659673039324, -1.30497367229205</coords>
+        <coords>43.02640292584476, -1.305590080829049</coords>
+        <coords>43.02620407011338, -1.306112206865109</coords>
+        <coords>43.02618871482609, -1.306420322604993</coords>
+        <coords>43.02604914178125, -1.306813562659102</coords>
+        <coords>43.0259173341042, -1.307206791621525</coords>
+        <coords>43.02583225669294, -1.307833695809606</coords>
+        <coords>43.02568501908441, -1.308418166552883</coords>
+        <coords>43.02554534448127, -1.30864141426656</coords>
+        <coords>43.02541456414367, -1.308876788557967</coords>
+        <coords>43.02523621612756, -1.309397554420926</coords>
+        <coords>43.02504235106034, -1.309950200951647</coords>
+        <coords>43.02501958368546, -1.310938245345682</coords>
+        <coords>43.02509779121014, -1.311958054889644</coords>
+        <coords>43.02506703138109, -1.312542394826721</coords>
+        <coords>43.02495868698243, -1.313285706248109</coords>
+        <coords>43.02489680969651, -1.313785089216694</coords>
+        <coords>43.02473384078547, -1.314040217360628</coords>
+        <coords>43.02464054953806, -1.313859701572369</coords>
+        <coords>43.0246868168472, -1.313211602028815</coords>
+        <coords>43.02464009084825, -1.312967297576577</coords>
+        <coords>43.02418198641671, -1.31321208967114</coords>
+        <coords>43.02370836347291, -1.313658739762914</coords>
+        <coords>43.02342124104106, -1.314137079003544</coords>
+        <coords>43.02340591168595, -1.314540789439462</coords>
+        <coords>43.02328193364221, -1.315114577065842</coords>
+        <coords>43.02319697480447, -1.316070770451162</coords>
+        <coords>43.02324196731153, -1.316428606560393</coords>
+        <coords>43.02328105788987, -1.3169597484044</coords>
+        <coords>43.02318806217757, -1.317384773700084</coords>
+        <coords>43.02273004304877, -1.317831368968641</coords>
+        <coords>43.02240403167141, -1.318224723479233</coords>
+        <coords>43.02186821141434, -1.318384545691615</coords>
+        <coords>43.02146448851119, -1.318682351287805</coords>
+        <coords>43.02107646019075, -1.319330705161264</coords>
+        <coords>43.02100694506685, -1.320170000117884</coords>
+        <coords>43.02097910805125, -1.320423028924466</coords>
+        <coords>43.02062203174585, -1.320848255108786</coords>
+        <coords>43.020497984556, -1.321337020338859</coords>
+        <coords>43.02052138441945, -1.321560085789102</coords>
+        <coords>43.02044399157543, -1.32217628922858</coords>
+        <coords>43.02037551912209, -1.322643771226183</coords>
+        <coords>43.02024366643837, -1.323058180580503</coords>
+        <coords>43.02023616915246, -1.323674334666293</coords>
+        <coords>43.02028296384574, -1.324120478372166</coords>
+        <coords>43.01970034083316, -1.323855345981727</coords>
+        <coords>43.01906337489312, -1.323632759105692</coords>
+        <coords>43.01853519176238, -1.323516324198906</coords>
+        <coords>43.01772738398215, -1.323336381676967</coords>
+        <coords>43.0169895029659, -1.323029165677923</coords>
+        <coords>43.01668641286423, -1.322604499742567</coords>
+        <coords>43.01644531090225, -1.321850495099298</coords>
+        <coords>43.0158856987071, -1.320926812777827</coords>
+        <coords>43.01510860503758, -1.319971475446309</coords>
+        <coords>43.014463704448, -1.319377196989819</coords>
+        <coords>43.01385008786023, -1.319260887166081</coords>
+        <coords>43.01333403847298, -1.319388796581976</coords>
+        <coords>43.01268950496505, -1.319591165966827</coords>
+        <coords>43.01205271773011, -1.319751038390137</coords>
+        <coords>43.01088312387842, -1.319688315816762</coords>
+        <coords>43.00954730092566, -1.319763812529985</coords>
+        <distAnterior>2.7</distAnterior>
+        <distSiguiente>19.9</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>4</orden>
+        <nombre>Orreaga/Roncesvalles</nombre>
+        <coords>43.00954730092566, -1.319763812529985</coords>
+        <coords>43.00885966154377, -1.319797232398457</coords>
+        <coords>43.00833576408309, -1.319705575856403</coords>
+        <coords>43.005852, -1.31919</coords>
+        <coords>43.005131, -1.31954</coords>
+        <coords>43.004341, -1.31962</coords>
+        <coords>42.99667, -1.32698</coords>
+        <coords>42.995312, -1.32838</coords>
+        <coords>42.994518, -1329</coords>
+        <coords>42.992512, -1.33104</coords>
+        <coords>42.99184, -1.33265</coords>
+        <coords>42.990768, -1.33473</coords>
+        <distAnterior>19.9</distAnterior>
+        <distSiguiente>2.6</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>true</farmacia>
+        <banco>true</banco>
+        <internet>true</internet>
+    </parada>
+    <parada>
+        <orden>5</orden>
+        <nombre>Auritz/Burguete</nombre>
+        <coords>42.990768, -1.33473</coords>
+        <coords>42.988449, -1.33625</coords>
+        <coords>42.988651, -1.33876</coords>
+        <coords>42.989578, -1.34127</coords>
+        <coords>42.989399, -1.34183</coords>
+        <coords>42.98978, -1.34249</coords>
+        <coords>42.989639, -1.3434</coords>
+        <coords>42.98975, -1.34501</coords>
+        <coords>42.989342, -1.34558</coords>
+        <coords>42.989441, -1.34872</coords>
+        <coords>42.990108, -1.35155</coords>
+        <coords>42.989761, -1.35408</coords>
+        <coords>42.989651, -1.35535</coords>
+        <coords>42.989361, -1.35567</coords>
+        <coords>42.989399, -1.35591</coords>
+        <coords>42.98922, -1.35614</coords>
+        <coords>42.98962, -1.35758</coords>
+        <coords>42.98967, -1.35938</coords>
+        <coords>42.98917, -1.36013</coords>
+        <coords>42.98922, -1.36073</coords>
+        <coords>42.988682, -1.3608</coords>
+        <coords>42.988121, -1.36127</coords>
+        <coords>42.987541, -1.36157</coords>
+        <coords>42987, -1.36196</coords>
+        <coords>42.98674, -1.36191</coords>
+        <coords>42.986408, -1.36245</coords>
+        <coords>42.986301, -1.36294</coords>
+        <coords>42.984772, -1.36397</coords>
+        <coords>42.983959, -1.36498</coords>
+        <coords>42.982891, -1.36601</coords>
+        <coords>42.982182, -1.36696</coords>
+        <coords>42.981289, -1.36741</coords>
+        <coords>42.9809, -1.3679</coords>
+        <coords>42.98032, -1.36891</coords>
+        <coords>42.98069, -1.36955</coords>
+        <coords>42.981289, -1.37163</coords>
+        <distAnterior>2.6</distAnterior>
+        <distSiguiente>3.8</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>false</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>6</orden>
+        <nombre>Aurizberri/Espinal</nombre>
+        <coords>42.981289, -1.37163</coords>
+        <coords>42.98032, -1.3723</coords>
+        <coords>42.97826, -1.37417</coords>
+        <coords>42.97776, -1.37567</coords>
+        <coords>42.976372, -1.3788</coords>
+        <coords>42.97612, -1.37899</coords>
+        <coords>42.97575, -1.38067</coords>
+        <coords>42.97554, -1.38185</coords>
+        <coords>42.976971, -1.38228</coords>
+        <coords>42.977661, -1.38337</coords>
+        <coords>42.978458, -1.38393</coords>
+        <coords>42.97929, -1.38513</coords>
+        <coords>42.979919, -1.38631</coords>
+        <coords>42.979778, -1.38674</coords>
+        <coords>42.979729, -1.38721</coords>
+        <coords>42.98024, -1.38766</coords>
+        <coords>42.980171, -1.38792</coords>
+        <coords>42.9795, -1.38777</coords>
+        <coords>42.979561, -1.38891</coords>
+        <coords>42.979439, -1.39</coords>
+        <coords>42.97887, -1.39092</coords>
+        <coords>42.978588, -1392</coords>
+        <coords>42.977982, -1.39301</coords>
+        <coords>42.97773, -1.39616</coords>
+        <coords>42.97718, -1.39723</coords>
+        <coords>42.977619, -1.39813</coords>
+        <coords>42.977539, -1.39846</coords>
+        <coords>42.976891, -1.39843</coords>
+        <coords>42.976269, -1.39867</coords>
+        <coords>42.975639, -1.39996</coords>
+        <coords>42.975021, -1.40075</coords>
+        <coords>42.974178, -1.40152</coords>
+        <coords>42.97374, -1.4026</coords>
+        <coords>42.973221, -1.40331</coords>
+        <coords>42.97287, -1.40395</coords>
+        <coords>42.971931, -1.40438</coords>
+        <coords>42.971821, -1.40509</coords>
+        <coords>42.97134, -1.40532</coords>
+        <coords>42.971039, -1405</coords>
+        <coords>42.970718, -1.40524</coords>
+        <coords>42.97094, -1.40584</coords>
+        <coords>42.970852, -1.40676</coords>
+        <coords>42.971451, -1.40783</coords>
+        <coords>42.971149, -1.40873</coords>
+        <coords>42.970852, -1.41</coords>
+        <coords>42.970348, -1.41107</coords>
+        <coords>42.970268, -1.4127</coords>
+        <coords>42.970032, -1.41386</coords>
+        <coords>42.969669, -1.41513</coords>
+        <coords>42.969341, -1.41592</coords>
+        <coords>42.969109, -1.41687</coords>
+        <coords>42.96854, -1.41693</coords>
+        <coords>42.96769, -1.41792</coords>
+        <distAnterior>3.8</distAnterior>
+        <distSiguiente>6.0</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>7</orden>
+        <nombre>Bizkarreta-Gerendiain</nombre>
+        <coords>42.96769, -1.41792</coords>
+        <coords>42.967522, -1.41957</coords>
+        <coords>42.96769, -1.42084</coords>
+        <coords>42.967411, -1.42343</coords>
+        <coords>42.967129, -1.42558</coords>
+        <coords>42.96714, -1.42627</coords>
+        <coords>42.966888, -1.42738</coords>
+        <coords>42.96648, -1.42777</coords>
+        <coords>42.966061, -1.4288</coords>
+        <coords>42.965672, -1.42957</coords>
+        <coords>42.965321, -1.43142</coords>
+        <coords>42.96479, -1.43232</coords>
+        <coords>42.964161, -1.43367</coords>
+        <coords>42.963661, -1.43453</coords>
+        <coords>42.963692, -1.43566</coords>
+        <coords>42.963188, -1.43641</coords>
+        <coords>42.96286, -1.4377</coords>
+        <distAnterior>6.0</distAnterior>
+        <distSiguiente>2.32</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>false</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>8</orden>
+        <nombre>Lintzoain</nombre>
+        <coords>42.96286, -1.4377</coords>
+        <coords>42.962429, -1.43781</coords>
+        <coords>42.961868, -1.43903</coords>
+        <coords>42.96196, -1.44008</coords>
+        <coords>42.961491, -1.44122</coords>
+        <coords>42.961269, -1.44277</coords>
+        <coords>42.960918, -1.44347</coords>
+        <coords>42.96114, -1.44435</coords>
+        <coords>42.960819, -1.44491</coords>
+        <coords>42.960468, -1.44605</coords>
+        <coords>42.960232, -1.44704</coords>
+        <coords>42.9599, -1.44792</coords>
+        <coords>42.960121, -1.44877</coords>
+        <coords>42.960171, -1.4495</coords>
+        <coords>42.96143, -1.4512</coords>
+        <coords>42.961319, -1.45201</coords>
+        <coords>42.960911, -1.45251</coords>
+        <coords>42.959702, -1.45251</coords>
+        <coords>42.958839, -1.45266</coords>
+        <coords>42.95895, -1453</coords>
+        <coords>42.95882, -1.45315</coords>
+        <coords>42.958698, -1.45495</coords>
+        <coords>42.95615, -1.45478</coords>
+        <coords>42.955589, -1.45596</coords>
+        <coords>42.954819, -1.45849</coords>
+        <coords>42.95422, -1.4588</coords>
+        <coords>42.95417, -1.46021</coords>
+        <coords>42.953911, -1.4598</coords>
+        <coords>42.953972, -1.46154</coords>
+        <coords>42.9534, -1.46322</coords>
+        <coords>42.952221, -1.46476</coords>
+        <coords>42.951141, -1.46536</coords>
+        <coords>42.949661, -1.4654</coords>
+        <coords>42.949009, -1.46646</coords>
+        <coords>42.94791, -1.46727</coords>
+        <coords>42.94619, -1.46798</coords>
+        <coords>42.94569, -1.46789</coords>
+        <coords>42.945572, -1.46845</coords>
+        <coords>42.94434, -1.46931</coords>
+        <coords>42.94315, -1.46989</coords>
+        <coords>42.942928, -1.46959</coords>
+        <coords>42.942081, -1.47051</coords>
+        <coords>42.941978, -1.47034</coords>
+        <coords>42.94173, -1.4706</coords>
+        <coords>42.94125, -1.47085</coords>
+        <coords>42.940788, -1.47098</coords>
+        <coords>42.93911, -1.47257</coords>
+        <coords>42.93771, -1.47639</coords>
+        <coords>42.93779, -1.47957</coords>
+        <coords>42.938419, -1.48253</coords>
+        <coords>42.938721, -1.48515</coords>
+        <coords>42.93927, -1.48673</coords>
+        <coords>42.93935, -1.48751</coords>
+        <coords>42.93935, -1.48826</coords>
+        <coords>42.939251, -1.4889</coords>
+        <coords>42.9384, -1.48961</coords>
+        <coords>42.938091, -1.49212</coords>
+        <coords>42.937759, -1.49308</coords>
+        <coords>42.937149, -1.49399</coords>
+        <coords>42.93631, -1.49315</coords>
+        <coords>42.935669, -1.49506</coords>
+        <coords>42.933891, -1.49609</coords>
+        <coords>42.933392, -1.49663</coords>
+        <coords>42.932861, -1.49641</coords>
+        <coords>42.932758, -1.49671</coords>
+        <coords>42.932461, -1.4968</coords>
+        <coords>42.93206, -1.4971</coords>
+        <coords>42.931759, -1.49796</coords>
+        <coords>42.931648, -1.49866</coords>
+        <coords>42.93058, -1.49961</coords>
+        <coords>42.930229, -1.50128</coords>
+        <coords>42.930279, -1.50227</coords>
+        <coords>42.92997, -1.50265</coords>
+        <coords>42.92984034699342, -1.502974861177975</coords>
+        <coords>42.92992554911847, -1.503698065800649</coords>
+        <coords>42.93036118544159, -1.50466604700992</coords>
+        <distAnterior>2.32</distAnterior>
+        <distSiguiente>1.8</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>false</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>9</orden>
+        <nombre>Zubiri</nombre>
+        <coords>42.93036118544159, -1.50466604700992</coords>
+        <coords>42.92996283644197, -1.503737009357508</coords>
+        <coords>42.92982902166272, -1.503027532840008</coords>
+        <coords>42.92960801889504, -1.502882600022559</coords>
+        <coords>42.92917537465313, -1.502816018693665</coords>
+        <coords>42.92881041248745, -1.502421256508967</coords>
+        <coords>42.928101, -1.50317</coords>
+        <coords>42.92733, -1.50347</coords>
+        <coords>42.926861, -1.50319</coords>
+        <coords>42.926479, -1.50229</coords>
+        <coords>42.924801, -1.50332</coords>
+        <coords>42.924549, -1.50448</coords>
+        <coords>42.92392, -1.50482</coords>
+        <coords>42.92345, -1.50656</coords>
+        <coords>42.9231, -1.50639</coords>
+        <coords>42.92202, -1.50701</coords>
+        <coords>42.920509, -1.50768</coords>
+        <coords>42.920219, -1.50853</coords>
+        <coords>42.919739, -1.50944</coords>
+        <coords>42.916641, -1.51156</coords>
+        <coords>42.915642, -1.51287</coords>
+        <coords>42.914848, -1.51446</coords>
+        <coords>42.914349, -1.51529</coords>
+        <coords>42.914169, -1.51574</coords>
+        <coords>42.91378, -1.51587</coords>
+        <coords>42.91325, -1.51671</coords>
+        <coords>42.912868, -1.51654</coords>
+        <coords>42.912338, -1.5168</coords>
+        <coords>42.911579, -1.51742</coords>
+        <coords>42.91111, -1.51707</coords>
+        <coords>42.91053, -1.51735</coords>
+        <coords>42.910419, -1.51875</coords>
+        <coords>42.90995, -1.52055</coords>
+        <coords>42.909161, -1.52233</coords>
+        <coords>42.909111, -1.52338</coords>
+        <coords>42.908611, -1.52407</coords>
+        <coords>42.908798, -1.52645</coords>
+        <coords>42.908562, -1.52722</coords>
+        <coords>42.90855, -1.52903</coords>
+        <coords>42.90691, -1.53096</coords>
+        <coords>42.906712, -1.53175</coords>
+        <coords>42.905849, -1.53315</coords>
+        <coords>42.90517, -1.53381</coords>
+        <coords>42.904781, -1.5339</coords>
+        <coords>42.903961, -1.53514</coords>
+        <coords>42.903191, -1.53527</coords>
+        <coords>42.903172, -1.53602</coords>
+        <coords>42.9025, -1.53733</coords>
+        <coords>42.901852, -1.53885</coords>
+        <coords>42.901459, -1.53903</coords>
+        <coords>42.901379, -1.53866</coords>
+        <coords>42.901131, -1.53877</coords>
+        <coords>42.90099, -1.53941</coords>
+        <coords>42.900879, -1.5404</coords>
+        <distAnterior>1.8</distAnterior>
+        <distSiguiente>6.44</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>10</orden>
+        <nombre>Larrasoaña</nombre>
+        <coords>42.900879, -1.5404</coords>
+        <coords>42.900452, -1.54076</coords>
+        <coords>42.898281, -1.54209</coords>
+        <coords>42.897148, -1.54177</coords>
+        <coords>42.896702, -1.54229</coords>
+        <coords>42.896931, -1.54261</coords>
+        <coords>42.897011, -1.54312</coords>
+        <coords>42.896542, -1.54364</coords>
+        <coords>42.896412, -1.54493</coords>
+        <coords>42.895969, -1.54546</coords>
+        <coords>42.895569, -1.54609</coords>
+        <coords>42.895061, -1.54673</coords>
+        <coords>42.89502, -1.54954</coords>
+        <coords>42.894669, -1.54997</coords>
+        <coords>42.894619, -1.54963</coords>
+        <coords>42.893581, -1.55123</coords>
+        <coords>42.892059, -1.55372</coords>
+        <coords>42.891651, -1.55407</coords>
+        <coords>42.89135, -1.55516</coords>
+        <coords>42.890171, -1.55619</coords>
+        <coords>42.887909, -1.55926</coords>
+        <coords>42.887199, -1.56001</coords>
+        <coords>42.88681, -1.56128</coords>
+        <coords>42.886452, -1.5622</coords>
+        <coords>42.88541, -1.56276</coords>
+        <coords>42.884472, -1.56244</coords>
+        <coords>42.883492, -1.5622</coords>
+        <coords>42.882118, -1.56248</coords>
+        <coords>42.881699, -1.56317</coords>
+        <coords>42.880772, -1.56409</coords>
+        <coords>42.878738, -1.56514</coords>
+        <coords>42.878479, -1.56523</coords>
+        <coords>42.878681, -1.56608</coords>
+        <distAnterior>6.44</distAnterior>
+        <distSiguiente>4.36</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>11</orden>
+        <nombre>Zuriain</nombre>
+        <coords>42.878681, -1.56608</coords>
+        <coords>42.874279, -1.56894</coords>
+        <coords>42.87307, -1.56958</coords>
+        <coords>42.871449, -1.56917</coords>
+        <coords>42.870579, -1.56935</coords>
+        <coords>42.869862, -1.56887</coords>
+        <coords>42.86805, -1.56887</coords>
+        <coords>42.86594, -1.56958</coords>
+        <coords>42.865742, -1.57003</coords>
+        <coords>42.86533, -1.56982</coords>
+        <coords>42.86512, -1.57042</coords>
+        <coords>42.864368, -1.57102</coords>
+        <coords>42.86319, -1.57117</coords>
+        <coords>42.862259, -1.57093</coords>
+        <coords>42.861809, -1.57087</coords>
+        <coords>42.86116, -1.5716</coords>
+        <coords>42.86031, -1.57241</coords>
+        <coords>42.85968, -1.57366</coords>
+        <coords>42.860031, -1.57439</coords>
+        <coords>42.858028, -1.57709</coords>
+        <coords>42.856651, -1.57834</coords>
+        <coords>42.85474, -1.58113</coords>
+        <distAnterior>4.36</distAnterior>
+        <distSiguiente>3.58</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>false</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>12</orden>
+        <nombre>Zabaldika</nombre>
+        <coords>42.85474, -1.58113</coords>
+        <coords>42.854408, -1.58198</coords>
+        <coords>42.85363, -1.58291</coords>
+        <coords>42.852982, -1.5834</coords>
+        <coords>42.852749, -1.58413</coords>
+        <coords>42.852341, -1.58456</coords>
+        <coords>42.85207, -1.58533</coords>
+        <coords>42.851082, -1.5858</coords>
+        <coords>42.850761, -1.58565</coords>
+        <coords>42.849682, -1.5858</coords>
+        <coords>42.848579, -1.58655</coords>
+        <coords>42.84771, -1.58722</coords>
+        <coords>42.846809, -1.58769</coords>
+        <coords>42.845291, -1.58876</coords>
+        <coords>42.84409, -1.58937</coords>
+        <coords>42.843948, -1.58997</coords>
+        <coords>42.843269, -1.5899</coords>
+        <coords>42.842381, -1.5907</coords>
+        <coords>42.841511, -1.59175</coords>
+        <coords>42.841339, -1.59248</coords>
+        <coords>42.839779, -1.59205</coords>
+        <coords>42.839039, -1.59166</coords>
+        <coords>42.838848, -1.59194</coords>
+        <coords>42.838539, -1.59316</coords>
+        <coords>42.838348, -1.59544</coords>
+        <coords>42.838459, -1.59829</coords>
+        <coords>42.838112, -1.59999</coords>
+        <coords>42.83741, -1.60185</coords>
+        <coords>42.836922, -1.6025</coords>
+        <coords>42.836159, -1.60338</coords>
+        <coords>42.836189, -1.60428</coords>
+        <distAnterior>3.58</distAnterior>
+        <distSiguiente>3.86</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>13</orden>
+        <nombre>Santísima Trinidad de Arre</nombre>
+        <coords>42.836189, -1.60428</coords>
+        <coords>42.83572, -1.60445</coords>
+        <coords>42.830952, -1.6087</coords>
+        <coords>42.829681, -1.61037</coords>
+        <distAnterior>3.86</distAnterior>
+        <distSiguiente>1.0</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>14</orden>
+        <nombre>Villava</nombre>
+        <coords>42.829681, -1.61037</coords>
+        <coords>42.827518, -1.61368</coords>
+        <coords>42.825821, -1.61619</coords>
+        <coords>42.824631, -1.61765</coords>
+        <distAnterior>1.0</distAnterior>
+        <distSiguiente>0.987</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>15</orden>
+        <nombre>Burlata</nombre>
+        <coords>42.824631, -1.61765</coords>
+        <coords>42.82172, -1.62078</coords>
+        <coords>42.822109, -1.62157</coords>
+        <coords>42.8223, -1.62205</coords>
+        <coords>42.82222, -1.62499</coords>
+        <coords>42.822159, -1.62556</coords>
+        <coords>42.822269, -1.62582</coords>
+        <coords>42.821201, -1.62983</coords>
+        <coords>42.821419, -1.63202</coords>
+        <coords>42.82151, -1.63443</coords>
+        <coords>42.820679, -1.63739</coords>
+        <coords>42.821201, -1.63765</coords>
+        <coords>42.820911, -1.63842</coords>
+        <coords>42.820728, -1.63861</coords>
+        <coords>42.820801, -1.63932</coords>
+        <coords>42.821419, -1.64018</coords>
+        <coords>42.821892, -1.64046</coords>
+        <coords>42.821281, -1.64256</coords>
+        <coords>42.821232, -1.64335</coords>
+        <coords>42.821018, -1.64325</coords>
+        <coords>42.819611, -1.64297</coords>
+        <coords>42.818851, -1.64269</coords>
+        <distAnterior>0.987</distAnterior>
+        <distSiguiente>3.42</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>false</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>16</orden>
+        <nombre>Pamplona</nombre>
+        <coords>42.818851, -1.64269</coords>
+        <coords>42.818504, -1.643035</coords>
+        <coords>42.818371, -1.643443</coords>
+        <coords>42.818157, -1.644237</coords>
+        <coords>42.818134, -1.644323</coords>
+        <coords>42.818336, -1.644602</coords>
+        <coords>42.818268, -1.644806</coords>
+        <coords>42.818298, -1.645213</coords>
+        <coords>42.817101, -1.649183</coords>
+        <coords>42.81678, -1.64973</coords>
+        <coords>42.815731, -1.651232</coords>
+        <coords>42.815376, -1.651822</coords>
+        <coords>42.815109, -1.6515</coords>
+        <coords>42.81459, -1.652337</coords>
+        <coords>42.81456, -1.652187</coords>
+        <coords>42.814228, -1.652337</coords>
+        <coords>42.814117, -1.652466</coords>
+        <coords>42.812286, -1.653314</coords>
+        <coords>42.810532, -1.65267</coords>
+        <coords>42.809933, -1.653013</coords>
+        <coords>42.809208, -1.653357</coords>
+        <coords>42.809319, -1.653743</coords>
+        <coords>42.809059, -1.653936</coords>
+        <coords>42.808765, -1.653571</coords>
+        <coords>42.806839, -1.656919</coords>
+        <coords>42.806618, -1.657037</coords>
+        <coords>42.806618, -1.657315</coords>
+        <coords>42.806358, -1.657884</coords>
+        <coords>42.806122, -1.658227</coords>
+        <coords>42.805241, -1.659579</coords>
+        <coords>42.804737, -1.660126</coords>
+        <coords>42.804516, -1.660094</coords>
+        <coords>42.80439, -1.660298</coords>
+        <coords>42.804367, -1.660534</coords>
+        <coords>42.803581, -1.661135</coords>
+        <coords>42.802429, -1.662208</coords>
+        <coords>42.801746, -1.663163</coords>
+        <coords>42.801487, -1.663216</coords>
+        <coords>42.80146, -1.66356</coords>
+        <coords>42.801563, -1.663699</coords>
+        <coords>42.801407, -1.664515</coords>
+        <coords>42.801216, -1.665115</coords>
+        <coords>42.800697, -1.665319</coords>
+        <coords>42.800133, -1.665673</coords>
+        <coords>42.799786, -1.666006</coords>
+        <coords>42.799126, -1.66621</coords>
+        <coords>42.798187, -1.666843</coords>
+        <coords>42.797756, -1.66725</coords>
+        <coords>42.797417, -1.66798</coords>
+        <coords>42.797047, -1.668452</coords>
+        <coords>42.796204, -1.669117</coords>
+        <coords>42.795834, -1.669621</coords>
+        <coords>42.795521, -1.670351</coords>
+        <coords>42.795361, -1.671059</coords>
+        <coords>42.794907, -1.671928</coords>
+        <coords>42.794197, -1.672679</coords>
+        <coords>42.794022, -1.672904</coords>
+        <coords>42.794029, -1.673162</coords>
+        <coords>42.793922, -1.673259</coords>
+        <coords>42.793701, -1.673151</coords>
+        <coords>42.793015, -1.67357</coords>
+        <coords>42.791748, -1.674181</coords>
+        <coords>42.790684, -1.674889</coords>
+        <coords>42.789742, -1.675179</coords>
+        <coords>42.788551, -1.675233</coords>
+        <coords>42.788197, -1.675415</coords>
+        <coords>42.787796, -1.67608</coords>
+        <coords>42.787693, -1.676263</coords>
+        <coords>42.786716, -1.676906</coords>
+        <coords>42.786346, -1.677024</coords>
+        <distAnterior>3.42</distAnterior>
+        <distSiguiente>5.96</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>true</farmacia>
+        <banco>true</banco>
+        <internet>true</internet>
+    </parada>
+    <parada>
+        <orden>17</orden>
+        <nombre>Cizur Menor</nombre>
+        <coords>42.786346, -1.677024</coords>
+        <coords>42.785946, -1.678344</coords>
+        <coords>42.785534, -1.678795</coords>
+        <coords>42.784592, -1.679728</coords>
+        <coords>42.784229, -1.680275</coords>
+        <coords>42.783276, -1.68094</coords>
+        <coords>42.782639, -1.681488</coords>
+        <coords>42.782433, -1.681949</coords>
+        <coords>42.781914, -1.682625</coords>
+        <coords>42.781654, -1.683236</coords>
+        <coords>42.781136, -1.684256</coords>
+        <coords>42.780426, -1.685339</coords>
+        <coords>42.780228, -1.685715</coords>
+        <coords>42.779903, -1.686004</coords>
+        <coords>42.778599, -1.687807</coords>
+        <coords>42.778206, -1.688215</coords>
+        <coords>42.77803, -1.688451</coords>
+        <coords>42.77803, -1.688719</coords>
+        <coords>42.778149, -1.689663</coords>
+        <coords>42.777977, -1.689835</coords>
+        <coords>42.776726, -1.690468</coords>
+        <coords>42.776134, -1.6908</coords>
+        <coords>42.775425, -1.691068</coords>
+        <coords>42.77533, -1.691251</coords>
+        <coords>42.775024, -1.691444</coords>
+        <coords>42.774937, -1.69168</coords>
+        <coords>42.774754, -1.691819</coords>
+        <coords>42.774521, -1.692088</coords>
+        <coords>42.773968, -1.692796</coords>
+        <coords>42.77356, -1.693386</coords>
+        <coords>42.773235, -1.693708</coords>
+        <coords>42.772732, -1.69403</coords>
+        <coords>42.772717, -1.694276</coords>
+        <coords>42.77206, -1.695178</coords>
+        <coords>42.771755, -1.695918</coords>
+        <coords>42.771526, -1.696379</coords>
+        <coords>42.771343, -1.696755</coords>
+        <coords>42.771275, -1.697602</coords>
+        <coords>42.771126, -1.697978</coords>
+        <coords>42.770744, -1.698589</coords>
+        <coords>42.770283, -1.699287</coords>
+        <coords>42.769543, -1.700059</coords>
+        <coords>42.768848, -1.700671</coords>
+        <coords>42.768448, -1.700907</coords>
+        <coords>42.768036, -1.701121</coords>
+        <coords>42.767628, -1.701379</coords>
+        <coords>42.767303, -1.701615</coords>
+        <coords>42.766815, -1.702334</coords>
+        <coords>42.766369, -1.703053</coords>
+        <coords>42.765919, -1.70404</coords>
+        <coords>42.765793, -1.704297</coords>
+        <coords>42.765438, -1.704919</coords>
+        <coords>42.765194, -1.705574</coords>
+        <coords>42.764942, -1.706786</coords>
+        <coords>42.764816, -1.707205</coords>
+        <coords>42.764492, -1.707816</coords>
+        <coords>42.76416, -1.708159</coords>
+        <coords>42.763428, -1.70875</coords>
+        <coords>42.763168, -1.709232</coords>
+        <coords>42.76302, -1.710048</coords>
+        <coords>42.762707, -1.71023</coords>
+        <coords>42.762531, -1.710638</coords>
+        <coords>42.762222, -1.710949</coords>
+        <coords>42.761963, -1.711303</coords>
+        <coords>42.761745, -1.711679</coords>
+        <coords>42.76162, -1.712204</coords>
+        <coords>42.761333, -1.712472</coords>
+        <coords>42.761002, -1.712676</coords>
+        <coords>42.760696, -1.712923</coords>
+        <coords>42.757679, -1.714489</coords>
+        <coords>42.756531, -1.715208</coords>
+        <coords>42.755661, -1.715906</coords>
+        <coords>42.754025, -1.717376</coords>
+        <coords>42.75362, -1.717654</coords>
+        <coords>42.753456, -1.717901</coords>
+        <coords>42.753117, -1.718127</coords>
+        <coords>42.752354, -1.718373</coords>
+        <coords>42.751881, -1.718985</coords>
+        <coords>42.751347, -1.719532</coords>
+        <coords>42.750874, -1.719725</coords>
+        <coords>42.750607, -1.719725</coords>
+        <coords>42.750454, -1.7198</coords>
+        <coords>42.750149, -1.719596</coords>
+        <coords>42.74987, -1.719747</coords>
+        <coords>42.748611, -1.722032</coords>
+        <coords>42.748184, -1.722718</coords>
+        <coords>42.74791, -1.723008</coords>
+        <distAnterior>5.96</distAnterior>
+        <distSiguiente>7.01</distSiguiente>
+        <comida>true</comida>
+        <hotel>false</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>18</orden>
+        <nombre>Zariquiegui</nombre>
+        <coords>42.74791, -1.723008</coords>
+        <coords>42.747585, -1.723169</coords>
+        <coords>42.746712, -1.723319</coords>
+        <coords>42.746231, -1.723405</coords>
+        <coords>42.7458, -1.723942</coords>
+        <coords>42.745491, -1.724199</coords>
+        <coords>42.745193, -1.724575</coords>
+        <coords>42.744942, -1.724671</coords>
+        <coords>42.74334, -1.72598</coords>
+        <coords>42.743229, -1.726388</coords>
+        <coords>42.743042, -1.726484</coords>
+        <coords>42.742859, -1.726795</coords>
+        <coords>42.742065, -1.7273</coords>
+        <coords>42.742001, -1.727611</coords>
+        <coords>42.742065, -1.727997</coords>
+        <coords>42.741993, -1.728297</coords>
+        <coords>42.741756, -1.728512</coords>
+        <coords>42.741497, -1.728802</coords>
+        <coords>42.741356, -1.729177</coords>
+        <coords>42.740707, -1.729574</coords>
+        <coords>42.740604, -1.729907</coords>
+        <coords>42.74052, -1.730357</coords>
+        <coords>42.740498, -1.730797</coords>
+        <coords>42.740284, -1.731119</coords>
+        <coords>42.740128, -1.731323</coords>
+        <coords>42.740055, -1.731484</coords>
+        <coords>42.739967, -1.731656</coords>
+        <coords>42.739677, -1.731784</coords>
+        <coords>42.739346, -1.732922</coords>
+        <coords>42.738888, -1.733619</coords>
+        <coords>42.738724, -1.733919</coords>
+        <coords>42.738659, -1.734123</coords>
+        <coords>42.738464, -1.734499</coords>
+        <coords>42.738346, -1.734885</coords>
+        <coords>42.738075, -1.735454</coords>
+        <coords>42.738014, -1.735861</coords>
+        <coords>42.737823, -1.736516</coords>
+        <coords>42.737659, -1.737074</coords>
+        <coords>42.737488, -1.737567</coords>
+        <coords>42.737232, -1.738662</coords>
+        <coords>42.737003, -1.73908</coords>
+        <coords>42.736542, -1.739498</coords>
+        <coords>42.736225, -1.740078</coords>
+        <coords>42.735943, -1.741022</coords>
+        <coords>42.735714, -1.742159</coords>
+        <coords>42.735706, -1.742588</coords>
+        <coords>42.735641, -1.742749</coords>
+        <coords>42.735249, -1.742706</coords>
+        <coords>42.735085, -1.7432</coords>
+        <coords>42.734932, -1.743876</coords>
+        <coords>42.734901, -1.744466</coords>
+        <coords>42.734871, -1.745603</coords>
+        <coords>42.734711, -1746</coords>
+        <coords>42.734531, -1.746569</coords>
+        <coords>42.733955, -1.747427</coords>
+        <coords>42.733562, -1.747674</coords>
+        <coords>42.733318, -1.747996</coords>
+        <coords>42.732922, -1.748317</coords>
+        <coords>42.732712, -1.748747</coords>
+        <coords>42.732697, -1.749197</coords>
+        <coords>42.732655, -1.749347</coords>
+        <coords>42.73241, -1.749251</coords>
+        <coords>42.732105, -1.749036</coords>
+        <coords>42.731441, -1.749101</coords>
+        <coords>42.73122, -1.749272</coords>
+        <coords>42.730968, -1.74924</coords>
+        <coords>42.730724, -1.749251</coords>
+        <coords>42.73056, -1.749111</coords>
+        <coords>42.730183, -1.749133</coords>
+        <coords>42.729992, -1.74895</coords>
+        <coords>42.729717, -1.748865</coords>
+        <coords>42.729565, -1.749004</coords>
+        <coords>42.729305, -1.748897</coords>
+        <coords>42.729015, -1.748843</coords>
+        <coords>42.728771, -1.748972</coords>
+        <coords>42.728558, -1.749004</coords>
+        <coords>42.727913, -1.74924</coords>
+        <coords>42.72665, -1.749616</coords>
+        <coords>42.725742, -1.749787</coords>
+        <coords>42.724358, -1.749573</coords>
+        <coords>42.723774, -1.749573</coords>
+        <coords>42.723263, -1.749691</coords>
+        <coords>42.72282, -1.750002</coords>
+        <coords>42.72234, -1.750495</coords>
+        <coords>42.721825, -1.751032</coords>
+        <coords>42.721409, -1.751643</coords>
+        <coords>42.721039, -1.752191</coords>
+        <coords>42.720753, -1.752566</coords>
+        <coords>42.720314, -1.75292</coords>
+        <coords>42.719643, -1.753446</coords>
+        <coords>42.718864, -1.753703</coords>
+        <coords>42.718239, -1.75365</coords>
+        <coords>42.717785, -1.75366</coords>
+        <coords>42.71727, -1.753736</coords>
+        <coords>42.717175, -1.7535</coords>
+        <coords>42.716751, -1.7538</coords>
+        <coords>42.716286, -1.754079</coords>
+        <coords>42.715992, -1.754433</coords>
+        <coords>42.715614, -1.75469</coords>
+        <coords>42.71545, -1.755366</coords>
+        <coords>42.715282, -1.75572</coords>
+        <coords>42.714905, -1.756096</coords>
+        <coords>42.714195, -1.756632</coords>
+        <coords>42.713818, -1.757061</coords>
+        <coords>42.710712, -1.758242</coords>
+        <coords>42.710663, -1.758564</coords>
+        <coords>42.710396, -1.759014</coords>
+        <coords>42.709103, -1.76101</coords>
+        <distAnterior>7.01</distAnterior>
+        <distSiguiente>6.4</distSiguiente>
+        <comida>true</comida>
+        <hotel>false</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>19</orden>
+        <nombre>Uterga</nombre>
+        <coords>42.709103, -1.76101</coords>
+        <coords>42.708755, -1.76146</coords>
+        <coords>42.708111, -1.761332</coords>
+        <coords>42.707573, -1.761782</coords>
+        <coords>42.706219, -1.763327</coords>
+        <coords>42.705585, -1.763906</coords>
+        <coords>42.704674, -1.764336</coords>
+        <coords>42.703648, -1.764808</coords>
+        <coords>42.701912, -1.765087</coords>
+        <coords>42.700699, -1.765494</coords>
+        <coords>42.699028, -1.765795</coords>
+        <coords>42.697529, -1.766417</coords>
+        <coords>42.697121, -1.766438</coords>
+        <coords>42.695652, -1.768327</coords>
+        <coords>42.69458, -1.769271</coords>
+        <coords>42.69368, -1.769829</coords>
+        <coords>42.692593, -1.76985</coords>
+        <coords>42.690338, -1.770859</coords>
+        <coords>42.68969, -1.771202</coords>
+        <distAnterior>6.4</distAnterior>
+        <distSiguiente>2.55</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>20</orden>
+        <nombre>Muruzábal</nombre>
+        <coords>42.68969, -1.771202</coords>
+        <coords>42.689236, -1.771567</coords>
+        <coords>42.689171, -1.771889</coords>
+        <coords>42.688541, -1.772168</coords>
+        <coords>42.687641, -1.772897</coords>
+        <coords>42.686111, -1.774507</coords>
+        <coords>42.68425, -1.776352</coords>
+        <coords>42.684486, -1.777081</coords>
+        <coords>42.684059, -1.777875</coords>
+        <coords>42.683727, -1.778755</coords>
+        <coords>42.683193, -1.779227</coords>
+        <coords>42.682499, -1.780429</coords>
+        <coords>42.681599, -1.781502</coords>
+        <coords>42.681393, -1.781802</coords>
+        <coords>42.681286, -1.782918</coords>
+        <coords>42.681503, -1.78427</coords>
+        <coords>42.680099, -1.785064</coords>
+        <coords>42.680275, -1.785729</coords>
+        <distAnterior>2.55</distAnterior>
+        <distSiguiente>2.10</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>false</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>21</orden>
+        <nombre>Obanos</nombre>
+        <coords>42.680275, -1.785729</coords>
+        <coords>42.679531, -1.786137</coords>
+        <coords>42.679249, -1.78633</coords>
+        <coords>42.67942, -1.786973</coords>
+        <coords>42.679062, -1.787531</coords>
+        <coords>42.679279, -1.789548</coords>
+        <coords>42.67947, -1.790514</coords>
+        <coords>42.67939, -1.791544</coords>
+        <coords>42.678997, -1.792445</coords>
+        <coords>42.678726, -1.793089</coords>
+        <coords>42.678429, -1.793561</coords>
+        <coords>42.678288, -1.795042</coords>
+        <coords>42.677925, -1.796672</coords>
+        <coords>42.677765, -1.798196</coords>
+        <coords>42.677467, -1.79944</coords>
+        <coords>42.67704, -1.800234</coords>
+        <coords>42.676929, -1.80105</coords>
+        <coords>42.677166, -1.801887</coords>
+        <coords>42.676773, -1.80474</coords>
+        <coords>42.676678, -1.805534</coords>
+        <coords>42.676647, -1.806672</coords>
+        <coords>42.676029, -1.807208</coords>
+        <coords>42.675446, -1.807745</coords>
+        <coords>42.674831, -1.808839</coords>
+        <coords>42.673695, -1.810598</coords>
+        <coords>42.673096, -1.810405</coords>
+        <distAnterior>2.10</distAnterior>
+        <distSiguiente>3.09</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>22</orden>
+        <nombre>Puente la Reina</nombre>
+        <coords>42.673096, -1.810405</coords>
+        <coords>42.672649, -1.81214</coords>
+        <coords>42.671452, -1.8183</coords>
+        <coords>42.670929, -1.81946</coords>
+        <coords>42.669449, -1.81939</coords>
+        <coords>42.668941, -1.81911</coords>
+        <coords>42.668388, -1.81924</coords>
+        <coords>42.668308, -1.82006</coords>
+        <coords>42.668362, -1.82113</coords>
+        <coords>42.668201, -1.82216</coords>
+        <coords>42.668331, -1.82265</coords>
+        <coords>42.6679, -1.82405</coords>
+        <coords>42.66708, -1.82647</coords>
+        <coords>42.666389, -1.82898</coords>
+        <coords>42.665958, -1.82967</coords>
+        <coords>42.665531, -1.83136</coords>
+        <coords>42.664452, -1.83411</coords>
+        <coords>42.664051, -1.83699</coords>
+        <coords>42.664051, -1.8375</coords>
+        <coords>42.66375, -1.83845</coords>
+        <coords>42.663609, -1.83928</coords>
+        <coords>42.663589, -1.84001</coords>
+        <coords>42.663059, -1.84068</coords>
+        <coords>42.662628, -1.84136</coords>
+        <coords>42.662109, -1.84173</coords>
+        <coords>42.661701, -1.84362</coords>
+        <coords>42.661381, -1.84475</coords>
+        <coords>42.661541, -1.84553</coords>
+        <coords>42.66209, -1.84602</coords>
+        <coords>42.662281, -1.84632</coords>
+        <coords>42.662621, -1.84636</coords>
+        <coords>42.662819, -1.84679</coords>
+        <coords>42.663738, -1.84722</coords>
+        <coords>42.664101, -1.84718</coords>
+        <coords>42.66494, -1.84814</coords>
+        <coords>42.66531, -1.84836</coords>
+        <coords>42.665878, -1.8492</coords>
+        <coords>42.665909, -1.85023</coords>
+        <coords>42.666241, -1.85123</coords>
+        <coords>42.666779, -1.85235</coords>
+        <coords>42.66711, -1.85349</coords>
+        <coords>42.666969, -1.85428</coords>
+        <coords>42.667271, -1.85495</coords>
+        <coords>42.667549, -1.85585</coords>
+        <coords>42.668091, -1.85656</coords>
+        <coords>42.668491, -1.85819</coords>
+        <coords>42.66901, -1.8589</coords>
+        <coords>42.66901, -1.8593</coords>
+        <coords>42.669319, -1.85947</coords>
+        <coords>42.669338, -1.86016</coords>
+        <coords>42.669159, -1.86117</coords>
+        <coords>42.66927, -1.8616</coords>
+        <coords>42.669022, -1.86209</coords>
+        <distAnterior>3.09</distAnterior>
+        <distSiguiente>6.64</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>true</farmacia>
+        <banco>true</banco>
+        <internet>true</internet>
+    </parada>
+    <parada>
+        <orden>23</orden>
+        <nombre>Mañeru</nombre>
+        <coords>42.669022, -1.86209</coords>
+        <coords>42.66901, -1.86338</coords>
+        <coords>42.66885, -1.86355</coords>
+        <coords>42.668941, -1.86389</coords>
+        <coords>42.66872, -1.86413</coords>
+        <coords>42.66885, -1.86568</coords>
+        <coords>42.669121, -1.86769</coords>
+        <coords>42.66946, -1869</coords>
+        <coords>42.66951, -1.86971</coords>
+        <coords>42.66938, -1.87014</coords>
+        <coords>42.670052, -1.87164</coords>
+        <coords>42.67033, -1.87319</coords>
+        <coords>42.670799, -1.87439</coords>
+        <coords>42.67099, -1.8758</coords>
+        <coords>42.67131, -1.87707</coords>
+        <coords>42.671009, -1.87791</coords>
+        <coords>42.67099, -1.87868</coords>
+        <coords>42.671169, -1.87977</coords>
+        <coords>42.671799, -1.88082</coords>
+        <coords>42.673031, -1.88256</coords>
+        <coords>42.673599, -1.88331</coords>
+        <coords>42.674198, -1.88387</coords>
+        <coords>42.674461, -1.88503</coords>
+        <coords>42.674839, -1.88567</coords>
+        <coords>42.67524, -1.88767</coords>
+        <coords>42.675362, -1.88821</coords>
+        <coords>42.675522, -1.88861</coords>
+        <coords>42.675579, -1.88911</coords>
+        <coords>42.675549, -1.88945</coords>
+        <coords>42.675838, -1.88958</coords>
+        <coords>42.67585, -1.88999</coords>
+        <coords>42.67598, -1.89007</coords>
+        <coords>42.67598, -1.89061</coords>
+        <coords>42.675789, -1.89142</coords>
+        <distAnterior>6.64</distAnterior>
+        <distSiguiente>2.7</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>24</orden>
+        <nombre>Cirauqui</nombre>
+        <coords>42.675789, -1.89142</coords>
+        <coords>42.675541, -1.8917</coords>
+        <coords>42.675701, -1.89194</coords>
+        <coords>42.675301, -1.89237</coords>
+        <coords>42.675251, -1.89291</coords>
+        <coords>42.67532, -1.89338</coords>
+        <coords>42.67593, -1.89411</coords>
+        <coords>42.677479, -1.89518</coords>
+        <coords>42.677639, -1.89559</coords>
+        <coords>42.677101, -1.8958</coords>
+        <coords>42.677109, -1.89636</coords>
+        <coords>42.677589, -1.89675</coords>
+        <coords>42.678082, -1.89694</coords>
+        <coords>42.678089, -1.89735</coords>
+        <coords>42.677711, -1.89803</coords>
+        <coords>42.677711, -1.89954</coords>
+        <coords>42.67778, -1.90089</coords>
+        <coords>42.678108, -1.90288</coords>
+        <coords>42.678089, -1.90366</coords>
+        <coords>42.678303, -1.904604</coords>
+        <coords>42.678776, -1.905377</coords>
+        <coords>42.679218, -1.906214</coords>
+        <coords>42.679028, -1.907094</coords>
+        <coords>42.678967, -1.90851</coords>
+        <coords>42.679073, -1.909969</coords>
+        <coords>42.679203, -1.910977</coords>
+        <coords>42.679028, -1.91263</coords>
+        <coords>42.679329, -1.913166</coords>
+        <coords>42.679642, -1.914496</coords>
+        <coords>42.679455, -1.916213</coords>
+        <coords>42.678967, -1.917028</coords>
+        <coords>42.679062, -1.917887</coords>
+        <coords>42.679169, -1.918488</coords>
+        <coords>42.679028, -1.919153</coords>
+        <coords>42.679329, -1.919496</coords>
+        <coords>42.679169, -1.920869</coords>
+        <coords>42.679314, -1.922414</coords>
+        <coords>42.679752, -1.924453</coords>
+        <coords>42.680305, -1.926899</coords>
+        <coords>42.680401, -1.9275</coords>
+        <coords>42.680386, -1.927907</coords>
+        <coords>42.679817, -1.928465</coords>
+        <coords>42.679691, -1.92941</coords>
+        <coords>42.67944, -1.931598</coords>
+        <coords>42.679817, -1.93207</coords>
+        <coords>42.680542, -1.93295</coords>
+        <coords>42.680607, -1.933873</coords>
+        <coords>42.680717, -1.934924</coords>
+        <coords>42.680698, -1.935546</coords>
+        <coords>42.680794, -1.93589</coords>
+        <coords>42.68119, -1.936104</coords>
+        <coords>42.68092, -1.937006</coords>
+        <coords>42.680336, -1.937284</coords>
+        <coords>42.679531, -1.937606</coords>
+        <coords>42.678791, -1.938314</coords>
+        <coords>42.678177, -1.938357</coords>
+        <coords>42.678001, -1.938636</coords>
+        <coords>42.677563, -1.938593</coords>
+        <coords>42.677197, -1.93898</coords>
+        <coords>42.676964, -1.939538</coords>
+        <coords>42.676315, -1.940181</coords>
+        <coords>42.67532, -1.940718</coords>
+        <coords>42.675117, -1.941726</coords>
+        <coords>42.674549, -1.94267</coords>
+        <coords>42.673569, -1.943593</coords>
+        <coords>42.672829, -1.944816</coords>
+        <coords>42.671833, -1.946318</coords>
+        <coords>42.671219, -1.947284</coords>
+        <coords>42.670746, -1.948528</coords>
+        <coords>42.669689, -1.950223</coords>
+        <coords>42.668804, -1.952391</coords>
+        <coords>42.668064, -1.954601</coords>
+        <coords>42.667793, -1.955416</coords>
+        <coords>42.667431, -1.956832</coords>
+        <coords>42.667385, -1.957669</coords>
+        <coords>42.667164, -1.958377</coords>
+        <coords>42.666485, -1.961017</coords>
+        <coords>42.665825, -1.960673</coords>
+        <coords>42.665569, -1.96106</coords>
+        <coords>42.665131, -1.962111</coords>
+        <coords>42.664799, -1.962111</coords>
+        <coords>42.6642, -1.961746</coords>
+        <coords>42.663063, -1.962411</coords>
+        <coords>42.661201, -1.964943</coords>
+        <coords>42.660759, -1.965609</coords>
+        <coords>42.658249, -1.966939</coords>
+        <coords>42.657917, -1.96769</coords>
+        <coords>42.657318, -1.968913</coords>
+        <coords>42.651684, -1.973162</coords>
+        <coords>42.653183, -1.975565</coords>
+        <coords>42.654083, -1.976295</coords>
+        <coords>42.654144, -1.97696</coords>
+        <coords>42.654144, -1.978354</coords>
+        <coords>42.654984, -1.979578</coords>
+        <coords>42.655693, -1.981487</coords>
+        <coords>42.656055, -1.982303</coords>
+        <coords>42.657761, -1.985843</coords>
+        <coords>42.658138, -1.98698</coords>
+        <coords>42.658878, -1.989255</coords>
+        <coords>42.659084, -1.989641</coords>
+        <coords>42.65929, -1.990907</coords>
+        <coords>42.659321, -1.991723</coords>
+        <coords>42.659225, -1.992087</coords>
+        <coords>42.659447, -1.992731</coords>
+        <distAnterior>2.7</distAnterior>
+        <distSiguiente>13.5</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>25</orden>
+        <nombre>Villatuerta</nombre>
+        <coords>42.659447, -1.992731</coords>
+        <coords>42.659447, -1.993504</coords>
+        <coords>42.6591, -1.99537</coords>
+        <coords>42.659653, -1.99625</coords>
+        <coords>42.66, -1.997387</coords>
+        <coords>42.660145, -1.99816</coords>
+        <coords>42.660442, -1.998889</coords>
+        <coords>42.660679, -2.000177</coords>
+        <coords>42.660931, -2.002151</coords>
+        <coords>42.661247, -2.002816</coords>
+        <coords>42.661373, -2.003052</coords>
+        <coords>42.661182, -2.004275</coords>
+        <coords>42.661182, -2.004769</coords>
+        <coords>42.661076, -2.005606</coords>
+        <coords>42.661137, -2.006421</coords>
+        <coords>42.661091, -2.00685</coords>
+        <coords>42.661182, -2.007494</coords>
+        <coords>42.660679, -2.007794</coords>
+        <coords>42.659718, -2.008095</coords>
+        <coords>42.659828, -2.00846</coords>
+        <coords>42.660347, -2.008867</coords>
+        <coords>42.660633, -2.009275</coords>
+        <coords>42.660728, -2.010155</coords>
+        <coords>42.661137, -2.010992</coords>
+        <coords>42.661388, -2.011421</coords>
+        <coords>42.662289, -2.011914</coords>
+        <coords>42.662888, -2.012815</coords>
+        <coords>42.663345, -2.013524</coords>
+        <coords>42.663361, -2.014275</coords>
+        <coords>42.66333, -2.015026</coords>
+        <coords>42.662872, -2.016528</coords>
+        <coords>42.662888, -2.01715</coords>
+        <coords>42.66259, -2.017879</coords>
+        <coords>42.662415, -2.018287</coords>
+        <coords>42.662605, -2.019038</coords>
+        <coords>42.662903, -2.019746</coords>
+        <coords>42.663063, -2.020304</coords>
+        <coords>42.66341, -2.020819</coords>
+        <coords>42.663471, -2.021227</coords>
+        <coords>42.664764, -2.021935</coords>
+        <coords>42.665161, -2.021978</coords>
+        <coords>42.665554, -2.021892</coords>
+        <coords>42.666264, -2.022064</coords>
+        <coords>42.666611, -2.022364</coords>
+        <coords>42.666943, -2.022579</coords>
+        <coords>42.667828, -2.022836</coords>
+        <coords>42.668427, -2.023137</coords>
+        <coords>42.668774, -2.02348</coords>
+        <coords>42.669373, -2.023802</coords>
+        <coords>42.669704, -2.024167</coords>
+        <coords>42.669735, -2.025089</coords>
+        <coords>42.66975, -2.026956</coords>
+        <coords>42.66983, -2.027471</coords>
+        <distAnterior>13.5</distAnterior>
+        <distSiguiente>4.69</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>26</orden>
+        <nombre>Estella</nombre>
+        <coords>42.66983, -2.027471</coords>
+        <coords>42.66964, -2.028168</coords>
+        <coords>42.669418, -2.028952</coords>
+        <coords>42.669334, -2.029198</coords>
+        <coords>42.668766, -2.029831</coords>
+        <coords>42.668041, -2.030668</coords>
+        <coords>42.667267, -2.031194</coords>
+        <coords>42.666756, -2.031569</coords>
+        <coords>42.666653, -2.031419</coords>
+        <coords>42.666374, -2.031623</coords>
+        <coords>42.666084, -2.031763</coords>
+        <coords>42.665146, -2.031859</coords>
+        <coords>42.664165, -2.032138</coords>
+        <coords>42.664215, -2.032256</coords>
+        <coords>42.664082, -2.032492</coords>
+        <coords>42.664001, -2.032793</coords>
+        <coords>42.66386, -2.032878</coords>
+        <coords>42.663738, -2.032793</coords>
+        <distAnterior>4.69</distAnterior>
+        <distSiguiente>1.02</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>true</farmacia>
+        <banco>true</banco>
+        <internet>true</internet>
+    </parada>
+    <parada>
+        <orden>27</orden>
+        <nombre>Lorca</nombre>
+        <coords>42.663738, -2.032793</coords>
+        <coords>42.663174, -2.033479</coords>
+        <coords>42.662952, -2.033758</coords>
+        <coords>42.662613, -2.034284</coords>
+        <coords>42.662304, -2.034574</coords>
+        <coords>42.661934, -2.034906</coords>
+        <coords>42.661476, -2.035207</coords>
+        <coords>42.661064, -2.035282</coords>
+        <coords>42.660908, -2.035486</coords>
+        <coords>42.660606, -2.036129</coords>
+        <coords>42.660316, -2.036569</coords>
+        <coords>42.660015, -2.036633</coords>
+        <coords>42.659786, -2.036934</coords>
+        <coords>42.65934, -2.037438</coords>
+        <coords>42.659119, -2.037578</coords>
+        <coords>42.658787, -2.037706</coords>
+        <coords>42.658382, -2.037942</coords>
+        <coords>42.65807, -2.038275</coords>
+        <coords>42.657871, -2.038565</coords>
+        <coords>42.657784, -2.038736</coords>
+        <distAnterior>1.02</distAnterior>
+        <distSiguiente>0.968</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>28</orden>
+        <nombre>Ayegui</nombre>
+        <coords>42.657784, -2.038736</coords>
+        <coords>42.657333, -2.039348</coords>
+        <coords>42.657146, -2.039702</coords>
+        <coords>42.656742, -2.040174</coords>
+        <coords>42.656277, -2.040474</coords>
+        <coords>42.656033, -2.040668</coords>
+        <coords>42.655811, -2.040721</coords>
+        <coords>42.655392, -2.041054</coords>
+        <coords>42.655315, -2.040807</coords>
+        <coords>42.655006, -2.040796</coords>
+        <coords>42.654846, -2041</coords>
+        <coords>42.654606, -2.041172</coords>
+        <coords>42.654312, -2.04129</coords>
+        <coords>42.654003, -2.041054</coords>
+        <coords>42.653774, -2.041397</coords>
+        <coords>42.653294, -2.041579</coords>
+        <coords>42.652702, -2.041773</coords>
+        <coords>42.652512, -2.042041</coords>
+        <coords>42.652222, -2.042191</coords>
+        <coords>42.651787, -2.042438</coords>
+        <coords>42.651424, -2.042803</coords>
+        <coords>42.651234, -2.043071</coords>
+        <coords>42.650517, -2.043682</coords>
+        <coords>42.650002, -2.044283</coords>
+        <distAnterior>0.968</distAnterior>
+        <distSiguiente>1.0</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>29</orden>
+        <nombre>Monasterio de Irache</nombre>
+        <coords>42.650002, -2.044283</coords>
+        <coords>42.64957, -2.04497</coords>
+        <coords>42.649158, -2.045635</coords>
+        <coords>42.648724, -2.046429</coords>
+        <coords>42.648338, -2.047008</coords>
+        <coords>42.648071, -2.047298</coords>
+        <coords>42.647461, -2.047631</coords>
+        <coords>42.647083, -2.047759</coords>
+        <coords>42.646191, -2.047791</coords>
+        <coords>42.646324, -2.048296</coords>
+        <coords>42.646461, -2.049186</coords>
+        <coords>42.646477, -2.049712</coords>
+        <coords>42.646633, -2.050635</coords>
+        <coords>42.646847, -2.051901</coords>
+        <coords>42.64698, -2.052673</coords>
+        <coords>42.647217, -2.053092</coords>
+        <coords>42.64698, -2.055259</coords>
+        <coords>42.646793, -2.055924</coords>
+        <coords>42.646595, -2.056428</coords>
+        <coords>42.646317, -2.056932</coords>
+        <distAnterior>1.0</distAnterior>
+        <distSiguiente>1.67</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>false</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>30</orden>
+        <nombre>Irache</nombre>
+        <coords>42.646317, -2.056932</coords>
+        <coords>42.646072, -2.057469</coords>
+        <coords>42.645939, -2.057716</coords>
+        <coords>42.64576, -2.058671</coords>
+        <coords>42.645481, -2.059904</coords>
+        <coords>42.645229, -2.060698</coords>
+        <coords>42.645103, -2.06131</coords>
+        <coords>42.645058, -2.061546</coords>
+        <coords>42.644756, -2.062458</coords>
+        <coords>42.644615, -2.062769</coords>
+        <coords>42.644417, -2.063198</coords>
+        <coords>42.644085, -2.063981</coords>
+        <coords>42.643864, -2.06455</coords>
+        <coords>42.643532, -2.065011</coords>
+        <coords>42.643074, -2.065762</coords>
+        <coords>42.642868, -2.066277</coords>
+        <coords>42.642666, -2.06661</coords>
+        <coords>42.642506, -2.066985</coords>
+        <coords>42.64238, -2.067425</coords>
+        <coords>42.642143, -2.067962</coords>
+        <coords>42.641869, -2.068466</coords>
+        <coords>42.641834, -2.06911</coords>
+        <coords>42.641788, -2.069732</coords>
+        <coords>42.641773, -2.070172</coords>
+        <coords>42.641773, -2.07044</coords>
+        <coords>42.641605, -2.070944</coords>
+        <coords>42.64119, -2.07191</coords>
+        <coords>42.640858, -2.072607</coords>
+        <coords>42.640785, -2.0728</coords>
+        <coords>42.640778, -2.073122</coords>
+        <coords>42.640629, -2.073176</coords>
+        <coords>42.640511, -2.072908</coords>
+        <coords>42.64032, -2.072854</coords>
+        <coords>42.639973, -2.072736</coords>
+        <coords>42.639648, -2.072822</coords>
+        <coords>42.639233, -2.073176</coords>
+        <coords>42.638985, -2.073562</coords>
+        <coords>42.638844, -2.074356</coords>
+        <coords>42.638859, -2.074775</coords>
+        <coords>42.638748, -2.075107</coords>
+        <coords>42.638451, -2.075515</coords>
+        <coords>42.63829, -2.076051</coords>
+        <coords>42.638149, -2.076856</coords>
+        <coords>42.637959, -2.077575</coords>
+        <coords>42.637825, -2.07809</coords>
+        <coords>42.637852, -2.078433</coords>
+        <coords>42.637928, -2.078755</coords>
+        <coords>42.637959, -2.079023</coords>
+        <coords>42.637794, -2.079334</coords>
+        <coords>42.637756, -2.079656</coords>
+        <coords>42.637756, -2.08016</coords>
+        <coords>42.637676, -2.080525</coords>
+        <coords>42.637424, -2.080622</coords>
+        <coords>42.637794, -2.081008</coords>
+        <coords>42.638268, -2.081587</coords>
+        <coords>42.638584, -2.081898</coords>
+        <coords>42.638763, -2.082489</coords>
+        <coords>42.638672, -2.083186</coords>
+        <coords>42.638569, -2.083561</coords>
+        <coords>42.638592, -2.083722</coords>
+        <coords>42.637817, -2.083068</coords>
+        <coords>42.637478, -2.082939</coords>
+        <coords>42.637047, -2.083261</coords>
+        <coords>42.636776, -2.083787</coords>
+        <coords>42.636524, -2.084291</coords>
+        <coords>42.636356, -2.084838</coords>
+        <coords>42.636303, -2.085224</coords>
+        <coords>42.63578, -2.086136</coords>
+        <coords>42.635666, -2.086447</coords>
+        <coords>42.635696, -2.086769</coords>
+        <coords>42.635578, -2.087016</coords>
+        <distAnterior>1.67</distAnterior>
+        <distSiguiente>4.09</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>false</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>31</orden>
+        <nombre>Azqueta</nombre>
+        <coords>42.635578, -2.087016</coords>
+        <coords>42.63538, -2.087188</coords>
+        <coords>42.634968, -2.087188</coords>
+        <coords>42.634598, -2.087177</coords>
+        <coords>42.634266, -2.08752</coords>
+        <coords>42.633808, -2.08811</coords>
+        <coords>42.633881, -2.088346</coords>
+        <coords>42.633926, -2.088668</coords>
+        <coords>42.634338, -2.089194</coords>
+        <coords>42.634117, -2.089344</coords>
+        <coords>42.633823, -2.089441</coords>
+        <coords>42.633617, -2.089763</coords>
+        <coords>42.633335, -2.089988</coords>
+        <coords>42.633156, -2.09031</coords>
+        <coords>42.633034, -2.090889</coords>
+        <coords>42.633083, -2.091619</coords>
+        <coords>42.633003, -2.092059</coords>
+        <coords>42.632736, -2.092745</coords>
+        <coords>42.6325, -2.093207</coords>
+        <coords>42.632412, -2.093432</coords>
+        <coords>42.632236, -2.093657</coords>
+        <coords>42.632153, -2.093872</coords>
+        <coords>42.63205, -2.094269</coords>
+        <coords>42.631924, -2.094569</coords>
+        <coords>42.631763, -2.094837</coords>
+        <coords>42.631683, -2.095202</coords>
+        <coords>42.631741, -2.095556</coords>
+        <coords>42.631859, -2.095878</coords>
+        <coords>42.632008, -2.096254</coords>
+        <coords>42.632008, -2.096715</coords>
+        <coords>42.632015, -2.097273</coords>
+        <coords>42632, -2.097734</coords>
+        <coords>42.631763, -2.098088</coords>
+        <coords>42.631756, -2.098292</coords>
+        <coords>42.63155, -2.098571</coords>
+        <coords>42.631222, -2.098753</coords>
+        <coords>42.630848, -2.099011</coords>
+        <coords>42.630722, -2.099547</coords>
+        <coords>42.630684, -2.099891</coords>
+        <coords>42.630508, -2.100223</coords>
+        <coords>42.630322, -2.100416</coords>
+        <coords>42.629948, -2.100728</coords>
+        <coords>42.629673, -2.101082</coords>
+        <coords>42.629444, -2.101725</coords>
+        <coords>42.629349, -2.10209</coords>
+        <coords>42.629326, -2.102487</coords>
+        <coords>42.629253, -2.10283</coords>
+        <coords>42.629444, -2.103099</coords>
+        <coords>42.629482, -2.103217</coords>
+        <coords>42.629578, -2.103324</coords>
+        <coords>42.629585, -2.103474</coords>
+        <coords>42.629505, -2.103614</coords>
+        <coords>42.629593, -2.103796</coords>
+        <coords>42.629539, -2.104064</coords>
+        <coords>42.629539, -2.104247</coords>
+        <coords>42.629665, -2.104257</coords>
+        <coords>42.629688, -2.104526</coords>
+        <coords>42.629665, -2.104837</coords>
+        <coords>42.629555, -2.105105</coords>
+        <coords>42.629475, -2.105427</coords>
+        <distAnterior>4.09</distAnterior>
+        <distSiguiente>2.0</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>false</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>32</orden>
+        <nombre>Villamayor de Monjardín</nombre>
+        <coords>42.629475, -2.105427</coords>
+        <coords>42.629524, -2.105867</coords>
+        <coords>42.629498, -2.106028</coords>
+        <coords>42.629303, -2.106274</coords>
+        <coords>42.629185, -2.10665</coords>
+        <coords>42.629158, -2.107197</coords>
+        <coords>42.629208, -2.107787</coords>
+        <coords>42.629223, -2.108216</coords>
+        <coords>42.629066, -2.108517</coords>
+        <coords>42.628654, -2.109118</coords>
+        <coords>42.628716, -2.10974</coords>
+        <coords>42.628811, -2.110298</coords>
+        <coords>42.628716, -2.110813</coords>
+        <coords>42.628876, -2.111328</coords>
+        <coords>42.628811, -2.111907</coords>
+        <coords>42.62859, -2.112379</coords>
+        <coords>42.62859, -2.113087</coords>
+        <coords>42.628685, -2.113667</coords>
+        <coords>42.628765, -2.114117</coords>
+        <coords>42.628529, -2.11489</coords>
+        <coords>42.628338, -2.115555</coords>
+        <coords>42.62804, -2.116177</coords>
+        <coords>42.627689, -2.116585</coords>
+        <coords>42.627377, -2.11725</coords>
+        <coords>42.627125, -2.117958</coords>
+        <coords>42.626572, -2.118473</coords>
+        <coords>42.626205, -2.119009</coords>
+        <coords>42.625908, -2.119803</coords>
+        <coords>42.625923, -2.121112</coords>
+        <coords>42.625984, -2.121992</coords>
+        <coords>42.625893, -2.122464</coords>
+        <coords>42.625622, -2.123044</coords>
+        <coords>42.624962, -2.123194</coords>
+        <coords>42.624454, -2.123795</coords>
+        <coords>42.623936, -2.123966</coords>
+        <coords>42.623459, -2.124588</coords>
+        <coords>42.622906, -2.125189</coords>
+        <coords>42.622704, -2.12579</coords>
+        <coords>42.622482, -2.126198</coords>
+        <coords>42.621975, -2.126498</coords>
+        <coords>42.621658, -2.126992</coords>
+        <coords>42.62114, -2.127292</coords>
+        <coords>42.620396, -2.127464</coords>
+        <coords>42.619797, -2.127829</coords>
+        <coords>42.619213, -2.128623</coords>
+        <coords>42.618771, -2.129481</coords>
+        <coords>42.618328, -2.130167</coords>
+        <coords>42.617729, -2.130876</coords>
+        <coords>42.617443, -2.131798</coords>
+        <coords>42.617443, -2.132936</coords>
+        <coords>42.617523, -2.133708</coords>
+        <coords>42.617126, -2.135146</coords>
+        <coords>42.616859, -2.136219</coords>
+        <coords>42.616703, -2.136583</coords>
+        <coords>42.616482, -2.135596</coords>
+        <coords>42.615627, -2.135425</coords>
+        <coords>42.614853, -2.135639</coords>
+        <coords>42.613796, -2.135875</coords>
+        <coords>42.612785, -2.136111</coords>
+        <coords>42.611694, -2.136025</coords>
+        <coords>42.611221, -2.136197</coords>
+        <coords>42.610607, -2.136068</coords>
+        <coords>42.610134, -2.136154</coords>
+        <coords>42.609219, -2.135618</coords>
+        <coords>42.608459, -2.13551</coords>
+        <coords>42.60751, -2.135897</coords>
+        <coords>42.607243, -2.136068</coords>
+        <coords>42.606941, -2.136025</coords>
+        <coords>42.606815, -2.136197</coords>
+        <coords>42.606358, -2.135961</coords>
+        <coords>42.605995, -2.136025</coords>
+        <coords>42.60582, -2.135618</coords>
+        <coords>42.605267, -2.135553</coords>
+        <coords>42.604858, -2.135231</coords>
+        <coords>42.604305, -2.134953</coords>
+        <coords>42.603516, -2.134695</coords>
+        <coords>42.602882, -2.134373</coords>
+        <coords>42.602867, -2.133858</coords>
+        <coords>42.602898, -2.133451</coords>
+        <coords>42.60244, -2.13315</coords>
+        <coords>42.60154, -2.133129</coords>
+        <coords>42.600674, -2.133365</coords>
+        <coords>42.60004, -2.133515</coords>
+        <coords>42.599976, -2.134459</coords>
+        <coords>42.599472, -2.139351</coords>
+        <coords>42.599442, -2.139823</coords>
+        <coords>42.598743, -2.141669</coords>
+        <coords>42.598305, -2.142742</coords>
+        <coords>42.598064, -2.143772</coords>
+        <coords>42.597939, -2.144458</coords>
+        <coords>42.597607, -2.144866</coords>
+        <coords>42.596485, -2.145681</coords>
+        <coords>42.596596, -2.146368</coords>
+        <coords>42.596832, -2.14699</coords>
+        <coords>42.596947, -2.148235</coords>
+        <coords>42.596706, -2.14905</coords>
+        <coords>42.596691, -2.150252</coords>
+        <coords>42.596786, -2.150981</coords>
+        <coords>42.596485, -2.151432</coords>
+        <coords>42.596344, -2.152419</coords>
+        <coords>42.596203, -2.154071</coords>
+        <coords>42.596298, -2.157032</coords>
+        <coords>42.596359, -2.158899</coords>
+        <coords>42.596519, -2.160466</coords>
+        <coords>42.596676, -2.16068</coords>
+        <coords>42.597118, -2.160594</coords>
+        <coords>42.597576, -2.160337</coords>
+        <coords>42.598099, -2.16083</coords>
+        <coords>42.598114, -2.161088</coords>
+        <coords>42.59753, -2.162204</coords>
+        <coords>42.597404, -2.162826</coords>
+        <coords>42.59745, -2.163491</coords>
+        <coords>42.596977, -2.164629</coords>
+        <coords>42.59647, -2.16583</coords>
+        <coords>42.595886, -2.166088</coords>
+        <coords>42.59549, -2.166474</coords>
+        <coords>42.595051, -2.167461</coords>
+        <coords>42.593739, -2.170079</coords>
+        <coords>42.593739, -2.172461</coords>
+        <coords>42.593754, -2.173727</coords>
+        <coords>42.593658, -2.174413</coords>
+        <coords>42.593296, -2.175786</coords>
+        <coords>42.592854, -2.177052</coords>
+        <coords>42.59222, -2.177632</coords>
+        <coords>42.591778, -2.178555</coords>
+        <coords>42.591461, -2.179327</coords>
+        <coords>42.590485, -2.180378</coords>
+        <coords>42.590118, -2.181623</coords>
+        <coords>42.589645, -2.181516</coords>
+        <coords>42.588966, -2.181344</coords>
+        <coords>42.588177, -2.181516</coords>
+        <coords>42.587513, -2.181537</coords>
+        <coords>42.586899, -2.18188</coords>
+        <coords>42.586441, -2.182159</coords>
+        <coords>42.584827, -2.18246</coords>
+        <coords>42.584545, -2.183061</coords>
+        <coords>42.584103, -2.183425</coords>
+        <coords>42.583691, -2.183812</coords>
+        <coords>42.581463, -2.187417</coords>
+        <coords>42.580956, -2.187588</coords>
+        <coords>42.579964, -2.188468</coords>
+        <coords>42.579647, -2.188575</coords>
+        <coords>42.579079, -2.188554</coords>
+        <coords>42.576328, -2.190185</coords>
+        <coords>42.576012, -2.190571</coords>
+        <coords>42.574448, -2.192459</coords>
+        <coords>42.573372, -2.19336</coords>
+        <coords>42.572472, -2.19321</coords>
+        <coords>42.571175, -2.192631</coords>
+        <coords>42.569439, -2.191601</coords>
+        <coords>42.569279, -2.192245</coords>
+        <coords>42.568981, -2.192974</coords>
+        <coords>42.568855, -2.193596</coords>
+        <distAnterior>2.0</distAnterior>
+        <distSiguiente>15.3</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>33</orden>
+        <nombre>Los Arcos</nombre>
+        <coords>42.568855, -2.193596</coords>
+        <coords>42.568539, -2.19451</coords>
+        <coords>42.568432, -2.19507</coords>
+        <coords>42.567791, -2.19738</coords>
+        <coords>42.567669, -2.19775</coords>
+        <coords>42.56744, -2.19823</coords>
+        <coords>42.56728, -2.19877</coords>
+        <coords>42.567169, -2.19976</coords>
+        <coords>42.567101, -2.20081</coords>
+        <coords>42.56683, -2.20235</coords>
+        <coords>42.566608, -2.20325</coords>
+        <coords>42.566528, -2.20484</coords>
+        <coords>42.566448, -2.20575</coords>
+        <coords>42.566189, -2.20764</coords>
+        <coords>42.565739, -2.21455</coords>
+        <coords>42.565399, -2.21818</coords>
+        <coords>42.565369, -2.218927</coords>
+        <coords>42.565296, -2.219743</coords>
+        <coords>42.565212, -2.221116</coords>
+        <coords>42.56506, -2.223026</coords>
+        <coords>42.564991, -2.223626</coords>
+        <coords>42.563931, -2.229828</coords>
+        <coords>42.563519, -2.232188</coords>
+        <coords>42.563084, -2.234741</coords>
+        <coords>42.562927, -2.235492</coords>
+        <coords>42.563046, -2.235578</coords>
+        <coords>42.563084, -2.235804</coords>
+        <coords>42.563148, -2.236104</coords>
+        <coords>42.563313, -2.236286</coords>
+        <coords>42.563553, -2.236544</coords>
+        <coords>42.563606, -2.236748</coords>
+        <coords>42.563622, -2.23708</coords>
+        <coords>42.563679, -2.238261</coords>
+        <coords>42.563694, -2.238786</coords>
+        <coords>42.563725, -2.239119</coords>
+        <coords>42.563732, -2.239623</coords>
+        <coords>42.563828, -2.240664</coords>
+        <coords>42.563873, -2.241715</coords>
+        <coords>42.56385, -2.242219</coords>
+        <coords>42.56385, -2.242799</coords>
+        <coords>42.563774, -2.24341</coords>
+        <coords>42.563614, -2.244655</coords>
+        <coords>42.563538, -2.245138</coords>
+        <coords>42.563488, -2.245663</coords>
+        <coords>42.563622, -2.24649</coords>
+        <coords>42.563694, -2.247144</coords>
+        <coords>42.563782, -2.247798</coords>
+        <coords>42.563961, -2.248389</coords>
+        <coords>42.564167, -2.248764</coords>
+        <coords>42.564335, -2.249011</coords>
+        <coords>42.564388, -2.249397</coords>
+        <coords>42.564335, -2.249858</coords>
+        <coords>42.564278, -2.250191</coords>
+        <coords>42.564121, -2.250727</coords>
+        <coords>42.564079, -2.251521</coords>
+        <coords>42.564041, -2.252229</coords>
+        <coords>42.563862, -2.252948</coords>
+        <coords>42.563717, -2.25356</coords>
+        <coords>42.563622, -2.253925</coords>
+        <coords>42.563702, -2.2543</coords>
+        <coords>42.563843, -2.25459</coords>
+        <coords>42.563869, -2.254783</coords>
+        <coords>42.563637, -2.255201</coords>
+        <coords>42.563339, -2.255738</coords>
+        <coords>42.562965, -2.256167</coords>
+        <coords>42.562881, -2.256607</coords>
+        <coords>42.562832, -2.256993</coords>
+        <coords>42.562744, -2.257175</coords>
+        <coords>42.562428, -2.257283</coords>
+        <coords>42.562096, -2.257454</coords>
+        <coords>42.561989, -2.257991</coords>
+        <coords>42.561535, -2.258399</coords>
+        <coords>42.560699, -2.25916</coords>
+        <coords>42.560089, -2.259954</coords>
+        <coords>42.559322, -2.261038</coords>
+        <coords>42.559109, -2.261403</coords>
+        <coords>42.558445, -2.262872</coords>
+        <coords>42.558353, -2.26298</coords>
+        <coords>42.557575, -2.263806</coords>
+        <coords>42.557102, -2.264149</coords>
+        <coords>42.556667, -2.2646</coords>
+        <coords>42.556351, -2.264825</coords>
+        <coords>42.555538, -2.265887</coords>
+        <coords>42.555397, -2.266123</coords>
+        <coords>42.554829, -2.266316</coords>
+        <coords>42.554394, -2.266392</coords>
+        <coords>42.55407, -2.266284</coords>
+        <coords>42.553703, -2.265909</coords>
+        <distAnterior>15.3</distAnterior>
+        <distSiguiente>8.77</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>true</farmacia>
+        <banco>true</banco>
+        <internet>true</internet>
+    </parada>
+    <parada>
+        <orden>34</orden>
+        <nombre>Sansol</nombre>
+        <coords>42.553703, -2.265909</coords>
+        <coords>42.553165, -2.265769</coords>
+        <coords>42.552795, -2.265973</coords>
+        <coords>42.55267, -2.266134</coords>
+        <coords>42.552612, -2.266059</coords>
+        <coords>42.552353, -2.266359</coords>
+        <coords>42.552162, -2.266896</coords>
+        <coords>42.552242, -2.267486</coords>
+        <coords>42.552273, -2.26784</coords>
+        <coords>42.552448, -2.268022</coords>
+        <coords>42.552963, -2.268387</coords>
+        <coords>42.553303, -2.26887</coords>
+        <coords>42.553577, -2.269031</coords>
+        <coords>42.553776, -2.269396</coords>
+        <coords>42.553951, -2.269503</coords>
+        <coords>42.554165, -2.26976</coords>
+        <coords>42.55418, -2.269996</coords>
+        <coords>42.553951, -2.270651</coords>
+        <coords>42.553665, -2.271488</coords>
+        <coords>42.553482, -2.272292</coords>
+        <coords>42.553047, -2.272249</coords>
+        <coords>42.552765, -2.272003</coords>
+        <coords>42.552677, -2.27167</coords>
+        <coords>42.552418, -2.271338</coords>
+        <coords>42.552059, -2.271091</coords>
+        <coords>42.552006, -2.271295</coords>
+        <distAnterior>8.77</distAnterior>
+        <distSiguiente>1.20</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>35</orden>
+        <nombre>Torres del Río</nombre>
+        <coords>42.552006, -2.271295</coords>
+        <coords>42.551888, -2.271638</coords>
+        <coords>42.551712, -2.271627</coords>
+        <coords>42.551636, -2.271777</coords>
+        <coords>42.551697, -2.272099</coords>
+        <coords>42.551674, -2.272335</coords>
+        <coords>42.55146, -2.272893</coords>
+        <coords>42.551292, -2.273226</coords>
+        <coords>42.551445, -2.273784</coords>
+        <coords>42.551414, -2.273966</coords>
+        <coords>42.55127, -2.274492</coords>
+        <coords>42.550922, -2.275082</coords>
+        <coords>42.550568, -2.275629</coords>
+        <coords>42.550331, -2.27608</coords>
+        <coords>42.550037, -2.276627</coords>
+        <coords>42.549839, -2.276841</coords>
+        <coords>42.549728, -2.277067</coords>
+        <coords>42.549618, -2.277625</coords>
+        <coords>42.549587, -2.278601</coords>
+        <coords>42.549461, -2.279502</coords>
+        <coords>42.549408, -2.280071</coords>
+        <coords>42.549332, -2.280495</coords>
+        <coords>42.549248, -2.280822</coords>
+        <coords>42.549194, -2.281396</coords>
+        <coords>42.549183, -2.281632</coords>
+        <coords>42.549088, -2.281932</coords>
+        <coords>42.54895, -2.282447</coords>
+        <coords>42.548843, -2.282635</coords>
+        <coords>42.548687, -2.282791</coords>
+        <coords>42.548569, -2.282946</coords>
+        <coords>42.548489, -2.283279</coords>
+        <coords>42.548473, -2.283418</coords>
+        <coords>42.548527, -2.283563</coords>
+        <coords>42.548378, -2.283896</coords>
+        <coords>42.548199, -2.284228</coords>
+        <coords>42.548084, -2.284362</coords>
+        <coords>42.547916, -2.28448</coords>
+        <coords>42.547829, -2.28462</coords>
+        <coords>42.547672, -2.28485</coords>
+        <coords>42.547428, -2.285076</coords>
+        <coords>42.547237, -2.285323</coords>
+        <coords>42.547215, -2.285607</coords>
+        <coords>42.54723, -2.286015</coords>
+        <coords>42.547199, -2.286149</coords>
+        <coords>42.547081, -2.28639</coords>
+        <coords>42.546913, -2.28668</coords>
+        <coords>42.54686, -2.286921</coords>
+        <coords>42.546837, -2.287093</coords>
+        <coords>42.54668, -2.287259</coords>
+        <coords>42.546349, -2.287393</coords>
+        <coords>42.546021, -2.28735</coords>
+        <coords>42.545757, -2.287318</coords>
+        <coords>42.545563, -2.287323</coords>
+        <coords>42.545486, -2.287264</coords>
+        <coords>42.545242, -2.287275</coords>
+        <coords>42.545189, -2.287372</coords>
+        <coords>42.54501, -2.287511</coords>
+        <coords>42.544857, -2.287683</coords>
+        <coords>42.544792, -2.287865</coords>
+        <coords>42.544823, -2.288134</coords>
+        <coords>42.54472, -2.288396</coords>
+        <coords>42.544693, -2.2886</coords>
+        <coords>42.544643, -2.28882</coords>
+        <coords>42.544579, -2.28919</coords>
+        <coords>42.544556, -2.289303</coords>
+        <coords>42.54451, -2.289577</coords>
+        <coords>42.544441, -2.289888</coords>
+        <coords>42.544403, -2.290124</coords>
+        <coords>42.544399, -2.290424</coords>
+        <coords>42.544365, -2.290757</coords>
+        <coords>42.544323, -2.291068</coords>
+        <coords>42.54425, -2.291347</coords>
+        <coords>42.544163, -2.291669</coords>
+        <coords>42.544041, -2.291926</coords>
+        <coords>42.54398, -2.292098</coords>
+        <coords>42.543861, -2.292286</coords>
+        <coords>42.543606, -2.292763</coords>
+        <coords>42.543507, -2.292967</coords>
+        <coords>42.543652, -2.293176</coords>
+        <coords>42.543648, -2.293348</coords>
+        <coords>42.543579, -2.293444</coords>
+        <coords>42.543438, -2.293573</coords>
+        <coords>42.543377, -2.293798</coords>
+        <coords>42.543285, -2.294367</coords>
+        <coords>42.543201, -2.294608</coords>
+        <coords>42.543015, -2.294995</coords>
+        <coords>42.542801, -2.295552</coords>
+        <coords>42.542629, -2.295976</coords>
+        <coords>42.542397, -2.2964</coords>
+        <coords>42.542225, -2.296556</coords>
+        <coords>42.542137, -2.296663</coords>
+        <coords>42.542011, -2.296743</coords>
+        <coords>42.541885, -2.297162</coords>
+        <coords>42.541817, -2.297478</coords>
+        <coords>42.541752, -2.297811</coords>
+        <coords>42.541832, -2.297972</coords>
+        <coords>42.541916, -2.29816</coords>
+        <coords>42.542046, -2.298197</coords>
+        <coords>42.542107, -2.298374</coords>
+        <coords>42.542168, -2.29854</coords>
+        <coords>42.542301, -2.29876</coords>
+        <coords>42.542526, -2.2992</coords>
+        <coords>42.542587, -2.299458</coords>
+        <coords>42.542538, -2.29971</coords>
+        <coords>42.542358, -2.299946</coords>
+        <coords>42.542145, -2.300021</coords>
+        <coords>42.541523, -2.299994</coords>
+        <coords>42.541622, -2.300123</coords>
+        <coords>42.541691, -2.300338</coords>
+        <coords>42.541737, -2.300472</coords>
+        <coords>42.541859, -2.300697</coords>
+        <coords>42.541912, -2.300826</coords>
+        <coords>42.541946, -2.300971</coords>
+        <coords>42.541958, -2.301072</coords>
+        <coords>42.541954, -2.301271</coords>
+        <coords>42.541904, -2.3014</coords>
+        <coords>42.541908, -2.301512</coords>
+        <coords>42.54184, -2.301555</coords>
+        <coords>42.541672, -2.301437</coords>
+        <coords>42.541622, -2.301464</coords>
+        <coords>42.54158, -2.301722</coords>
+        <coords>42.541443, -2.301952</coords>
+        <coords>42.541286, -2.302263</coords>
+        <coords>42.541195, -2.302703</coords>
+        <coords>42.541218, -2.303186</coords>
+        <coords>42.541237, -2.303476</coords>
+        <coords>42.541256, -2.303792</coords>
+        <coords>42.541283, -2.304162</coords>
+        <coords>42.541328, -2.304382</coords>
+        <coords>42.541363, -2.304736</coords>
+        <coords>42.541328, -2.305015</coords>
+        <coords>42.541203, -2.305305</coords>
+        <coords>42.541103, -2.305616</coords>
+        <coords>42.541138, -2.305906</coords>
+        <coords>42.541142, -2.306045</coords>
+        <coords>42.541042, -2.306099</coords>
+        <coords>42.540691, -2.306083</coords>
+        <coords>42.540485, -2.306067</coords>
+        <coords>42.540379, -2.306233</coords>
+        <coords>42.540356, -2.306442</coords>
+        <coords>42.540428, -2.306791</coords>
+        <coords>42.540562, -2.307048</coords>
+        <coords>42.540867, -2.307413</coords>
+        <coords>42.540936, -2.307681</coords>
+        <coords>42.540966, -2.3081</coords>
+        <coords>42.540977, -2.308454</coords>
+        <coords>42.540939, -2.308787</coords>
+        <coords>42.540798, -2.309355</coords>
+        <coords>42.540646, -2.309961</coords>
+        <coords>42.540642, -2.310181</coords>
+        <coords>42.540562, -2.310256</coords>
+        <coords>42.540356, -2.310337</coords>
+        <coords>42.540161, -2.310396</coords>
+        <coords>42.540112, -2.310546</coords>
+        <coords>42.540009, -2.310616</coords>
+        <coords>42.539856, -2.310653</coords>
+        <coords>42.53981, -2.310814</coords>
+        <coords>42.539757, -2.311254</coords>
+        <coords>42.539764, -2.311656</coords>
+        <coords>42.539768, -2.311807</coords>
+        <coords>42.539745, -2.311994</coords>
+        <coords>42.539631, -2.312112</coords>
+        <coords>42.539536, -2.312252</coords>
+        <coords>42.539585, -2.312279</coords>
+        <coords>42.539482, -2.312343</coords>
+        <coords>42.539234, -2.312359</coords>
+        <coords>42.539169, -2.312595</coords>
+        <coords>42.539078, -2.312729</coords>
+        <coords>42.538952, -2.312917</coords>
+        <coords>42.538853, -2.313094</coords>
+        <coords>42.538803, -2.313271</coords>
+        <coords>42.538719, -2.313443</coords>
+        <coords>42.538616, -2.313711</coords>
+        <coords>42.538399, -2.314011</coords>
+        <coords>42.538265, -2.314231</coords>
+        <coords>42.538082, -2.314414</coords>
+        <coords>42.53791, -2.314526</coords>
+        <coords>42.537685, -2.314532</coords>
+        <coords>42.537537, -2.31458</coords>
+        <coords>42.537376, -2.314945</coords>
+        <coords>42.537273, -2.315487</coords>
+        <coords>42.537212, -2.315964</coords>
+        <coords>42.537182, -2.316189</coords>
+        <coords>42.53701, -2.316522</coords>
+        <coords>42.536842, -2.316833</coords>
+        <coords>42.536423, -2.317412</coords>
+        <coords>42.536285, -2.317638</coords>
+        <coords>42.536205, -2.317938</coords>
+        <coords>42.536087, -2.318169</coords>
+        <coords>42.535885, -2.318453</coords>
+        <coords>42.535522, -2.318689</coords>
+        <coords>42.535183, -2.318743</coords>
+        <coords>42.534996, -2.318818</coords>
+        <coords>42.534878, -2.318941</coords>
+        <coords>42.534733, -2.319038</coords>
+        <coords>42.534515, -2.319226</coords>
+        <coords>42.534172, -2.319489</coords>
+        <coords>42.534023, -2.319633</coords>
+        <coords>42.533794, -2.319982</coords>
+        <coords>42.533615, -2.320245</coords>
+        <coords>42.533394, -2.320481</coords>
+        <coords>42.533131, -2.320728</coords>
+        <coords>42.532921, -2.320894</coords>
+        <coords>42.532837, -2.321044</coords>
+        <coords>42.532684, -2.321205</coords>
+        <coords>42.532524, -2.32143</coords>
+        <coords>42.532059, -2.32187</coords>
+        <coords>42.532066, -2.322101</coords>
+        <coords>42.531895, -2.322122</coords>
+        <coords>42.531544, -2.322208</coords>
+        <coords>42.531147, -2.322369</coords>
+        <coords>42.530918, -2.322444</coords>
+        <coords>42.530754, -2.32245</coords>
+        <coords>42.530563, -2.322589</coords>
+        <coords>42.530239, -2.322755</coords>
+        <coords>42.529903, -2.322809</coords>
+        <coords>42.529381, -2.322804</coords>
+        <coords>42.529217, -2.322916</coords>
+        <coords>42.528915, -2.323233</coords>
+        <coords>42.528511, -2.323447</coords>
+        <coords>42.528149, -2.323716</coords>
+        <coords>42.527771, -2.324193</coords>
+        <coords>42.527538, -2.32459</coords>
+        <coords>42.527382, -2.324746</coords>
+        <coords>42.52726, -2.32481</coords>
+        <coords>42.527172, -2.324976</coords>
+        <coords>42.527042, -2.325191</coords>
+        <coords>42.526855, -2.325346</coords>
+        <coords>42.526703, -2.325486</coords>
+        <coords>42.526585, -2.325636</coords>
+        <coords>42.526432, -2.325856</coords>
+        <coords>42.526352, -2.326108</coords>
+        <coords>42.526405, -2.326736</coords>
+        <coords>42.526394, -2.327449</coords>
+        <coords>42.526417, -2.327637</coords>
+        <coords>42.526432, -2.327771</coords>
+        <coords>42.526321, -2.327948</coords>
+        <coords>42.526237, -2.328163</coords>
+        <coords>42.526089, -2.328463</coords>
+        <coords>42.526035, -2.328748</coords>
+        <coords>42.526077, -2.329053</coords>
+        <coords>42.526108, -2.329252</coords>
+        <coords>42.526127, -2.329391</coords>
+        <coords>42.526024, -2.329681</coords>
+        <coords>42.525894, -2.330073</coords>
+        <coords>42.525795, -2.330148</coords>
+        <coords>42.525623, -2.330185</coords>
+        <coords>42.525478, -2.330335</coords>
+        <coords>42.525333, -2.3304</coords>
+        <coords>42.525295, -2.330469</coords>
+        <coords>42.525146, -2.330502</coords>
+        <coords>42.525024, -2.330727</coords>
+        <coords>42.524887, -2.330781</coords>
+        <coords>42.524811, -2.330824</coords>
+        <coords>42.524792, -2.330947</coords>
+        <coords>42.524677, -2.331065</coords>
+        <coords>42.524422, -2.331998</coords>
+        <coords>42.524158, -2.333554</coords>
+        <coords>42.524075, -2.33416</coords>
+        <coords>42.523464, -2.336054</coords>
+        <coords>42.523163, -2.3368</coords>
+        <coords>42.52301, -2.33696</coords>
+        <coords>42.522923, -2.336934</coords>
+        <coords>42.522873, -2.33703</coords>
+        <coords>42.522755, -2.337465</coords>
+        <coords>42.52269, -2.33769</coords>
+        <coords>42.522423, -2.338243</coords>
+        <coords>42.522007, -2.339079</coords>
+        <coords>42.521774, -2.339396</coords>
+        <coords>42.521511, -2.339809</coords>
+        <coords>42.521152, -2.340276</coords>
+        <coords>42.520775, -2.341129</coords>
+        <coords>42.519768, -2.343644</coords>
+        <coords>42.519661, -2.344009</coords>
+        <coords>42.518803, -2.347952</coords>
+        <coords>42.518353, -2.349819</coords>
+        <coords>42.518311, -2.34998</coords>
+        <coords>42.51823, -2.350243</coords>
+        <coords>42.51807, -2.35065</coords>
+        <coords>42.517864, -2.35109</coords>
+        <coords>42.517761, -2.351273</coords>
+        <coords>42.51767, -2.351809</coords>
+        <coords>42.517616, -2.352099</coords>
+        <coords>42.517559, -2.352356</coords>
+        <coords>42.517513, -2.352721</coords>
+        <coords>42.517487, -2.353231</coords>
+        <coords>42.517387, -2.353815</coords>
+        <coords>42.5172894991636, -2.354330071078749</coords>
+        <coords>42.51725783274868, -2.354533663395557</coords>
+        <coords>42.51722964161172, -2.354762121086793</coords>
+        <coords>42.51717598748947, -2.354890158156294</coords>
+        <coords>42.51715553865392, -2.354955913848315</coords>
+        <coords>42.51713758914628, -2.355118604904391</coords>
+        <coords>42.51715534790434, -2.355309026676608</coords>
+        <coords>42.5171781909788, -2.35553407283939</coords>
+        <coords>42.51718317197677, -2.35575910161856</coords>
+        <coords>42.51721116877204, -2.355890682513078</coords>
+        <coords>42.51724940434903, -2.355963421459038</coords>
+        <coords>42.51706345357862, -2.356145547662564</coords>
+        <coords>42.5169510974958, -2.356294295153703</coords>
+        <coords>42.51685660134992, -2.356446522022495</coords>
+        <coords>42.51678248226057, -2.35666454489585</coords>
+        <coords>42.51674664573078, -2.356868759229457</coords>
+        <coords>42.51667250865297, -2.357117938881856</coords>
+        <coords>42.51658558833285, -2.357408865646619</coords>
+        <coords>42.5164730384797, -2.357900333945111</coords>
+        <coords>42.51625962034203, -2.358961623154613</coords>
+        <coords>42.51619427422177, -2.359383645832125</coords>
+        <coords>42.51617626033949, -2.359646726322268</coords>
+        <coords>42.51618890017023, -2.35985098848542</coords>
+        <coords>42.51620666520959, -2.360017176217269</coords>
+        <coords>42.51617334189728, -2.360276779533379</coords>
+        <coords>42.51603906527941, -2.360960543700912</coords>
+        <coords>42.51593158296618, -2.361486624563767</coords>
+        <coords>42.51587268580921, -2.361836205621373</coords>
+        <coords>42.51596190965384, -2.36197824016844</coords>
+        <coords>42.51599752947511, -2.362151372987086</coords>
+        <coords>42.51582357133569, -2.362884607993664</coords>
+        <coords>42.51573156989169, -2.36311644703504</coords>
+        <coords>42.51568040947834, -2.363324099173383</coords>
+        <coords>42.51563941486987, -2.363597538053497</coords>
+        <coords>42.51563679715889, -2.36370485234086</coords>
+        <coords>42.51545556081437, -2.364470267595394</coords>
+        <coords>42.51554985427678, -2.364660775362935</coords>
+        <coords>42.51555735592835, -2.364906573645925</coords>
+        <coords>42.5155694019409, -2.366036577379191</coords>
+        <coords>42.51551532134419, -2.366812396763123</coords>
+        <coords>42.5154921803918, -2.367085852712776</coords>
+        <coords>42.51536406886799, -2.367900456655363</coords>
+        <coords>42.5152000630236, -2.36896485684187</coords>
+        <coords>42.51537594067091, -2.369248939368376</coords>
+        <coords>42.51541159981291, -2.369345914054279</coords>
+        <coords>42.51539364593477, -2.369484365534788</coords>
+        <coords>42.51530143300111, -2.370013039065711</coords>
+        <coords>42.51507179594596, -2.369991985699414</coords>
+        <coords>42.51503314491934, -2.370549288268109</coords>
+        <coords>42.51498904007088, -2.371620293919122</coords>
+        <coords>42.51525682640756, -2.371824876799167</coords>
+        <coords>42.51554261904568, -2.37181831350982</coords>
+        <distAnterior>1.20</distAnterior>
+        <distSiguiente>13.1</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>36</orden>
+        <nombre>Viana</nombre>
+        <coords>42.51554261904568, -2.37181831350982</coords>
+        <coords>42.51592115041467, -2.37421656323906</coords>
+        <coords>42.51570410121402, -2.374437837916858</coords>
+        <coords>42.5157321231758, -2.374503649536138</coords>
+        <coords>42.5159133073338, -2.374483115403649</coords>
+        <coords>42.51609843813415, -2.376078887422253</coords>
+        <coords>42.51540412050478, -2.376437992142357</coords>
+        <coords>42.51505223972042, -2.376091342624235</coords>
+        <coords>42.51502896949958, -2.37606899422245</coords>
+        <coords>42.51487818996861, -2.3763872766677</coords>
+        <coords>42.51441333459835, -2.377006307868101</coords>
+        <coords>42.51419702243432, -2.377132259394557</coords>
+        <coords>42.51378363343012, -2.377155934474601</coords>
+        <coords>42.5134365883589, -2.377179698847954</coords>
+        <coords>42.51326552966211, -2.377311012310699</coords>
+        <coords>42.51298222666246, -2.37740063393764</coords>
+        <coords>42.51285717075447, -2.377431620389444</coords>
+        <coords>42.51284738472673, -2.37784767619506</coords>
+        <coords>42.51290829706188, -2.37829085185345</coords>
+        <coords>42.5129361081374, -2.378637055614249</coords>
+        <coords>42.51293595585138, -2.378841293216496</coords>
+        <coords>42.51288738617422, -2.378958922813723</coords>
+        <coords>42.51280576582121, -2.37904451200987</coords>
+        <coords>42.51272410926312, -2.379047861042878</coords>
+        <coords>42.51269345023844, -2.379099743548508</coords>
+        <coords>42.51248422026018, -2.379089069939354</coords>
+        <coords>42.51226228417514, -2.379009146596147</coords>
+        <coords>42.51214743305787, -2.379043604618204</coords>
+        <coords>42.5119125443354, -2.379223284690198</coords>
+        <coords>42.5115372469547, -2.379489310341313</coords>
+        <coords>42.51143014391528, -2.379399161086212</coords>
+        <coords>42.51123359418196, -2.379246579951641</coords>
+        <coords>42.51111878111754, -2.379229113221882</coords>
+        <coords>42.5106900705062, -2.379266597647344</coords>
+        <coords>42.51042977907554, -2.379293930380541</coords>
+        <coords>42.51026383180754, -2.379411393018188</coords>
+        <coords>42.51007480656425, -2.379677669018236</coords>
+        <coords>42.50996414890813, -2.37997474065682</coords>
+        <coords>42.50985643101264, -2.380694581422148</coords>
+        <coords>42.5097922723241, -2.381172179689912</coords>
+        <coords>42.5097103544265, -2.381347933843472</coords>
+        <coords>42.50952390916374, -2.381572665786806</coords>
+        <coords>42.50907378919955, -2.381977016847259</coords>
+        <coords>42.50855290648954, -2.382415876490441</coords>
+        <coords>42.508272045484, -2.382640468546157</coords>
+        <coords>42.50803184825992, -2.382695948703884</coords>
+        <coords>42.50793750929606, -2.382602355957744</coords>
+        <coords>42.50785074979191, -2.382605692920919</coords>
+        <coords>42.50766681588431, -2.382878877345476</coords>
+        <coords>42.50753393883045, -2.383120982203764</coords>
+        <coords>42.50741635447621, -2.38338387730731</coords>
+        <coords>42.50734736601711, -2.383501464747738</coords>
+        <coords>42.50708948237156, -2.383661014666515</coords>
+        <coords>42.50656114809483, -2.383833313362899</coords>
+        <coords>42.50617580744523, -2.38388121116401</coords>
+        <coords>42.5058156795285, -2.383963757719997</coords>
+        <coords>42.50538937192452, -2.384188118218859</coords>
+        <coords>42.5052410437026, -2.38460325197309</coords>
+        <coords>42.50498251419025, -2.384845900054572</coords>
+        <coords>42.50454322174419, -2.385350588747514</coords>
+        <coords>42.50405029304692, -2.385914032726987</coords>
+        <coords>42.50380717735276, -2.386204688353701</coords>
+        <coords>42.50358253199811, -2.386325493235589</coords>
+        <coords>42.50343950049351, -2.386494875474583</coords>
+        <coords>42.50331941379341, -2.386688519720465</coords>
+        <coords>42.50317644338115, -2.386781756480659</coords>
+        <coords>42.50294043969362, -2.386821474321366</coords>
+        <coords>42.50272087986932, -2.386963049450742</coords>
+        <coords>42.5021694607087, -2.38727717747868</coords>
+        <coords>42.50191387020808, -2.387789030738063</coords>
+        <coords>42.50165184302106, -2.387971597843219</coords>
+        <coords>42.50145582819641, -2.388002883752307</coords>
+        <coords>42.50113158260901, -2.387991863170655</coords>
+        <coords>42.50089873565886, -2.38797834883222</coords>
+        <coords>42.50072029655977, -2.387875430200978</coords>
+        <coords>42.50052633601305, -2.387769856853325</coords>
+        <coords>42.50021848637481, -2.387864046383299</coords>
+        <coords>42.49947092833006, -2.38843667206838</coords>
+        <coords>42.49832992908225, -2.388738066947099</coords>
+        <coords>42.49788141704373, -2.388650528504712</coords>
+        <coords>42.49771842157637, -2.388645015269532</coords>
+        <coords>42.49763879206234, -2.388729112598938</coords>
+        <coords>42.49673474490134, -2.388430333131936</coords>
+        <coords>42.4966180376688, -2.388374886806048</coords>
+        <coords>42.49614638980814, -2.388508388311848</coords>
+        <coords>42.49606080976213, -2.388747749798483</coords>
+        <coords>42.49601211138529, -2.388971376882068</coords>
+        <coords>42.49594562175447, -2.389584444100549</coords>
+        <coords>42.49592201255821, -2.389968647258428</coords>
+        <coords>42.49598162952517, -2.390604176469864</coords>
+        <coords>42.49610135610188, -2.391288629263386</coords>
+        <coords>42.49607387149499, -2.39165961573741</coords>
+        <coords>42.49594326816342, -2.392346304081656</coords>
+        <coords>42.49594880478856, -2.392675285432716</coords>
+        <coords>42.49595416621304, -2.393204457436639</coords>
+        <coords>42.49586830460199, -2.393754360797303</coords>
+        <coords>42.49574172927783, -2.394259458357666</coords>
+        <coords>42.49558326173067, -2.394539475336686</coords>
+        <coords>42.49554563180227, -2.395397368989919</coords>
+        <coords>42.49548515047628, -2.395763085268825</coords>
+        <coords>42.49538383614311, -2.396220444987307</coords>
+        <coords>42.4953189425698, -2.397170403065644</coords>
+        <coords>42.49524941753494, -2.397734765245943</coords>
+        <coords>42.49512450712204, -2.398521451171305</coords>
+        <coords>42.49504565283765, -2.398930722750421</coords>
+        <coords>42.49475381719409, -2.399756591384048</coords>
+        <coords>42.49438647714953, -2.400476943194747</coords>
+        <coords>42.49421743149348, -2.400716138755797</coords>
+        <coords>42.49404278943467, -2.4011384917454</coords>
+        <coords>42.49387929574132, -2.40166191607743</coords>
+        <coords>42.49371798018103, -2.402010513841006</coords>
+        <coords>42.49348259478192, -2.402628547040308</coords>
+        <coords>42.49329181335441, -2.403270342448224</coords>
+        <coords>42.49315926096578, -2.403660511901705</coords>
+        <coords>42.49317828241944, -2.404057927454275</coords>
+        <coords>42.4932227428765, -2.404234328934024</coords>
+        <coords>42.49335853559268, -2.404276677694611</coords>
+        <coords>42.49357388055665, -2.404327063950092</coords>
+        <coords>42.49362048199312, -2.404629567989417</coords>
+        <coords>42.4936707988313, -2.404769137110392</coords>
+        <coords>42.49375788731388, -2.405008776794048</coords>
+        <coords>42.49368990912611, -2.405071815459777</coords>
+        <coords>42.4935249450195, -2.405339247718203</coords>
+        <coords>42.49340826408887, -2.40559694205497</coords>
+        <coords>42.49325651471227, -2.405996681989038</coords>
+        <coords>42.4931279117961, -2.406535942235436</coords>
+        <coords>42.49286801013398, -2.407433166073119</coords>
+        <coords>42.4927180262598, -2.408001328812674</coords>
+        <coords>42.49253703637769, -2.408594454646647</coords>
+        <coords>42.49247656110305, -2.408912770456595</coords>
+        <coords>42.49240043852299, -2.409352112898034</coords>
+        <coords>42.49228525329188, -2.409662105114236</coords>
+        <coords>42.49219763762005, -2.409951420453737</coords>
+        <coords>42.49201454851081, -2.410622139564438</coords>
+        <coords>42.49187220451179, -2.411171188178244</coords>
+        <coords>42.49177285562537, -2.41154468806802</coords>
+        <coords>42.49157983879286, -2.412423278196869</coords>
+        <coords>42.49152931189671, -2.412495304269442</coords>
+        <coords>42.49133834606568, -2.413260732787066</coords>
+        <coords>42.49124407222837, -2.413666643797583</coords>
+        <coords>42.49123422054645, -2.413808730336484</coords>
+        <coords>42.49118548446829, -2.414021794110596</coords>
+        <coords>42.49109407153441, -2.414221616800987</coords>
+        <coords>42.49098141307533, -2.414326661153496</coords>
+        <coords>42.49054198266332, -2.415785008410666</coords>
+        <coords>42.49055714266557, -2.416125291455998</coords>
+        <coords>42.49023000678401, -2.417179897767923</coords>
+        <coords>42.48987509939077, -2.418405678677786</coords>
+        <coords>42.4896348453209, -2.41840256499809</coords>
+        <coords>42.48924243488011, -2.418799136116789</coords>
+        <coords>42.48914841352534, -2.419068189516935</coords>
+        <coords>42.48915126888174, -2.419999955623979</coords>
+        <coords>42.48898226705247, -2.420162765189659</coords>
+        <coords>42.48887116827758, -2.420347747579271</coords>
+        <coords>42.48872450911744, -2.421357938626287</coords>
+        <coords>42.48864098648781, -2.421801296569058</coords>
+        <coords>42.48848714556637, -2.422285169494387</coords>
+        <coords>42.48835868026388, -2.422634888942412</coords>
+        <coords>42.48817255599319, -2.423006539971937</coords>
+        <coords>42.48745126819456, -2.424416347558974</coords>
+        <coords>42.48613263101611, -2.426947938087793</coords>
+        <coords>42.48603084342751, -2.427200561910141</coords>
+        <coords>42.48588091316602, -2.427639676737655</coords>
+        <coords>42.4856280184123, -2.428178558727879</coords>
+        <coords>42.48547981464473, -2.428674768564491</coords>
+        <coords>42.48537637504574, -2.429177129642511</coords>
+        <coords>42.48511958818622, -2.430174644270863</coords>
+        <coords>42.48490839035871, -2.431047661759479</coords>
+        <coords>42.48478959396496, -2.431402627657747</coords>
+        <coords>42.48456221277939, -2.431755227349484</coords>
+        <coords>42.48417961136721, -2.432266577864994</coords>
+        <coords>42.4835026757884, -2.433065842095388</coords>
+        <coords>42.4823513617964, -2.434302694997115</coords>
+        <coords>42.48171212490926, -2.434743290192358</coords>
+        <coords>42.4800672123591, -2.435557585292486</coords>
+        <coords>42.47919580024067, -2.436152976600269</coords>
+        <coords>42.47829617138407, -2.436867766178665</coords>
+        <coords>42.47771694884852, -2.437263613446461</coords>
+        <coords>42.47752807318352, -2.437322774784562</coords>
+        <coords>42.47716497295236, -2.437506105968339</coords>
+        <coords>42.47697267092531, -2.437660889679165</coords>
+        <coords>42.4768327612526, -2.437815794150836</coords>
+        <coords>42.47673591881939, -2.438008036082564</coords>
+        <coords>42.47652587951713, -2.438492945408626</coords>
+        <coords>42.47634569786326, -2.438864726300992</coords>
+        <coords>42.47622204890112, -2.439077649581208</coords>
+        <coords>42.47608041750121, -2.439177083854389</coords>
+        <coords>42.47584122688938, -2.439214895832521</coords>
+        <coords>42.47553074299016, -2.439281318163808</coords>
+        <coords>42.47515550560443, -2.439478048181783</coords>
+        <coords>42.47467716861961, -2.439572852968311</coords>
+        <coords>42.4743950509523, -2.439585621174018</coords>
+        <coords>42.47383926446892, -2.43966873142854</coords>
+        <coords>42.4736736200521, -2.439735989464566</coords>
+        <coords>42.47342716566112, -2.439921502422408</coords>
+        <coords>42.47314515137892, -2.44014540613388</coords>
+        <coords>42.4729033804617, -2.440256107504354</coords>
+        <coords>42.47275898256425, -2.440305647057684</coords>
+        <coords>42.47225534502043, -2.440904141499189</coords>
+        <coords>42.47205974562881, -2.441154992959838</coords>
+        <coords>42.47177612618369, -2.441628169870299</coords>
+        <coords>42.47167742965572, -2.441832577049311</coords>
+        <coords>42.47127964331946, -2.443340431835111</coords>
+        <coords>42.47124962835606, -2.443437467203665</coords>
+        <coords>42.4711463707019, -2.443406524493497</coords>
+        <coords>42.47100270991226, -2.443972104707768</coords>
+        <coords>42.47091200116334, -2.444083152513258</coords>
+        <coords>42.47087110274732, -2.444155953571013</coords>
+        <coords>42.46900640845528, -2.443290114620211</coords>
+        <coords>42.46898988396183, -2.443359825793266</coords>
+        <coords>42.46885389962606, -2.443466925378274</coords>
+        <coords>42.46850324587689, -2.444191459358379</coords>
+        <coords>42.46837095429641, -2.444684460353869</coords>
+        <distAnterior>13.1</distAnterior>
+        <distSiguiente>11.3</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>37</orden>
+        <nombre>Logroño</nombre>
+        <coords>42.46837095429641, -2.444684460353869</coords>
+        <coords>42.468288, -2.44518</coords>
+        <coords>42.467628, -2.44659</coords>
+        <coords>42.467609, -2.44717</coords>
+        <coords>42.467682, -2.44728</coords>
+        <coords>42.46767, -2.44763</coords>
+        <coords>42.467529, -2.44825</coords>
+        <coords>42.466991, -2.44971</coords>
+        <coords>42.46674, -2.44972</coords>
+        <coords>42.46664, -2.45015</coords>
+        <coords>42.466301, -2.45019</coords>
+        <coords>42.466179, -2.4508</coords>
+        <coords>42466, -2.45087</coords>
+        <coords>42.465919, -2.4508</coords>
+        <coords>42.465881, -2.45091</coords>
+        <coords>42.465961, -2.45094</coords>
+        <coords>42.465912, -2.45129</coords>
+        <coords>42.465931, -2.45156</coords>
+        <coords>42.465351, -2.4538</coords>
+        <coords>42.465141, -2.4539</coords>
+        <coords>42.465191, -2.4541</coords>
+        <coords>42.464951, -2.4542</coords>
+        <coords>42.46513, -2.45486</coords>
+        <coords>42.461811, -2.46857</coords>
+        <coords>42.460449, -2.47096</coords>
+        <coords>42.459961, -2.47077</coords>
+        <coords>42.459251, -2.47376</coords>
+        <coords>42.458569, -2.47339</coords>
+        <coords>42.458141, -2.4739</coords>
+        <coords>42.45681, -2475</coords>
+        <coords>42.456539, -2.4749</coords>
+        <coords>42.456348, -2.47535</coords>
+        <coords>42.45623, -2.47523</coords>
+        <coords>42.456139, -2.47549</coords>
+        <coords>42.45602, -2.47631</coords>
+        <coords>42.455791, -2.47734</coords>
+        <coords>42.455688, -2.47748</coords>
+        <coords>42.455341, -2.47743</coords>
+        <coords>42.455292, -2.47751</coords>
+        <coords>42.455269, -2.47786</coords>
+        <coords>42.454941, -2.47971</coords>
+        <coords>42.454189, -2.48121</coords>
+        <coords>42.453609, -2.48278</coords>
+        <coords>42.453461, -2.48337</coords>
+        <coords>42.453049, -2.48621</coords>
+        <coords>42.453011, -2.48684</coords>
+        <coords>42.45163, -2.49034</coords>
+        <coords>42.450939, -2.49311</coords>
+        <coords>42.450352, -2.49505</coords>
+        <coords>42.450241, -2.49506</coords>
+        <coords>42.450081, -2.49488</coords>
+        <coords>42.449951, -2.49502</coords>
+        <coords>42.449909, -2.49531</coords>
+        <coords>42.449951, -2.49628</coords>
+        <coords>42.449909, -2.49729</coords>
+        <coords>42.449829, -2.49772</coords>
+        <coords>42.449249, -2.49826</coords>
+        <coords>42.448872, -2.49824</coords>
+        <coords>42.44875, -2.49831</coords>
+        <coords>42.448769, -2.49859</coords>
+        <coords>42.448681, -2.49881</coords>
+        <coords>42.448479, -2.49908</coords>
+        <coords>42.448318, -2.49914</coords>
+        <coords>42.448132, -2.49973</coords>
+        <coords>42.447819, -2.49996</coords>
+        <coords>42.447689, -2.49995</coords>
+        <coords>42.447552, -2.50011</coords>
+        <coords>42.447369, -2.50048</coords>
+        <coords>42.44717, -2.50052</coords>
+        <coords>42.447121, -2.50067</coords>
+        <coords>42.44817, -2.50372</coords>
+        <coords>42.44733, -2.50453</coords>
+        <coords>42.447079, -2.50502</coords>
+        <coords>42.44677, -2.50524</coords>
+        <coords>42.446671, -2.50566</coords>
+        <coords>42.446678, -2.50658</coords>
+        <coords>42.446732, -2.50672</coords>
+        <coords>42.446411, -2.50825</coords>
+        <coords>42.446339, -2.50907</coords>
+        <coords>42.446209, -2.50962</coords>
+        <coords>42.44611, -2.50974</coords>
+        <coords>42.446331, -2.50999</coords>
+        <coords>42.44627, -2.51023</coords>
+        <coords>42.446098, -2.51051</coords>
+        <coords>42.445999, -2.51083</coords>
+        <coords>42.44577, -2.51109</coords>
+        <coords>42.44553, -2.51158</coords>
+        <coords>42.444939, -2.51284</coords>
+        <coords>42.44487, -2.51316</coords>
+        <coords>42.444672, -2.51332</coords>
+        <coords>42.444462, -2.5134</coords>
+        <coords>42.444351, -2.51316</coords>
+        <coords>42.444099, -2.51221</coords>
+        <coords>42.443951, -2.51209</coords>
+        <coords>42.443611, -2.51251</coords>
+        <coords>42.443279, -2.51317</coords>
+        <coords>42.442768, -2.5133</coords>
+        <coords>42.442039, -2.51323</coords>
+        <coords>42.44175, -2.51338</coords>
+        <coords>42.441299, -2.51335</coords>
+        <coords>42.44128, -2.51365</coords>
+        <coords>42.44154, -2.51464</coords>
+        <coords>42.441471, -2.51486</coords>
+        <coords>42.441631, -2.51502</coords>
+        <coords>42.441811, -2.51579</coords>
+        <coords>42.44183, -2.51637</coords>
+        <coords>42.441681, -2.51672</coords>
+        <coords>42.441521, -2.51783</coords>
+        <coords>42.44136, -2.51804</coords>
+        <coords>42.440971, -2.51875</coords>
+        <coords>42.440891, -2.51893</coords>
+        <coords>42.440819, -2.51937</coords>
+        <coords>42.440639, -2.51979</coords>
+        <coords>42.4403, -2.5201</coords>
+        <coords>42.44022, -2.52036</coords>
+        <coords>42.440231, -2.52071</coords>
+        <coords>42.440109, -2.52109</coords>
+        <coords>42.439301, -2.52179</coords>
+        <coords>42.439468, -2.52253</coords>
+        <coords>42.439758, -2.52305</coords>
+        <coords>42.44006, -2.52382</coords>
+        <coords>42.439869, -2.52512</coords>
+        <coords>42.439739, -2.5269</coords>
+        <coords>42.439758, -2.52725</coords>
+        <coords>42.439499, -2.52895</coords>
+        <coords>42.439529, -2.52906</coords>
+        <coords>42.439079, -2.53125</coords>
+        <coords>42.438881, -2.53184</coords>
+        <coords>42.43882, -2.53219</coords>
+        <coords>42.43877, -2.53322</coords>
+        <coords>42.438469, -2.53542</coords>
+        <coords>42.438229, -2.53608</coords>
+        <coords>42.437832, -2.53748</coords>
+        <coords>42.437679, -2.53778</coords>
+        <coords>42.437538, -2.53826</coords>
+        <coords>42.43771, -2.53849</coords>
+        <coords>42.437511, -2.53948</coords>
+        <coords>42.437019, -2.54027</coords>
+        <coords>42.43684, -2.54095</coords>
+        <coords>42.436779, -2.54136</coords>
+        <coords>42.43634, -2.54273</coords>
+        <coords>42.436062, -2.54515</coords>
+        <coords>42.435768, -2.54669</coords>
+        <coords>42.435719, -2.54733</coords>
+        <coords>42.43552, -2.54817</coords>
+        <coords>42.435711, -2.54909</coords>
+        <coords>42.435879, -2.54951</coords>
+        <coords>42.435902, -2.54967</coords>
+        <coords>42.435001, -2.55091</coords>
+        <coords>42.433762, -2.55506</coords>
+        <coords>42.432831, -2.55839</coords>
+        <coords>42.43269, -2.55883</coords>
+        <coords>42.43256, -2.55902</coords>
+        <coords>42.43264, -2.55941</coords>
+        <coords>42.432461, -2.55941</coords>
+        <coords>42.431042, -2.55901</coords>
+        <coords>42.430241, -2.55895</coords>
+        <coords>42.42992, -2.55898</coords>
+        <coords>42.429581, -2.55932</coords>
+        <coords>42.429359, -2.55978</coords>
+        <coords>42.429218, -2.56024</coords>
+        <coords>42.429131, -2.56069</coords>
+        <coords>42.429119, -2.56147</coords>
+        <coords>42.42947, -2.56149</coords>
+        <coords>42.429459, -2562</coords>
+        <coords>42.429539, -2.56221</coords>
+        <distAnterior>11.3</distAnterior>
+        <distSiguiente>12.2</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>true</farmacia>
+        <banco>true</banco>
+        <internet>true</internet>
+    </parada>
+    <parada>
+        <orden>38</orden>
+        <nombre>Navarrete</nombre>
+        <coords>42.429539, -2.56221</coords>
+        <coords>42.430359, -2.56287</coords>
+        <coords>42.430809, -2.56309</coords>
+        <coords>42.430759, -2.56414</coords>
+        <coords>42.430592, -2.56534</coords>
+        <coords>42.430531, -2.56538</coords>
+        <coords>42.430069, -2.56792</coords>
+        <coords>42.429989, -2.56816</coords>
+        <coords>42.429401, -2.56955</coords>
+        <coords>42.428581, -2.57127</coords>
+        <coords>42.427341, -2.57379</coords>
+        <coords>42.427261, -2.57383</coords>
+        <coords>42.425869, -2.57701</coords>
+        <coords>42.425739, -2.5771</coords>
+        <coords>42.425419, -2.57752</coords>
+        <coords>42.425388, -2.57768</coords>
+        <coords>42.425152, -2.57823</coords>
+        <coords>42.425041, -2.57841</coords>
+        <coords>42.42382, -2.58119</coords>
+        <coords>42.4235, -2.58166</coords>
+        <coords>42.423038, -2.58221</coords>
+        <coords>42.422562, -2.58308</coords>
+        <coords>42.422451, -2.58321</coords>
+        <coords>42.42234, -2.58325</coords>
+        <coords>42.421982, -2.58371</coords>
+        <coords>42.421322, -2.58432</coords>
+        <coords>42.420559, -2.58458</coords>
+        <coords>42.420151, -2.58485</coords>
+        <coords>42.419189, -2.58523</coords>
+        <coords>42.41906, -2.58513</coords>
+        <coords>42.418839, -2.5851</coords>
+        <coords>42.418659, -2.58513</coords>
+        <coords>42.418201, -2.58534</coords>
+        <coords>42.41811, -2.58532</coords>
+        <coords>42.41806, -2.58515</coords>
+        <coords>42.416779, -2.58637</coords>
+        <coords>42.416641, -2.58663</coords>
+        <coords>42.416359, -2.58698</coords>
+        <coords>42.416019, -2.58724</coords>
+        <coords>42.415031, -2.58767</coords>
+        <coords>42.41518, -2.58886</coords>
+        <coords>42.415058, -2.58974</coords>
+        <coords>42.414982, -2.59128</coords>
+        <coords>42.41489, -2.5921</coords>
+        <coords>42.414711, -2.5929</coords>
+        <coords>42.414661, -2.59347</coords>
+        <coords>42.414661, -2.59394</coords>
+        <coords>42.414719, -2.59431</coords>
+        <coords>42.414871, -2.59461</coords>
+        <coords>42.415649, -2.59574</coords>
+        <coords>42.415939, -2.59632</coords>
+        <coords>42.416142, -2.5968</coords>
+        <coords>42.41647, -2.59804</coords>
+        <coords>42.416382, -2.59816</coords>
+        <coords>42.416119, -2.59825</coords>
+        <coords>42.416161, -2.59868</coords>
+        <coords>42.4161, -2.59897</coords>
+        <coords>42.415951, -2.59928</coords>
+        <coords>42.415981, -2.59944</coords>
+        <coords>42.41592, -2.59977</coords>
+        <coords>42.415951, -2.59993</coords>
+        <coords>42.415821, -2.60015</coords>
+        <coords>42.415791, -2.60033</coords>
+        <coords>42.415691, -2.6005</coords>
+        <coords>42.415459, -2.60064</coords>
+        <coords>42.415329, -2.60084</coords>
+        <coords>42.414909, -2602</coords>
+        <coords>42.414799, -2.60251</coords>
+        <coords>42.414639, -2.60296</coords>
+        <coords>42.4142, -2.60271</coords>
+        <coords>42.414108, -2.60293</coords>
+        <coords>42.413719, -2.60424</coords>
+        <coords>42.413792, -2.60481</coords>
+        <coords>42.413471, -2.60576</coords>
+        <coords>42.413181, -2.60629</coords>
+        <coords>42.41354, -2.60653</coords>
+        <coords>42.413212, -2.60726</coords>
+        <coords>42.412769, -2.60812</coords>
+        <coords>42.412579, -2.60833</coords>
+        <coords>42.412281, -2.60923</coords>
+        <coords>42.412201, -2.61</coords>
+        <coords>42.412601, -2.61009</coords>
+        <coords>42.412659, -2.61036</coords>
+        <coords>42.412319, -2.61219</coords>
+        <coords>42.412201, -2.61333</coords>
+        <coords>42.412159, -2.61412</coords>
+        <coords>42.412148, -2.615594</coords>
+        <coords>42.412132, -2.616999</coords>
+        <coords>42.412125, -2.61914</coords>
+        <coords>42.412094, -2.620293</coords>
+        <coords>42.412052, -2.621334</coords>
+        <coords>42.412071, -2.621993</coords>
+        <coords>42.412106, -2.622299</coords>
+        <coords>42.412014, -2.622535</coords>
+        <coords>42.411953, -2.622809</coords>
+        <coords>42.411983, -2.623168</coords>
+        <coords>42.411953, -2.623774</coords>
+        <coords>42.411873, -2.624665</coords>
+        <coords>42.411846, -2.62547</coords>
+        <coords>42.41177, -2.626553</coords>
+        <coords>42.411743, -2.627728</coords>
+        <distAnterior>12.2</distAnterior>
+        <distSiguiente>7.0</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>true</farmacia>
+        <banco>true</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>39</orden>
+        <nombre>Ventosa</nombre>
+        <coords>42.411743, -2.627728</coords>
+        <coords>42.411659, -2.628608</coords>
+        <coords>42.411545, -2.629187</coords>
+        <coords>42.411591, -2.629595</coords>
+        <coords>42.411564, -2.630051</coords>
+        <coords>42.411533, -2.630491</coords>
+        <coords>42.411556, -2631</coords>
+        <coords>42.411495, -2.631424</coords>
+        <coords>42.411484, -2.632057</coords>
+        <coords>42.411518, -2.632899</coords>
+        <coords>42.411552, -2.633768</coords>
+        <coords>42.41153, -2.634069</coords>
+        <coords>42.411369, -2.634562</coords>
+        <coords>42.41135, -2.634884</coords>
+        <coords>42.4114, -2.635887</coords>
+        <coords>42.411469, -2.63667</coords>
+        <coords>42.41143, -2.637202</coords>
+        <coords>42.411388, -2.63748</coords>
+        <coords>42.411461, -2.638199</coords>
+        <coords>42.411449, -2.638468</coords>
+        <coords>42.411373, -2.638848</coords>
+        <coords>42.411301, -2.639728</coords>
+        <coords>42.411289, -2.640136</coords>
+        <coords>42.411324, -2.640796</coords>
+        <coords>42.411339, -2.641048</coords>
+        <coords>42.411297, -2.641515</coords>
+        <coords>42.411385, -2.641885</coords>
+        <coords>42.411564, -2.642196</coords>
+        <coords>42.411663, -2.642346</coords>
+        <coords>42.411705, -2.642518</coords>
+        <coords>42.411903, -2.642657</coords>
+        <coords>42.412014, -2.642781</coords>
+        <coords>42.412067, -2.643022</coords>
+        <coords>42.412132, -2.64322</coords>
+        <coords>42.412266, -2.643521</coords>
+        <coords>42.412415, -2.643811</coords>
+        <coords>42.412407, -2.644036</coords>
+        <coords>42.412331, -2.644401</coords>
+        <coords>42.412434, -2.64542</coords>
+        <coords>42.412464, -2.646734</coords>
+        <coords>42.412533, -2.647174</coords>
+        <coords>42.412533, -2.647415</coords>
+        <coords>42.412571, -2648</coords>
+        <coords>42.412628, -2.648317</coords>
+        <coords>42.41264, -2.648467</coords>
+        <coords>42.412567, -2.648622</coords>
+        <coords>42.4123, -2.649019</coords>
+        <coords>42.412083, -2.6494</coords>
+        <coords>42.411732, -2.649658</coords>
+        <coords>42.411629, -2.649824</coords>
+        <coords>42.411335, -2.649996</coords>
+        <coords>42.411118, -2.650301</coords>
+        <coords>42.410934, -2.650752</coords>
+        <coords>42.410919, -2.650956</coords>
+        <coords>42.41106, -2.65116</coords>
+        <coords>42.410988, -2.651508</coords>
+        <coords>42.410889, -2.651959</coords>
+        <coords>42.410896, -2.652345</coords>
+        <coords>42.410931, -2.652791</coords>
+        <coords>42.410892, -2.653182</coords>
+        <coords>42.410728, -2.653622</coords>
+        <coords>42.410637, -2.654083</coords>
+        <coords>42.410656, -2.654856</coords>
+        <coords>42.41074, -2.655762</coords>
+        <coords>42.410847, -2.656733</coords>
+        <coords>42.410969, -2.657554</coords>
+        <coords>42.411003, -2.658005</coords>
+        <coords>42.411102, -2.658493</coords>
+        <coords>42.411156, -2.658992</coords>
+        <coords>42.411285, -2.659823</coords>
+        <coords>42.411335, -2.660156</coords>
+        <coords>42.411335, -2.660558</coords>
+        <coords>42.411358, -2.66081</coords>
+        <coords>42.411427, -2.661336</coords>
+        <coords>42.411415, -2.661642</coords>
+        <coords>42.411423, -2.662151</coords>
+        <coords>42.411377, -2.662613</coords>
+        <coords>42.411377, -2.663155</coords>
+        <coords>42.411411, -2.663503</coords>
+        <coords>42.411655, -2.664061</coords>
+        <coords>42.411671, -2.664405</coords>
+        <coords>42.411713, -2.664855</coords>
+        <coords>42.411766, -2.665375</coords>
+        <coords>42.411942, -2.666405</coords>
+        <coords>42.412098, -2.667173</coords>
+        <coords>42.412178, -2.66765</coords>
+        <coords>42.412331, -2.668487</coords>
+        <coords>42.412769, -2.669946</coords>
+        <coords>42.412971, -2.670541</coords>
+        <coords>42.413158, -2.671142</coords>
+        <coords>42.413235, -2.671528</coords>
+        <coords>42.413303, -2.671899</coords>
+        <coords>42.413342, -2.672086</coords>
+        <coords>42.413368, -2.672381</coords>
+        <coords>42.413334, -2.672617</coords>
+        <coords>42.413353, -2.672794</coords>
+        <coords>42.413422, -2.672891</coords>
+        <coords>42.413448, -2.673181</coords>
+        <coords>42.413555, -2.673427</coords>
+        <coords>42.413601, -2.67376</coords>
+        <coords>42.413643, -2.673921</coords>
+        <coords>42.413586, -2.67428</coords>
+        <coords>42.413631, -2.674559</coords>
+        <coords>42.413906, -2.675444</coords>
+        <coords>42.414173, -2.676024</coords>
+        <coords>42.41452, -2.676625</coords>
+        <coords>42.414772, -2.677236</coords>
+        <coords>42.41486, -2.677596</coords>
+        <coords>42.414978, -2.678111</coords>
+        <coords>42.414997, -2.678304</coords>
+        <coords>42.414913, -2.678604</coords>
+        <coords>42.414822, -2.679183</coords>
+        <coords>42.41468, -2.679822</coords>
+        <coords>42.414509, -2.680428</coords>
+        <coords>42.414413, -2.680922</coords>
+        <coords>42.414295, -2.682526</coords>
+        <coords>42.414261, -2.683244</coords>
+        <coords>42.414177, -2.683523</coords>
+        <coords>42.414001, -2.684049</coords>
+        <coords>42.413818, -2.684666</coords>
+        <coords>42.413612, -2.685433</coords>
+        <coords>42.413555, -2.685943</coords>
+        <coords>42.413452, -2.68627</coords>
+        <coords>42.413383, -2.686731</coords>
+        <coords>42.413315, -2.687241</coords>
+        <coords>42.413311, -2.687632</coords>
+        <coords>42.413399, -2.68885</coords>
+        <coords>42.413387, -2.689344</coords>
+        <coords>42.413303, -2.69061</coords>
+        <coords>42.413216, -2.691296</coords>
+        <coords>42.413208, -2.691602</coords>
+        <coords>42.413181, -2.691972</coords>
+        <coords>42.413277, -2.692541</coords>
+        <coords>42.413403, -2.692884</coords>
+        <coords>42.413494, -2.693646</coords>
+        <coords>42.413662, -2.694638</coords>
+        <coords>42.41407, -2.695143</coords>
+        <coords>42.414173, -2.695819</coords>
+        <coords>42.41423, -2.696275</coords>
+        <coords>42.414131, -2.696564</coords>
+        <coords>42.414097, -2.697058</coords>
+        <coords>42.414135, -2.697455</coords>
+        <coords>42.414425, -2.6982</coords>
+        <coords>42.414291, -2.69857</coords>
+        <coords>42.414646, -2.699166</coords>
+        <coords>42.414696, -2.699418</coords>
+        <coords>42.414837, -2.699794</coords>
+        <coords>42.415012, -2.700647</coords>
+        <coords>42.415234, -2.701982</coords>
+        <coords>42.41539, -2.702814</coords>
+        <coords>42.415497, -2.703307</coords>
+        <coords>42.415489, -2.703447</coords>
+        <coords>42.415672, -2.704788</coords>
+        <coords>42.415764, -2.705973</coords>
+        <coords>42.415825, -2.706601</coords>
+        <coords>42.415817, -2.707363</coords>
+        <coords>42.416012, -2.708897</coords>
+        <coords>42.416088, -2.709509</coords>
+        <coords>42.416023, -2.70997</coords>
+        <coords>42.416142, -2.710093</coords>
+        <coords>42.416214, -2.710265</coords>
+        <coords>42.416428, -2.711483</coords>
+        <coords>42.416542, -2.712218</coords>
+        <coords>42.416634, -2.712711</coords>
+        <coords>42.416882, -2.713741</coords>
+        <coords>42.417187, -2.714921</coords>
+        <coords>42.417683, -2.715372</coords>
+        <coords>42.417694, -2.715479</coords>
+        <coords>42.417526, -2.715924</coords>
+        <coords>42.417564, -2.716091</coords>
+        <coords>42.41785, -2.716954</coords>
+        <coords>42.417923, -2.717491</coords>
+        <coords>42.417953, -2.717807</coords>
+        <coords>42.418404, -2.718993</coords>
+        <coords>42.41848, -2.719476</coords>
+        <coords>42.418503, -2.719916</coords>
+        <coords>42.41853, -2.721294</coords>
+        <coords>42.418507, -2.72175</coords>
+        <coords>42.41835, -2.723687</coords>
+        <coords>42.418228, -2.724829</coords>
+        <coords>42.418312, -2.724974</coords>
+        <coords>42.418301, -2.725178</coords>
+        <coords>42.418331, -2.725183</coords>
+        <coords>42.418228, -2.725323</coords>
+        <coords>42.418247, -2.725993</coords>
+        <coords>42.418213, -2.726326</coords>
+        <coords>42.418022, -2.727351</coords>
+        <coords>42.417805, -2.728461</coords>
+        <coords>42.417675, -2.728933</coords>
+        <coords>42.417553, -2.729089</coords>
+        <coords>42.417576, -2.729148</coords>
+        <coords>42.417297, -2.729877</coords>
+        <coords>42.417027, -2.73044</coords>
+        <coords>42.416962, -2.730736</coords>
+        <coords>42.416855, -2.731154</coords>
+        <coords>42.417213, -2.731841</coords>
+        <coords>42.417183, -2.731921</coords>
+        <coords>42.417095, -2.731889</coords>
+        <coords>42.417088, -2.732039</coords>
+        <coords>42.417225, -2.732055</coords>
+        <coords>42.417282, -2.732162</coords>
+        <coords>42.417416, -2.733273</coords>
+        <coords>42.417534, -2.733514</coords>
+        <coords>42.417042, -2.733895</coords>
+        <coords>42.416889, -2.733943</coords>
+        <coords>42.416512, -2.734185</coords>
+        <coords>42.416634, -2.735177</coords>
+        <distAnterior>7.0</distAnterior>
+        <distSiguiente>9.46</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>40</orden>
+        <nombre>Nájera</nombre>
+        <coords>42.416634, -2.735177</coords>
+        <coords>42.416363, -2.735252</coords>
+        <coords>42.415794, -2.735445</coords>
+        <coords>42.415703, -2.735724</coords>
+        <coords>42.415672, -2.736293</coords>
+        <coords>42.415855, -2.737468</coords>
+        <coords>42.415844, -2.737597</coords>
+        <coords>42.415314, -2.738675</coords>
+        <coords>42.415359, -2.738863</coords>
+        <coords>42.415321, -2.739297</coords>
+        <coords>42.415298, -2.73949</coords>
+        <coords>42.414997, -2.740059</coords>
+        <coords>42.414875, -2.740413</coords>
+        <coords>42.414692, -2.740644</coords>
+        <coords>42.414509, -2.741089</coords>
+        <coords>42.414371, -2.741604</coords>
+        <coords>42.414307, -2.741765</coords>
+        <coords>42.414169, -2.742108</coords>
+        <coords>42.414047, -2.742473</coords>
+        <coords>42.414009, -2.74287</coords>
+        <coords>42.414097, -2.743208</coords>
+        <coords>42.414238, -2.74354</coords>
+        <coords>42.414288, -2.743846</coords>
+        <coords>42.414276, -2.744372</coords>
+        <coords>42.41433, -2.744914</coords>
+        <coords>42.414455, -2.745305</coords>
+        <coords>42.414429, -2.745515</coords>
+        <coords>42.414444, -2.745697</coords>
+        <coords>42.4147, -2.746346</coords>
+        <coords>42.414749, -2.746587</coords>
+        <coords>42.414867, -2.747113</coords>
+        <coords>42.415005, -2.747591</coords>
+        <coords>42.415234, -2.748041</coords>
+        <coords>42.415287, -2.74839</coords>
+        <coords>42.415333, -2.748808</coords>
+        <coords>42.415344, -2.749318</coords>
+        <coords>42.415417, -2.749715</coords>
+        <coords>42.415581, -2.750487</coords>
+        <coords>42.415668, -2.750761</coords>
+        <coords>42.415817, -2.750906</coords>
+        <coords>42.415874, -2.751056</coords>
+        <coords>42.416164, -2.751421</coords>
+        <coords>42.416306, -2.751646</coords>
+        <coords>42.416332, -2.751893</coords>
+        <coords>42.416286, -2.752386</coords>
+        <coords>42.41626, -2.753175</coords>
+        <coords>42.416222, -2.753727</coords>
+        <coords>42.416126, -2.754232</coords>
+        <coords>42.416096, -2.75465</coords>
+        <coords>42.416138, -2.754951</coords>
+        <coords>42.416145, -2.755492</coords>
+        <coords>42.416054, -2.756667</coords>
+        <coords>42.415981, -2.757713</coords>
+        <coords>42.41597, -2.758722</coords>
+        <coords>42.415943, -2.759489</coords>
+        <coords>42.416367, -2.759993</coords>
+        <coords>42.416504, -2.76061</coords>
+        <coords>42.416618, -2.761205</coords>
+        <coords>42.416725, -2.761651</coords>
+        <coords>42.416901, -2.762584</coords>
+        <coords>42.417259, -2.76444</coords>
+        <coords>42.417416, -2.765347</coords>
+        <coords>42.417469, -2.765647</coords>
+        <coords>42.417522, -2.766452</coords>
+        <coords>42.417706, -2.76731</coords>
+        <coords>42.41777, -2.767932</coords>
+        <coords>42.417824, -2.768447</coords>
+        <coords>42.417961, -2.769552</coords>
+        <coords>42.418015, -2.770915</coords>
+        <coords>42.418491, -2.772481</coords>
+        <coords>42.41888, -2.773951</coords>
+        <coords>42.419418, -2.776011</coords>
+        <coords>42.419804, -2.778007</coords>
+        <coords>42.419941, -2.779241</coords>
+        <coords>42.420059, -2.78011</coords>
+        <coords>42.420223, -2.780786</coords>
+        <coords>42.420273, -2.781708</coords>
+        <coords>42.420258, -2.783157</coords>
+        <coords>42.420422, -2.784337</coords>
+        <coords>42.420517, -2.784948</coords>
+        <coords>42.420685, -2.786901</coords>
+        <coords>42.4207, -2.78851</coords>
+        <coords>42.420795, -2.789283</coords>
+        <coords>42.422207, -2.792995</coords>
+        <coords>42.422695, -2.795184</coords>
+        <coords>42.422981, -2.796257</coords>
+        <coords>42.423046, -2.797823</coords>
+        <coords>42.423328, -2.798638</coords>
+        <coords>42.424026, -2.800612</coords>
+        <distAnterior>9.46</distAnterior>
+        <distSiguiente>7.58</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>true</farmacia>
+        <banco>true</banco>
+        <internet>true</internet>
+    </parada>
+    <parada>
+        <orden>41</orden>
+        <nombre>Azofra</nombre>
+        <coords>42.424026, -2.800612</coords>
+        <coords>42.424599, -2.801878</coords>
+        <coords>42.424644, -2.802715</coords>
+        <coords>42.425896, -2.80381</coords>
+        <coords>42.426006, -2.805376</coords>
+        <coords>42.426197, -2.806985</coords>
+        <coords>42.42572, -2.807844</coords>
+        <coords>42.424629, -2.811577</coords>
+        <coords>42.424564, -2.812092</coords>
+        <coords>42.424313, -2.813251</coords>
+        <coords>42.424217, -2.814152</coords>
+        <coords>42.424835, -2.817092</coords>
+        <coords>42.4258, -2.821298</coords>
+        <coords>42.426212, -2.823164</coords>
+        <coords>42.426529, -2.82413</coords>
+        <coords>42.42664, -2.824559</coords>
+        <coords>42.42664, -2.824817</coords>
+        <coords>42.426147, -2.824667</coords>
+        <coords>42.426086, -2.825739</coords>
+        <coords>42.425991, -2.826319</coords>
+        <coords>42.42569, -2.826877</coords>
+        <coords>42.424107, -2.828808</coords>
+        <coords>42.423203, -2.830353</coords>
+        <coords>42.422157, -2.832627</coords>
+        <coords>42.422016, -2.833314</coords>
+        <coords>42.421871, -2.834365</coords>
+        <coords>42.421509, -2.834923</coords>
+        <coords>42.420891, -2.835653</coords>
+        <coords>42.420559, -2.836554</coords>
+        <coords>42.419846, -2.838035</coords>
+        <coords>42.419876, -2.839065</coords>
+        <coords>42.419655, -2.83958</coords>
+        <coords>42.419399, -2.839987</coords>
+        <coords>42.418861, -2.841446</coords>
+        <coords>42.41861, -2.842541000000001</coords>
+        <coords>42.418674, -2.843013</coords>
+        <coords>42.418545, -2.843142</coords>
+        <coords>42.418831, -2.843485</coords>
+        <coords>42.419052, -2.843807</coords>
+        <coords>42.419147, -2.845137</coords>
+        <coords>42.418404, -2.846768</coords>
+        <coords>42.418243, -2.846811</coords>
+        <coords>42.416882, -2.849793</coords>
+        <coords>42.417088, -2.852154</coords>
+        <coords>42.416851, -2.854943</coords>
+        <coords>42.416946, -2.855995</coords>
+        <coords>42.416977, -2.857647</coords>
+        <coords>42.417328, -2.858334</coords>
+        <coords>42.419006, -2.861273000000001</coords>
+        <coords>42.419514, -2.862089</coords>
+        <coords>42.419781, -2.863054</coords>
+        <coords>42.420971, -2.865371999999999</coords>
+        <coords>42.421032, -2.867516999999999</coords>
+        <coords>42.421097, -2.868011000000001</coords>
+        <coords>42.421001, -2.86917</coords>
+        <coords>42.421066, -2.870264000000001</coords>
+        <coords>42.421333, -2.871509</coords>
+        <coords>42.421112, -2.873805</coords>
+        <coords>42.421207, -2.874556</coords>
+        <coords>42.421143, -2.87492</coords>
+        <coords>42.420826, -2.875521</coords>
+        <coords>42.420841, -2.876101</coords>
+        <coords>42.420811, -2.876723</coords>
+        <coords>42.420685, -2.877152</coords>
+        <coords>42.420509, -2.877967</coords>
+        <coords>42.420147, -2.879534000000001</coords>
+        <coords>42.41972, -2.881916</coords>
+        <coords>42.420464, -2.882688</coords>
+        <coords>42.420525, -2.882988</coords>
+        <coords>42.418751, -2.885864</coords>
+        <coords>42.418358, -2.885821</coords>
+        <coords>42.415821, -2.889898</coords>
+        <coords>42.414871, -2.890155</coords>
+        <coords>42.414745, -2.890348</coords>
+        <coords>42.414871, -2.892623</coords>
+        <coords>42.414444, -2.892666</coords>
+        <coords>42.414474, -2.893524</coords>
+        <coords>42.414268, -2.893953</coords>
+        <coords>42.413921, -2.894511</coords>
+        <coords>42.413445, -2.895155</coords>
+        <coords>42.413002, -2.895219</coords>
+        <coords>42.412827, -2.896335</coords>
+        <distAnterior>7.58</distAnterior>
+        <distSiguiente>11.7</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>42</orden>
+        <nombre>Cirueña</nombre>
+        <coords>42.412827, -2.896335</coords>
+        <coords>42.413288, -2.89655</coords>
+        <coords>42.413952, -2.896485</coords>
+        <coords>42.41441, -2897</coords>
+        <coords>42.414696, -2.898223</coords>
+        <coords>42.415218, -2.898588</coords>
+        <coords>42.416203, -2.905326</coords>
+        <coords>42.417992, -2.910776</coords>
+        <coords>42.423172, -2.919423999999999</coords>
+        <coords>42.423679, -2.919981</coords>
+        <coords>42.427132, -2.923973</coords>
+        <coords>42.433182, -2.930818</coords>
+        <coords>42.436489, -2.934487</coords>
+        <coords>42.436855, -2.935581</coords>
+        <coords>42.437523, -2.938199</coords>
+        <coords>42.437679, -2.938886</coords>
+        <coords>42.437916, -2.9391</coords>
+        <coords>42.438248, -2.939143</coords>
+        <coords>42.439232, -2.944422</coords>
+        <coords>42.439293, -2.945302</coords>
+        <coords>42.439533, -2.94558</coords>
+        <coords>42.440056, -2.947919000000001</coords>
+        <coords>42.440449, -2.949915</coords>
+        <coords>42.440624, -2.950686999999999</coords>
+        <coords>42.440674, -2.951524</coords>
+        <coords>42.440861, -2.952554</coords>
+        <distAnterior>11.7</distAnterior>
+        <distSiguiente>5.9</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>43</orden>
+        <nombre>Santo Domingo de la Calzada</nombre>
+        <coords>42.440861, -2.952554</coords>
+        <coords>42.44099, -2.953112</coords>
+        <coords>42.440941, -2.953477</coords>
+        <coords>42.441006, -2.954056</coords>
+        <coords>42.441097, -2.955579999999999</coords>
+        <coords>42.441193, -2.956975</coords>
+        <coords>42.441086, -2.957275</coords>
+        <coords>42.441212, -2.958627</coords>
+        <coords>42.441509, -2.959378</coords>
+        <coords>42.442368, -2.962189</coords>
+        <coords>42.442539, -2.962232</coords>
+        <coords>42.442745, -2.962854</coords>
+        <coords>42.443127, -2.963583</coords>
+        <coords>42.44384, -2.964528</coords>
+        <coords>42.443966, -2.964807</coords>
+        <coords>42.443966, -2.965021</coords>
+        <coords>42.444454, -2.965536000000001</coords>
+        <coords>42.444866, -2.967167</coords>
+        <coords>42.445122, -2.968647</coords>
+        <coords>42.445911, -2.971673</coords>
+        <coords>42.445358, -2.972102</coords>
+        <coords>42.445312, -2.97236</coords>
+        <coords>42.447338, -2.978582</coords>
+        <coords>42.44772, -2.980149</coords>
+        <coords>42.447861, -2.980514</coords>
+        <coords>42.448036, -2.981157</coords>
+        <coords>42.448147, -2.981994</coords>
+        <coords>42.448795, -2.984483</coords>
+        <coords>42.449383, -2.985964</coords>
+        <coords>42.449619, -2.985835</coords>
+        <coords>42.449997, -2.987294</coords>
+        <coords>42.450333, -2.988882</coords>
+        <coords>42.451378, -2.996135</coords>
+        <coords>42.451485, -2.996457</coords>
+        <coords>42.451771, -2.999482</coords>
+        <coords>42.452042, -3.002164</coords>
+        <coords>42.450283, -3.00386</coords>
+        <coords>42.450314, -3.00549</coords>
+        <coords>42.450012, -3.012722</coords>
+        <coords>42.448353, -3.017979</coords>
+        <coords>42.446976, -3.022292</coords>
+        <coords>42.447006, -3.024845</coords>
+        <coords>42.447147, -3.026004</coords>
+        <coords>42.447258, -3.02639</coords>
+        <coords>42.447514, -3.026519</coords>
+        <coords>42.447876, -3.026626</coords>
+        <coords>42.449997, -3.026047000000001</coords>
+        <coords>42.449936, -3.026326000000001</coords>
+        <coords>42.450645, -3.026712</coords>
+        <coords>42.450569, -3.026948</coords>
+        <distAnterior>5.9</distAnterior>
+        <distSiguiente>9.12</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>true</farmacia>
+        <banco>true</banco>
+        <internet>true</internet>
+    </parada>
+    <parada>
+        <orden>44</orden>
+        <nombre>Grañón</nombre>
+        <coords>42.450569, -3.026948</coords>
+        <coords>42.449207, -3.030338</coords>
+        <coords>42.449017, -3.030617</coords>
+        <coords>42.449001, -3.031261</coords>
+        <coords>42.448765, -3.032055</coords>
+        <coords>42.44862, -3.033128</coords>
+        <coords>42.449047, -3.032913</coords>
+        <coords>42.44973, -3.034608</coords>
+        <coords>42.449715, -3.036067</coords>
+        <coords>42.449745, -3.037806</coords>
+        <coords>42.449585, -3.038321</coords>
+        <coords>42.449474, -3.038535</coords>
+        <coords>42.448635, -3.039393</coords>
+        <coords>42.44862, -3.039823000000001</coords>
+        <coords>42.447845, -3.041432</coords>
+        <coords>42.4468, -3.043234</coords>
+        <coords>42.445122, -3.045788</coords>
+        <coords>42.444695, -3.047546999999999</coords>
+        <coords>42.444077, -3.049650000000001</coords>
+        <coords>42.443489, -3.051431</coords>
+        <coords>42.443333, -3.052139</coords>
+        <coords>42.442493, -3.053555</coords>
+        <coords>42.441605, -3.054863999999999</coords>
+        <coords>42.439941, -3.05789</coords>
+        <coords>42.438835, -3.060336</coords>
+        <coords>42.438152, -3.06231</coords>
+        <coords>42.43874, -3.062868</coords>
+        <coords>42.438267, -3.064091</coords>
+        <distAnterior>9.12</distAnterior>
+        <distSiguiente>4.63</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>45</orden>
+        <nombre>Redecilla del Camino</nombre>
+        <coords>42.438267, -3.064091</coords>
+        <coords>42.437252, -3.066323</coords>
+        <coords>42.437222, -3.068833</coords>
+        <coords>42.437126, -3.069906</coords>
+        <coords>42.437393, -3.070743</coords>
+        <coords>42.437202, -3.072224</coords>
+        <coords>42.437237, -3.073082</coords>
+        <coords>42.437649, -3.079627</coords>
+        <coords>42.437016, -3.080248999999999</coords>
+        <coords>42.437126, -3.081279</coords>
+        <coords>42.437187, -3.081536</coords>
+        <coords>42.436981, -3.082631000000001</coords>
+        <coords>42.436775, -3.083575000000001</coords>
+        <distAnterior>4.63</distAnterior>
+        <distSiguiente>2.24</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>46</orden>
+        <nombre>Castildelgado</nombre>
+        <coords>42.436775, -3.083575000000001</coords>
+        <coords>42.436634, -3.084219000000001</coords>
+        <coords>42.436428, -3.085184</coords>
+        <coords>42.436378, -3.085999</coords>
+        <coords>42.436413, -3.086472000000001</coords>
+        <coords>42.436665, -3.086514</coords>
+        <coords>42.436569, -3.086901</coords>
+        <coords>42.435558, -3.088038</coords>
+        <coords>42.435081, -3.089476</coords>
+        <coords>42.434116, -3.093059</coords>
+        <coords>42.433765, -3.093724</coords>
+        <coords>42.433418, -3.094282</coords>
+        <coords>42.432564, -3.095162</coords>
+        <coords>42.431534, -3.096042</coords>
+        <coords>42.430649, -3.097586999999999</coords>
+        <coords>42.429901, -3.098209</coords>
+        <coords>42.429016, -3.098595</coords>
+        <coords>42.428162, -3.098724</coords>
+        <coords>42.427624, -3.099067</coords>
+        <coords>42.427322, -3.099432</coords>
+        <coords>42.427052, -3.099689</coords>
+        <coords>42.427052, -3.099947</coords>
+        <coords>42.4268, -3.100376</coords>
+        <coords>42.426086, -3.101664</coords>
+        <distAnterior>2.24</distAnterior>
+        <distSiguiente>2.52</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>false</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>47</orden>
+        <nombre>Viloria de Rioja</nombre>
+        <coords>42.426086, -3.101664</coords>
+        <coords>42.425961, -3.102522</coords>
+        <coords>42.426147, -3.103101</coords>
+        <coords>42.426338, -3.103724</coords>
+        <coords>42.426765, -3.104239</coords>
+        <coords>42.426971, -3.104603</coords>
+        <coords>42.427368, -3.106127</coords>
+        <coords>42.427086, -3.108144</coords>
+        <coords>42.426991, -3.108895</coords>
+        <coords>42.427212, -3.109303</coords>
+        <coords>42.428017, -3.110697</coords>
+        <coords>42.430046, -3.112028</coords>
+        <coords>42.431217, -3.113551</coords>
+        <coords>42.430946, -3.116899</coords>
+        <coords>42.430458, -3.122478</coords>
+        <coords>42.430599, -3.124344</coords>
+        <coords>42.431107, -3.128014</coords>
+        <coords>42.431107, -3.128871999999999</coords>
+        <coords>42.430996, -3.129773</coords>
+        <coords>42.430664, -3.13076</coords>
+        <coords>42.429317, -3.132734000000001</coords>
+        <coords>42.428951, -3.132885</coords>
+        <coords>42.428841, -3.133335</coords>
+        <coords>42.42886, -3.133636</coords>
+        <coords>42.428192, -3.135695</coords>
+        <coords>42.427734, -3.135974</coords>
+        <coords>42.427448, -3.136146</coords>
+        <distAnterior>2.52</distAnterior>
+        <distSiguiente>4.22</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>48</orden>
+        <nombre>Villamayor del Rio</nombre>
+        <coords>42.427448, -3.136146</coords>
+        <coords>42.427227, -3.137498</coords>
+        <coords>42.427162, -3.138614</coords>
+        <coords>42.424915, -3.145673</coords>
+        <coords>42.42271, -3.152325</coords>
+        <coords>42.422283, -3.153741</coords>
+        <coords>42.420876, -3.158033000000001</coords>
+        <coords>42.420067, -3.160822</coords>
+        <coords>42.418831, -3.165886</coords>
+        <coords>42.416615, -3.174362</coords>
+        <coords>42.416359, -3.175585</coords>
+        <coords>42.415871, -3.177581</coords>
+        <coords>42.415836, -3.178439</coords>
+        <coords>42.415981, -3.179984</coords>
+        <coords>42.416359, -3.179941</coords>
+        <coords>42.416805, -3.180628</coords>
+        <coords>42.417358, -3.181164</coords>
+        <coords>42.417881, -3.18228</coords>
+        <coords>42.418056, -3.183503</coords>
+        <coords>42.418182, -3.184276000000001</coords>
+        <coords>42.418373, -3.184576</coords>
+        <coords>42.418419, -3.185177</coords>
+        <coords>42.41853, -3.185971</coords>
+        <coords>42.418926, -3.186636</coords>
+        <coords>42.419273, -3.187108</coords>
+        <coords>42.419655, -3.187987999999999</coords>
+        <coords>42.419861, -3.188095</coords>
+        <coords>42.420525, -3.188503</coords>
+        <coords>42.420841, -3.188653</coords>
+        <distAnterior>4.22</distAnterior>
+        <distSiguiente>6.25</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+    <parada>
+        <orden>49</orden>
+        <nombre>Belorado</nombre>
+        <coords>42.420841, -3.188653</coords>
+        <coords>42.420826, -3.189533</coords>
+        <coords>42.420811, -3.189919</coords>
+        <coords>42.420826, -3.190605999999999</coords>
+        <coords>42.420715, -3.190906000000001</coords>
+        <coords>42.420937, -3.191357</coords>
+        <coords>42.420338, -3.193181</coords>
+        <coords>42.419781, -3.194468000000001</coords>
+        <coords>42.419197, -3.195519</coords>
+        <coords>42.418911, -3.195863</coords>
+        <coords>42.41888, -3.196228</coords>
+        <coords>42.418816, -3.196807</coords>
+        <coords>42.41861, -3.197322</coords>
+        <coords>42.418434, -3.197923</coords>
+        <coords>42.418339, -3.198631</coords>
+        <coords>42.418152, -3.199682</coords>
+        <coords>42.417976, -3.200540999999999</coords>
+        <coords>42.418007, -3.200948</coords>
+        <coords>42.417831, -3.201313</coords>
+        <coords>42.41777, -3.201849</coords>
+        <coords>42.418118, -3.202579</coords>
+        <coords>42.418419, -3.202964999999999</coords>
+        <coords>42.418594, -3.203652</coords>
+        <coords>42.418625, -3.204167</coords>
+        <coords>42.418198, -3.205132</coords>
+        <coords>42.418118, -3.205411</coords>
+        <coords>42.417866, -3.205819</coords>
+        <coords>42.417343, -3.206356</coords>
+        <coords>42.416901, -3.207171</coords>
+        <coords>42.416645, -3.207858</coords>
+        <coords>42.41647, -3.208373</coords>
+        <coords>42.416409, -3.208952</coords>
+        <coords>42.416138, -3.209596</coords>
+        <coords>42.416058, -3.210111</coords>
+        <coords>42.41555, -3.211055</coords>
+        <coords>42.415062, -3.211849</coords>
+        <coords>42.414806, -3.212836</coords>
+        <coords>42.414711, -3.213544</coords>
+        <coords>42.414665, -3.21393</coords>
+        <coords>42.414349, -3.214853</coords>
+        <coords>42.413826, -3.216162</coords>
+        <coords>42.413319, -3.21732</coords>
+        <coords>42.413002, -3.218458000000001</coords>
+        <coords>42.412827, -3.219638</coords>
+        <coords>42.412731, -3.220689</coords>
+        <coords>42.412636, -3.221633000000001</coords>
+        <coords>42.41251, -3.222342</coords>
+        <coords>42.412334, -3.224144</coords>
+        <coords>42.412224, -3.224938</coords>
+        <coords>42.411797, -3.226547</coords>
+        <coords>42.411701, -3.227127</coords>
+        <coords>42.41151, -3.228071</coords>
+        <coords>42.411385, -3.228757</coords>
+        <coords>42.411354, -3.229315000000001</coords>
+        <coords>42.411385, -3.230152</coords>
+        <coords>42.411354, -3.230968</coords>
+        <coords>42.41151, -3.23292</coords>
+        <coords>42.411415, -3.233435000000001</coords>
+        <coords>42.411892, -3.234594</coords>
+        <coords>42.412113, -3.235409000000001</coords>
+        <coords>42.412289, -3.236783</coords>
+        <coords>42.412842, -3.24131</coords>
+        <coords>42.413208, -3.243971</coords>
+        <distAnterior>6.25</distAnterior>
+        <distSiguiente>6.44</distSiguiente>
+        <comida>true</comida>
+        <hotel>true</hotel>
+        <albergue>true</albergue>
+        <farmacia>true</farmacia>
+        <banco>true</banco>
+        <internet>true</internet>
+    </parada>
+    <parada>
+        <orden>50</orden>
+        <nombre>Tosantos</nombre>
+        <coords>42.413208, -3.243971</coords>
+        <coords>42.412655, -3.244593</coords>
+        <coords>42.412415, -3.244872</coords>
+        <coords>42.412258, -3.24558</coords>
+        <coords>42.411766, -3.246267000000001</coords>
+        <coords>42.411591, -3.246825</coords>
+        <coords>42.411098, -3.247683</coords>
+        <coords>42.410133, -3.249164</coords>
+        <coords>42.408962, -3.251288</coords>
+        <coords>42.408566, -3.251866999999999</coords>
+        <coords>42.40646, -3.254271</coords>
+        <coords>42.404732, -3.259227</coords>
+        <coords>42.404873, -3.259592</coords>
+        <coords>42.404747, -3.260386</coords>
+        <coords>42.404682, -3.260815</coords>
+        <coords>42.404716, -3.261244</coords>
+        <coords>42.404652, -3.261502</coords>
+        <coords>42.40451, -3.261695</coords>
+        <distAnterior>6.44</distAnterior>
+        <distSiguiente> 2.25</distSiguiente>
+        <comida>false</comida>
+        <hotel>false</hotel>
+        <albergue>true</albergue>
+        <farmacia>false</farmacia>
+        <banco>false</banco>
+        <internet>false</internet>
+    </parada>
+
 </paradas>
