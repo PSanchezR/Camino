@@ -398,9 +398,8 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
         if (correcto) {
             //Comprobar donde recibe usuario seleccionado y como construye etapas y caminos
-            Toast.makeText(this, "ENTRO.", Toast.LENGTH_SHORT).show();
-            // etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, nombre, kmDia);
-            etapas = pruebaETAPAS();
+            etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, nombre, kmDia);
+            //etapas = pruebaETAPAS();
             camino = new Camino(nombre, etapas);
 
             //Primera prueba estableciendo un único camino
@@ -465,26 +464,40 @@ public class AccionCaminoNuevo extends ActionBarActivity {
             paradasEtapa.clear();
 
             while (semaforo) {
-                if (this.listaParadas.get(ordenParada).getDistSiguiente() + km <= kmMax) {
-                    paradasEtapa.add(this.listaParadas.get(ordenParada));
-                    km += this.listaParadas.get(ordenParada).getDistSiguiente();
-                    ordenParada++;
-                } else {
+                    if (this.listaParadas.get(ordenParada).getDistSiguiente() + km <= kmMax) {
+                        paradasEtapa.add(this.listaParadas.get(ordenParada));
+                        km += this.listaParadas.get(ordenParada).getDistSiguiente();
 
-                   /* //Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la parada mas cercana que sí tenga alojamientos.
+                        if(this.listaParadas.get(ordenParada).equals("Santiago de Compostela"))
+                        {
+                            Toast.makeText(this, ""+ordenParada, Toast.LENGTH_SHORT).show();
+                            km = 999999.99;
+                            dias = 0;
+                        }
+                        else
+                        {
+                            ordenParada++;
+                        }
+
+                    } else {
+
+                   /*/Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la parada mas cercana que sí tenga alojamientos.
                     while(!paradasEtapa.get(paradasEtapa.size()-1).getHotel() && !paradasEtapa.get(paradasEtapa.size()-1).getAlbergue())
                     {
+                        Toast.makeText(this, "quitando etapa: "+paradasEtapa.get(paradasEtapa.size()-1), Toast.LENGTH_SHORT).show();
                         km-= this.listaParadas.get(ordenParada).getDistAnterior();
                         paradasEtapa.remove(paradasEtapa.size()-1);
                         ordenParada--;
                     }
                     */
-                    listaEtapas.add(new Etapa(ordenEtapa, paradasEtapa));
-                    ordenEtapa++;
-                    km = 0.0;
-                    dias--;
-                    semaforo = false;
-                }
+                        listaEtapas.add(new Etapa(ordenEtapa, paradasEtapa));
+                        ordenEtapa++;
+                        km = 0.0;
+                        dias--;
+                        semaforo = false;
+                    }
+
+
             }
         }
 
