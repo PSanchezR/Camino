@@ -1,7 +1,5 @@
 package com.dev.lin.camino;
 
-import android.util.Log;
-
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.Serializable;

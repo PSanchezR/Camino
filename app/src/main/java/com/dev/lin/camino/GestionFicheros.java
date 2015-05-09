@@ -32,7 +32,7 @@ import java.util.Iterator;
 public class GestionFicheros {
     private static final String ESCRIBIR_USUARIOS = "EscribirUsuarios";
     private static final String LEER_USUARIOS = "LeerUsuarios";
-    public static final String DATOS_PARADA = "DatosParada";
+    private static final String DATOS_PARADA = "DatosParada";
 
     public int escribirUsuarios(Usuario usuario, Context ctx) {
         int res = 1;
