@@ -116,12 +116,12 @@ public class Usuario implements Serializable {
         this.caminoActual = camino;
     }
 
-    public void setCaminoActual(Camino caminoActual) {
-        this.caminoActual = caminoActual;
-    }
-
     public Camino getCaminoActual() {
         return caminoActual;
+    }
+
+    public void setCaminoActual(Camino caminoActual) {
+        this.caminoActual = caminoActual;
     }
 
     public void removeCamino(Camino camino) {

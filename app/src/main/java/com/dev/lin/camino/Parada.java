@@ -1,5 +1,7 @@
 package com.dev.lin.camino;
 
+import android.util.Log;
+
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.Serializable;
@@ -17,8 +19,6 @@ public class Parada implements Serializable {
     private int orden;
     private String nombre;
     private ArrayList<LatLng> listaCoords;
-    private double latitud;
-    private double longitud;
     private double distAnterior;
     private double distSiguiente;
     private boolean comida;
@@ -28,32 +28,13 @@ public class Parada implements Serializable {
     private boolean banco;
     private boolean internet;
 
-    public Parada() {
-        this.listaCoords = new ArrayList<LatLng>();
-    }
-
-    public Parada(int orden, String nombre, double latitud, double longitud, double distAnterior,
-                  double distSiguiente, boolean comida, boolean hotel, boolean albergue,
-                  boolean farmacia, boolean banco, boolean internet) {
-        this.orden = orden;
-        this.nombre = nombre;
-        this.latitud = latitud;
-        this.longitud = longitud;
-        this.distAnterior = distAnterior;
-        this.distSiguiente = distSiguiente;
-        this.comida = comida;
-        this.hotel = hotel;
-        this.farmacia = farmacia;
-        this.albergue = albergue;
-        this.banco = banco;
-        this.internet = internet;
-    }
-
     public Parada(int orden, String nombre, ArrayList<LatLng> listaCoords, double distAnterior,
                   double distSiguiente, boolean comida, boolean hotel, boolean albergue,
                   boolean farmacia, boolean banco, boolean internet) {
         this.orden = orden;
         this.nombre = nombre;
+
+        this.listaCoords = new ArrayList<LatLng>();
 
         Iterator<LatLng> itr = listaCoords.iterator();
         while (itr.hasNext()) {
@@ -80,14 +61,6 @@ public class Parada implements Serializable {
 
     public ArrayList<LatLng> getListaCoords() {
         return this.listaCoords;
-    }
-
-    public double getLatitud() {
-        return this.latitud;
-    }
-
-    public double getLongitud() {
-        return this.longitud;
     }
 
     public double getDistAnterior() {
@@ -120,54 +93,6 @@ public class Parada implements Serializable {
 
     public boolean getInternet() {
         return this.internet;
-    }
-
-    public void setOrden(int orden) {
-        this.orden = orden;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setDistAnterior(float distAnterior) {
-        this.distAnterior = distAnterior;
-    }
-
-    public void setDistSiguiente(float distSiguiente) {
-        this.distSiguiente = distSiguiente;
-    }
-
-    public void setComida(boolean comida) {
-        this.comida = comida;
-    }
-
-    public void setHotel(boolean hotel) {
-        this.hotel = hotel;
-    }
-
-    public void setAlbergue(boolean albergue) {
-        this.albergue = albergue;
-    }
-
-    public void setFarmacia(boolean farmacia) {
-        this.farmacia = farmacia;
-    }
-
-    public void setBanco(boolean banco) {
-        this.banco = banco;
-    }
-
-    public void setInternet(boolean internet) {
-        this.internet = internet;
-    }
-
-    public void addCoords(float latitud, float longitud) {
-        this.listaCoords.add(new LatLng(latitud, longitud));
-    }
-
-    public void remCoords(){
-        this.listaCoords.clear();
     }
 
     @Override

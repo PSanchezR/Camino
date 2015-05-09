@@ -24,11 +24,10 @@ import java.util.Iterator;
  * @author Pablo Sánchez Robles
  */
 public class AccionUsuarioDatos extends ActionBarActivity {
+    private static final String DATOS_USUARIO = "DatosUsuario";
     protected String[] valoresComplexion = {"Nada deportista", "Poco deportista", "Deportista Amateur", "Deportista profesional"};
     private Usuario usuarioSeleccionado = null;
     private GestionFicheros archivador = new GestionFicheros();
-    private static final String DATOS_USUARIO = "DatosUsuario";
-
     private ArrayAdapter<String> adapter;
 
     @Override

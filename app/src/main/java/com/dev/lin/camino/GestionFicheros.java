@@ -3,15 +3,21 @@ package com.dev.lin.camino;
 import android.content.Context;
 import android.util.Log;
 
+import com.google.android.gms.maps.model.LatLng;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -26,6 +32,7 @@ import java.util.Iterator;
 public class GestionFicheros {
     private static final String ESCRIBIR_USUARIOS = "EscribirUsuarios";
     private static final String LEER_USUARIOS = "LeerUsuarios";
+    public static final String DATOS_PARADA = "DatosParada";
 
     public int escribirUsuarios(Usuario usuario, Context ctx) {
         int res = 1;
@@ -113,14 +120,101 @@ public class GestionFicheros {
         return usuarios;
     }
 
-    private static class AppendableObjectOutputStream extends ObjectOutputStream {
-        public AppendableObjectOutputStream(OutputStream out) throws IOException {
-            super(out);
+    public ArrayList<Parada> parseadorXMLcaminos(Context ctx) {
+        ArrayList<Parada> paradas = new ArrayList<Parada>();
+
+        int orden = -1;
+        String nombre = null;
+        ArrayList<LatLng> listaCoords = new ArrayList<LatLng>();
+        double distAnterior = -1.0;
+        double distSiguiente = -1.0;
+        boolean comida = false;
+        boolean hotel = false;
+        boolean albergue = false;
+        boolean farmacia = false;
+        boolean banco = false;
+        boolean internet = false;
+
+        int eventType;
+        XmlPullParserFactory pullParserFactory;
+        String etiqueta;
+
+        try {
+            InputStream istr = ctx.getAssets().open("caminoFrances.xml");
+
+            pullParserFactory = XmlPullParserFactory.newInstance();
+            XmlPullParser parser = pullParserFactory.newPullParser();
+
+            parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
+            parser.setInput(istr, null);
+
+            eventType = parser.getEventType();
+
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                etiqueta = null;
+
+                switch (eventType) {
+                    case XmlPullParser.START_TAG:
+                        etiqueta = parser.getName();
+
+                        switch (etiqueta) {
+                            case "orden":
+                                orden = Integer.parseInt(parser.nextText());
+                                break;
+                            case "nombre":
+                                nombre = parser.nextText();
+                                break;
+                            case "coords":
+                                String[] parts = parser.nextText().split(",");
+                                listaCoords.add(new LatLng(Float.parseFloat(parts[0]), Float.parseFloat(parts[1])));
+                                break;
+                            case "distAnterior":
+                                distAnterior = Float.parseFloat(parser.nextText());
+                                break;
+                            case "distSiguiente":
+                                distSiguiente = Float.parseFloat(parser.nextText());
+                                break;
+                            case "comida":
+                                comida = Boolean.parseBoolean(parser.nextText());
+                                break;
+                            case "hotel":
+                                hotel = Boolean.parseBoolean(parser.nextText());
+                                break;
+                            case "albergue":
+                                albergue = Boolean.parseBoolean(parser.nextText());
+                                break;
+                            case "farmacia":
+                                farmacia = Boolean.parseBoolean(parser.nextText());
+                                break;
+                            case "banco":
+                                banco = Boolean.parseBoolean(parser.nextText());
+                                break;
+                            case "internet":
+                                internet = Boolean.parseBoolean(parser.nextText());
+                                break;
+                        }
+
+                        break;
+                    case XmlPullParser.END_TAG:
+                        etiqueta = parser.getName();
+                        if (etiqueta.equals("parada")) {
+                            Parada parada = new Parada(orden, nombre, listaCoords, distAnterior, distSiguiente, comida, hotel, albergue, farmacia, banco, internet);
+                            Log.d(GestionFicheros.DATOS_PARADA, parada.toString());
+                            paradas.add(parada);
+                            listaCoords.clear();
+                        }
+                        break;
+                }
+
+                eventType = parser.next();
+            }
+        } catch (XmlPullParserException e) {
+            Log.e(GestionFicheros.DATOS_PARADA, "Error en el procesador del archivo XML: " + e.getMessage());
+        } catch (IOException e) {
+            Log.e(GestionFicheros.DATOS_PARADA, "Error de entrada/salida en el archivo XML: " + e.getMessage());
         }
 
-        @Override
-        protected void writeStreamHeader() throws IOException {
-            reset();
-        }
+        return paradas;
     }
+
 }
