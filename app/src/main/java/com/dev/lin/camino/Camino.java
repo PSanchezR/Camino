@@ -11,7 +11,7 @@ import java.util.Iterator;
  * @author Pablo Sánchez Robles
  */
 public class Camino implements Serializable {
-    private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 1L;
     private String nombre;
     private Etapa etapaInicio;
     private Etapa etapaFin;

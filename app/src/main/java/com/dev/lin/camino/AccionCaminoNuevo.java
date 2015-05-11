@@ -3,6 +3,7 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -25,7 +26,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
     private static final String DATOS_USUARIO = "DatosUsuario";
     private static final String DATOS_PARADA = "DatosParada";
     private GestionFicheros archivador = new GestionFicheros();
-    private Usuario usuarioSeleccionado = null;
+    private Usuario usuarioSeleccionado;
 
     private ArrayList<Parada> listaParadas;
 
@@ -37,7 +38,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         this.listaParadas = archivador.parseadorXMLcaminos(getBaseContext());
 
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        // Log.d(AccionCaminoNuevo.DATOS_USUARIO, usuarioSeleccionado.toString());
+         Log.d(AccionCaminoNuevo.DATOS_USUARIO, usuarioSeleccionado.toString());
 
         //Log.d(AccionCaminoNuevo.DATOS_PARADA, this.listaParadas.get(0).toString());
 
@@ -72,7 +73,8 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         Toast.makeText(this, "Añadido el camino francés.", Toast.LENGTH_SHORT).show();
 
         archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
-        Intent i = new Intent(AccionCaminoNuevo.this, AccionMenuPrincipal.class);
+
+        Intent i = new Intent(AccionCaminoNuevo.this, AccionUsuarioSeleccion.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
         startActivity(i);
     }

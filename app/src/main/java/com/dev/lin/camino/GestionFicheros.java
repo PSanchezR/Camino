@@ -125,7 +125,7 @@ public class GestionFicheros {
 
         int orden = -1;
         String nombre = null;
-        ArrayList<LatLng> listaCoords = new ArrayList<LatLng>();
+        ArrayList<LatitudLongitud> listaCoords = new ArrayList<LatitudLongitud>();
         double distAnterior = -1.0;
         double distSiguiente = -1.0;
         boolean comida = false;
@@ -166,7 +166,7 @@ public class GestionFicheros {
                                 break;
                             case "coords":
                                 String[] parts = parser.nextText().split(",");
-                                listaCoords.add(new LatLng(Float.parseFloat(parts[0]), Float.parseFloat(parts[1])));
+                                listaCoords.add(new LatitudLongitud(Float.parseFloat(parts[0]), Float.parseFloat(parts[1])));
                                 break;
                             case "distAnterior":
                                 distAnterior = Float.parseFloat(parser.nextText());
