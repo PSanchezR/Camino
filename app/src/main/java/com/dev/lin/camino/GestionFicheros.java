@@ -87,7 +87,7 @@ public class GestionFicheros {
 
                     while (true) {
                         Usuario usuario = (Usuario) ois.readObject();
-                        Log.d(GestionFicheros.LEER_USUARIOS, usuario.toString());
+                        //Log.d(GestionFicheros.LEER_USUARIOS, usuario.toString());
                         usuarios.add(usuario);
                     }
                 } catch (EOFException e) {
@@ -199,7 +199,7 @@ public class GestionFicheros {
                         etiqueta = parser.getName();
                         if (etiqueta.equals("parada")) {
                             Parada parada = new Parada(orden, nombre, listaCoords, distAnterior, distSiguiente, comida, hotel, albergue, farmacia, banco, internet);
-                            Log.d(GestionFicheros.DATOS_PARADA, parada.toString());
+                            //Log.d(GestionFicheros.DATOS_PARADA, parada.toString());
                             paradas.add(parada);
                             listaCoords.clear();
                         }

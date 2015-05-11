@@ -1,5 +1,6 @@
 package com.dev.lin.camino;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -11,27 +12,41 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.util.ArrayList;
 
 public class AccionMapaPrueba extends ActionBarActivity {
-    static final LatLng SAINT_JEAN_PIED_DE_PORT = new LatLng(43.1569766, -1.2337874);
-    static final LatLng SANTIAGO_DE_COMPOSTELA = new LatLng(42.8802049, -8.5447697);
     private GoogleMap map;
+    private GestionFicheros archivador = new GestionFicheros();
+    private ArrayList<Parada> listaParadas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa_prueba);
 
+        this.listaParadas = archivador.parseadorXMLcaminos(getBaseContext());
+        Parada inicio = this.listaParadas.get(0);
+        LatLng posInicial = inicio.getListaCoords().get(0);
+
+        PolylineOptions puntos = new PolylineOptions();
+        puntos.addAll(this.listaParadas.get(0).getListaCoords());
+
         map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
                 .getMap();
-        Marker inicio = map.addMarker(new MarkerOptions().position(SAINT_JEAN_PIED_DE_PORT).title("Saint Jean Pied de Port"));
-        Marker fin = map.addMarker(new MarkerOptions().position(SANTIAGO_DE_COMPOSTELA).title("Santiago de Compostela"));
+        Marker marca = map.addMarker(new MarkerOptions().position(posInicial).title(inicio.getNombre()));
+
+        Polyline linea = map.addPolyline(puntos);
 
         // Move the camera instantly to Saint Jean Pied de Port with caminoFrances.xml zoom of 2000.
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(SAINT_JEAN_PIED_DE_PORT, 2000));
+        //map.moveCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 2000));
+
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 12.0f));
 
         // Zoom in, animating the camera.
-        map.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
+        //map.animateCamera(CameraUpdateFactory.zoomTo(5), 2000, null);
     }
 
     @Override
