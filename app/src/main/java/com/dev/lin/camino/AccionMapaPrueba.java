@@ -39,13 +39,7 @@ public class AccionMapaPrueba extends ActionBarActivity {
 
         Polyline linea = map.addPolyline(puntos);
 
-        // Move the camera instantly to Saint Jean Pied de Port with caminoFrances.xml zoom of 2000.
-        //map.moveCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 2000));
-
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 12.0f));
-
-        // Zoom in, animating the camera.
-        //map.animateCamera(CameraUpdateFactory.zoomTo(5), 2000, null);
     }
 
     @Override

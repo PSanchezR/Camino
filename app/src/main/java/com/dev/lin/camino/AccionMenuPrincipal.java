@@ -18,7 +18,6 @@ import java.io.Serializable;
  * @author Pablo Sánchez Robles
  */
 public class AccionMenuPrincipal extends ActionBarActivity {
-
     private Usuario usuarioSeleccionado = null;
 
     @Override
