@@ -190,7 +190,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         }
 
         //Mientras queden dias o no se alcance la ciudad final
-        while (dias > 0) {
+        while (dias >= 0) {
             semaforo = true;
             paradasEtapa.clear();
 
@@ -199,17 +199,18 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                     paradasEtapa.add(this.listaParadas.get(ordenParada));
                     km += this.listaParadas.get(ordenParada).getDistSiguiente();
 
-                    if (this.listaParadas.get(ordenParada).equals("Santiago de Compostela")) {
+                    if (ordenParada==listaParadas.size()-1) {
                         Toast.makeText(this, "" + ordenParada, Toast.LENGTH_SHORT).show();
-                        km = 999999.99;
                         dias = 0;
+                        km = 9999.0;
+                        ordenParada--;
                     } else {
                         ordenParada++;
                     }
 
                 } else {
 
-                   /*/Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la parada mas cercana que sí tenga alojamientos.
+                   //Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la parada mas cercana que sí tenga alojamientos.
                     while(!paradasEtapa.get(paradasEtapa.size()-1).getHotel() && !paradasEtapa.get(paradasEtapa.size()-1).getAlbergue())
                     {
                         Toast.makeText(this, "quitando etapa: "+paradasEtapa.get(paradasEtapa.size()-1), Toast.LENGTH_SHORT).show();
@@ -217,9 +218,10 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                         paradasEtapa.remove(paradasEtapa.size()-1);
                         ordenParada--;
                     }
-                    */
+
                     listaEtapas.add(new Etapa(ordenEtapa, paradasEtapa));
                     ordenEtapa++;
+                    ordenParada--;
                     km = 0.0;
                     dias--;
                     semaforo = false;
