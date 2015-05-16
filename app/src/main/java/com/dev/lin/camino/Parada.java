@@ -2,9 +2,7 @@ package com.dev.lin.camino;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * Pueblos del Camino de Santiago
@@ -12,11 +10,10 @@ import java.util.Iterator;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class Parada implements Serializable {
-    private static final long serialVersionUID = 3L;
+public class Parada {
     private int orden;
     private String nombre;
-    private transient ArrayList<LatitudLongitud> listaCoords = new ArrayList<LatitudLongitud>();
+    private ArrayList<LatLng> listaCoords;
     private double distAnterior;
     private double distSiguiente;
     private boolean comida;
@@ -26,17 +23,12 @@ public class Parada implements Serializable {
     private boolean banco;
     private boolean internet;
 
-    public Parada(int orden, String nombre, ArrayList<LatitudLongitud> listaCoords, double distAnterior,
+    public Parada(int orden, String nombre, ArrayList<LatLng> listaCoords, double distAnterior,
                   double distSiguiente, boolean comida, boolean hotel, boolean albergue,
                   boolean farmacia, boolean banco, boolean internet) {
         this.orden = orden;
         this.nombre = nombre;
-
-        Iterator<LatitudLongitud> itr = listaCoords.iterator();
-        while (itr.hasNext()) {
-            this.listaCoords.add(itr.next());
-        }
-
+        this.listaCoords = new ArrayList<LatLng>(listaCoords);
         this.distAnterior = distAnterior;
         this.distSiguiente = distSiguiente;
         this.comida = comida;
@@ -53,6 +45,10 @@ public class Parada implements Serializable {
 
     public String getNombre() {
         return this.nombre;
+    }
+
+    public ArrayList<LatLng> getListaCoords() {
+        return this.listaCoords;
     }
 
     public double getDistAnterior() {
@@ -85,18 +81,6 @@ public class Parada implements Serializable {
 
     public boolean getInternet() {
         return this.internet;
-    }
-
-    public ArrayList<LatLng> getListaCoords() {
-        ArrayList<LatLng> listaLatLng = new ArrayList<LatLng>();
-
-        Iterator<LatitudLongitud> itr = this.listaCoords.iterator();
-        while (itr.hasNext()) {
-            LatitudLongitud latlon = itr.next();
-            listaLatLng.add(new LatLng(latlon.getLatitud(), latlon.getLongitud()));
-        }
-
-        return listaLatLng;
     }
 
     @Override

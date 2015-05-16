@@ -54,9 +54,6 @@
             android:name="com.dev.lin.camino.AccionEtapaSeleccion"
             android:label="Selección de etapa" />
         <activity
-            android:name="com.dev.lin.camino.AccionMapaPrueba"
-            android:label="Mapa de prueba" />
-        <activity
             android:name="com.dev.lin.camino.AccionMenuPrincipal"
             android:label="Menú principal" />
         <activity

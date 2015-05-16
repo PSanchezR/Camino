@@ -22,6 +22,8 @@ public class AccionPortada extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_portada);
 
+        GestionFicheros.generarParadasListadoCaminoFrances("caminoFrances.xml", getBaseContext());
+
         FrameLayout frame_fondo = (FrameLayout) findViewById(R.id.frame_fondo);
 
         frame_fondo.setOnTouchListener(new View.OnTouchListener() {

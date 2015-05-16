@@ -52,9 +52,6 @@
             android:name=".AccionEtapaSeleccion"
             android:label="Selección de etapa"></activity>
         <activity
-            android:name=".AccionMapaPrueba"
-            android:label="Mapa de prueba"></activity>
-        <activity
             android:name=".AccionMenuPrincipal"
             android:label="Menú principal"></activity>
         <activity

@@ -33,8 +33,9 @@ public class GestionFicheros {
     private static final String ESCRIBIR_USUARIOS = "EscribirUsuarios";
     private static final String LEER_USUARIOS = "LeerUsuarios";
     private static final String DATOS_PARADA = "DatosParada";
+    public static ArrayList<Parada> listaParadasCaminoFrances = new ArrayList<Parada>();
 
-    public int escribirUsuarios(Usuario usuario, Context ctx) {
+    public static int escribirUsuarios(Usuario usuario, Context ctx) {
         int res = 1;
         String filename = usuario.getNombre() + ".dat";
         FileOutputStream fos = null;
@@ -69,7 +70,7 @@ public class GestionFicheros {
         return res;
     }
 
-    public ArrayList<Usuario> leerUsuarios(Context ctx) {
+    public static ArrayList<Usuario> leerUsuarios(Context ctx) {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         ArrayList<String> archivos = new ArrayList<String>(Arrays.asList(ctx.fileList()));
@@ -120,12 +121,22 @@ public class GestionFicheros {
         return usuarios;
     }
 
-    public ArrayList<Parada> parseadorXMLcaminos(Context ctx) {
+    public static void generarParadasListadoCaminoFrances(String archivoCamino, Context ctx) {
+        Iterator<Parada> itr = GestionFicheros.parsearArchivoCamino(archivoCamino, ctx).iterator();
+        Parada parada;
+
+        while (itr.hasNext()) {
+            parada = itr.next();
+            GestionFicheros.listaParadasCaminoFrances.add(parada);
+        }
+    }
+
+    public static ArrayList<Parada> parsearArchivoCamino(String archivoCamino, Context ctx) {
         ArrayList<Parada> paradas = new ArrayList<Parada>();
 
         int orden = -1;
         String nombre = null;
-        ArrayList<LatitudLongitud> listaCoords = new ArrayList<LatitudLongitud>();
+        ArrayList<LatLng> listaCoords = new ArrayList<LatLng>();
         double distAnterior = -1.0;
         double distSiguiente = -1.0;
         boolean comida = false;
@@ -140,7 +151,7 @@ public class GestionFicheros {
         String etiqueta;
 
         try {
-            InputStream istr = ctx.getAssets().open("caminoFrances.xml");
+            InputStream istr = ctx.getAssets().open(archivoCamino);
 
             pullParserFactory = XmlPullParserFactory.newInstance();
             XmlPullParser parser = pullParserFactory.newPullParser();
@@ -166,7 +177,8 @@ public class GestionFicheros {
                                 break;
                             case "coords":
                                 String[] parts = parser.nextText().split(",");
-                                listaCoords.add(new LatitudLongitud(Float.parseFloat(parts[0]), Float.parseFloat(parts[1])));
+                                LatLng coord = new LatLng(Float.parseFloat(parts[0]), Float.parseFloat(parts[1]));
+                                listaCoords.add(coord);
                                 break;
                             case "distAnterior":
                                 distAnterior = Float.parseFloat(parser.nextText());
@@ -196,13 +208,9 @@ public class GestionFicheros {
 
                         break;
                     case XmlPullParser.END_TAG:
-                        etiqueta = parser.getName();
-                        if (etiqueta.equals("parada")) {
-                            Parada parada = new Parada(orden, nombre, listaCoords, distAnterior, distSiguiente, comida, hotel, albergue, farmacia, banco, internet);
-                            //Log.d(GestionFicheros.DATOS_PARADA, parada.toString());
-                            paradas.add(parada);
-                            listaCoords.clear();
-                        }
+                        Parada parada = new Parada(orden, nombre, listaCoords, distAnterior, distSiguiente, comida, hotel, albergue, farmacia, banco, internet);
+                        paradas.add(parada);
+                        listaCoords.clear();
                         break;
                 }
 

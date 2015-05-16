@@ -25,25 +25,18 @@ import java.util.Iterator;
 public class AccionCaminoNuevo extends ActionBarActivity {
     private static final String DATOS_USUARIO = "DatosUsuario";
     private static final String DATOS_PARADA = "DatosParada";
-    private GestionFicheros archivador = new GestionFicheros();
     private Usuario usuarioSeleccionado;
-
-    private ArrayList<Parada> listaParadas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nuevo_camino);
 
-        this.listaParadas = archivador.parseadorXMLcaminos(getBaseContext());
-
-        usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-         Log.d(AccionCaminoNuevo.DATOS_USUARIO, usuarioSeleccionado.toString());
-
-        //Log.d(AccionCaminoNuevo.DATOS_PARADA, this.listaParadas.get(0).toString());
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        Log.d(AccionCaminoNuevo.DATOS_USUARIO, usuarioSeleccionado.toString());
 
         ArrayList<String> nombresListaParadas = new ArrayList<String>();
-        Iterator<Parada> itr = this.listaParadas.iterator();
+        Iterator<Parada> itr = GestionFicheros.listaParadasCaminoFrances.iterator();
 
         while (itr.hasNext()) {
             Parada parada = itr.next();
@@ -53,30 +46,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
         ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, nombresListaParadas);
         Spinner spinnerInicio = (Spinner) findViewById(R.id.spinnerParadaInicio);
-        //Spinner spinnerFin = (Spinner) findViewById(R.id.spinnerParadaFin);
         spinnerInicio.setAdapter(adaptador);
-        //spinnerFin.setAdapter(adaptador);
-    }
-
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_accion_camino_nuevo, menu);
-        return true;
-    }
-    */
-
-    public void crearCaminoFrances(View view) {
-        Camino camino = new Camino("Camino franćes de " + this.usuarioSeleccionado.getNombre(), this.crearEtapasCaminoFrances());
-        this.usuarioSeleccionado.addCamino(camino);
-        Toast.makeText(this, "Añadido el camino francés.", Toast.LENGTH_SHORT).show();
-
-        archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
-
-        Intent i = new Intent(AccionCaminoNuevo.this, AccionUsuarioSeleccion.class);
-        i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
-        startActivity(i);
     }
 
     public void menuPrincipal(View view) {
@@ -135,7 +105,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
             //Primera prueba estableciendo un único camino
             this.usuarioSeleccionado.addCamino(camino);
-            archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+            GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
             Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoActual.class);
             i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
@@ -149,57 +119,70 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         }
     }
 
+    public void crearCaminoFrances(View view) {
+        Camino camino = new Camino("Camino franćes de " + this.usuarioSeleccionado.getNombre(), this.crearEtapasCaminoFrances());
+        this.usuarioSeleccionado.addCamino(camino);
+        Toast.makeText(this, "Añadido el camino francés.", Toast.LENGTH_SHORT).show();
+
+        GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+
+        Intent i = new Intent(AccionCaminoNuevo.this, AccionMenuPrincipal.class);
+        i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
+        startActivity(i);
+    }
+
+    /*
     ///////////////////Prueba para ver las distancias entre paradas////////////////
     public ArrayList<Etapa> pruebaETAPAS() {
         ArrayList<Etapa> etapas = new ArrayList<Etapa>();
-        ArrayList<Parada> par;
+        ArrayList<Parada> parada;
 
-        for (int i = 0; i < listaParadas.size() - 1; i++) {
-            par = new ArrayList<Parada>();
-            par.add(listaParadas.get(i));
-            par.add(listaParadas.get(i + 1));
+        for (int i = 0; i < GestionFicheros.listaParadasCaminoFrances.size() - 1; i++) {
+            parada = new ArrayList<Parada>();
+            parada.add(GestionFicheros.listaParadasCaminoFrances.get(i));
+            parada.add(GestionFicheros.listaParadasCaminoFrances.get(i + 1));
 
-            etapas.add(new Etapa(i, par));
+            etapas.add(new Etapa(i, parada));
         }
 
         return etapas;
     }
     ////////////////////////////////////////////////////////////////////////////////
+*/
 
     public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String comienzoCamino, String nombreCamino, int kmMax) {
-        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        String inicioEtapa, finEtapa;
         ArrayList<Etapa> listaEtapas = new ArrayList<Etapa>();
         ArrayList<Parada> paradasEtapa = new ArrayList<Parada>();
         Double km = 0.0;
         boolean semaforo = true;
         int ordenParada = 1;
         int ordenEtapa = 1;
-        boolean comp = false;
-        Iterator<Parada> itr = this.listaParadas.iterator();
+        boolean inicio = false;
 
-        // Llevamos el iterador de la lista de paradas hasta la inicial del camino
-        while (itr.hasNext() && !comp) {
-            Parada parada = itr.next();
+        Iterator<Parada> itr = GestionFicheros.listaParadasCaminoFrances.iterator();
+        Parada parada = null;
 
-            comp = (parada.getNombre()).equals(comienzoCamino);
+        // Nos situamos en el inicio del camino
+        while (itr.hasNext() && !inicio) {
+           parada = itr.next();
 
-            if (comp) {
+            if (parada.getNombre().equals(comienzoCamino)) {
                 ordenParada = parada.getOrden();
+                inicio = true;
             }
         }
 
-        //Mientras queden dias o no se alcance la ciudad final
+        // Mientras queden dias o no se alcance la ciudad final
         while (dias >= 0) {
             semaforo = true;
             paradasEtapa.clear();
 
             while (semaforo) {
-                if (this.listaParadas.get(ordenParada).getDistSiguiente() + km <= kmMax) {
-                    paradasEtapa.add(this.listaParadas.get(ordenParada));
-                    km += this.listaParadas.get(ordenParada).getDistSiguiente();
+                if (GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente() + km <= kmMax) {
+                    paradasEtapa.add(GestionFicheros.listaParadasCaminoFrances.get(ordenParada));
+                    km += GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente();
 
-                    if (ordenParada==listaParadas.size()-1) {
+                    if (ordenParada == GestionFicheros.listaParadasCaminoFrances.size() - 1) {
                         Toast.makeText(this, "" + ordenParada, Toast.LENGTH_SHORT).show();
                         dias = 0;
                         km = 9999.0;
@@ -210,23 +193,21 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
                 } else {
 
-                   //Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la parada mas cercana que sí tenga alojamientos.
-                    while(!paradasEtapa.get(paradasEtapa.size()-1).getHotel() && !paradasEtapa.get(paradasEtapa.size()-1).getAlbergue())
-                    {
-                        Toast.makeText(this, "quitando etapa: "+paradasEtapa.get(paradasEtapa.size()-1), Toast.LENGTH_SHORT).show();
-                        km-= this.listaParadas.get(ordenParada).getDistAnterior();
-                        paradasEtapa.remove(paradasEtapa.size()-1);
+                    //Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la parada mas cercana que sí tenga alojamientos.
+                    while (!paradasEtapa.get(paradasEtapa.size() - 1).getHotel() && !paradasEtapa.get(paradasEtapa.size() - 1).getAlbergue()) {
+                        Toast.makeText(this, "quitando etapa: " + paradasEtapa.get(paradasEtapa.size() - 1), Toast.LENGTH_SHORT).show();
+                        km -= GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistAnterior();
+                        paradasEtapa.remove(paradasEtapa.size() - 1);
                         ordenParada--;
                     }
 
-                    listaEtapas.add(new Etapa(ordenEtapa, paradasEtapa));
+                    //listaEtapas.add(new Etapa(ordenEtapa, paradasEtapa));
                     ordenEtapa++;
                     ordenParada--;
                     km = 0.0;
                     dias--;
                     semaforo = false;
                 }
-
 
             }
         }
@@ -237,314 +218,137 @@ public class AccionCaminoNuevo extends ActionBarActivity {
     public ArrayList<Etapa> crearEtapasCaminoFrances() {
         ArrayList<Etapa> listaEtapas = new ArrayList<Etapa>();
 
-        listaEtapas.add(new Etapa(1, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(0),
-                this.listaParadas.get(1),
-                this.listaParadas.get(2),
-                this.listaParadas.get(3)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa01 = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
+        Etapa etapa_01 = new Etapa(1, indiceParadasEtapa01);
+        listaEtapas.add(etapa_01);
 
-        listaEtapas.add(new Etapa(2, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(3),
-                this.listaParadas.get(4),
-                this.listaParadas.get(5),
-                this.listaParadas.get(6),
-                this.listaParadas.get(7),
-                this.listaParadas.get(8)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa02 = new ArrayList<Integer>(Arrays.asList(4, 5, 6, 7, 8, 9));
+        Etapa etapa_02 = new Etapa(2, indiceParadasEtapa02);
+        listaEtapas.add(etapa_02);
 
-        listaEtapas.add(new Etapa(3, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(8),
-                this.listaParadas.get(9),
-                this.listaParadas.get(10),
-                this.listaParadas.get(11),
-                this.listaParadas.get(12),
-                this.listaParadas.get(13),
-                this.listaParadas.get(14),
-                this.listaParadas.get(15)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa03 = new ArrayList<Integer>(Arrays.asList(9, 10, 11, 12, 13, 14, 15, 16));
+        Etapa etapa_03 = new Etapa(3, indiceParadasEtapa03);
+        listaEtapas.add(etapa_03);
 
-        listaEtapas.add(new Etapa(4, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(15),
-                this.listaParadas.get(16),
-                this.listaParadas.get(17),
-                this.listaParadas.get(18),
-                this.listaParadas.get(19),
-                this.listaParadas.get(20),
-                this.listaParadas.get(21)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa04 = new ArrayList<Integer>(Arrays.asList(16, 17, 18, 19, 20, 21, 22));
+        Etapa etapa_04 = new Etapa(4, indiceParadasEtapa04);
+        listaEtapas.add(etapa_04);
 
-        listaEtapas.add(new Etapa(5, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(21),
-                this.listaParadas.get(22),
-                this.listaParadas.get(23),
-                this.listaParadas.get(24),
-                this.listaParadas.get(25)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa05 = new ArrayList<Integer>(Arrays.asList(22, 23, 24, 25, 26));
+        Etapa etapa_05 = new Etapa(5, indiceParadasEtapa05);
+        listaEtapas.add(etapa_05);
 
-        listaEtapas.add(new Etapa(6, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(25),
-                this.listaParadas.get(26),
-                this.listaParadas.get(27),
-                this.listaParadas.get(28),
-                this.listaParadas.get(29),
-                this.listaParadas.get(30),
-                this.listaParadas.get(31),
-                this.listaParadas.get(32)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa06 = new ArrayList<Integer>(Arrays.asList(26, 27, 28, 29, 30, 31, 32, 33));
+        Etapa etapa_06 = new Etapa(6, indiceParadasEtapa06);
+        listaEtapas.add(etapa_06);
 
-        listaEtapas.add(new Etapa(7, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(32),
-                this.listaParadas.get(33),
-                this.listaParadas.get(34),
-                this.listaParadas.get(35),
-                this.listaParadas.get(36)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa07 = new ArrayList<Integer>(Arrays.asList(33, 34, 35, 36, 37));
+        Etapa etapa_07 = new Etapa(7, indiceParadasEtapa07);
+        listaEtapas.add(etapa_07);
 
-        listaEtapas.add(new Etapa(8, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(36),
-                this.listaParadas.get(37),
-                this.listaParadas.get(38),
-                this.listaParadas.get(39)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa08 = new ArrayList<Integer>(Arrays.asList(37, 38, 39, 40));
+        Etapa etapa_08 = new Etapa(8, indiceParadasEtapa08);
+        listaEtapas.add(etapa_08);
 
-        listaEtapas.add(new Etapa(9, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(39),
-                this.listaParadas.get(40),
-                this.listaParadas.get(41),
-                this.listaParadas.get(42)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa09 = new ArrayList<Integer>(Arrays.asList(40, 41, 42, 43));
+        Etapa etapa_09 = new Etapa(9, indiceParadasEtapa09);
+        listaEtapas.add(etapa_09);
 
-        listaEtapas.add(new Etapa(10, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(42),
-                this.listaParadas.get(43),
-                this.listaParadas.get(44),
-                this.listaParadas.get(45),
-                this.listaParadas.get(46),
-                this.listaParadas.get(47),
-                this.listaParadas.get(48)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa10 = new ArrayList<Integer>(Arrays.asList(43, 44, 45, 46, 47, 48, 49));
+        Etapa etapa_10 = new Etapa(10, indiceParadasEtapa10);
+        listaEtapas.add(etapa_10);
 
-        listaEtapas.add(new Etapa(11, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(48),
-                this.listaParadas.get(49),
-                this.listaParadas.get(50),
-                this.listaParadas.get(51),
-                this.listaParadas.get(52),
-                this.listaParadas.get(53)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa11 = new ArrayList<Integer>(Arrays.asList(49, 50, 51, 52, 53, 54));
+        Etapa etapa_11 = new Etapa(11, indiceParadasEtapa11);
+        listaEtapas.add(etapa_11);
 
-        listaEtapas.add(new Etapa(12, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(53),
-                this.listaParadas.get(54),
-                this.listaParadas.get(55),
-                this.listaParadas.get(56),
-                this.listaParadas.get(57),
-                this.listaParadas.get(58),
-                this.listaParadas.get(59)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa12 = new ArrayList<Integer>(Arrays.asList(54, 55, 56, 57, 58, 59, 60));
+        Etapa etapa_12 = new Etapa(12, indiceParadasEtapa12);
+        listaEtapas.add(etapa_12);
 
-        listaEtapas.add(new Etapa(13, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(59),
-                this.listaParadas.get(60),
-                this.listaParadas.get(61),
-                this.listaParadas.get(62)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa13 = new ArrayList<Integer>(Arrays.asList(60, 61, 62, 63));
+        Etapa etapa_13 = new Etapa(13, indiceParadasEtapa13);
+        listaEtapas.add(etapa_13);
 
-        listaEtapas.add(new Etapa(14, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(62),
-                this.listaParadas.get(63),
-                this.listaParadas.get(64),
-                this.listaParadas.get(65),
-                this.listaParadas.get(66)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa14 = new ArrayList<Integer>(Arrays.asList(63, 64, 65, 66, 67));
+        Etapa etapa_14 = new Etapa(14, indiceParadasEtapa14);
+        listaEtapas.add(etapa_14);
 
-        listaEtapas.add(new Etapa(15, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(66),
-                this.listaParadas.get(67),
-                this.listaParadas.get(68),
-                this.listaParadas.get(69),
-                this.listaParadas.get(70)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa15 = new ArrayList<Integer>(Arrays.asList(67, 68, 69, 70, 71));
+        Etapa etapa_15 = new Etapa(15, indiceParadasEtapa15);
+        listaEtapas.add(etapa_15);
 
-        listaEtapas.add(new Etapa(16, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(70),
-                this.listaParadas.get(71),
-                this.listaParadas.get(72),
-                this.listaParadas.get(73),
-                this.listaParadas.get(74),
-                this.listaParadas.get(75)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa16 = new ArrayList<Integer>(Arrays.asList(71, 72, 73, 74, 75, 76));
+        Etapa etapa_16 = new Etapa(16, indiceParadasEtapa16);
+        listaEtapas.add(etapa_16);
 
-        listaEtapas.add(new Etapa(17, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(75),
-                this.listaParadas.get(76),
-                this.listaParadas.get(77)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa17 = new ArrayList<Integer>(Arrays.asList(76, 77, 78));
+        Etapa etapa_17 = new Etapa(17, indiceParadasEtapa17);
+        listaEtapas.add(etapa_17);
 
-        listaEtapas.add(new Etapa(18, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(77),
-                this.listaParadas.get(78),
-                this.listaParadas.get(79),
-                this.listaParadas.get(80),
-                this.listaParadas.get(81)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa18 = new ArrayList<Integer>(Arrays.asList(78, 79, 80, 81, 82));
+        Etapa etapa_18 = new Etapa(18, indiceParadasEtapa18);
+        listaEtapas.add(etapa_18);
 
-        listaEtapas.add(new Etapa(19, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(81),
-                this.listaParadas.get(82),
-                this.listaParadas.get(83)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa19 = new ArrayList<Integer>(Arrays.asList(82, 83, 84));
+        Etapa etapa_19 = new Etapa(19, indiceParadasEtapa19);
+        listaEtapas.add(etapa_19);
 
-        listaEtapas.add(new Etapa(20, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(83),
-                this.listaParadas.get(84),
-                this.listaParadas.get(85)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa20 = new ArrayList<Integer>(Arrays.asList(84, 85, 86));
+        Etapa etapa_20 = new Etapa(20, indiceParadasEtapa20);
+        listaEtapas.add(etapa_20);
 
-        listaEtapas.add(new Etapa(21, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(85),
-                this.listaParadas.get(86),
-                this.listaParadas.get(87),
-                this.listaParadas.get(88),
-                this.listaParadas.get(89)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa21 = new ArrayList<Integer>(Arrays.asList(86, 87, 88, 89, 90));
+        Etapa etapa_21 = new Etapa(21, indiceParadasEtapa21);
+        listaEtapas.add(etapa_21);
 
-        listaEtapas.add(new Etapa(22, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(89),
-                this.listaParadas.get(90),
-                this.listaParadas.get(91),
-                this.listaParadas.get(92),
-                this.listaParadas.get(93),
-                this.listaParadas.get(94)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa22 = new ArrayList<Integer>(Arrays.asList(90, 91, 92, 93, 94, 95));
+        Etapa etapa_22 = new Etapa(22, indiceParadasEtapa22);
+        listaEtapas.add(etapa_22);
 
-        listaEtapas.add(new Etapa(23, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(94),
-                this.listaParadas.get(95),
-                this.listaParadas.get(96),
-                this.listaParadas.get(97),
-                this.listaParadas.get(98),
-                this.listaParadas.get(99),
-                this.listaParadas.get(100)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa23 = new ArrayList<Integer>(Arrays.asList(95, 96, 97, 98, 99, 100, 101));
+        Etapa etapa_23 = new Etapa(23, indiceParadasEtapa23);
+        listaEtapas.add(etapa_23);
 
-        listaEtapas.add(new Etapa(24, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(100),
-                this.listaParadas.get(101),
-                this.listaParadas.get(102),
-                this.listaParadas.get(103),
-                this.listaParadas.get(104),
-                this.listaParadas.get(105)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa24 = new ArrayList<Integer>(Arrays.asList(101, 102, 103, 104, 105, 106));
+        Etapa etapa_24 = new Etapa(24, indiceParadasEtapa24);
+        listaEtapas.add(etapa_24);
 
-        listaEtapas.add(new Etapa(25, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(105),
-                this.listaParadas.get(106),
-                this.listaParadas.get(107),
-                this.listaParadas.get(108),
-                this.listaParadas.get(109),
-                this.listaParadas.get(110),
-                this.listaParadas.get(111),
-                this.listaParadas.get(112),
-                this.listaParadas.get(113)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa25 = new ArrayList<Integer>(Arrays.asList(106, 107, 108, 109, 110, 111, 112, 113, 114));
+        Etapa etapa_25 = new Etapa(25, indiceParadasEtapa25);
+        listaEtapas.add(etapa_25);
 
-        listaEtapas.add(new Etapa(26, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(113),
-                this.listaParadas.get(114),
-                this.listaParadas.get(115),
-                this.listaParadas.get(116),
-                this.listaParadas.get(117),
-                this.listaParadas.get(118),
-                this.listaParadas.get(119),
-                this.listaParadas.get(120)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa26 = new ArrayList<Integer>(Arrays.asList(114, 115, 116, 117, 118, 119, 120, 121));
+        Etapa etapa_26 = new Etapa(26, indiceParadasEtapa26);
+        listaEtapas.add(etapa_26);
 
-        listaEtapas.add(new Etapa(27, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(120),
-                this.listaParadas.get(121),
-                this.listaParadas.get(122),
-                this.listaParadas.get(123),
-                this.listaParadas.get(124),
-                this.listaParadas.get(125),
-                this.listaParadas.get(126),
-                this.listaParadas.get(127),
-                this.listaParadas.get(128),
-                this.listaParadas.get(129),
-                this.listaParadas.get(130)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa27 = new ArrayList<Integer>(Arrays.asList(121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131));
+        Etapa etapa_27 = new Etapa(27, indiceParadasEtapa27);
+        listaEtapas.add(etapa_27);
 
-        listaEtapas.add(new Etapa(28, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(130),
-                this.listaParadas.get(131),
-                this.listaParadas.get(132),
-                this.listaParadas.get(133),
-                this.listaParadas.get(134),
-                this.listaParadas.get(135),
-                this.listaParadas.get(136),
-                this.listaParadas.get(137),
-                this.listaParadas.get(138)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa28 = new ArrayList<Integer>(Arrays.asList(131, 132, 133, 134, 135, 136, 137, 138, 139));
+        Etapa etapa_28 = new Etapa(28, indiceParadasEtapa28);
+        listaEtapas.add(etapa_28);
 
-        listaEtapas.add(new Etapa(29, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(138),
-                this.listaParadas.get(139),
-                this.listaParadas.get(140),
-                this.listaParadas.get(141),
-                this.listaParadas.get(142),
-                this.listaParadas.get(143),
-                this.listaParadas.get(144),
-                this.listaParadas.get(145),
-                this.listaParadas.get(146),
-                this.listaParadas.get(147)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa29 = new ArrayList<Integer>(Arrays.asList(139, 140, 141, 142, 143, 144, 145, 146, 147, 148));
+        Etapa etapa_29 = new Etapa(29, indiceParadasEtapa29);
+        listaEtapas.add(etapa_29);
 
-        listaEtapas.add(new Etapa(30, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(147),
-                this.listaParadas.get(148),
-                this.listaParadas.get(149),
-                this.listaParadas.get(150),
-                this.listaParadas.get(151),
-                this.listaParadas.get(152),
-                this.listaParadas.get(153),
-                this.listaParadas.get(154),
-                this.listaParadas.get(155)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa30 = new ArrayList<Integer>(Arrays.asList(148, 149, 150, 151, 152, 153, 154, 155, 156));
+        Etapa etapa_30 = new Etapa(30, indiceParadasEtapa30);
+        listaEtapas.add(etapa_30);
 
-        listaEtapas.add(new Etapa(31, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(155),
-                this.listaParadas.get(156),
-                this.listaParadas.get(157),
-                this.listaParadas.get(158),
-                this.listaParadas.get(159),
-                this.listaParadas.get(160),
-                this.listaParadas.get(161),
-                this.listaParadas.get(162),
-                this.listaParadas.get(163),
-                this.listaParadas.get(164),
-                this.listaParadas.get(165)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa31 = new ArrayList<Integer>(Arrays.asList(156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166));
+        Etapa etapa_31 = new Etapa(31, indiceParadasEtapa31);
+        listaEtapas.add(etapa_31);
 
-        listaEtapas.add(new Etapa(32, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(165),
-                this.listaParadas.get(166),
-                this.listaParadas.get(167),
-                this.listaParadas.get(168),
-                this.listaParadas.get(169),
-                this.listaParadas.get(170),
-                this.listaParadas.get(171),
-                this.listaParadas.get(172),
-                this.listaParadas.get(173),
-                this.listaParadas.get(174),
-                this.listaParadas.get(175),
-                this.listaParadas.get(176)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa32 = new ArrayList<Integer>(Arrays.asList(166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177));
+        Etapa etapa_32 = new Etapa(32, indiceParadasEtapa32);
+        listaEtapas.add(etapa_32);
 
-        listaEtapas.add(new Etapa(33, new ArrayList<Parada>(Arrays.asList(
-                this.listaParadas.get(176),
-                this.listaParadas.get(177)
-        ))));
+        ArrayList<Integer> indiceParadasEtapa33 = new ArrayList<Integer>(Arrays.asList(177, 178));
+        Etapa etapa_33 = new Etapa(33, indiceParadasEtapa33);
+        listaEtapas.add(etapa_33);
 
         return listaEtapas;
     }

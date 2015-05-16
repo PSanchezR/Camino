@@ -28,11 +28,9 @@ public class AccionUsuarioSeleccion extends ActionBarActivity {
     private Usuario usuarioSeleccionado = null;
     private ArrayList<String> nombresUsuarios = new ArrayList<String>();// Lista de nombres de usuario
 
-    private GestionFicheros archivador = new GestionFicheros();
-
     //Este método carga los usuarios leidos del fichero en la ListView
     public void cargarUsuarios() {
-        this.usuarios = new ArrayList<Usuario>(archivador.leerUsuarios(getBaseContext()));
+        this.usuarios = new ArrayList<Usuario>(GestionFicheros.leerUsuarios(getBaseContext()));
 
         Iterator<Usuario> itr = usuarios.iterator();
 

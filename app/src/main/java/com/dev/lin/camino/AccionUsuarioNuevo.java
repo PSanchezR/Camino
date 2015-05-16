@@ -26,8 +26,6 @@ public class AccionUsuarioNuevo extends ActionBarActivity {
     protected Spinner listaComplexion;
     protected String[] valoresComplexion = {"Nada deportista", "Poco deportista", "Deportista Amateur", "Deportista profesional"};
 
-    private GestionFicheros archivador = new GestionFicheros();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,21 +49,21 @@ public class AccionUsuarioNuevo extends ActionBarActivity {
 
             Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
 
-            if (archivador.escribirUsuarios(usuario, getBaseContext()) == 0) {
+            if (GestionFicheros.escribirUsuarios(usuario, getBaseContext()) == 0) {
                 Toast.makeText(this, "Usuario guardado correctamente.", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "El usuario no ha sido creado.", Toast.LENGTH_SHORT).show();
             }
         }
 
-        archivador.leerUsuarios(getBaseContext());
+        GestionFicheros.leerUsuarios(getBaseContext());
         menuUsuarios();
     }
 
 
     public boolean existeUsuario(String nombre) {
         boolean comp = false;
-        ArrayList<Usuario> usuarios = new ArrayList<Usuario>(archivador.leerUsuarios(getBaseContext()));
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>(GestionFicheros.leerUsuarios(getBaseContext()));
         Iterator<Usuario> itr = usuarios.iterator();
 
         while (itr.hasNext() && !comp) {

@@ -27,7 +27,6 @@ public class AccionUsuarioDatos extends ActionBarActivity {
     private static final String DATOS_USUARIO = "DatosUsuario";
     protected String[] valoresComplexion = {"Nada deportista", "Poco deportista", "Deportista Amateur", "Deportista profesional"};
     private Usuario usuarioSeleccionado = null;
-    private GestionFicheros archivador = new GestionFicheros();
     private ArrayAdapter<String> adapter;
 
     @Override
@@ -59,7 +58,7 @@ public class AccionUsuarioDatos extends ActionBarActivity {
                        /* Cuando se seleccione un camino pasa caminoFrances.xml ser el actual. */
                         String seleccionado = (String) a.getItemAtPosition(position);
                         usuarioSeleccionado.setCaminoActual(buscarCamino(seleccionado));
-                        archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+                        GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
                         Intent i = new Intent(AccionUsuarioDatos.this, AccionCaminoActual.class);
                         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
                         startActivity(i);
@@ -103,7 +102,7 @@ public class AccionUsuarioDatos extends ActionBarActivity {
         usuarioSeleccionado.setPeso(Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText() + ""));
         usuarioSeleccionado.setComplexion(((Spinner) findViewById(R.id.spinnerComplexion)).getSelectedItemPosition());
         usuarioSeleccionado.calcularKmMaximos();
-        archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+        GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
 
         Intent i = new Intent(AccionUsuarioDatos.this, AccionMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);

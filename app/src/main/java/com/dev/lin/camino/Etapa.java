@@ -1,5 +1,7 @@
 package com.dev.lin.camino;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,25 +16,26 @@ public class Etapa implements Serializable {
     private static final long serialVersionUID = 2L;
     private int orden;
     private String nombre;
-    private Parada paradaInicio;
-    private Parada paradaFin;
-    private double KMs;
-    private ArrayList<Parada> listaParadas = null;
+    private double distancia;
+    private ArrayList<Integer> indiceParadas;
 
-    public Etapa(int orden, ArrayList<Parada> listaParadas) {
+    public Etapa(int orden, ArrayList<Integer> indiceParadas) {
         this.orden = orden;
-        this.listaParadas = new ArrayList<Parada>(listaParadas);
-        this.paradaInicio = this.listaParadas.get(0);
-        this.paradaFin = this.listaParadas.get(this.listaParadas.size() - 1);
-        this.nombre = this.paradaInicio.getNombre() + " - " + this.paradaFin.getNombre();
-        this.KMs = 0;
+        this.indiceParadas = new ArrayList<Integer>(indiceParadas);
+
+        ArrayList<Parada> listaParadas = new ArrayList<Parada>(this.getListaParadas());
+        Parada paradaInicio = listaParadas.get(0);
+        Parada paradaFin = listaParadas.get(listaParadas.size() - 1);
+
+        this.nombre = paradaInicio.getNombre() + " - " + paradaFin.getNombre();
+        this.distancia = 0;
 
         Iterator<Parada> itr = listaParadas.iterator();
         Parada parada = itr.next();
 
         while (itr.hasNext()) {
             parada = itr.next();
-            this.KMs += parada.getDistAnterior();
+            this.distancia += parada.getDistAnterior();
         }
     }
 
@@ -44,27 +47,73 @@ public class Etapa implements Serializable {
         return this.nombre;
     }
 
+    public double getDistancia() {
+        return distancia;
+    }
+
     public ArrayList<Parada> getListaParadas() {
-        return this.listaParadas;
+        ArrayList<Parada> listaParadas = new ArrayList<Parada>();
+
+        Iterator<Parada> itr = GestionFicheros.listaParadasCaminoFrances.iterator();
+        Parada paradaInicio = GestionFicheros.listaParadasCaminoFrances.get(this.indiceParadas.get(0) - 1);
+        Parada paradaFin = GestionFicheros.listaParadasCaminoFrances.get(this.indiceParadas.get(this.indiceParadas.size() - 2));
+
+        boolean dentro = false;
+        Parada parada = null;
+
+        while (itr.hasNext() && !dentro) {
+            parada = itr.next();
+
+            if (parada.getNombre().equals(paradaInicio.getNombre())) {
+                dentro = true;
+            }
+        }
+
+        while (itr.hasNext() && dentro) {
+            listaParadas.add(parada);
+
+            if (parada.getNombre().equals(paradaFin.getNombre())) {
+                dentro = false;
+            }
+
+            parada = itr.next();
+        }
+
+        return listaParadas;
     }
 
-    public Parada getParadaInicio() {
-        return this.paradaInicio;
+    public ArrayList<LatLng> getListaCoordsParadas() {
+        ArrayList<Parada> listaParadas = new ArrayList<Parada>(this.getListaParadas());
+        ArrayList<LatLng> listaLatLng = new ArrayList<LatLng>();
+        Parada parada;
+
+        Iterator<Parada> itr = listaParadas.iterator();
+        int i = 0;
+
+        while (i < listaParadas.size() - 1) {
+            parada = itr.next();
+
+            Iterator<LatLng> itr2 = parada.getListaCoords().iterator();
+
+            while (itr2.hasNext()) {
+                listaLatLng.add(itr2.next());
+            }
+
+            i++;
+        }
+
+        return listaLatLng;
     }
 
-    public Parada getParadaFin() {
-        return this.paradaFin;
-    }
+    @Override
+    public String toString() {
+        String cadena = "Etapa:\nOrden: " + this.orden + "\tNombre: " + this.nombre + "\nDistancia: " + this.distancia;
 
-    public String getNombreParadaInicio() {
-        return this.paradaInicio.getNombre();
-    }
+        Iterator<Parada> itr = this.getListaParadas().iterator();
+        while (itr.hasNext()) {
+            cadena += itr.next().toString();
+        }
 
-    public String getNombreParadaFin() {
-        return this.paradaFin.getNombre();
-    }
-
-    public double getKMs() {
-        return KMs;
+        return cadena;
     }
 }

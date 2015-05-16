@@ -3,6 +3,7 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,9 +18,10 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -30,76 +32,77 @@ import java.util.Iterator;
  * @author Pablo Sánchez Robles
  */
 public class AccionCaminoActual extends ActionBarActivity {
+    private static final String DATOS_PARADA = "DatosParada";
     private GoogleMap map;
+    private Marker inicio;
+    private Marker fin;
     private ArrayList<String> nombresEtapas = new ArrayList<String>();
-    private GestionFicheros archivador = new GestionFicheros();
-    private ArrayList<Parada> listaParadas;
+    private Usuario user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camino_actual);
 
-        this.listaParadas = archivador.parseadorXMLcaminos(getBaseContext());
-
-        Usuario user = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        user = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         ListView lista = (ListView) findViewById(R.id.listViewEtapas);
         ArrayAdapter<String> adaptador;
 
-        buscaNombresEtapas(user.getCaminoActual());
+        DecimalFormat df = new DecimalFormat("##.##");
+        df.setRoundingMode(RoundingMode.UP);
+        ArrayList<Etapa> listaEtapas = user.getCaminoActual().getListaEtapas();
+        Iterator<Etapa> itr = listaEtapas.iterator();
+        Etapa etapa = null;
+
+        while (itr.hasNext()) {
+            etapa = itr.next();
+            nombresEtapas.add(etapa.getNombre() + ":\n" + df.format(etapa.getDistancia()) + " km");
+        }
+
         adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresEtapas);
         lista.setAdapter(adaptador);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> padre, View vista, int posicion, long id) {
-                String[] parts = nombresEtapas.get(posicion).split(" - ");
-                Toast.makeText(getApplicationContext(), "Seleccionado: " + parts[0], Toast.LENGTH_SHORT).show();
+                String[] nombreEtapa = nombresEtapas.get(posicion).split(":\n");
+                String[] nombreParada = nombreEtapa[0].split(" - ");
+                Toast.makeText(getApplicationContext(), "Seleccionado: " + nombreEtapa[0], Toast.LENGTH_SHORT).show();
 
-                Iterator<Parada> itr = listaParadas.iterator();
+                ArrayList<Etapa> listaEtapas = user.getCaminoActual().getListaEtapas();
+                Iterator<Etapa> itr2 = listaEtapas.iterator();
+                Etapa etapa = null;
                 boolean encontrado = false;
-                Parada parada = null;
 
-                while (itr.hasNext() && !encontrado) {
-                    parada = itr.next();
+                while (itr2.hasNext() && !encontrado) {
+                    etapa = itr2.next();
 
-                    if (parada.getNombre().equals(parts[0])) {
+                    if (etapa.getNombre().equals(nombreEtapa[0])) {
                         encontrado = true;
                     }
                 }
 
-                //Toast.makeText(getApplicationContext(), "Encontrado: " + parada.getNombre(), Toast.LENGTH_SHORT).show();
-                Parada paradaSiguiente = listaParadas.get(parada.getOrden()-1);
-                LatLng posInicial = parada.getListaCoords().get(0);
-                LatLng posFinal = paradaSiguiente.getListaCoords().get(0);
+                Log.d(AccionCaminoActual.DATOS_PARADA, "Etapa: " + etapa.toString());
+
+                ArrayList<LatLng> listaCoordsParadas = new ArrayList<LatLng>(etapa.getListaCoordsParadas());
+
+                LatLng posInicial = listaCoordsParadas.get(0);
+                LatLng posFinal = listaCoordsParadas.get(listaCoordsParadas.size() - 1);
 
                 PolylineOptions puntos = new PolylineOptions();
-                puntos.addAll(parada.getListaCoords());
+                puntos.addAll(listaCoordsParadas);
 
-                map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
-                        .getMap();
-                Marker marcaInicio = map.addMarker(new MarkerOptions().position(posInicial).title(parada.getNombre()));
-                Marker marcaFin = map.addMarker(new MarkerOptions().position(posFinal).title(paradaSiguiente.getNombre()));
+                map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+                map.clear();
 
-                Polyline linea = map.addPolyline(puntos);
+                map.addMarker(new MarkerOptions().position(posInicial).title(nombreParada[0]));
+                map.addMarker(new MarkerOptions().position(posFinal).title(nombreParada[1]));
+
+                map.addPolyline(puntos);
 
                 map.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 11.0f));
             }
         });
-
-        /*
-        lista.setOnItemClickListener(
-                new AdapterView.OnItemClickListener() {
-                    public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-
-                       // Intent i = new Intent(AccionCaminoActual.this, AccionMenuPrincipal.class);
-
-                        //i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
-                        //startActivity(i);
-                    }
-                }
-        );
-        */
     }
 
     public void menuPrincipal(View view) {
@@ -107,15 +110,6 @@ public class AccionCaminoActual extends ActionBarActivity {
         Intent i = new Intent(AccionCaminoActual.this, AccionMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
         startActivity(i);
-    }
-
-    private void buscaNombresEtapas(Camino c) {
-        ArrayList<Etapa> etapas = c.getListaEtapas();
-        Etapa et;
-        for (int i = 0; i < etapas.size(); i++) {
-            et = etapas.get(i);
-            nombresEtapas.add(et.getNombre() + ": " + et.getKMs() + " kms.");
-        }
     }
 
     @Override

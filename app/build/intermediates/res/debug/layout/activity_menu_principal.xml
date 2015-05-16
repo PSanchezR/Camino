@@ -62,13 +62,6 @@
                 android:onClick="caminoActual"
                 android:text="Camino actual" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="mapaPrueba"
-                android:text="Mapa prueba" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,4 +73,4 @@
     </LinearLayout>
 
 </RelativeLayout>
-<!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/layout/activity_menu_principal.xml -->
+<!-- From: file:/home/germaaan/AndroidStudioProjects/Camino/app/src/main/res/layout/activity_menu_principal.xml -->

@@ -17,18 +17,6 @@ public class Camino implements Serializable {
     private Etapa etapaFin;
     private double KMs;
     private ArrayList<Etapa> listaEtapas;
-    //private int kmDiarios;
-    //private ArrayList<Etapa> etapasCompletadas;
-
-    /*
-    public Camino(String nombre, ArrayList<Etapa> listaEtapas, int kmDia) {
-        this.nombre = nombre;
-        this.listaEtapas = listaEtapas;
-        this.etapaInicio = listaEtapas.get(0).;
-        this.etapaFin = listaEtapas.get(0).getParadaFin();
-        this.kmDiarios = kmDia;
-    }
-    */
 
     public Camino(String nombre, ArrayList<Etapa> listaEtapas) {
         this.nombre = nombre;
@@ -41,7 +29,7 @@ public class Camino implements Serializable {
 
         while (itr.hasNext()) {
             Etapa etapa = itr.next();
-            this.KMs += etapa.getKMs();
+            this.KMs += etapa.getDistancia();
         }
     }
 
@@ -72,20 +60,4 @@ public class Camino implements Serializable {
     public double getKMs() {
         return this.KMs;
     }
-
-        /*
-    public void setEtapaCompletada(Etapa etapa) {
-        this.etapasCompletadas.add(etapa);
-    }
-
-    public ArrayList<Etapa> getEtapasCompletadas() {
-        return this.etapasCompletadas;
-    }
-    */
-
-    /*
-    public int getKmDiarios() {
-        return this.kmDiarios;
-    }
-    */
 }

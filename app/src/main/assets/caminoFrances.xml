@@ -327,7 +327,7 @@
         <coords>43.004341, -1.31962</coords>
         <coords>42.99667, -1.32698</coords>
         <coords>42.995312, -1.32838</coords>
-        <coords>42.994518, -1329</coords>
+        <coords>42.994518, -1.329</coords>
         <coords>42.992512, -1.33104</coords>
         <coords>42.99184, -1.33265</coords>
         <coords>42.990768, -1.33473</coords>
@@ -366,7 +366,7 @@
         <coords>42.988682, -1.3608</coords>
         <coords>42.988121, -1.36127</coords>
         <coords>42.987541, -1.36157</coords>
-        <coords>42987, -1.36196</coords>
+        <coords>42.987, -1.36196</coords>
         <coords>42.98674, -1.36191</coords>
         <coords>42.986408, -1.36245</coords>
         <coords>42.986301, -1.36294</coords>
@@ -412,7 +412,7 @@
         <coords>42.979561, -1.38891</coords>
         <coords>42.979439, -1.39</coords>
         <coords>42.97887, -1.39092</coords>
-        <coords>42.978588, -1392</coords>
+        <coords>42.978588, -1.392</coords>
         <coords>42.977982, -1.39301</coords>
         <coords>42.97773, -1.39616</coords>
         <coords>42.97718, -1.39723</coords>
@@ -429,7 +429,7 @@
         <coords>42.971931, -1.40438</coords>
         <coords>42.971821, -1.40509</coords>
         <coords>42.97134, -1.40532</coords>
-        <coords>42.971039, -1405</coords>
+        <coords>42.971039, -1.405</coords>
         <coords>42.970718, -1.40524</coords>
         <coords>42.97094, -1.40584</coords>
         <coords>42.970852, -1.40676</coords>
@@ -504,7 +504,7 @@
         <coords>42.960911, -1.45251</coords>
         <coords>42.959702, -1.45251</coords>
         <coords>42.958839, -1.45266</coords>
-        <coords>42.95895, -1453</coords>
+        <coords>42.95895, -1.453</coords>
         <coords>42.95882, -1.45315</coords>
         <coords>42.958698, -1.45495</coords>
         <coords>42.95615, -1.45478</coords>
@@ -1060,7 +1060,7 @@
         <coords>42.734932, -1.743876</coords>
         <coords>42.734901, -1.744466</coords>
         <coords>42.734871, -1.745603</coords>
-        <coords>42.734711, -1746</coords>
+        <coords>42.734711, -1.746</coords>
         <coords>42.734531, -1.746569</coords>
         <coords>42.733955, -1.747427</coords>
         <coords>42.733562, -1.747674</coords>
@@ -1299,7 +1299,7 @@
         <coords>42.66872, -1.86413</coords>
         <coords>42.66885, -1.86568</coords>
         <coords>42.669121, -1.86769</coords>
-        <coords>42.66946, -1869</coords>
+        <coords>42.66946, -1.869</coords>
         <coords>42.66951, -1.86971</coords>
         <coords>42.66938, -1.87014</coords>
         <coords>42.670052, -1.87164</coords>
@@ -1591,7 +1591,7 @@
         <coords>42.655392, -2.041054</coords>
         <coords>42.655315, -2.040807</coords>
         <coords>42.655006, -2.040796</coords>
-        <coords>42.654846, -2041</coords>
+        <coords>42.654846, -2.041</coords>
         <coords>42.654606, -2.041172</coords>
         <coords>42.654312, -2.04129</coords>
         <coords>42.654003, -2.041054</coords>
@@ -1763,7 +1763,7 @@
         <coords>42.632008, -2.096254</coords>
         <coords>42.632008, -2.096715</coords>
         <coords>42.632015, -2.097273</coords>
-        <coords>42632, -2.097734</coords>
+        <coords>42.632, -2.097734</coords>
         <coords>42.631763, -2.098088</coords>
         <coords>42.631756, -2.098292</coords>
         <coords>42.63155, -2.098571</coords>
@@ -2695,7 +2695,7 @@
         <coords>42.46664, -2.45015</coords>
         <coords>42.466301, -2.45019</coords>
         <coords>42.466179, -2.4508</coords>
-        <coords>42466, -2.45087</coords>
+        <coords>42.466, -2.45087</coords>
         <coords>42.465919, -2.4508</coords>
         <coords>42.465881, -2.45091</coords>
         <coords>42.465961, -2.45094</coords>
@@ -2712,7 +2712,7 @@
         <coords>42.459251, -2.47376</coords>
         <coords>42.458569, -2.47339</coords>
         <coords>42.458141, -2.4739</coords>
-        <coords>42.45681, -2475</coords>
+        <coords>42.45681, -2.475</coords>
         <coords>42.456539, -2.4749</coords>
         <coords>42.456348, -2.47535</coords>
         <coords>42.45623, -2.47523</coords>
@@ -2847,7 +2847,7 @@
         <coords>42.429131, -2.56069</coords>
         <coords>42.429119, -2.56147</coords>
         <coords>42.42947, -2.56149</coords>
-        <coords>42.429459, -2562</coords>
+        <coords>42.429459, -2.562</coords>
         <coords>42.429539, -2.56221</coords>
         <distAnterior>11.3</distAnterior>
         <distSiguiente>12.2</distSiguiente>
@@ -2927,7 +2927,7 @@
         <coords>42.415691, -2.6005</coords>
         <coords>42.415459, -2.60064</coords>
         <coords>42.415329, -2.60084</coords>
-        <coords>42.414909, -2602</coords>
+        <coords>42.414909, -2.602</coords>
         <coords>42.414799, -2.60251</coords>
         <coords>42.414639, -2.60296</coords>
         <coords>42.4142, -2.60271</coords>
@@ -2980,7 +2980,7 @@
         <coords>42.411591, -2.629595</coords>
         <coords>42.411564, -2.630051</coords>
         <coords>42.411533, -2.630491</coords>
-        <coords>42.411556, -2631</coords>
+        <coords>42.411556, -2.631</coords>
         <coords>42.411495, -2.631424</coords>
         <coords>42.411484, -2.632057</coords>
         <coords>42.411518, -2.632899</coords>
@@ -3016,7 +3016,7 @@
         <coords>42.412464, -2.646734</coords>
         <coords>42.412533, -2.647174</coords>
         <coords>42.412533, -2.647415</coords>
-        <coords>42.412571, -2648</coords>
+        <coords>42.412571, -2.648</coords>
         <coords>42.412628, -2.648317</coords>
         <coords>42.41264, -2.648467</coords>
         <coords>42.412567, -2.648622</coords>
@@ -3391,7 +3391,7 @@
         <coords>42.412827, -2.896335</coords>
         <coords>42.413288, -2.89655</coords>
         <coords>42.413952, -2.896485</coords>
-        <coords>42.41441, -2897</coords>
+        <coords>42.41441, -2.897</coords>
         <coords>42.414696, -2.898223</coords>
         <coords>42.415218, -2.898588</coords>
         <coords>42.416203, -2.905326</coords>
@@ -4514,7 +4514,7 @@
         <coords>42.347744, -3.805625</coords>
         <coords>42.347603, -3.80687</coords>
         <coords>42.347759, -3.80878</coords>
-        <coords>42348, -3.810582</coords>
+        <coords>42.348, -3.810582</coords>
         <coords>42.348377, -3.812943</coords>
         <coords>42.348793, -3.814402</coords>
         <coords>42.349236, -3.815303</coords>
@@ -4793,7 +4793,7 @@
         <coords>42.304897, -4.086485</coords>
         <coords>42.304356, -4.0873</coords>
         <coords>42.303898, -4.087408</coords>
-        <coords>42.303596, -4087</coords>
+        <coords>42.303596, -4.087</coords>
         <coords>42.303532, -4.086549</coords>
         <coords>42.303055, -4.087665</coords>
         <coords>42.302216, -4.090133</coords>
@@ -4913,7 +4913,7 @@
         <coords>42.285969, -4.18825</coords>
         <coords>42.285938, -4.18939</coords>
         <coords>42.286072, -4.19006</coords>
-        <coords>42.286121, -4191</coords>
+        <coords>42.286121, -4.191</coords>
         <coords>42.286228, -4.19169</coords>
         <coords>42.28624, -4.19289</coords>
         <coords>42.286209, -4.19446</coords>
@@ -5027,7 +5027,7 @@
         <coords>42.275162, -4.30779</coords>
         <coords>42.2747, -4.30915</coords>
         <coords>42.27457, -4.30973</coords>
-        <coords>42.27272, -4314</coords>
+        <coords>42.27272, -4.314</coords>
         <coords>42.27219, -4.31533</coords>
         <coords>42.271832, -4.31679</coords>
         <coords>42.270321, -4.32406</coords>
@@ -5062,7 +5062,7 @@
         <coords>42.26125, -4.34895</coords>
         <coords>42.26149, -4.34968</coords>
         <coords>42.262321, -4.35062</coords>
-        <coords>42263, -4.3511</coords>
+        <coords>42.263, -4.3511</coords>
         <coords>42.262871, -4.35178</coords>
         <coords>42.261761, -4.35412</coords>
         <coords>42.259472, -4.35813</coords>
