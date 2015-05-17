@@ -3,7 +3,6 @@
     android:id="@+id/relativeLayoutMenuPrincipal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/fondo_default"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -47,7 +46,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:onClick="datosUsuario"
-                android:text="Datos usuario" />
+                android:text="Datos usuario"
+                android:background="@drawable/btn_style" />
+
 
             <Button
                 android:id="@+id/buttonCaminoNuevo"
@@ -55,7 +56,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:onClick="caminoNuevo"
-                android:text="Camino nuevo" />
+                android:text="Camino nuevo"
+                android:background="@drawable/btn_style" />
 
             <Button
                 android:id="@+id/buttonCaminoActual"
@@ -63,7 +65,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:onClick="caminoActual"
-                android:text="Camino actual" />
+                android:text="Camino actual"
+                android:background="@drawable/btn_style" />
 
         </LinearLayout>
 

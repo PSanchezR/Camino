@@ -81,7 +81,7 @@
     <color name="theme_components">#448AFF</color>
     <color name="theme_dark">#1A237E</color>
     <color name="theme_primary">#FFFF8D</color>
-    <color name="theme_wbackgound">#ffff00</color>
+    <color name="theme_wbackgound">#ffc400</color>
     <!-- From: file:/home/lin/Escritorio/APPS/Camino/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/res/values/wallet_colors.xml -->
     <eat-comment/>
     <color name="wallet_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
@@ -295,8 +295,9 @@ available. Please contact the developer for assistance.</string>
         <item name="colorAccent">@color/theme_accent</item>
         <!-- <item name="android:textColorPrimary">@color/theme_wbackgound</item> -->
          <item name="android:windowBackground">@color/theme_accent</item>
-
-     </style>
+        <item name="android:textColor">@color/theme_dark</item>
+        <item name="android:textColorPrimary">@color/theme_dark</item>
+        </style>
     <!-- From: file:/home/lin/Escritorio/APPS/Camino/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance">

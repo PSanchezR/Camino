@@ -40,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:onClick="nuevoUsuario"
-            android:text="Nuevo Usuario" />
+            android:text="Nuevo Usuario"
+            android:background="@drawable/btn_style" />
     </LinearLayout>
 </RelativeLayout>

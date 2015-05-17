@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="theme_primary">#FFFF8D</color>
     <color name="theme_dark">#1A237E</color>
     <color name="theme_accent">#82B1FF</color>
     <color name="theme_components">#448AFF</color>
-    <color name="theme_wbackgound">#ffff00</color>
+    <color name="theme_wbackgound">#ffc400</color>
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -23,7 +24,7 @@
         <item name="colorAccent">@color/theme_accent</item>
         <!-- <item name="android:textColorPrimary">@color/theme_wbackgound</item> -->
          <item name="android:windowBackground">@color/theme_accent</item>
-
-     </style>
-
+        <item name="android:textColor">@color/theme_dark</item>
+        <item name="android:textColorPrimary">@color/theme_dark</item>
+        </style>
  </resources>
