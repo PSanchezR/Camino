@@ -1,28 +1,45 @@
 package com.dev.lin.camino;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 
 /**
- * Datos de la etapa seleccionada del Camino de Santiago
+ * Datos de la portada de la aplicación
  *
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class AccionEtapaSeleccion extends ActionBarActivity {
+public class ActivityPortada extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_etapa_seleccionada);
+        setContentView(R.layout.activity_portada);
+
+        GestionFicheros.generarParadasListadoCaminoFrances("caminoFrances.xml", getBaseContext());
+
+        FrameLayout frame_fondo = (FrameLayout) findViewById(R.id.frameLayoutPortada);
+
+        frame_fondo.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Intent intent = new Intent(ActivityPortada.this, ActivityUsuarioSeleccionado.class);
+                startActivity(intent);
+                return false;
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_accion_etapa_seleccion, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_portada, menu);
         return true;
     }
 

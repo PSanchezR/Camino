@@ -1,16 +1,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rlay"
+    android:id="@+id/relativeLayoutCaminoNuevo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/fondodefault"
+    android:background="@mipmap/fondo_default"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.dev.lin.camino.AccionCaminoNuevo">
+    tools:context="com.dev.lin.camino.ActivityCaminoNuevo">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearLayoutCaminoNuevo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
@@ -19,12 +20,13 @@
         android:weightSum="1">
 
         <GridLayout
+            android:id="@+id/gridLayoutCabecera"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewEtiquetaDatos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -32,7 +34,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Button
-                android:id="@+id/buttonMenu"
+                android:id="@+id/buttonMenuPrincipal"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
@@ -43,17 +45,18 @@
         </GridLayout>
 
         <TableLayout
+            android:id="@+id/tableLayoutDatos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.67">
 
             <TableRow
-                android:id="@+id/tableRowTiempo"
+                android:id="@+id/tableRowNumDias"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/textViewNumDias"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
@@ -61,7 +64,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <EditText
-                    android:id="@+id/editTextDias"
+                    android:id="@+id/editTextNumDias"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -71,12 +74,12 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/TableRowComienzo"
+                android:id="@+id/tableRowParadaInicio"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/textViewParadaInicio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
@@ -92,11 +95,12 @@
             </TableRow>
 
             <TableRow
+                android:id="@+id/tableRowNombre"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
                 <TextView
-                    android:id="@+id/textView16"
+                    android:id="@+id/textViewNombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
@@ -104,18 +108,19 @@
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <EditText
-                    android:id="@+id/editTextNombreCamino"
+                    android:id="@+id/editTextNombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1" />
             </TableRow>
 
             <TableRow
+                android:id="@+id/tableRowDistanciaMax"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
                 <TextView
-                    android:id="@+id/textView21"
+                    android:id="@+id/textViewDistanciaMax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
@@ -123,7 +128,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <EditText
-                    android:id="@+id/editTextKmMax"
+                    android:id="@+id/editTextDistanciaMax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
@@ -133,14 +138,14 @@
         </TableLayout>
 
         <LinearLayout
-            android:id="@+id/LinearCrear"
+            android:id="@+id/linearLayoutCrearCaminoNuevo"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:weightSum="1">
 
             <Button
-                android:id="@+id/buttonCrearCamino"
+                android:id="@+id/buttonCrearCaminoNuevo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -149,33 +154,26 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayoutCrearCaminoClasico"
             android:layout_width="match_parent"
             android:layout_height="130dp"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/LinearClasico"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textViewCrearCaminoClasico"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_gravity="center_horizontal"
+                android:text="Pulse el botón &quot;camino clásico&quot; para realizar el camino francés completo con las etapas clásicas. Son 33 etapas."
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Pulse el botón &quot;camino clásico&quot; para realizar el camino francés completo con las etapas clásicas. Son 33 etapas."
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <Button
-                    android:id="@+id/buttonCaminoClasico"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="crearCaminoFrances"
-                    android:text="Camino Clásico" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/buttonCrearCaminoClasico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="crearCaminoFrances"
+                android:text="Camino Clásico" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
-<!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/layout/activity_nuevo_camino.xml -->

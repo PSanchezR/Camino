@@ -20,7 +20,7 @@ import java.util.Iterator;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class AccionUsuarioSeleccion extends ActionBarActivity {
+public class ActivityUsuarioSeleccionado extends ActionBarActivity {
     static ArrayList<Usuario> usuarios;//Lista de objetos usuario que se leerán desde fichero.
 
     private ArrayAdapter<String> adapter; //Adaptador para pasar los nombres caminoFrances.xml un listview
@@ -41,21 +41,21 @@ public class AccionUsuarioSeleccion extends ActionBarActivity {
         }
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresUsuarios);
-        ListView lista = (ListView) findViewById(R.id.listUsuarios);
+        ListView lista = (ListView) findViewById(R.id.listViewListaUsuarios);
         lista.setAdapter(adapter);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seleccion_usuario);
+        setContentView(R.layout.activity_usuario_seleccionado);
 
         cargarUsuarios();
         usuarioSeleccionado();
     }
 
     public void nuevoUsuario(View view) {
-        Intent i = new Intent(AccionUsuarioSeleccion.this, AccionUsuarioNuevo.class);
+        Intent i = new Intent(ActivityUsuarioSeleccionado.this, ActivityUsuarioNuevo.class);
         i.putExtra("usuarios", (Serializable) usuarios);
         startActivity(i);
     }
@@ -76,7 +76,7 @@ public class AccionUsuarioSeleccion extends ActionBarActivity {
     }
 
     public void usuarioSeleccionado() {
-        ListView lista = (ListView) findViewById(R.id.listUsuarios);
+        ListView lista = (ListView) findViewById(R.id.listViewListaUsuarios);
         ArrayAdapter<String> adaptador;
         adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresUsuarios);
         lista.setAdapter(adaptador);
@@ -86,7 +86,7 @@ public class AccionUsuarioSeleccion extends ActionBarActivity {
                     public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                         seleccionado = (String) a.getItemAtPosition(position);
                         buscarUsuario();
-                        Intent i = new Intent(AccionUsuarioSeleccion.this, AccionMenuPrincipal.class);
+                        Intent i = new Intent(ActivityUsuarioSeleccionado.this, ActivityMenuPrincipal.class);
 
                         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
                         startActivity(i);
@@ -98,7 +98,7 @@ public class AccionUsuarioSeleccion extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_accion_usuario_seleccion, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_usuario_seleccion, menu);
         return true;
     }
 

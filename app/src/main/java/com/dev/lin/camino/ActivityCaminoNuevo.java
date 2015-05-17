@@ -22,7 +22,7 @@ import java.util.Iterator;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class AccionCaminoNuevo extends ActionBarActivity {
+public class ActivityCaminoNuevo extends ActionBarActivity {
     private static final String DATOS_USUARIO = "DatosUsuario";
     private static final String DATOS_PARADA = "DatosParada";
     private Usuario usuarioSeleccionado;
@@ -30,10 +30,10 @@ public class AccionCaminoNuevo extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nuevo_camino);
+        setContentView(R.layout.activity_camino_nuevo);
 
         this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        Log.d(AccionCaminoNuevo.DATOS_USUARIO, usuarioSeleccionado.toString());
+        Log.d(ActivityCaminoNuevo.DATOS_USUARIO, usuarioSeleccionado.toString());
 
         ArrayList<String> nombresListaParadas = new ArrayList<String>();
         Iterator<Parada> itr = GestionFicheros.listaParadasCaminoFrances.iterator();
@@ -50,69 +50,62 @@ public class AccionCaminoNuevo extends ActionBarActivity {
     }
 
     public void menuPrincipal(View view) {
-        Intent i = new Intent(AccionCaminoNuevo.this, AccionMenuPrincipal.class);
+        Intent i = new Intent(ActivityCaminoNuevo.this, ActivityMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", this.usuarioSeleccionado);
         startActivity(i);
     }
 
     public void crearCaminoNuevo(View view) {
-        String nombre = "";
-        String comienzoCamino = "";
-        int dias = 0;
-        int kmDia = 0;
+        String paradaComienzo = "";
+        String nombreCamino = "";
+        int numDias = 0;
+        int distanciaDiaria = 0;
         boolean correcto = true;
-        ArrayList<Etapa> etapas = new ArrayList<Etapa>();
+        ArrayList<Etapa> listaEtapas = new ArrayList<Etapa>();
         Camino camino = null;
 
-        if ((((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString().equals("SIN SELECCIONAR")) {
-            Toast.makeText(this, "Introduzca un nombre para su nuevo camino.", Toast.LENGTH_SHORT).show();
-            correcto = false;
-        } else {
-            nombre = (((EditText) findViewById(R.id.editTextNombreCamino)).getText()).toString();
-        }
-
-        if ((((Spinner) findViewById(R.id.spinnerParadaInicio)).getSelectedItem()).toString().equals("")) {
-            Toast.makeText(this, "Seleccione una parada de inicio para su camino.", Toast.LENGTH_SHORT).show();
-            correcto = false;
-        } else {
-            comienzoCamino = (((Spinner) findViewById(R.id.spinnerParadaInicio)).getSelectedItem()).toString();
-        }
-
-        if (((EditText) findViewById(R.id.editTextDias)).getText().toString().equals("") || Integer.parseInt(((EditText) findViewById(R.id.editTextDias)).getText().toString()) < 2) {
+        if (((EditText) findViewById(R.id.editTextNumDias)).getText().toString().isEmpty() || Integer.parseInt(((EditText) findViewById(R.id.editTextNumDias)).getText().toString()) < 2) {
             Toast.makeText(this, "El número de días para hacer el camino tiene que ser mayor que 1.", Toast.LENGTH_SHORT).show();
             correcto = false;
         } else {
-            dias = Integer.parseInt(((EditText) findViewById(R.id.editTextDias)).getText().toString());
+            numDias = Integer.parseInt(((EditText) findViewById(R.id.editTextNumDias)).getText().toString());
         }
 
-        if ((((EditText) findViewById(R.id.editTextKmMax)).getText()).toString().equals("")) {
+        if ((((EditText) findViewById(R.id.editTextNombre)).getText()).toString().isEmpty()) {
+            Toast.makeText(this, "Introduzca un nombre para su nuevo camino.", Toast.LENGTH_SHORT).show();
+            correcto = false;
+        } else {
+            nombreCamino = (((EditText) findViewById(R.id.editTextNombre)).getText()).toString();
+        }
+
+        if ((((EditText) findViewById(R.id.editTextDistanciaMax)).getText()).toString().equals("")) {
             Toast.makeText(this, "Sin número de KMs diarios introducido. Distancia recomendada: " + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
             correcto = false;
 
         } else {
-            kmDia = Integer.parseInt((((EditText) findViewById(R.id.editTextKmMax)).getText()).toString());
+            distanciaDiaria = Integer.parseInt((((EditText) findViewById(R.id.editTextDistanciaMax)).getText()).toString());
 
-            if (kmDia > usuarioSeleccionado.getKmMaximos()) {
+            if (distanciaDiaria > usuarioSeleccionado.getKmMaximos()) {
                 Toast.makeText(this, "Distancia diaria mayor que la recomendada. Distancia recomendada: " + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
             }
         }
 
         if (correcto) {
             //Comprobar donde recibe usuario seleccionado y como construye etapas y caminos
-            etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, nombre, kmDia);
-            camino = new Camino(nombre, etapas);
+            listaEtapas = crearEtapasCaminoNuevo(numDias, paradaComienzo, nombreCamino, distanciaDiaria);
+            camino = new Camino(nombreCamino, listaEtapas);
 
             //Primera prueba estableciendo un único camino
             this.usuarioSeleccionado.addCamino(camino);
             GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
-            Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoActual.class);
+
+            Intent i = new Intent(ActivityCaminoNuevo.this, ActivityMenuPrincipal.class);
             i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         } else {
             Toast.makeText(this, "Introduzca todos los datos del formulario correctamente.", Toast.LENGTH_SHORT).show();
-            //archivador.escribirUsuarios(usuarioSeleccionado, getBaseContext());
 
-            Intent i = new Intent(AccionCaminoNuevo.this, AccionCaminoNuevo.class);
+            Intent i = new Intent(ActivityCaminoNuevo.this, ActivityCaminoNuevo.class);
             i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         }
@@ -125,37 +118,18 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
         GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
 
-        Intent i = new Intent(AccionCaminoNuevo.this, AccionMenuPrincipal.class);
+        Intent i = new Intent(ActivityCaminoNuevo.this, ActivityMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
         startActivity(i);
     }
 
-    /*
-    ///////////////////Prueba para ver las distancias entre paradas////////////////
-    public ArrayList<Etapa> pruebaETAPAS() {
-        ArrayList<Etapa> etapas = new ArrayList<Etapa>();
-        ArrayList<Parada> parada;
-
-        for (int i = 0; i < GestionFicheros.listaParadasCaminoFrances.size() - 1; i++) {
-            parada = new ArrayList<Parada>();
-            parada.add(GestionFicheros.listaParadasCaminoFrances.get(i));
-            parada.add(GestionFicheros.listaParadasCaminoFrances.get(i + 1));
-
-            etapas.add(new Etapa(i, parada));
-        }
-
-        return etapas;
-    }
-    ////////////////////////////////////////////////////////////////////////////////
-*/
-
-    public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String comienzoCamino, String nombreCamino, int kmMax) {
+    public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String paradaComienzo, String nombreCamino, int kmMax) {
         ArrayList<Etapa> listaEtapas = new ArrayList<Etapa>();
-        ArrayList<Integer> paradasEtapa = new ArrayList<Integer>();
-        Double km = 0.0;
-        boolean semaforo = true;
+        ArrayList<Integer> listaParadasEtapa = new ArrayList<Integer>();
+        Double distancia = 0.0;
         int ordenParada = 1;
         int ordenEtapa = 1;
+        boolean semaforo = true;
         boolean inicio = false;
 
         Iterator<Parada> itr = GestionFicheros.listaParadasCaminoFrances.iterator();
@@ -163,9 +137,9 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
         // Nos situamos en el inicio del camino
         while (itr.hasNext() && !inicio) {
-           parada = itr.next();
+            parada = itr.next();
 
-            if (parada.getNombre().equals(comienzoCamino)) {
+            if (parada.getNombre().equals(paradaComienzo)) {
                 ordenParada = parada.getOrden();
                 inicio = true;
             }
@@ -174,31 +148,31 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         while (dias > 0) {
             semaforo = true;
             while (semaforo) {
-                if (GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente() + km <= kmMax) {
+                if (GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente() + distancia <= kmMax) {
 
-                    paradasEtapa.add(ordenParada);
-                    km += GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente();
+                    listaParadasEtapa.add(ordenParada);
+                    distancia += GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente();
 
                     if (ordenParada == GestionFicheros.listaParadasCaminoFrances.size() - 1) {
                         dias = 0;
-                        km = 9999.0;
+                        distancia = 9999.0;
                         ordenParada--;
                     } else {
                         ordenParada++;
                     }
                 } else {
                     //Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la parada mas cercana que sí tenga alojamientos.
-                    while (!GestionFicheros.listaParadasCaminoFrances.get(paradasEtapa.get(paradasEtapa.size() - 1)).getHotel() &&
-                           !GestionFicheros.listaParadasCaminoFrances.get(paradasEtapa.get(paradasEtapa.size() - 1)).getAlbergue()) {
-                        km -= GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistAnterior();
-                        paradasEtapa.remove(paradasEtapa.size() - 1);
+                    while (!GestionFicheros.listaParadasCaminoFrances.get(listaParadasEtapa.get(listaParadasEtapa.size() - 1)).getHotel() &&
+                            !GestionFicheros.listaParadasCaminoFrances.get(listaParadasEtapa.get(listaParadasEtapa.size() - 1)).getAlbergue()) {
+                        distancia -= GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistAnterior();
+                        listaParadasEtapa.remove(listaParadasEtapa.size() - 1);
                         ordenParada--;
                     }
-                    listaEtapas.add(new Etapa(ordenEtapa, paradasEtapa));
-                    paradasEtapa.clear();
+                    listaEtapas.add(new Etapa(ordenEtapa, listaParadasEtapa));
+                    listaParadasEtapa.clear();
                     ordenEtapa++;
                     ordenParada--;
-                    km = 0.0;
+                    distancia = 0.0;
                     dias--;
                     semaforo = false;
                 }

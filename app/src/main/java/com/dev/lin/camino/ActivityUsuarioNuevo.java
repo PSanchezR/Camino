@@ -20,7 +20,7 @@ import java.util.Iterator;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class AccionUsuarioNuevo extends ActionBarActivity {
+public class ActivityUsuarioNuevo extends ActionBarActivity {
     protected String archivo = "usuarios.dat";
     protected Usuario usuario;
     protected Spinner listaComplexion;
@@ -29,7 +29,7 @@ public class AccionUsuarioNuevo extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_formulario_nuevo_usuario);
+        setContentView(R.layout.activity_usuario_nuevo);
         ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, valoresComplexion);
         listaComplexion = (Spinner) findViewById(R.id.spinnerComplexion);
         listaComplexion.setAdapter(adaptador);
@@ -40,7 +40,7 @@ public class AccionUsuarioNuevo extends ActionBarActivity {
         int altura = Integer.parseInt(((EditText) findViewById(R.id.editTextAltura)).getText().toString());
         int peso = Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText().toString());
         int complexion = ((Spinner) findViewById(R.id.spinnerComplexion)).getSelectedItemPosition();
-        int anioDeNacimiento = Integer.parseInt(((EditText) findViewById(R.id.editTextFecha)).getText().toString());
+        int anioDeNacimiento = Integer.parseInt(((EditText) findViewById(R.id.editTextAnioNacimiento)).getText().toString());
         double kmMax = 0;
 
         if (existeUsuario(nombre)) {
@@ -76,14 +76,14 @@ public class AccionUsuarioNuevo extends ActionBarActivity {
     }
 
     public void menuUsuarios() {
-        Intent intent = new Intent(AccionUsuarioNuevo.this, AccionUsuarioSeleccion.class);
+        Intent intent = new Intent(ActivityUsuarioNuevo.this, ActivityUsuarioSeleccionado.class);
         startActivity(intent);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_accion_usuario_nuevo, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_usuario_nuevo, menu);
         return true;
     }
 

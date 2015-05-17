@@ -31,26 +31,26 @@ import java.util.Iterator;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class AccionCaminoActual extends ActionBarActivity {
+public class ActivityCaminoActual extends ActionBarActivity {
     private static final String DATOS_PARADA = "DatosParada";
     private GoogleMap map;
     private Marker inicio;
     private Marker fin;
     private ArrayList<String> nombresEtapas = new ArrayList<String>();
-    private Usuario user;
+    private Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camino_actual);
 
-        user = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        ListView lista = (ListView) findViewById(R.id.listViewEtapas);
+        usuario = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        ListView lista = (ListView) findViewById(R.id.listViewListaEtapas);
         ArrayAdapter<String> adaptador;
 
         DecimalFormat df = new DecimalFormat("##.##");
         df.setRoundingMode(RoundingMode.UP);
-        ArrayList<Etapa> listaEtapas = user.getCaminoActual().getListaEtapas();
+        ArrayList<Etapa> listaEtapas = usuario.getCaminoActual().getListaEtapas();
         Iterator<Etapa> itr = listaEtapas.iterator();
         Etapa etapa = null;
 
@@ -69,7 +69,7 @@ public class AccionCaminoActual extends ActionBarActivity {
                 String[] nombreParada = nombreEtapa[0].split(" - ");
                 Toast.makeText(getApplicationContext(), "Seleccionado: " + nombreEtapa[0], Toast.LENGTH_SHORT).show();
 
-                ArrayList<Etapa> listaEtapas = user.getCaminoActual().getListaEtapas();
+                ArrayList<Etapa> listaEtapas = usuario.getCaminoActual().getListaEtapas();
                 Iterator<Etapa> itr2 = listaEtapas.iterator();
                 Etapa etapa = null;
                 boolean encontrado = false;
@@ -82,7 +82,7 @@ public class AccionCaminoActual extends ActionBarActivity {
                     }
                 }
 
-                Log.d(AccionCaminoActual.DATOS_PARADA, "Etapa: " + etapa.toString());
+                Log.d(ActivityCaminoActual.DATOS_PARADA, "Etapa: " + etapa.toString());
 
                 ArrayList<LatLng> listaCoordsParadas = new ArrayList<LatLng>(etapa.getListaCoordsParadas());
 
@@ -92,7 +92,7 @@ public class AccionCaminoActual extends ActionBarActivity {
                 PolylineOptions puntos = new PolylineOptions();
                 puntos.addAll(listaCoordsParadas);
 
-                map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+                map = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).getMap();
                 map.clear();
 
                 map.addMarker(new MarkerOptions().position(posInicial).title(nombreParada[0]));
@@ -107,7 +107,7 @@ public class AccionCaminoActual extends ActionBarActivity {
 
     public void menuPrincipal(View view) {
         Usuario usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        Intent i = new Intent(AccionCaminoActual.this, AccionMenuPrincipal.class);
+        Intent i = new Intent(ActivityCaminoActual.this, ActivityMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
         startActivity(i);
     }
@@ -115,7 +115,7 @@ public class AccionCaminoActual extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_accion_camino_actual, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_camino_actual, menu);
         return true;
     }
 

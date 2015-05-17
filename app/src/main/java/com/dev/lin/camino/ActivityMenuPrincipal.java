@@ -17,7 +17,7 @@ import java.io.Serializable;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class AccionMenuPrincipal extends ActionBarActivity {
+public class ActivityMenuPrincipal extends ActionBarActivity {
     private Usuario usuarioSeleccionado = null;
 
     @Override
@@ -31,30 +31,30 @@ public class AccionMenuPrincipal extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_accion_menu_principal, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_menu_principal, menu);
         return true;
     }
 
     public void datosUsuario(View view) {
-        Intent i = new Intent(AccionMenuPrincipal.this, AccionUsuarioDatos.class);
+        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityUsuarioDatos.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }
 
     public void caminoNuevo(View view) {
-        Intent i = new Intent(AccionMenuPrincipal.this, AccionCaminoNuevo.class);
+        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityCaminoNuevo.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }
 
     public void caminoActual(View view) {
         if (usuarioSeleccionado.getCaminoActual() != null) {
-            Intent i = new Intent(AccionMenuPrincipal.this, AccionCaminoActual.class);
+            Intent i = new Intent(ActivityMenuPrincipal.this, ActivityCaminoActual.class);
             i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
             startActivity(i);
         } else {
             Toast.makeText(this, "No tiene asignado un camino actual", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(AccionMenuPrincipal.this, AccionMenuPrincipal.class);
+            Intent i = new Intent(ActivityMenuPrincipal.this, ActivityMenuPrincipal.class);
             i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
             startActivity(i);
         }

@@ -23,7 +23,7 @@ import java.util.Iterator;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class AccionUsuarioDatos extends ActionBarActivity {
+public class ActivityUsuarioDatos extends ActionBarActivity {
     private static final String DATOS_USUARIO = "DatosUsuario";
     protected String[] valoresComplexion = {"Nada deportista", "Poco deportista", "Deportista Amateur", "Deportista profesional"};
     private Usuario usuarioSeleccionado = null;
@@ -32,16 +32,16 @@ public class AccionUsuarioDatos extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_datos_usuario);
+        setContentView(R.layout.activity_usuario_datos);
 
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        //       Log.d(AccionUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.toString());
-//        Log.d(AccionUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.getNombreCaminoActual());
+        //       Log.d(ActivityUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.toString());
+//        Log.d(ActivityUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.getNombreCaminoActual());
 
         ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + usuarioSeleccionado.getNombre());
         ((EditText) findViewById(R.id.editTextAltura)).setText("" + usuarioSeleccionado.getAltura());
         ((EditText) findViewById(R.id.editTextPeso)).setText("" + usuarioSeleccionado.getPeso());
-        ((TextView) findViewById(R.id.textViewDistMax)).setText("   " + usuarioSeleccionado.getKmMaximos() + " Kms");
+        ((TextView) findViewById(R.id.textViewDistanciaMax)).setText("   " + usuarioSeleccionado.getKmMaximos() + " Kms");
 
         ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, valoresComplexion);
         Spinner spinnerComplexion = (Spinner) findViewById(R.id.spinnerComplexion);
@@ -59,7 +59,7 @@ public class AccionUsuarioDatos extends ActionBarActivity {
                         String seleccionado = (String) a.getItemAtPosition(position);
                         usuarioSeleccionado.setCaminoActual(buscarCamino(seleccionado));
                         GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
-                        Intent i = new Intent(AccionUsuarioDatos.this, AccionCaminoActual.class);
+                        Intent i = new Intent(ActivityUsuarioDatos.this, ActivityCaminoActual.class);
                         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
                         startActivity(i);
                     }
@@ -104,7 +104,7 @@ public class AccionUsuarioDatos extends ActionBarActivity {
         usuarioSeleccionado.calcularKmMaximos();
         GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
 
-        Intent i = new Intent(AccionUsuarioDatos.this, AccionMenuPrincipal.class);
+        Intent i = new Intent(ActivityUsuarioDatos.this, ActivityMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
         startActivity(i);
     }
@@ -112,7 +112,7 @@ public class AccionUsuarioDatos extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_accion_usuario_datos, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_usuario_datos, menu);
 
         return true;
     }
