@@ -55,7 +55,7 @@ public class Etapa implements Serializable {
         ArrayList<Parada> listaParadas = new ArrayList<Parada>();
 
         Iterator<Parada> itr = GestionFicheros.listaParadasCaminoFrances.iterator();
-        Parada paradaInicio = GestionFicheros.listaParadasCaminoFrances.get(this.indiceParadas.get(0) - 1);
+        Parada paradaInicio = GestionFicheros.listaParadasCaminoFrances.get(this.indiceParadas.get(0)-1 );
         Parada paradaFin = GestionFicheros.listaParadasCaminoFrances.get(this.indiceParadas.get(this.indiceParadas.size() - 2));
 
         boolean dentro = false;

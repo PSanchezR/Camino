@@ -100,7 +100,6 @@ public class AccionCaminoNuevo extends ActionBarActivity {
         if (correcto) {
             //Comprobar donde recibe usuario seleccionado y como construye etapas y caminos
             etapas = crearEtapasCaminoNuevo(dias, comienzoCamino, nombre, kmDia);
-            //etapas = pruebaETAPAS();
             camino = new Camino(nombre, etapas);
 
             //Primera prueba estableciendo un único camino
@@ -152,7 +151,7 @@ public class AccionCaminoNuevo extends ActionBarActivity {
 
     public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String comienzoCamino, String nombreCamino, int kmMax) {
         ArrayList<Etapa> listaEtapas = new ArrayList<Etapa>();
-        ArrayList<Parada> paradasEtapa = new ArrayList<Parada>();
+        ArrayList<Integer> paradasEtapa = new ArrayList<Integer>();
         Double km = 0.0;
         boolean semaforo = true;
         int ordenParada = 1;
@@ -171,47 +170,40 @@ public class AccionCaminoNuevo extends ActionBarActivity {
                 inicio = true;
             }
         }
-
         // Mientras queden dias o no se alcance la ciudad final
-        while (dias >= 0) {
+        while (dias > 0) {
             semaforo = true;
-            paradasEtapa.clear();
-
             while (semaforo) {
                 if (GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente() + km <= kmMax) {
-                    paradasEtapa.add(GestionFicheros.listaParadasCaminoFrances.get(ordenParada));
+
+                    paradasEtapa.add(ordenParada);
                     km += GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente();
 
                     if (ordenParada == GestionFicheros.listaParadasCaminoFrances.size() - 1) {
-                        Toast.makeText(this, "" + ordenParada, Toast.LENGTH_SHORT).show();
                         dias = 0;
                         km = 9999.0;
                         ordenParada--;
                     } else {
                         ordenParada++;
                     }
-
                 } else {
-
                     //Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la parada mas cercana que sí tenga alojamientos.
-                    while (!paradasEtapa.get(paradasEtapa.size() - 1).getHotel() && !paradasEtapa.get(paradasEtapa.size() - 1).getAlbergue()) {
-                        Toast.makeText(this, "quitando etapa: " + paradasEtapa.get(paradasEtapa.size() - 1), Toast.LENGTH_SHORT).show();
+                    while (!GestionFicheros.listaParadasCaminoFrances.get(paradasEtapa.get(paradasEtapa.size() - 1)).getHotel() &&
+                           !GestionFicheros.listaParadasCaminoFrances.get(paradasEtapa.get(paradasEtapa.size() - 1)).getAlbergue()) {
                         km -= GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistAnterior();
                         paradasEtapa.remove(paradasEtapa.size() - 1);
                         ordenParada--;
                     }
-
-                    //listaEtapas.add(new Etapa(ordenEtapa, paradasEtapa));
+                    listaEtapas.add(new Etapa(ordenEtapa, paradasEtapa));
+                    paradasEtapa.clear();
                     ordenEtapa++;
                     ordenParada--;
                     km = 0.0;
                     dias--;
                     semaforo = false;
                 }
-
             }
         }
-
         return listaEtapas;
     }
 
