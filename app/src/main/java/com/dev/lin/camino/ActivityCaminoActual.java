@@ -82,6 +82,10 @@ public class ActivityCaminoActual extends ActionBarActivity {
                     }
                 }
 
+                Intent i = new Intent(ActivityCaminoActual.this, ActivityEtapaSeleccionada.class);
+                i.putExtra("etapaSeleccionada", etapa);
+                startActivity(i);
+                /*
                 Log.d(ActivityCaminoActual.DATOS_PARADA, "Etapa: " + etapa.toString());
 
                 ArrayList<LatLng> listaCoordsParadas = new ArrayList<LatLng>(etapa.getListaCoordsParadas());
@@ -101,6 +105,7 @@ public class ActivityCaminoActual extends ActionBarActivity {
                 map.addPolyline(puntos);
 
                 map.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 11.0f));
+                */
             }
         });
     }
