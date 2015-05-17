@@ -3,7 +3,6 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,6 +50,9 @@ public class ActivityCaminoActual extends ActionBarActivity {
         DecimalFormat df = new DecimalFormat("##.##");
         df.setRoundingMode(RoundingMode.UP);
         ArrayList<Etapa> listaEtapas = usuario.getCaminoActual().getListaEtapas();
+
+        this.dibujarMapaCamino(listaEtapas);
+
         Iterator<Etapa> itr = listaEtapas.iterator();
         Etapa etapa = null;
 
@@ -82,25 +84,9 @@ public class ActivityCaminoActual extends ActionBarActivity {
                     }
                 }
 
-                Log.d(ActivityCaminoActual.DATOS_PARADA, "Etapa: " + etapa.toString());
-
-                ArrayList<LatLng> listaCoordsParadas = new ArrayList<LatLng>(etapa.getListaCoordsParadas());
-
-                LatLng posInicial = listaCoordsParadas.get(0);
-                LatLng posFinal = listaCoordsParadas.get(listaCoordsParadas.size() - 1);
-
-                PolylineOptions puntos = new PolylineOptions();
-                puntos.addAll(listaCoordsParadas);
-
-                map = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).getMap();
-                map.clear();
-
-                map.addMarker(new MarkerOptions().position(posInicial).title(nombreParada[0]));
-                map.addMarker(new MarkerOptions().position(posFinal).title(nombreParada[1]));
-
-                map.addPolyline(puntos);
-
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 11.0f));
+                Intent i = new Intent(ActivityCaminoActual.this, ActivityEtapaSeleccionada.class);
+                i.putExtra("etapaSeleccionada", etapa);
+                startActivity(i);
             }
         });
     }
@@ -110,6 +96,42 @@ public class ActivityCaminoActual extends ActionBarActivity {
         Intent i = new Intent(ActivityCaminoActual.this, ActivityMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
         startActivity(i);
+    }
+
+    public void dibujarMapaCamino(ArrayList<Etapa> listaEtapas) {
+        ArrayList<LatLng> listaCoordsParadas = new ArrayList<LatLng>();
+
+        Iterator<Etapa> itr = listaEtapas.iterator();
+        Etapa etapa = null;
+        LatLng coor = null;
+
+        while (itr.hasNext()) {
+            etapa = itr.next();
+
+            Iterator<LatLng> itr2 = etapa.getListaCoordsParadas().iterator();
+
+            while (itr2.hasNext()) {
+                coor = itr2.next();
+                listaCoordsParadas.add(coor);
+            }
+
+        }
+
+        LatLng posInicial = listaCoordsParadas.get(0);
+        LatLng posFinal = listaCoordsParadas.get(listaCoordsParadas.size() - 1);
+
+        PolylineOptions puntos = new PolylineOptions();
+        puntos.addAll(listaCoordsParadas);
+
+        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).getMap();
+        map.clear();
+
+        map.addMarker(new MarkerOptions().position(posInicial).title("Inicio"));
+        map.addMarker(new MarkerOptions().position(posFinal).title("Fin"));
+
+        map.addPolyline(puntos);
+
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 7.0f));
     }
 
     @Override

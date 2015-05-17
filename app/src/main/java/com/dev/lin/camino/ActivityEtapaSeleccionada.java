@@ -4,6 +4,20 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Datos de la etapa seleccionada del Camino de Santiago
@@ -12,11 +26,55 @@ import android.view.MenuItem;
  * @author Pablo Sánchez Robles
  */
 public class ActivityEtapaSeleccionada extends ActionBarActivity {
+    private Etapa etapaSeleccionada = null;
+    private ArrayList<String> nombresParadas = new ArrayList<String>();
+    private GoogleMap map;
+    private Marker inicio;
+    private Marker fin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_etapa_seleccionada);
+        etapaSeleccionada = (Etapa) getIntent().getSerializableExtra("etapaSeleccionada");
+
+        ListView lista = (ListView) findViewById(R.id.listViewListaParadas);
+        ArrayAdapter<String> adaptador;
+
+        ArrayList<Parada> listaParadas = etapaSeleccionada.getListaParadas();
+
+
+        Iterator<Parada> itr = listaParadas.iterator();
+        Parada parada = null;
+
+        while (itr.hasNext()) {
+            parada = itr.next();
+            nombresParadas.add(parada.getNombre());
+        }
+
+        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresParadas);
+        lista.setAdapter(adaptador);
+
+        ((TextView) findViewById(R.id.textViewNombre)).setText("Etapa " + etapaSeleccionada.getOrden() + ": " + etapaSeleccionada.getNombre());
+        String[] nombreParada = etapaSeleccionada.getNombre().split(" - ");
+
+        ArrayList<LatLng> listaCoordsParadas = new ArrayList<LatLng>(etapaSeleccionada.getListaCoordsParadas());
+
+        LatLng posInicial = listaCoordsParadas.get(0);
+        LatLng posFinal = listaCoordsParadas.get(listaCoordsParadas.size() - 1);
+
+        PolylineOptions puntos = new PolylineOptions();
+        puntos.addAll(listaCoordsParadas);
+
+        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).getMap();
+        map.clear();
+
+        map.addMarker(new MarkerOptions().position(posInicial).title(nombreParada[0]));
+        map.addMarker(new MarkerOptions().position(posFinal).title(nombreParada[1]));
+
+        map.addPolyline(puntos);
+
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 11.0f));
     }
 
     @Override

@@ -22,7 +22,7 @@
         <LinearLayout
             android:id="@+id/linearLayoutMapa"
             android:layout_width="match_parent"
-            android:layout_height="171dp"
+            android:layout_height="250dp"
             android:orientation="vertical"
             android:weightSum="1">
 
@@ -42,39 +42,35 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayoutDatos"
+            android:id="@+id/linearLayoutListaParadas"
             android:layout_width="match_parent"
-            android:layout_height="178dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:orientation="vertical">
+            android:layout_height="130dp"
+            android:layout_weight="0.17"
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textViewEtiquetaParadas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Perfil:"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="Paradas:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <WebView
-                android:id="@+id/webView2"
+            <ListView
+                android:id="@+id/listViewListaParadas"
                 android:layout_width="match_parent"
-                android:layout_height="185dp"
-                android:layout_gravity="center_horizontal" />
+                android:layout_height="wrap_content"
+                android:layout_weight="0.43" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayoutHistoria"
             android:layout_width="wrap_content"
-            android:layout_height="109dp"
+            android:layout_height="100dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/linearLayoutDatos"
-            android:layout_weight="1.15"
             android:orientation="vertical"
             android:weightSum="1">
 
@@ -87,8 +83,8 @@
 
             <TextView
                 android:id="@+id/textViewHistoria"
-                android:layout_width="371dp"
-                android:layout_height="wrap_content"
+                android:layout_width="347dp"
+                android:layout_height="50dp"
                 android:text="Aquí irá una breve historia de la etapa seleccionada............."
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
