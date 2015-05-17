@@ -47,7 +47,6 @@ public class ActivityUsuarioDatos extends ActionBarActivity {
         Spinner spinnerComplexion = (Spinner) findViewById(R.id.spinnerComplexion);
         spinnerComplexion.setAdapter(adaptador);
         spinnerComplexion.setSelection(usuarioSeleccionado.getComplexion());
-
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cargarCaminos());
         ListView lista = (ListView) findViewById(R.id.listViewMisCaminos);
         lista.setAdapter(adapter);

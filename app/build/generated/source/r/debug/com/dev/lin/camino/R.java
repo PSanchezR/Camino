@@ -1483,19 +1483,19 @@ containing a value of this type.
         public static final int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f070005;
     }
     public static final class color {
-        public static final int abc_background_cache_hint_selector_material_dark=0x7f080048;
-        public static final int abc_background_cache_hint_selector_material_light=0x7f080049;
+        public static final int abc_background_cache_hint_selector_material_dark=0x7f08004d;
+        public static final int abc_background_cache_hint_selector_material_light=0x7f08004e;
         public static final int abc_input_method_navigation_guard=0x7f080000;
-        public static final int abc_primary_text_disable_only_material_dark=0x7f08004a;
-        public static final int abc_primary_text_disable_only_material_light=0x7f08004b;
-        public static final int abc_primary_text_material_dark=0x7f08004c;
-        public static final int abc_primary_text_material_light=0x7f08004d;
-        public static final int abc_search_url_text=0x7f08004e;
+        public static final int abc_primary_text_disable_only_material_dark=0x7f08004f;
+        public static final int abc_primary_text_disable_only_material_light=0x7f080050;
+        public static final int abc_primary_text_material_dark=0x7f080051;
+        public static final int abc_primary_text_material_light=0x7f080052;
+        public static final int abc_search_url_text=0x7f080053;
         public static final int abc_search_url_text_normal=0x7f080001;
         public static final int abc_search_url_text_pressed=0x7f080002;
         public static final int abc_search_url_text_selected=0x7f080003;
-        public static final int abc_secondary_text_material_dark=0x7f08004f;
-        public static final int abc_secondary_text_material_light=0x7f080050;
+        public static final int abc_secondary_text_material_dark=0x7f080054;
+        public static final int abc_secondary_text_material_light=0x7f080055;
         public static final int accent_material_dark=0x7f080004;
         public static final int accent_material_light=0x7f080005;
         public static final int background_floating_material_dark=0x7f080006;
@@ -1520,8 +1520,8 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f080019;
         public static final int common_signin_btn_light_text_focused=0x7f08001a;
         public static final int common_signin_btn_light_text_pressed=0x7f08001b;
-        public static final int common_signin_btn_text_dark=0x7f080051;
-        public static final int common_signin_btn_text_light=0x7f080052;
+        public static final int common_signin_btn_text_dark=0x7f080056;
+        public static final int common_signin_btn_text_light=0x7f080057;
         public static final int dim_foreground_disabled_material_dark=0x7f08001c;
         public static final int dim_foreground_disabled_material_light=0x7f08001d;
         public static final int dim_foreground_material_dark=0x7f08001e;
@@ -1553,21 +1553,26 @@ containing a value of this type.
         public static final int secondary_text_disabled_material_light=0x7f080038;
         public static final int switch_thumb_normal_material_dark=0x7f080039;
         public static final int switch_thumb_normal_material_light=0x7f08003a;
-        public static final int wallet_bright_foreground_disabled_holo_light=0x7f08003b;
-        public static final int wallet_bright_foreground_holo_dark=0x7f08003c;
-        public static final int wallet_bright_foreground_holo_light=0x7f08003d;
-        public static final int wallet_dim_foreground_disabled_holo_dark=0x7f08003e;
-        public static final int wallet_dim_foreground_holo_dark=0x7f08003f;
-        public static final int wallet_dim_foreground_inverse_disabled_holo_dark=0x7f080040;
-        public static final int wallet_dim_foreground_inverse_holo_dark=0x7f080041;
-        public static final int wallet_highlighted_text_holo_dark=0x7f080042;
-        public static final int wallet_highlighted_text_holo_light=0x7f080043;
-        public static final int wallet_hint_foreground_holo_dark=0x7f080044;
-        public static final int wallet_hint_foreground_holo_light=0x7f080045;
-        public static final int wallet_holo_blue_light=0x7f080046;
-        public static final int wallet_link_text_light=0x7f080047;
-        public static final int wallet_primary_text_holo_light=0x7f080053;
-        public static final int wallet_secondary_text_holo_dark=0x7f080054;
+        public static final int theme_accent=0x7f08003b;
+        public static final int theme_components=0x7f08003c;
+        public static final int theme_dark=0x7f08003d;
+        public static final int theme_primary=0x7f08003e;
+        public static final int theme_wbackgound=0x7f08003f;
+        public static final int wallet_bright_foreground_disabled_holo_light=0x7f080040;
+        public static final int wallet_bright_foreground_holo_dark=0x7f080041;
+        public static final int wallet_bright_foreground_holo_light=0x7f080042;
+        public static final int wallet_dim_foreground_disabled_holo_dark=0x7f080043;
+        public static final int wallet_dim_foreground_holo_dark=0x7f080044;
+        public static final int wallet_dim_foreground_inverse_disabled_holo_dark=0x7f080045;
+        public static final int wallet_dim_foreground_inverse_holo_dark=0x7f080046;
+        public static final int wallet_highlighted_text_holo_dark=0x7f080047;
+        public static final int wallet_highlighted_text_holo_light=0x7f080048;
+        public static final int wallet_hint_foreground_holo_dark=0x7f080049;
+        public static final int wallet_hint_foreground_holo_light=0x7f08004a;
+        public static final int wallet_holo_blue_light=0x7f08004b;
+        public static final int wallet_link_text_light=0x7f08004c;
+        public static final int wallet_primary_text_holo_light=0x7f080058;
+        public static final int wallet_secondary_text_holo_dark=0x7f080059;
     }
     public static final class dimen {
         public static final int abc_action_bar_default_height_material=0x7f090000;
@@ -1999,8 +2004,6 @@ containing a value of this type.
         public static final int wallet_buy_button_place_holder=0x7f0c0042;
     }
     public static final class style {
-        /**  Customize your theme here. 
-         */
         public static final int AppTheme=0x7f0d0000;
         public static final int Base_TextAppearance_AppCompat=0x7f0d0001;
         public static final int Base_TextAppearance_AppCompat_Body1=0x7f0d0002;
