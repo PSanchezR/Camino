@@ -36,11 +36,12 @@
 
         <Button
             android:id="@+id/buttonNuevoUsuario"
-            android:layout_width="144dp"
+            android:layout_width="46dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:onClick="nuevoUsuario"
-            android:text="Nuevo Usuario"
-            android:background="@drawable/btn_style" />
+            android:text="+"
+            android:background="@drawable/btn_style"
+            android:textSize="35dp" />
     </LinearLayout>
 </RelativeLayout>

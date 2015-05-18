@@ -145,22 +145,15 @@
                 </TableRow>
             </TableLayout>
 
-            <TextView
-                android:id="@+id/textViewCrearUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Creación de nuevo usuario"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
             <Button
                 android:id="@+id/buttonCrearUsuario"
-                android:layout_width="wrap_content"
+                android:layout_width="54dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:onClick="crearUsuario"
-                android:text="Crear usuario"
-                android:background="@drawable/btn_style" />
+                android:text="+"
+                android:background="@drawable/btn_style"
+                android:textSize="35dp" />
         </LinearLayout>
 
     </LinearLayout>
