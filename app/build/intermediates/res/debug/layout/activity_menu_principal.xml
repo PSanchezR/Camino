@@ -75,7 +75,16 @@
             android:layout_width="fill_parent"
             android:layout_height="145dp"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/pruebaGPS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="probarGPS"
+                android:text="Probar GPS"
+                android:background="@drawable/btn_style" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
-<!-- From: file:/home/lin/Escritorio/APPS/Camino/app/src/main/res/layout/activity_menu_principal.xml -->
+<!-- From: file:/home/germaaan/AndroidStudioProjects/Camino/app/src/main/res/layout/activity_menu_principal.xml -->
