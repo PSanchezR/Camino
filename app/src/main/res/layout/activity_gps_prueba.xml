@@ -4,15 +4,21 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textViewEtiqueta"
+        android:id="@+id/textViewOrigen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="2"
-        android:text="Coordenadas:"
+        android:text=" "
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <TextView
-        android:id="@+id/textViewCoordenadas"
+        android:id="@+id/textViewDestino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:text=" "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:id="@+id/textViewDistancia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="2"

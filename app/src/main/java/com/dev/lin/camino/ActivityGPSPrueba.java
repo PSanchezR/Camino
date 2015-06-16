@@ -9,14 +9,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.model.LatLng;
+
+import java.util.Date;
+
 /**
  * Created by germaaan on 16/06/15.
  */
-public class ActivityGPSPrueba extends ActionBarActivity implements LocationListener{
+public class ActivityGPSPrueba extends ActionBarActivity implements LocationListener {
     double latitud;
     double longitud;
+    float distancia;
     boolean gpsActivo;
-    Location location;
+    Location origen;
+    Location destino;
+    LatLng coordsDestino;
     LocationManager locationManager;
 
     @Override
@@ -25,16 +32,28 @@ public class ActivityGPSPrueba extends ActionBarActivity implements LocationList
         setContentView(R.layout.activity_gps_prueba);
 
         try {
-            locationManager = (LocationManager)this.getBaseContext().getSystemService(LOCATION_SERVICE);
+            locationManager = (LocationManager) this.getBaseContext().getSystemService(LOCATION_SERVICE);
             gpsActivo = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        }catch(Exception e){}
+        } catch (Exception e) {
+        }
 
-        if(gpsActivo){
-            locationManager.requestLocationUpdates(locationManager.GPS_PROVIDER,60000,10,this);
-            location = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
-            latitud = location.getLatitude();
-            longitud = location.getLongitude();
-            ((TextView) findViewById(R.id.textViewCoordenadas)).setText(latitud+","+longitud);
+        if (gpsActivo) {
+            locationManager.requestLocationUpdates(locationManager.GPS_PROVIDER, 60000, 10, this);
+            origen = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
+            latitud = origen.getLatitude();
+            longitud = origen.getLongitude();
+
+            coordsDestino = GestionFicheros.listaParadasCaminoFrances.get(0).getListaCoords().get(GestionFicheros.listaParadasCaminoFrances.get(0).getListaCoords().size() - 1);
+            destino = new Location("Destino");
+            destino.setLatitude(coordsDestino.latitude);
+            destino.setLongitude(coordsDestino.longitude);
+            destino.setTime(new Date().getTime());
+
+            distancia = origen.distanceTo(destino);
+
+            ((TextView) findViewById(R.id.textViewOrigen)).setText("Coordenadas actuales: " + latitud + "," + longitud);
+            ((TextView) findViewById(R.id.textViewDestino)).setText("Coordenadas coordsDestino: " + coordsDestino.latitude + "," + coordsDestino.longitude);
+            ((TextView) findViewById(R.id.textViewDistancia)).setText("Distancia: " + distancia/1000 + "km");
         }
         //En caso contrario mostrar un toast de aviso
     }
