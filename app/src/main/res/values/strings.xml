@@ -13,4 +13,6 @@
     <string name="title_activity_sf">sf</string>
     <string name="title_activity_usuario_datos">datos_usuario</string>
     <string name="title_activity_datos__usuario">Datos_Usuario</string>
+    <string name="title_activity_foto_geoposicionada">fotoGeoposicionada</string>
+    <string name="title_activity_activityfoto_geoposicionada">ActivityfotoGeoposicionada</string>
 </resources>

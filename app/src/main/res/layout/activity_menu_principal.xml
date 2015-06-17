@@ -84,6 +84,15 @@
                 android:onClick="probarGPS"
                 android:text="Probar GPS"
                 android:background="@drawable/btn_style" />
+
+            <Button
+                android:id="@+id/buttonFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="fotoGeoposicionada"
+                android:text="foto"
+                android:background="@drawable/btn_style" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

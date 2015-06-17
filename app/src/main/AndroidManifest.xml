@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dev.lin.camino"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -30,53 +30,68 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
-        <!--android:theme="@style/AppTheme" -->
+        android:theme="@style/AppTheme" >
+
+        <!-- android:theme="@style/AppTheme" -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBV33eHmVnvyhHjSRTVqM7ZHEu_pB8xfPg" />
-        <!--android:value="AIzaSyCcTiRquSCzcR7Vd7L0CS8cQCStwEIR48A" />-->
+        <!-- android:value="AIzaSyCcTiRquSCzcR7Vd7L0CS8cQCStwEIR48A" /> -->
 
         <activity
             android:name=".ActivityPortada"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ActivityCaminoActual"
-            android:label="Camino actual"></activity>
+            android:label="Camino actual" />
         <activity
             android:name=".ActivityCaminoNuevo"
-            android:label="Nuevo camino"></activity>
+            android:label="Nuevo camino" />
         <activity
             android:name=".ActivityEtapaSeleccionada"
-            android:label="Selección de etapa"></activity>
+            android:label="Selección de etapa" />
         <activity
             android:name=".ActivityMenuPrincipal"
-            android:label="Menú principal"></activity>
+            android:label="Menú principal" />
         <activity
             android:name=".ActivityUsuarioDatos"
-            android:label="Datos de usuario"></activity>
+            android:label="Datos de usuario" />
         <activity
             android:name=".ActivityUsuarioNuevo"
-            android:label="Nuevo usuario"></activity>
+            android:label="Nuevo usuario" />
         <activity
             android:name=".ActivityUsuarioSeleccionado"
-            android:label="Selección de usuario"></activity>
+            android:label="Selección de usuario" />
         <activity
             android:name=".ActivityGPSPrueba"
-            android:label="Prueba de GPS"></activity>
+            android:label="Prueba de GPS" />
+        <activity
+            android:name=".fotoGeoposicionada"
+            android:label="@string/title_activity_foto_geoposicionada" >
+        </activity>
+        <activity
+            android:name=".ActivityfotoGeoposicionada"
+            android:label="@string/title_activity_activityfoto_geoposicionada" >
+        </activity>
     </application>
 
 </manifest>
