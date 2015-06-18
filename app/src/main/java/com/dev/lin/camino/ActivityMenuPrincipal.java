@@ -68,7 +68,7 @@ public class ActivityMenuPrincipal extends ActionBarActivity {
 
     public void fotoGeoposicionada(View view)
     {
-        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityfotoGeoposicionada.class);
+        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityFotoGeoposicionada.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }

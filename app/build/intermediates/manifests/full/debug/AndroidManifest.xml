@@ -50,7 +50,6 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBV33eHmVnvyhHjSRTVqM7ZHEu_pB8xfPg" />
-        <!-- android:value="AIzaSyCcTiRquSCzcR7Vd7L0CS8cQCStwEIR48A" /> -->
 
         <activity
             android:name="com.dev.lin.camino.ActivityPortada"
@@ -86,12 +85,8 @@
             android:name="com.dev.lin.camino.ActivityGPSPrueba"
             android:label="Prueba de GPS" />
         <activity
-            android:name="com.dev.lin.camino.fotoGeoposicionada"
-            android:label="@string/title_activity_foto_geoposicionada" >
-        </activity>
-        <activity
-            android:name="com.dev.lin.camino.ActivityfotoGeoposicionada"
-            android:label="@string/title_activity_activityfoto_geoposicionada" >
+            android:name="com.dev.lin.camino.ActivityFotoGeoposicionada"
+            android:label="Foto geoposicionada" >
         </activity>
     </application>
 
