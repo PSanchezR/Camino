@@ -8,34 +8,29 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
-import org.apache.commons.net.ftp.FTPFile;
-import org.apache.commons.net.ftp.FTPReply;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.Serializable;
-import java.net.InetAddress;
-import java.net.SocketException;
-import java.net.UnknownHostException;
 
-
+/**
+ * Captura de fotos
+ *
+ * @author German Martínez Maldonado
+ * @author Pablo Sánchez Robles
+ */
 public class ActivityFotoGeoposicionada extends ActionBarActivity {
     private String nombre;
     private Usuario usuarioSeleccionado = null;
     private ImageView imagenCapturada = null;
-    private File imagen = null;
-    private FTPClient cliente;
-    private static final String CONEXION_FTP = "ConexionFTP";
+    private File foto = null;
+    FTPClient cliente = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +45,10 @@ public class ActivityFotoGeoposicionada extends ActionBarActivity {
         File imageFolder = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camino/");
         imageFolder.mkdirs();
         nombre = usuarioSeleccionado.getNombre() + System.currentTimeMillis() + ".png";
-        imagen = new File(imageFolder, nombre);
-        Uri idImagen = Uri.fromFile(imagen);
+        foto = new File(imageFolder, nombre);
+        Uri idImagen = Uri.fromFile(foto);
         i.putExtra(MediaStore.EXTRA_OUTPUT, idImagen);
-        i.putExtra("imagen", (Serializable) imagen);
+        i.putExtra("foto", (Serializable) foto);
         startActivityForResult(i, 1);
     }
 
@@ -61,54 +56,10 @@ public class ActivityFotoGeoposicionada extends ActionBarActivity {
         Intent i = new Intent(ActivityFotoGeoposicionada.this, ActivityFotoGeoposicionada.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
 
-        if (imagen != null) {
-            i.putExtra("imagen", (Serializable) imagen);
-            subirArchivo(imagen);
-            Toast.makeText(this, "Foto subida al servidor.", Toast.LENGTH_SHORT).show();
+        if (foto != null) {
+            new ConexionFTP().execute(foto);
         } else {
             Toast.makeText(this, "No se ha capturado ninguna foto.", Toast.LENGTH_SHORT).show();
-        }
-
-        startActivity(i);
-    }
-
-    private void conectarServidor(String url, String user, String pass) {
-        boolean status = false;
-        try {
-            cliente = new FTPClient();
-            cliente.setConnectTimeout(10 * 1000);
-            cliente.connect(InetAddress.getByName(url));
-            status = cliente.login(user, pass);
-            Log.d(ActivityFotoGeoposicionada.CONEXION_FTP, "Conexión FTP: " + String.valueOf(status));
-            if (FTPReply.isPositiveCompletion(cliente.getReplyCode())) {
-                cliente.changeWorkingDirectory("fotos");
-                cliente.setFileType(FTP.BINARY_FILE_TYPE);
-                cliente.enterLocalPassiveMode();
-                FTPFile[] mFileArray = cliente.listFiles();
-                Log.d(ActivityFotoGeoposicionada.CONEXION_FTP, "Tamaño: " + String.valueOf(mFileArray.length));
-            }
-        } catch (SocketException e) {
-            Log.e(ActivityFotoGeoposicionada.CONEXION_FTP, "Error en la conexión: " + e.getMessage());
-        } catch (UnknownHostException e) {
-            Log.e(ActivityFotoGeoposicionada.CONEXION_FTP, "Error. Host desconocido: " + e.getMessage());
-        } catch (IOException e) {
-            Log.e(ActivityFotoGeoposicionada.CONEXION_FTP, "Error de entrada/salida: " + e.getMessage());
-        }
-    }
-
-    private void subirArchivo(File archivo) {
-        try {
-            conectarServidor("caminoapp.cloudapp.net", "caminoapp", "caminoapp");
-
-            FileInputStream fis = new FileInputStream(archivo);
-            boolean status = cliente.storeFile(archivo.getName(), fis);
-            Log.d(ActivityFotoGeoposicionada.CONEXION_FTP, "Subido: " + String.valueOf(status));
-
-            fis.close();
-            cliente.logout();
-            cliente.disconnect();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
