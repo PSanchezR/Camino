@@ -2,12 +2,15 @@ package com.dev.lin.camino;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import java.io.File;
 
 /**
  * Datos de la portada de la aplicación
@@ -22,7 +25,9 @@ public class ActivityPortada extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_portada);
 
-        GestionFicheros.generarParadasListadoCaminoFrances("caminoFrances.xml", getBaseContext());
+        GestionConfigFicheros.generarParadasListadoCaminoFrances("caminoFrances.xml", getBaseContext());
+        File imageFolder = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camino/");
+        imageFolder.mkdirs();
 
         FrameLayout frame_fondo = (FrameLayout) findViewById(R.id.frameLayoutPortada);
 

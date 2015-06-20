@@ -3,7 +3,6 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,9 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Menú principal de la aplicación
@@ -76,13 +72,13 @@ public class ActivityMenuPrincipal extends ActionBarActivity {
     }
 
     public void fotoGeoposicion(View view) {
-        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityFotoGeoposicion.class);
+        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityFotoCapturada.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }
 
     public void mostrarGaleria(View view) {
-        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityGaleria.class);
+        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityFotoListado.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }

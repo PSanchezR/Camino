@@ -36,7 +36,7 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         Log.d(ActivityCaminoNuevo.DATOS_USUARIO, usuarioSeleccionado.toString());
 
         ArrayList<String> nombresListaParadas = new ArrayList<String>();
-        Iterator<Parada> itr = GestionFicheros.listaParadasCaminoFrances.iterator();
+        Iterator<Parada> itr = GestionConfigFicheros.listaParadasCaminoFrances.iterator();
 
         while (itr.hasNext()) {
             Parada parada = itr.next();
@@ -97,7 +97,7 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
 
             //Primera prueba estableciendo un único camino
             this.usuarioSeleccionado.addCamino(camino);
-            GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+            GestionConfigFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
 
             Intent i = new Intent(ActivityCaminoNuevo.this, ActivityMenuPrincipal.class);
             i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
@@ -116,7 +116,7 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         this.usuarioSeleccionado.addCamino(camino);
         Toast.makeText(this, "Añadido el camino francés.", Toast.LENGTH_SHORT).show();
 
-        GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+        GestionConfigFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
 
         Intent i = new Intent(ActivityCaminoNuevo.this, ActivityMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
@@ -132,7 +132,7 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         boolean semaforo = true;
         boolean inicio = false;
 
-        Iterator<Parada> itr = GestionFicheros.listaParadasCaminoFrances.iterator();
+        Iterator<Parada> itr = GestionConfigFicheros.listaParadasCaminoFrances.iterator();
         Parada parada = null;
 
         // Nos situamos en el inicio del camino
@@ -148,12 +148,12 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         while (dias > 0) {
             semaforo = true;
             while (semaforo) {
-                if (GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente() + distancia <= kmMax) {
+                if (GestionConfigFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente() + distancia <= kmMax) {
 
                     listaParadasEtapa.add(ordenParada);
-                    distancia += GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente();
+                    distancia += GestionConfigFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente();
 
-                    if (ordenParada == GestionFicheros.listaParadasCaminoFrances.size() - 1) {
+                    if (ordenParada == GestionConfigFicheros.listaParadasCaminoFrances.size() - 1) {
                         dias = 0;
                         distancia = 9999.0;
                         ordenParada--;
@@ -162,9 +162,9 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
                     }
                 } else {
                     //Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la parada mas cercana que sí tenga alojamientos.
-                    while (!GestionFicheros.listaParadasCaminoFrances.get(listaParadasEtapa.get(listaParadasEtapa.size() - 1)).getHotel() &&
-                            !GestionFicheros.listaParadasCaminoFrances.get(listaParadasEtapa.get(listaParadasEtapa.size() - 1)).getAlbergue()) {
-                        distancia -= GestionFicheros.listaParadasCaminoFrances.get(ordenParada).getDistAnterior();
+                    while (!GestionConfigFicheros.listaParadasCaminoFrances.get(listaParadasEtapa.get(listaParadasEtapa.size() - 1)).getHotel() &&
+                            !GestionConfigFicheros.listaParadasCaminoFrances.get(listaParadasEtapa.get(listaParadasEtapa.size() - 1)).getAlbergue()) {
+                        distancia -= GestionConfigFicheros.listaParadasCaminoFrances.get(ordenParada).getDistAnterior();
                         listaParadasEtapa.remove(listaParadasEtapa.size() - 1);
                         ordenParada--;
                     }

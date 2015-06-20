@@ -1,6 +1,8 @@
 package com.dev.lin.camino;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -18,8 +20,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Iterator;
 
 /**
@@ -29,7 +33,7 @@ import java.util.Iterator;
  * @author Pablo Sánchez Robles
  */
 
-public class GestionFicheros {
+public class GestionConfigFicheros {
     private static final String ESCRIBIR_USUARIOS = "EscribirUsuarios";
     private static final String LEER_USUARIOS = "LeerUsuarios";
     private static final String DATOS_PARADA = "DatosParada";
@@ -45,16 +49,16 @@ public class GestionFicheros {
             fos = ctx.openFileOutput(filename, Context.MODE_PRIVATE);
 
             oos = new ObjectOutputStream(fos);
-            Log.v(GestionFicheros.ESCRIBIR_USUARIOS, "Se ha creado un archivo nuevo.");
+            Log.v(GestionConfigFicheros.ESCRIBIR_USUARIOS, "Se ha creado un archivo nuevo.");
 
             oos.writeObject(usuario);
             oos.flush();
 
             res = 0;
         } catch (FileNotFoundException e) {
-            Log.e(GestionFicheros.ESCRIBIR_USUARIOS, "Error: archivo no encontrado.\n\t" + e.getMessage());
+            Log.e(GestionConfigFicheros.ESCRIBIR_USUARIOS, "Error: archivo no encontrado.\n\t" + e.getMessage());
         } catch (IOException e) {
-            Log.e(GestionFicheros.ESCRIBIR_USUARIOS, "Error: problema de entrada salida.\n\t" + e.getMessage());
+            Log.e(GestionConfigFicheros.ESCRIBIR_USUARIOS, "Error: problema de entrada salida.\n\t" + e.getMessage());
         } finally {
             try {
                 if (fos != null) {
@@ -63,7 +67,7 @@ public class GestionFicheros {
                     oos.close();
                 }
             } catch (IOException e) {
-                Log.e(GestionFicheros.ESCRIBIR_USUARIOS, "Error: fallo al cerrar el flujo de escritura.\n\t" + e.getMessage());
+                Log.e(GestionConfigFicheros.ESCRIBIR_USUARIOS, "Error: fallo al cerrar el flujo de escritura.\n\t" + e.getMessage());
             }
         }
 
@@ -88,20 +92,20 @@ public class GestionFicheros {
 
                     while (true) {
                         Usuario usuario = (Usuario) ois.readObject();
-                        //Log.d(GestionFicheros.LEER_USUARIOS, usuario.toString());
+                        //Log.d(GestionConfigFicheros.LEER_USUARIOS, usuario.toString());
                         usuarios.add(usuario);
                     }
                 } catch (EOFException e) {
-                    Log.d(GestionFicheros.LEER_USUARIOS, "Fin de archivo.\n\t" + e.getMessage());
+                    Log.d(GestionConfigFicheros.LEER_USUARIOS, "Fin de archivo.\n\t" + e.getMessage());
                     e.printStackTrace();
                 } catch (FileNotFoundException e) {
-                    Log.e(GestionFicheros.LEER_USUARIOS, "Error: archivo no encontrado.\n\t" + e.getMessage());
+                    Log.e(GestionConfigFicheros.LEER_USUARIOS, "Error: archivo no encontrado.\n\t" + e.getMessage());
                     e.printStackTrace();
                 } catch (IOException e) {
-                    Log.e(GestionFicheros.LEER_USUARIOS, "Error: problema de entrada/salida.\n\t" + e.getMessage());
+                    Log.e(GestionConfigFicheros.LEER_USUARIOS, "Error: problema de entrada/salida.\n\t" + e.getMessage());
                     e.printStackTrace();
                 } catch (ClassNotFoundException e) {
-                    Log.e(GestionFicheros.LEER_USUARIOS, "Error: no se han podido recuperar los usuarios.\n\t" + e.getMessage());
+                    Log.e(GestionConfigFicheros.LEER_USUARIOS, "Error: no se han podido recuperar los usuarios.\n\t" + e.getMessage());
                     e.printStackTrace();
                 } finally {
                     try {
@@ -111,7 +115,7 @@ public class GestionFicheros {
                             ois.close();
                         }
                     } catch (IOException e) {
-                        Log.e(GestionFicheros.LEER_USUARIOS, "Error: fallo al cerrar el flujo de lectura.\n\t" + e.getMessage());
+                        Log.e(GestionConfigFicheros.LEER_USUARIOS, "Error: fallo al cerrar el flujo de lectura.\n\t" + e.getMessage());
                         e.printStackTrace();
                     }
                 }
@@ -122,12 +126,12 @@ public class GestionFicheros {
     }
 
     public static void generarParadasListadoCaminoFrances(String archivoCamino, Context ctx) {
-        Iterator<Parada> itr = GestionFicheros.parsearArchivoCamino(archivoCamino, ctx).iterator();
+        Iterator<Parada> itr = GestionConfigFicheros.parsearArchivoCamino(archivoCamino, ctx).iterator();
         Parada parada;
 
         while (itr.hasNext()) {
             parada = itr.next();
-            GestionFicheros.listaParadasCaminoFrances.add(parada);
+            GestionConfigFicheros.listaParadasCaminoFrances.add(parada);
         }
     }
 
@@ -217,12 +221,33 @@ public class GestionFicheros {
                 eventType = parser.next();
             }
         } catch (XmlPullParserException e) {
-            Log.e(GestionFicheros.DATOS_PARADA, "Error en el procesador del archivo XML: " + e.getMessage());
+            Log.e(GestionConfigFicheros.DATOS_PARADA, "Error en el procesador del archivo XML: " + e.getMessage());
         } catch (IOException e) {
-            Log.e(GestionFicheros.DATOS_PARADA, "Error de entrada/salida en el archivo XML: " + e.getMessage());
+            Log.e(GestionConfigFicheros.DATOS_PARADA, "Error de entrada/salida en el archivo XML: " + e.getMessage());
         }
 
         return paradas;
+    }
+
+    public static boolean comprobarConexion(Context ctx) {
+        boolean conexion = false;
+
+        ConnectivityManager gestor = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] redes = gestor.getAllNetworkInfo();
+
+        for (int i = 0; i < redes.length; i++) {
+            if (redes[i].getState() == NetworkInfo.State.CONNECTED) {
+                conexion = true;
+            }
+        }
+
+        return conexion;
+    }
+
+    public static String getFechaHoraActual() {
+        Date fecha = new Date();
+        SimpleDateFormat formateador = new SimpleDateFormat("ddMMyy-hhmmss");
+        return formateador.format(fecha);
     }
 
 }

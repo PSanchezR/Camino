@@ -30,7 +30,7 @@ public class ActivityUsuarioSeleccionado extends ActionBarActivity {
 
     //Este método carga los usuarios leidos del fichero en la ListView
     public void cargarUsuarios() {
-        this.usuarios = new ArrayList<Usuario>(GestionFicheros.leerUsuarios(getBaseContext()));
+        this.usuarios = new ArrayList<Usuario>(GestionConfigFicheros.leerUsuarios(getBaseContext()));
 
         Iterator<Usuario> itr = usuarios.iterator();
 

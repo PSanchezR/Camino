@@ -1,29 +1,25 @@
 package com.dev.lin.camino;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Captura de fotos
@@ -31,7 +27,7 @@ import java.util.Date;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class ActivityFotoGeoposicion extends ActionBarActivity {
+public class ActivityFotoCapturada extends ActionBarActivity {
     private String nombreArchivo = null;
     private Usuario usuarioSeleccionado = null;
     private ImageView fotoCapturada = null;
@@ -39,7 +35,6 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
     private boolean estadoRed = false;
     private boolean fotoSubida = false;
 
-    private LocationManager locationManager = null;
     private double latitud = 0.0;
     private double longitud = 0.0;
     private Coordenadas coords = null;
@@ -47,21 +42,22 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
     private File archivoCoords = null;
     private Location origen = null;
 
+    private static final String FOTO_CAPTURADA = "FotoCapturada";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foto_geoposicion);
+        setContentView(R.layout.activity_foto_capturada);
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         fotoCapturada = (ImageView) this.findViewById(R.id.imageViewFoto);
     }
 
-    public void sacarFoto(View view) {
+    public void sacarFoto() {
         Intent i = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         File imageFolder = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camino/");
         PrintWriter out = null;
 
-        imageFolder.mkdirs();
-        nombreArchivo = usuarioSeleccionado.getNombre() + "_" + getFechaHoraActual();
+        nombreArchivo = usuarioSeleccionado.getNombre() + "_" + GestionConfigFicheros.getFechaHoraActual();
         archivoFoto = new File(imageFolder, nombreArchivo + ".png");
         archivoCoords = new File(imageFolder, nombreArchivo + ".dat");
 
@@ -98,17 +94,30 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
         }
     }
 
-    public void enviarFoto(View view) {
+    public void enviarFoto() {
         if (!fotoSubida) {
-            estadoRed = this.comprobarConexion();
+            estadoRed = GestionConfigFicheros.comprobarConexion(this.getBaseContext());
 
             if (estadoRed) {
-                if (archivoFoto != null) {
-                    Toast.makeText(this, "Foto subida al servidor.", Toast.LENGTH_SHORT).show();
-                    new AsyncTaskSubidaArchivos().execute(archivoFoto, archivoCoords);
-                    fotoSubida = true;
-                } else {
-                    Toast.makeText(this, "No se ha capturado ninguna foto.", Toast.LENGTH_SHORT).show();
+                AsyncTaskArchivosSubir task = new AsyncTaskArchivosSubir();
+
+                try {
+                    if (archivoFoto != null) {
+                        fotoSubida = task.execute(archivoFoto, archivoCoords).get();
+
+                        if (fotoSubida) {
+                            Toast.makeText(this, "Foto subida al servidor.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(this, "No se ha podido subir la foto al servidor.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(this, "No se ha capturado ninguna foto.", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (InterruptedException e) {
+                    Log.e(ActivityFotoCapturada.FOTO_CAPTURADA, "Error de interrupción: " + e.getMessage());
+                } catch (ExecutionException e) {
+                    Log.e(ActivityFotoCapturada.FOTO_CAPTURADA, "Error de ejecución: " + e.getMessage());
                 }
             } else {
                 Toast.makeText(this, "No hay conexion a internet.", Toast.LENGTH_SHORT).show();
@@ -116,28 +125,6 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
         } else {
             Toast.makeText(this, "Esta foto ya ha sido subida al servidor.", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    private boolean comprobarConexion() {
-        boolean conexion = false;
-
-        ConnectivityManager gestor = (ConnectivityManager) this.getBaseContext().
-                getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo[] redes = gestor.getAllNetworkInfo();
-
-        for (int i = 0; i < redes.length; i++) {
-            if (redes[i].getState() == NetworkInfo.State.CONNECTED) {
-                conexion = true;
-            }
-        }
-
-        return conexion;
-    }
-
-    public static String getFechaHoraActual() {
-        Date fecha = new Date();
-        SimpleDateFormat formateador = new SimpleDateFormat("ddMMyy-hhmmss");
-        return formateador.format(fecha);
     }
 
     protected void onActivityResult(int solicitud, int resultado, Intent datos) {
@@ -151,7 +138,7 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_foto_geoposicion, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_foto_capturada, menu);
         return true;
     }
 

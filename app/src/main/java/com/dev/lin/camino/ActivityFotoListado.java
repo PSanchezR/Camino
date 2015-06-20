@@ -1,38 +1,40 @@
 package com.dev.lin.camino;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Galería con imágenes geoposicionadas y mapas contenidos en el servidor
+ * Listado de fotos en el servidor
  *
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class ActivityGaleria extends ActionBarActivity {
+public class ActivityFotoListado extends ActionBarActivity {
     private ArrayList<String> listaFotos = new ArrayList<String>();
-    private static final String GALERIA = "Galeria";
+    private static final String FOTO_LISTADO = "FotoListado";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_galeria);
+        setContentView(R.layout.activity_foto_listado);
 
         ListView lista = (ListView) findViewById(R.id.listViewListaFotos);
         ArrayAdapter<String> adaptador;
 
         Object dump = null;
-        AsyncTaskListarArchivos task = new AsyncTaskListarArchivos();
+        AsyncTaskArchivosListar task = new AsyncTaskArchivosListar();
 
         try {
             ArrayList<String> listado = task.execute(dump).get();
@@ -41,16 +43,29 @@ public class ActivityGaleria extends ActionBarActivity {
 
             while (itr.hasNext()) {
                 String nombre = itr.next();
-                Log.d(ActivityGaleria.GALERIA, "Archivo recibido: " + nombre);
+                Log.d(ActivityFotoListado.FOTO_LISTADO, "Archivo recibido: " + nombre);
                 listaFotos.add(nombre);
             }
 
             adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaFotos);
             lista.setAdapter(adaptador);
+
+            lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> padre, View vista, int posicion, long id) {
+                    String fotoSeleccionada = listaFotos.get(posicion);
+
+                    Log.d(ActivityFotoListado.FOTO_LISTADO, "Foto seleccionada: " + fotoSeleccionada);
+
+                    Intent i = new Intent(ActivityFotoListado.this, ActivityFotoSeleccionada.class);
+                    i.putExtra("fotoSeleccionada", fotoSeleccionada);
+                    startActivity(i);
+                }
+            });
         } catch (InterruptedException e) {
-            Log.e(ActivityGaleria.GALERIA, "Error de interrupción: " + e.getMessage());
+            Log.e(ActivityFotoListado.FOTO_LISTADO, "Error de interrupción: " + e.getMessage());
         } catch (ExecutionException e) {
-            Log.e(ActivityGaleria.GALERIA, "Error de ejecución: " + e.getMessage());
+            Log.e(ActivityFotoListado.FOTO_LISTADO, "Error de ejecución: " + e.getMessage());
         }
     }
 

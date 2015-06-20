@@ -39,7 +39,7 @@ public class ActivityPruebaPosicionamiento extends ActionBarActivity {
             latitud = origen.getLatitude();
             longitud = origen.getLongitude();
 
-            coordsDestino = GestionFicheros.listaParadasCaminoFrances.get(0).getListaCoords().get(GestionFicheros.listaParadasCaminoFrances.get(0).getListaCoords().size() - 1);
+            coordsDestino = GestionConfigFicheros.listaParadasCaminoFrances.get(0).getListaCoords().get(GestionConfigFicheros.listaParadasCaminoFrances.get(0).getListaCoords().size() - 1);
             destino = new Location("Destino");
             destino.setLatitude(coordsDestino.latitude);
             destino.setLongitude(coordsDestino.longitude);

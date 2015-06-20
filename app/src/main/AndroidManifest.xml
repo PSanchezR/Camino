@@ -84,11 +84,14 @@
             android:name=".ActivityPruebaPosicionamiento"
             android:label="Prueba de GPS" />
         <activity
-            android:name=".ActivityFotoGeoposicion"
-            android:label="Foto geoposicionada" />
+            android:name=".ActivityFotoCapturada"
+            android:label="Captura de fotos" />
         <activity
-            android:name=".ActivityGaleria"
-            android:label="Galería de fotos" />
+            android:name=".ActivityFotoListado"
+            android:label="Listado de fotos" />
+        <activity
+            android:name=".ActivityFotoSeleccionada"
+            android:label="Foto seleccionada" />
     </application>
 
 </manifest>

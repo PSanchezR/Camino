@@ -49,21 +49,21 @@ public class ActivityUsuarioNuevo extends ActionBarActivity {
 
             Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
 
-            if (GestionFicheros.escribirUsuarios(usuario, getBaseContext()) == 0) {
+            if (GestionConfigFicheros.escribirUsuarios(usuario, getBaseContext()) == 0) {
                 Toast.makeText(this, "Usuario guardado correctamente.", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "El usuario no ha sido creado.", Toast.LENGTH_SHORT).show();
             }
         }
 
-        GestionFicheros.leerUsuarios(getBaseContext());
+        GestionConfigFicheros.leerUsuarios(getBaseContext());
         menuUsuarios();
     }
 
 
     public boolean existeUsuario(String nombre) {
         boolean comp = false;
-        ArrayList<Usuario> usuarios = new ArrayList<Usuario>(GestionFicheros.leerUsuarios(getBaseContext()));
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>(GestionConfigFicheros.leerUsuarios(getBaseContext()));
         Iterator<Usuario> itr = usuarios.iterator();
 
         while (itr.hasNext() && !comp) {

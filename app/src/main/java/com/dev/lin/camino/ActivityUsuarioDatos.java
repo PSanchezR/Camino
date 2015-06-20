@@ -57,7 +57,7 @@ public class ActivityUsuarioDatos extends ActionBarActivity {
                        /* Cuando se seleccione un camino pasa caminoFrances.xml ser el actual. */
                         String seleccionado = (String) a.getItemAtPosition(position);
                         usuarioSeleccionado.setCaminoActual(buscarCamino(seleccionado));
-                        GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+                        GestionConfigFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
                         Intent i = new Intent(ActivityUsuarioDatos.this, ActivityCaminoActual.class);
                         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
                         startActivity(i);
@@ -101,7 +101,7 @@ public class ActivityUsuarioDatos extends ActionBarActivity {
         usuarioSeleccionado.setPeso(Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText() + ""));
         usuarioSeleccionado.setComplexion(((Spinner) findViewById(R.id.spinnerComplexion)).getSelectedItemPosition());
         usuarioSeleccionado.calcularKmMaximos();
-        GestionFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+        GestionConfigFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
 
         Intent i = new Intent(ActivityUsuarioDatos.this, ActivityMenuPrincipal.class);
         i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
