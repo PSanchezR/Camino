@@ -43,7 +43,6 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
 
         ArrayList<Parada> listaParadas = etapaSeleccionada.getListaParadas();
 
-
         Iterator<Parada> itr = listaParadas.iterator();
         Parada parada = null;
 

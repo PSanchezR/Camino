@@ -365,3 +365,9 @@ ADDED from AndroidManifest.xml:86:9
 		ADDED from AndroidManifest.xml:88:13
 	android:name
 		ADDED from AndroidManifest.xml:87:13
+activity#com.dev.lin.camino.ActivityGaleria
+ADDED from AndroidManifest.xml:89:9
+	android:label
+		ADDED from AndroidManifest.xml:91:13
+	android:name
+		ADDED from AndroidManifest.xml:90:13

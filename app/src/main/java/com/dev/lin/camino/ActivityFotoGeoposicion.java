@@ -22,6 +22,8 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Captura de fotos
@@ -59,7 +61,7 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
         PrintWriter out = null;
 
         imageFolder.mkdirs();
-        nombreArchivo = usuarioSeleccionado.getNombre() + System.currentTimeMillis();
+        nombreArchivo = usuarioSeleccionado.getNombre() + "_" + getFechaHoraActual();
         archivoFoto = new File(imageFolder, nombreArchivo + ".png");
         archivoCoords = new File(imageFolder, nombreArchivo + ".dat");
 
@@ -130,6 +132,12 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
         }
 
         return conexion;
+    }
+
+    public static String getFechaHoraActual() {
+        Date fecha = new Date();
+        SimpleDateFormat formateador = new SimpleDateFormat("ddMMyy-hhmmss");
+        return formateador.format(fecha);
     }
 
     protected void onActivityResult(int solicitud, int resultado, Intent datos) {

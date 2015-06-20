@@ -28,7 +28,6 @@ public class ActivityMenuPrincipal extends ActionBarActivity {
     public static final String PASS = "caminoapp2015";
     public static final int PUERTO = 21;
     public static final String DIRECTORIO = "fotos";
-    private static final String MENU_PRINCIPAL = "MenuPrincipal";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,25 +82,9 @@ public class ActivityMenuPrincipal extends ActionBarActivity {
     }
 
     public void mostrarGaleria(View view) {
-        Object dump = null;
-        AsyncTaskListarArchivos task = new AsyncTaskListarArchivos();
-
-        try {
-            ArrayList<String> listado = task.execute(dump).get();
-
-            Iterator<String> itr = listado.iterator();
-            while (itr.hasNext()) {
-                String nombre = itr.next();
-                Log.d(ActivityMenuPrincipal.MENU_PRINCIPAL, "Archivo recibido: " + nombre);
-            }
-        } catch (InterruptedException e) {
-            Log.e(ActivityMenuPrincipal.MENU_PRINCIPAL, "Error de interrupción: " + e.getMessage());
-        } catch (ExecutionException e) {
-            Log.e(ActivityMenuPrincipal.MENU_PRINCIPAL, "Error de ejecución: " + e.getMessage());
-        }
-        //Intent i = new Intent(ActivityMenuPrincipal.this, ActivityGaleria.class);
-        //i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
-        //startActivity(i);
+        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityGaleria.class);
+        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
+        startActivity(i);
     }
 
     @Override
