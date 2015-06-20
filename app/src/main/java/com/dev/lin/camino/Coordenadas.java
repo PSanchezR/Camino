@@ -43,12 +43,13 @@ public class Coordenadas implements LocationListener {
             } else if (estadoRed) {
                 locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
                 Toast.makeText(ctx, "Conexión a internet disponible.", Toast.LENGTH_SHORT).show();
+
                 if (locationManager != null) {
                     coordenadas = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                 }
             }
         } catch (Exception e) {
-            Log.e(Coordenadas.COORDS_GPS, "Error obteniendo coordenadas: " + e.getMessage());
+            Log.e(Coordenadas.COORDS_GPS, "Error obteniendo coords: " + e.getMessage());
         }
 
         return coordenadas;

@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:onClick="fotoGeoposicion"
-                android:text="foto"
+                android:text="Hacer foto"
                 android:background="@drawable/btn_style" />
         </LinearLayout>
     </LinearLayout>

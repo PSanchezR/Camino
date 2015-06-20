@@ -22,6 +22,7 @@ public class ActivityPruebaPosicionamiento extends ActionBarActivity {
     double latitud;
     double longitud;
     float distancia;
+    Coordenadas coordenadas;
     Location origen;
     Location destino;
     LatLng coordsDestino;
@@ -31,7 +32,7 @@ public class ActivityPruebaPosicionamiento extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prueba_posicionamiento);
 
-        Coordenadas coordenadas = new Coordenadas();
+        coordenadas = new Coordenadas();
         origen = coordenadas.getCoordenadas(this.getBaseContext());
 
         if (origen != null) {

@@ -12,14 +12,14 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 /**
- * Conexión FTP
+ * Conexión al servidor de fotos mediante FTP
  *
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class ConexionFTP extends AsyncTask<File, Void, Void> {
+public class ConexionServidor extends AsyncTask<File, Void, Void> {
     private FTPClient cliente = null;
-    private static final String CONEXION_FTP = "ConexionFTP";
+    private static final String CONEXION_FTP = "ConexionServidor";
 
     public Void doInBackground(File... foto) {
         int reply;
@@ -36,9 +36,9 @@ public class ConexionFTP extends AsyncTask<File, Void, Void> {
             reply = cliente.getReplyCode();
 
             if (FTPReply.isPositiveCompletion(reply)) {
-                Log.d(ConexionFTP.CONEXION_FTP, "Conexión realizada con éxito.");
+                Log.d(ConexionServidor.CONEXION_FTP, "Conexión realizada con éxito.");
             } else {
-                Log.d(ConexionFTP.CONEXION_FTP, "Conexión rechazada por el servidor.");
+                Log.d(ConexionServidor.CONEXION_FTP, "Conexión rechazada por el servidor.");
                 cliente.disconnect();
             }
 
@@ -47,31 +47,31 @@ public class ConexionFTP extends AsyncTask<File, Void, Void> {
             bis = new BufferedInputStream(new FileInputStream(foto[0]));
             cliente.enterLocalPassiveMode();
 
-            Log.d(ConexionFTP.CONEXION_FTP, "Archivo a subir: " + foto[0].getName());
+            Log.d(ConexionServidor.CONEXION_FTP, "Archivo a subir: " + foto[0].getName());
             result = cliente.storeFile(foto[0].getName(), bis);
 
             if (result) {
-                Log.d(ConexionFTP.CONEXION_FTP, "Foto subida con éxito al servidor.");
+                Log.d(ConexionServidor.CONEXION_FTP, "Foto subida con éxito al servidor.");
             } else {
-                Log.d(ConexionFTP.CONEXION_FTP, "No se ha podido subir la foto al servidor.");
+                Log.d(ConexionServidor.CONEXION_FTP, "No se ha podido subir la foto al servidor.");
             }
 
             cliente.logout();
         } catch (IOException e) {
-            Log.e(ConexionFTP.CONEXION_FTP, "Error de entrada/salida: " + e.getMessage());
+            Log.e(ConexionServidor.CONEXION_FTP, "Error de entrada/salida: " + e.getMessage());
         } finally {
             try {
                 if (bis != null) {
                     bis.close();
-                    Log.e(ConexionFTP.CONEXION_FTP, "Cerrado flujo de entrada.");
+                    Log.e(ConexionServidor.CONEXION_FTP, "Cerrado flujo de entrada.");
                 }
 
                 if (cliente.isConnected()) {
                     cliente.disconnect();
-                    Log.e(ConexionFTP.CONEXION_FTP, "Desconectado del servidor.");
+                    Log.e(ConexionServidor.CONEXION_FTP, "Desconectado del servidor.");
                 }
             } catch (IOException e) {
-                Log.e(ConexionFTP.CONEXION_FTP, "Error de entrada/salida: " + e.getMessage());
+                Log.e(ConexionServidor.CONEXION_FTP, "Error de entrada/salida: " + e.getMessage());
             }
         }
 
