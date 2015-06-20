@@ -25,12 +25,18 @@
             android:orientation="vertical"
             android:weightSum="1">
 
+            <ImageView
+                android:id="@+id/imageViewFoto"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.5" />
+
             <fragment
                 android:id="@+id/fragmentMapa"
                 class="com.google.android.gms.maps.MapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.54" />
+                android:layout_weight="0.5" />
         </LinearLayout>
 
     </LinearLayout>

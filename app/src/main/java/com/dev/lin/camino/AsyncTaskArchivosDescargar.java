@@ -40,17 +40,20 @@ public class AsyncTaskArchivosDescargar extends AsyncTask<String, Void, Boolean>
 
                 cliente.setFileType(org.apache.commons.net.ftp.FTP.BINARY_FILE_TYPE);
                 cliente.enterLocalPassiveMode();
+                String extensiones[] = {".png", ".dat"};
 
-                String archivoRemoto = archivos[0] + ".dat";
-                File archivoDescargado = new File(Environment.getExternalStorageDirectory() +
-                        "/DCIM/Camino/" + archivoRemoto);
-                OutputStream out = new BufferedOutputStream(new FileOutputStream(archivoDescargado));
-                resultado = cliente.retrieveFile(archivoRemoto, out);
-                out.close();
+                for (int i = 0; i < extensiones.length; i++) {
+                    String archivoRemoto = archivos[0] + extensiones[i];
+                    File archivoDescargado = new File(Environment.getExternalStorageDirectory() +
+                            "/DCIM/Camino/" + archivoRemoto);
+                    OutputStream out = new BufferedOutputStream(new FileOutputStream(archivoDescargado));
+                    resultado = cliente.retrieveFile(archivoRemoto, out);
+                    out.close();
 
-                if (resultado) {
-                    Log.d(AsyncTaskArchivosDescargar.ARCHIVOS_DESCARGAR, "Archivo " + archivoRemoto +
-                            " descargado correctamente en " + archivoDescargado.getAbsolutePath());
+                    if (resultado) {
+                        Log.d(AsyncTaskArchivosDescargar.ARCHIVOS_DESCARGAR, "Archivo " + archivoRemoto +
+                                " descargado correctamente en " + archivoDescargado.getAbsolutePath());
+                    }
                 }
 
                 cliente.logout();

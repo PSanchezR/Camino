@@ -1,11 +1,14 @@
 package com.dev.lin.camino;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -33,14 +36,21 @@ public class ActivityFotoSeleccionada extends ActionBarActivity {
     private File archivo = null;
     private boolean fotoDescargada = false;
     private boolean estadoRed = false;
+
+    private Bitmap bitmap = null;
+    private ImageView fotoCapturada = null;
+
     private GoogleMap map = null;
     private Marker inicio = null;
+
     private static final String FOTO_SELECCIONADA = "FotoSeleccionada";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foto_seleccionada);
+        fotoCapturada = (ImageView) this.findViewById(R.id.imageViewFoto);
+
         fotoSeleccionada = (String) getIntent().getSerializableExtra("fotoSeleccionada");
 
         estadoRed = GestionConfigFicheros.comprobarConexion(this.getBaseContext());
@@ -54,6 +64,9 @@ public class ActivityFotoSeleccionada extends ActionBarActivity {
                 if (fotoDescargada) {
                     archivo = new File(Environment.getExternalStorageDirectory() +
                             "/DCIM/Camino/" + fotoSeleccionada + ".dat");
+                    bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory() +
+                            "/DCIM/Camino/" + fotoSeleccionada + ".png");
+                    fotoCapturada.setImageBitmap(bitmap);
 
                     try {
                         FileReader lector = new FileReader(archivo.getAbsolutePath());
@@ -88,7 +101,7 @@ public class ActivityFotoSeleccionada extends ActionBarActivity {
                 Log.e(ActivityFotoSeleccionada.FOTO_SELECCIONADA, "Error de ejecución: " + e.getMessage());
             }
         } else {
-            Toast.makeText(this, "Esta foto ya ha sido subida al servidor.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No hay conexión a internet.", Toast.LENGTH_SHORT).show();
         }
     }
 
