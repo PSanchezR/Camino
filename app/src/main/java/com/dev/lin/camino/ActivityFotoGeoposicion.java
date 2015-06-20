@@ -14,10 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import org.apache.commons.net.ftp.FTPClient;
-
 import java.io.File;
-import java.io.Serializable;
 
 /**
  * Captura de fotos
@@ -25,39 +22,37 @@ import java.io.Serializable;
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
-public class ActivityFotoGeoposicionada extends ActionBarActivity {
-    private String nombre;
+public class ActivityFotoGeoposicion extends ActionBarActivity {
+    private String nombreFoto;
     private Usuario usuarioSeleccionado = null;
-    private ImageView imagenCapturada = null;
-    private File foto = null;
-    FTPClient cliente = null;
+    private ImageView fotoCapturada = null;
+    private File archivoFoto = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foto_geoposicionada);
+        setContentView(R.layout.activity_foto_geoposicion);
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        imagenCapturada = (ImageView) this.findViewById(R.id.imageViewFoto);
+        fotoCapturada = (ImageView) this.findViewById(R.id.imageViewFoto);
     }
 
     public void sacarFoto(View view) {
         Intent i = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         File imageFolder = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camino/");
         imageFolder.mkdirs();
-        nombre = usuarioSeleccionado.getNombre() + System.currentTimeMillis() + ".png";
-        foto = new File(imageFolder, nombre);
-        Uri idImagen = Uri.fromFile(foto);
+        nombreFoto = usuarioSeleccionado.getNombre() + System.currentTimeMillis() + ".png";
+        archivoFoto = new File(imageFolder, nombreFoto);
+        Uri idImagen = Uri.fromFile(archivoFoto);
         i.putExtra(MediaStore.EXTRA_OUTPUT, idImagen);
-        i.putExtra("foto", (Serializable) foto);
         startActivityForResult(i, 1);
     }
 
     public void enviarFoto(View view) {
-        Intent i = new Intent(ActivityFotoGeoposicionada.this, ActivityFotoGeoposicionada.class);
-        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
+        Intent i = new Intent(ActivityFotoGeoposicion.this, ActivityMenuPrincipal.class);
 
-        if (foto != null) {
-            new ConexionFTP().execute(foto);
+        if (archivoFoto != null) {
+            new ConexionFTP().execute(archivoFoto);
+            startActivity(i);
         } else {
             Toast.makeText(this, "No se ha capturado ninguna foto.", Toast.LENGTH_SHORT).show();
         }
@@ -66,15 +61,15 @@ public class ActivityFotoGeoposicionada extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 && resultCode == RESULT_OK) {
             Bitmap bMap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory() +
-                    "/DCIM/Camino/" + nombre);
-            imagenCapturada.setImageBitmap(bMap);
+                    "/DCIM/Camino/" + nombreFoto);
+            fotoCapturada.setImageBitmap(bMap);
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_foto_geoposicionada, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_foto_geoposicion, menu);
         return true;
     }
 

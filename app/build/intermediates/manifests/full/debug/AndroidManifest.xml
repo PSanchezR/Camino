@@ -85,7 +85,7 @@
             android:name="com.dev.lin.camino.ActivityGPSPrueba"
             android:label="Prueba de GPS" />
         <activity
-            android:name="com.dev.lin.camino.ActivityFotoGeoposicionada"
+            android:name="com.dev.lin.camino.ActivityFotoGeoposicion"
             android:label="Foto geoposicionada" >
         </activity>
     </application>

@@ -640,7 +640,7 @@ int layout abc_simple_dropdown_hint 0x7f040016
 int layout activity_camino_actual 0x7f040017
 int layout activity_camino_nuevo 0x7f040018
 int layout activity_etapa_seleccionada 0x7f040019
-int layout activity_foto_geoposicionada 0x7f04001a
+int layout activity_foto_geoposicion 0x7f04001a
 int layout activity_gps_prueba 0x7f04001b
 int layout activity_menu_principal 0x7f04001c
 int layout activity_portada 0x7f04001d
@@ -651,7 +651,7 @@ int layout support_simple_spinner_dropdown_item 0x7f040021
 int menu menu_activity_camino_actual 0x7f0e0000
 int menu menu_activity_camino_nuevo 0x7f0e0001
 int menu menu_activity_etapa_seleccionada 0x7f0e0002
-int menu menu_activity_foto_geoposicionada 0x7f0e0003
+int menu menu_activity_foto_geoposicion 0x7f0e0003
 int menu menu_activity_gps_prueba 0x7f0e0004
 int menu menu_activity_menu_principal 0x7f0e0005
 int menu menu_activity_portada 0x7f0e0006

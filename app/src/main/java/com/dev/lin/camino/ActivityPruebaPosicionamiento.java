@@ -1,45 +1,40 @@
 package com.dev.lin.camino;
 
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.Date;
 
 /**
- * Created by germaaan on 16/06/15.
+ * Prueba de obtención de posición GPS
+ *
+ * @author German Martínez Maldonado
+ * @author Pablo Sánchez Robles
  */
-public class ActivityGPSPrueba extends ActionBarActivity implements LocationListener {
+public class ActivityPruebaPosicionamiento extends ActionBarActivity {
     double latitud;
     double longitud;
     float distancia;
-    boolean gpsActivo;
     Location origen;
     Location destino;
     LatLng coordsDestino;
-    LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gps_prueba);
+        setContentView(R.layout.activity_prueba_posicionamiento);
 
-        try {
-            locationManager = (LocationManager) this.getBaseContext().getSystemService(LOCATION_SERVICE);
-            gpsActivo = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        } catch (Exception e) {
-        }
+        Coordenadas coordenadas = new Coordenadas();
+        origen = coordenadas.getCoordenadas(this.getBaseContext());
 
-        if (gpsActivo) {
-            locationManager.requestLocationUpdates(locationManager.GPS_PROVIDER, 60000, 10, this);
-            origen = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
+        if (origen != null) {
             latitud = origen.getLatitude();
             longitud = origen.getLongitude();
 
@@ -53,15 +48,16 @@ public class ActivityGPSPrueba extends ActionBarActivity implements LocationList
 
             ((TextView) findViewById(R.id.textViewOrigen)).setText("Coordenadas actuales: " + latitud + "," + longitud);
             ((TextView) findViewById(R.id.textViewDestino)).setText("Coordenadas coordsDestino: " + coordsDestino.latitude + "," + coordsDestino.longitude);
-            ((TextView) findViewById(R.id.textViewDistancia)).setText("Distancia: " + distancia/1000 + "km");
+            ((TextView) findViewById(R.id.textViewDistancia)).setText("Distancia: " + distancia / 1000 + "km");
+        } else {
+            Toast.makeText(this, "No hay conexión GPS ni conexión a internet disponibles.", Toast.LENGTH_SHORT).show();
         }
-        //En caso contrario mostrar un toast de aviso
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_gps_prueba, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_prueba_posicionamiento, menu);
         return true;
     }
 
@@ -78,25 +74,5 @@ public class ActivityGPSPrueba extends ActionBarActivity implements LocationList
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onLocationChanged(Location location) {
-
-    }
-
-    @Override
-    public void onStatusChanged(String s, int i, Bundle bundle) {
-
-    }
-
-    @Override
-    public void onProviderEnabled(String s) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(String s) {
-
     }
 }

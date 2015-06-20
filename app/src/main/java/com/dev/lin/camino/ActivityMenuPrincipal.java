@@ -61,17 +61,17 @@ public class ActivityMenuPrincipal extends ActionBarActivity {
     }
 
     public void probarGPS(View view) {
-        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityGPSPrueba.class);
+        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityPruebaPosicionamiento.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }
 
-    public void fotoGeoposicionada(View view)
-    {
-        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityFotoGeoposicionada.class);
+    public void fotoGeoposicion(View view) {
+        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityFotoGeoposicion.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

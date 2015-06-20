@@ -1916,8 +1916,8 @@ containing a value of this type.
         public static final int activity_camino_actual=0x7f040017;
         public static final int activity_camino_nuevo=0x7f040018;
         public static final int activity_etapa_seleccionada=0x7f040019;
-        public static final int activity_foto_geoposicionada=0x7f04001a;
-        public static final int activity_gps_prueba=0x7f04001b;
+        public static final int activity_foto_geoposicion=0x7f04001a;
+        public static final int activity_prueba_posicionamiento =0x7f04001b;
         public static final int activity_menu_principal=0x7f04001c;
         public static final int activity_portada=0x7f04001d;
         public static final int activity_usuario_datos=0x7f04001e;
@@ -1929,8 +1929,8 @@ containing a value of this type.
         public static final int menu_activity_camino_actual=0x7f0e0000;
         public static final int menu_activity_camino_nuevo=0x7f0e0001;
         public static final int menu_activity_etapa_seleccionada=0x7f0e0002;
-        public static final int menu_activity_foto_geoposicionada=0x7f0e0003;
-        public static final int menu_activity_gps_prueba=0x7f0e0004;
+        public static final int menu_activity_foto_geoposicion=0x7f0e0003;
+        public static final int menu_activity_prueba_posicionamiento =0x7f0e0004;
         public static final int menu_activity_menu_principal=0x7f0e0005;
         public static final int menu_activity_portada=0x7f0e0006;
         public static final int menu_activity_usuario_datos=0x7f0e0007;

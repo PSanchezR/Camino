@@ -81,10 +81,10 @@
             android:name=".ActivityUsuarioSeleccionado"
             android:label="Selección de usuario" />
         <activity
-            android:name=".ActivityGPSPrueba"
+            android:name=".ActivityPruebaPosicionamiento"
             android:label="Prueba de GPS" />
         <activity
-            android:name=".ActivityFotoGeoposicionada"
+            android:name=".ActivityFotoGeoposicion"
             android:label="Foto geoposicionada" >
         </activity>
     </application>
