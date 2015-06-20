@@ -103,7 +103,7 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
             if (estadoRed) {
                 if (archivoFoto != null) {
                     Toast.makeText(this, "Foto subida al servidor.", Toast.LENGTH_SHORT).show();
-                    new ConexionServidor().execute(archivoFoto, archivoCoords);
+                    new AsyncTaskSubidaArchivos().execute(archivoFoto, archivoCoords);
                     fotoSubida = true;
                 } else {
                     Toast.makeText(this, "No se ha capturado ninguna foto.", Toast.LENGTH_SHORT).show();

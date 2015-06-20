@@ -45,9 +45,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
                 android:onClick="datosUsuario"
-                android:text="Datos usuario"
-                android:background="@drawable/btn_style" />
+                android:text="Datos usuario" />
 
 
             <Button
@@ -55,18 +55,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
                 android:onClick="caminoNuevo"
-                android:text="Camino nuevo"
-                android:background="@drawable/btn_style" />
+                android:text="Camino nuevo" />
 
             <Button
                 android:id="@+id/buttonCaminoActual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
                 android:onClick="caminoActual"
-                android:text="Camino actual"
-                android:background="@drawable/btn_style" />
+                android:text="Camino actual" />
 
         </LinearLayout>
 
@@ -81,18 +81,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
                 android:onClick="probarGPS"
-                android:text="Probar GPS"
-                android:background="@drawable/btn_style" />
+                android:text="Probar GPS" />
 
             <Button
                 android:id="@+id/buttonFoto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
                 android:onClick="fotoGeoposicion"
-                android:text="Hacer foto"
-                android:background="@drawable/btn_style" />
+                android:text="Hacer foto" />
+
+            <Button
+                android:id="@+id/buttonGaleria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
+                android:onClick="mostrarGaleria"
+                android:text="Mostrar galeria" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

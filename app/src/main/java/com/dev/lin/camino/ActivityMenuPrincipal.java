@@ -3,6 +3,7 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,6 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Menú principal de la aplicación
@@ -19,6 +23,12 @@ import java.io.Serializable;
  */
 public class ActivityMenuPrincipal extends ActionBarActivity {
     private Usuario usuarioSeleccionado = null;
+    public static final String SERVIDOR = "caminoapp.bugs3.com";
+    public static final String USUARIO = "u223647139";
+    public static final String PASS = "caminoapp2015";
+    public static final int PUERTO = 21;
+    public static final String DIRECTORIO = "fotos";
+    private static final String MENU_PRINCIPAL = "MenuPrincipal";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +80,28 @@ public class ActivityMenuPrincipal extends ActionBarActivity {
         Intent i = new Intent(ActivityMenuPrincipal.this, ActivityFotoGeoposicion.class);
         i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
         startActivity(i);
+    }
+
+    public void mostrarGaleria(View view) {
+        Object dump = null;
+        AsyncTaskListarArchivos task = new AsyncTaskListarArchivos();
+
+        try {
+            ArrayList<String> listado = task.execute(dump).get();
+
+            Iterator<String> itr = listado.iterator();
+            while (itr.hasNext()) {
+                String nombre = itr.next();
+                Log.d(ActivityMenuPrincipal.MENU_PRINCIPAL, "Archivo recibido: " + nombre);
+            }
+        } catch (InterruptedException e) {
+            Log.e(ActivityMenuPrincipal.MENU_PRINCIPAL, "Error de interrupción: " + e.getMessage());
+        } catch (ExecutionException e) {
+            Log.e(ActivityMenuPrincipal.MENU_PRINCIPAL, "Error de ejecución: " + e.getMessage());
+        }
+        //Intent i = new Intent(ActivityMenuPrincipal.this, ActivityGaleria.class);
+        //i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
+        //startActivity(i);
     }
 
     @Override
