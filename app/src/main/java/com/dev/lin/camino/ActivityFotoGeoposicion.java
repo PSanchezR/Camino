@@ -34,15 +34,16 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
     private Usuario usuarioSeleccionado = null;
     private ImageView fotoCapturada = null;
     private File archivoFoto = null;
-    boolean estadoRed = false;
-    boolean fotoSubida = false;
+    private boolean estadoRed = false;
+    private boolean fotoSubida = false;
 
-    private LocationManager locationManager;
-    double latitud;
-    double longitud;
-    Coordenadas coords;
-    String coordsCadena;
-    Location origen;
+    private LocationManager locationManager = null;
+    private double latitud = 0.0;
+    private double longitud = 0.0;
+    private Coordenadas coords = null;
+    private String cadenaCoords = null;
+    private File archivoCoords = null;
+    private Location origen = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,7 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
         imageFolder.mkdirs();
         nombreArchivo = usuarioSeleccionado.getNombre() + System.currentTimeMillis();
         archivoFoto = new File(imageFolder, nombreArchivo + ".png");
+        archivoCoords = new File(imageFolder, nombreArchivo + ".dat");
 
         try {
             out = new PrintWriter(Environment.getExternalStorageDirectory() +
@@ -72,8 +74,8 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
                 latitud = origen.getLatitude();
                 longitud = origen.getLongitude();
 
-                coordsCadena = latitud + "," + longitud;
-                out.print(coordsCadena);
+                cadenaCoords = latitud + "," + longitud;
+                out.print(cadenaCoords);
 
                 fotoSubida = false;
 
@@ -100,7 +102,8 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
 
             if (estadoRed) {
                 if (archivoFoto != null) {
-                    new ConexionServidor().execute(archivoFoto);
+                    Toast.makeText(this, "Foto subida al servidor.", Toast.LENGTH_SHORT).show();
+                    new ConexionServidor().execute(archivoFoto, archivoCoords);
                     fotoSubida = true;
                 } else {
                     Toast.makeText(this, "No se ha capturado ninguna foto.", Toast.LENGTH_SHORT).show();
@@ -109,7 +112,7 @@ public class ActivityFotoGeoposicion extends ActionBarActivity {
                 Toast.makeText(this, "No hay conexion a internet.", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(this, "Esta foto ya ha sido subida.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Esta foto ya ha sido subida al servidor.", Toast.LENGTH_SHORT).show();
         }
     }
 

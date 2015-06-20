@@ -21,7 +21,7 @@ public class ConexionServidor extends AsyncTask<File, Void, Void> {
     private FTPClient cliente = null;
     private static final String CONEXION_FTP = "ConexionServidor";
 
-    public Void doInBackground(File... foto) {
+    public Void doInBackground(File... archivos) {
         int reply;
         boolean result;
         BufferedInputStream bis = null;
@@ -29,8 +29,8 @@ public class ConexionServidor extends AsyncTask<File, Void, Void> {
         cliente = new FTPClient();
 
         try {
-            cliente.connect("caminoapp.cloudapp.net", 21);
-            cliente.login("caminoapp", "caminoapp");
+            cliente.connect("caminoapp.vhostall.com", 21);
+            cliente.login("u489348026", "caminoapp2015");
             cliente.changeWorkingDirectory("fotos");
 
             reply = cliente.getReplyCode();
@@ -43,17 +43,24 @@ public class ConexionServidor extends AsyncTask<File, Void, Void> {
             }
 
             cliente.setFileType(org.apache.commons.net.ftp.FTP.BINARY_FILE_TYPE);
-
-            bis = new BufferedInputStream(new FileInputStream(foto[0]));
             cliente.enterLocalPassiveMode();
 
-            Log.d(ConexionServidor.CONEXION_FTP, "Archivo a subir: " + foto[0].getName());
-            result = cliente.storeFile(foto[0].getName(), bis);
+            for (int i = 0; i < archivos.length; i++) {
+                bis = new BufferedInputStream(new FileInputStream(archivos[i]));
 
-            if (result) {
-                Log.d(ConexionServidor.CONEXION_FTP, "Foto subida con éxito al servidor.");
-            } else {
-                Log.d(ConexionServidor.CONEXION_FTP, "No se ha podido subir la foto al servidor.");
+                Log.d(ConexionServidor.CONEXION_FTP, "Archivo a subir: " + archivos[i].getName());
+                result = cliente.storeFile(archivos[i].getName(), bis);
+
+                if (result) {
+                    Log.d(ConexionServidor.CONEXION_FTP, archivos[i].getName() + " subido con éxito al " +
+                            "servidor.");
+                } else {
+                    Log.d(ConexionServidor.CONEXION_FTP, "No se ha podido subir + " + archivos[i].getName() +
+                            " al servidor.");
+                }
+
+                bis.close();
+                Log.e(ConexionServidor.CONEXION_FTP, "Cerrado flujo de entrada.");
             }
 
             cliente.logout();
@@ -61,11 +68,6 @@ public class ConexionServidor extends AsyncTask<File, Void, Void> {
             Log.e(ConexionServidor.CONEXION_FTP, "Error de entrada/salida: " + e.getMessage());
         } finally {
             try {
-                if (bis != null) {
-                    bis.close();
-                    Log.e(ConexionServidor.CONEXION_FTP, "Cerrado flujo de entrada.");
-                }
-
                 if (cliente.isConnected()) {
                     cliente.disconnect();
                     Log.e(ConexionServidor.CONEXION_FTP, "Desconectado del servidor.");
