@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Location;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -13,6 +12,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -52,7 +52,7 @@ public class ActivityFotoCapturada extends ActionBarActivity {
         fotoCapturada = (ImageView) this.findViewById(R.id.imageViewFoto);
     }
 
-    public void sacarFoto() {
+    public void sacarFoto(View view) {
         Intent i = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         File imageFolder = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camino/");
         PrintWriter out = null;
@@ -94,7 +94,7 @@ public class ActivityFotoCapturada extends ActionBarActivity {
         }
     }
 
-    public void enviarFoto() {
+    public void enviarFoto(View view) {
         if (!fotoSubida) {
             estadoRed = GestionConfigFicheros.comprobarConexion(this.getBaseContext());
 
@@ -103,6 +103,7 @@ public class ActivityFotoCapturada extends ActionBarActivity {
 
                 try {
                     if (archivoFoto != null) {
+                        Toast.makeText(this, "Subiendo foto al servidor.", Toast.LENGTH_SHORT).show();
                         fotoSubida = task.execute(archivoFoto, archivoCoords).get();
 
                         if (fotoSubida) {
