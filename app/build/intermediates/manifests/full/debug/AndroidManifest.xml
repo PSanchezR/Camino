@@ -69,8 +69,20 @@
             android:name="com.dev.lin.camino.ActivityEtapaSeleccionada"
             android:label="Selección de etapa" />
         <activity
+            android:name="com.dev.lin.camino.ActivityFotoCapturada"
+            android:label="Captura de fotos" />
+        <activity
+            android:name="com.dev.lin.camino.ActivityFotoListado"
+            android:label="Listado de fotos" />
+        <activity
+            android:name="com.dev.lin.camino.ActivityFotoSeleccionada"
+            android:label="Foto seleccionada" />
+        <activity
             android:name="com.dev.lin.camino.ActivityMenuPrincipal"
             android:label="Menú principal" />
+        <activity
+            android:name="com.dev.lin.camino.ActivityParadaSeleccionada"
+            android:label="Selección de parada" />
         <activity
             android:name="com.dev.lin.camino.ActivityUsuarioDatos"
             android:label="Datos de usuario" />
@@ -83,15 +95,6 @@
         <activity
             android:name="com.dev.lin.camino.ActivityPruebaPosicionamiento"
             android:label="Prueba de GPS" />
-        <activity
-            android:name="com.dev.lin.camino.ActivityFotoCapturada"
-            android:label="Captura de fotos" />
-        <activity
-            android:name="com.dev.lin.camino.ActivityFotoListado"
-            android:label="Listado de fotos" />
-        <activity
-            android:name="com.dev.lin.camino.ActivityFotoSeleccionada"
-            android:label="Foto seleccionada" />
     </application>
 
 </manifest>

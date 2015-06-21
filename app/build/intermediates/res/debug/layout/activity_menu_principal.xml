@@ -101,7 +101,7 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/btn_style"
                 android:onClick="mostrarGaleria"
-                android:text="Mostrar galeria" />
+                android:text="Lista fotos" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

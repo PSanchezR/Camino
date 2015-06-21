@@ -1,9 +1,12 @@
 package com.dev.lin.camino;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -53,6 +56,21 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
 
         adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresParadas);
         lista.setAdapter(adaptador);
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> padre, View vista, int posicion, long id) {
+                Parada parada = etapaSeleccionada.getListaParadas().get(posicion);
+                Object elementos[] = {parada.getOrden(), parada.getNombre(), parada.getDistAnterior(),
+                        parada.getDistSiguiente(), parada.getComida(), parada.getHotel(),
+                        parada.getAlbergue(), parada.getFarmacia(), parada.getBanco(),
+                        parada.getInternet()};
+
+                Intent i = new Intent(ActivityEtapaSeleccionada.this, ActivityParadaSeleccionada.class);
+                i.putExtra("paradaSeleccionada", elementos);
+                startActivity(i);
+            }
+        });
 
         ((TextView) findViewById(R.id.textViewNombre)).setText("Etapa " + etapaSeleccionada.getOrden() + ": " + etapaSeleccionada.getNombre());
         String[] nombreParada = etapaSeleccionada.getNombre().split(" - ");

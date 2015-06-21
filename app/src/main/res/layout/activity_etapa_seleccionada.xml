@@ -62,32 +62,6 @@
                 android:layout_weight="0.43" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayoutHistoria"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/linearLayoutDatos"
-            android:orientation="vertical"
-            android:weightSum="1">
-
-            <TextView
-                android:id="@+id/textViewEtiquetaHistoria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Historia:"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/textViewHistoria"
-                android:layout_width="347dp"
-                android:layout_height="50dp"
-                android:text="Aquí irá una breve historia de la etapa seleccionada............."
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </LinearLayout>
-
     </LinearLayout>
 
 </RelativeLayout>

@@ -250,4 +250,7 @@ public class GestionConfigFicheros {
         return formateador.format(fecha);
     }
 
+    public static String boolString(boolean valor) {
+        return valor ? "Sí" : "No";
+    }
 }

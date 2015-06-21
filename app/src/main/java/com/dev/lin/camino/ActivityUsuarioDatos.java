@@ -35,8 +35,6 @@ public class ActivityUsuarioDatos extends ActionBarActivity {
         setContentView(R.layout.activity_usuario_datos);
 
         usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        //       Log.d(ActivityUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.toString());
-//        Log.d(ActivityUsuarioDatos.DATOS_USUARIO, usuarioSeleccionado.getNombreCaminoActual());
 
         ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + usuarioSeleccionado.getNombre());
         ((EditText) findViewById(R.id.editTextAltura)).setText("" + usuarioSeleccionado.getAltura());
