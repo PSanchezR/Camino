@@ -1,9 +1,6 @@
 package com.dev.lin.camino;
 
-import android.app.Activity;
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -20,12 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
-
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v4.app.NotificationCompat.WearableExtender;
 
 /**
  * Etapa seleccionada del camino actual
@@ -42,13 +34,6 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
     private ArrayList<String> nombresParadas = new ArrayList<String>();
 
     private GoogleMap mapa = null;
-    Coordenadas coordenadas = null;
-    LatLng coordsDestino = null;
-    Location origen = null;
-    Location destino = null;
-    double latitud = 0.0;
-    double longitud = 0.0;
-    float distancia = 0.0f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,45 +96,5 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
         this.mapa.addPolyline(puntos);
 
         this.mapa.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 11.0f));
-    }
-
-    public void distanciaADestino(View view)
-    {
-        this.coordenadas = new Coordenadas();
-        this.origen = this.coordenadas.getCoordenadas(this.getBaseContext());
-
-
-            this.latitud = this.origen.getLatitude();
-            this.longitud = this.origen.getLongitude();
-
-            this.coordsDestino = GestionFicherosConfigs.listaParadasCaminoFrances.get(etapaSeleccionada.getOrden()).getListaCoords().
-                    get(GestionFicherosConfigs.listaParadasCaminoFrances.get(etapaSeleccionada.getOrden()).getListaCoords().size() - 1);
-            this.destino = new Location("Destino");
-            this.destino.setLatitude(this.coordsDestino.latitude);
-            this.destino.setLongitude(this.coordsDestino.longitude);
-            this.destino.setTime(new Date().getTime());
-            this.distancia = this.origen.distanceTo(this.destino);
-
-        int notificationId = 001;
-// Build intent for notification content
-        Intent viewIntent = new Intent(this, ActivityEtapaSeleccionada.class);
-        viewIntent.putExtra("Aviso distancia", 1);
-        PendingIntent viewPendingIntent =
-                PendingIntent.getActivity(this, 0, viewIntent, 0);
-
-        NotificationCompat.Builder notificationBuilder =
-                new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.mipmap.portada)
-                        .setContentTitle(etapaSeleccionada.getParadaFin().getNombre()+" a:")
-                        .setContentText(""+distancia/1000 +" kms.")
-                        .setContentIntent(viewPendingIntent);
-
-// Get an instance of the NotificationManager service
-        NotificationManagerCompat notificationManager =
-                NotificationManagerCompat.from(this);
-
-// Build the notification and issues it with notification manager.
-        notificationManager.notify(notificationId, notificationBuilder.build());
-
     }
 }
