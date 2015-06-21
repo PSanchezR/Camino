@@ -3,8 +3,6 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -42,7 +40,7 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_etapa_seleccionada);
 
-        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         this.etapaSeleccionada = (Etapa) getIntent().getSerializableExtra("etapaSeleccionada");
 
         ListView lista = (ListView) findViewById(R.id.listViewListaParadas);
@@ -71,7 +69,7 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
                         parada.getInternet()};
 
                 Intent i = new Intent(ActivityEtapaSeleccionada.this, ActivityParadaSeleccionada.class);
-                i.putExtra("seleccionarUsuario", usuarioSeleccionado);
+                i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
                 i.putExtra("paradaSeleccionada", elementos);
                 startActivity(i);
             }

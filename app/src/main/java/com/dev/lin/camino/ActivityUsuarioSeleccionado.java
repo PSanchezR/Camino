@@ -3,8 +3,6 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -70,7 +68,7 @@ public class ActivityUsuarioSeleccionado extends ActionBarActivity {
                         buscarUsuario();
                         Intent i = new Intent(ActivityUsuarioSeleccionado.this, ActivityMenuPrincipal.class);
 
-                        i.putExtra("seleccionarUsuario", (Serializable) usuarioSeleccionado);
+                        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
                         startActivity(i);
                     }
                 }

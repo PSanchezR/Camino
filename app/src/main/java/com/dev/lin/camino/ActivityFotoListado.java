@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -33,7 +31,7 @@ public class ActivityFotoListado extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foto_listado);
 
-        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
 
         ListView lista = (ListView) findViewById(R.id.listViewListaFotos);
         ArrayAdapter<String> adaptador;
@@ -63,7 +61,7 @@ public class ActivityFotoListado extends ActionBarActivity {
                     Log.d(ActivityFotoListado.FOTO_LISTADO, "Foto seleccionada: " + fotoSeleccionada);
 
                     Intent i = new Intent(ActivityFotoListado.this, ActivityFotoSeleccionada.class);
-                    i.putExtra("seleccionarUsuario", usuarioSeleccionado);
+                    i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
                     i.putExtra("fotoSeleccionada", fotoSeleccionada);
                     startActivity(i);
                 }

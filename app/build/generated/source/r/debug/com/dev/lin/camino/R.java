@@ -1949,21 +1949,6 @@ containing a value of this type.
         public static final int activity_usuario_seleccionado=0x7f040023;
         public static final int support_simple_spinner_dropdown_item=0x7f040024;
     }
-    public static final class menu {
-        public static final int menu_activity_camino_actual=0x7f0e0000;
-        public static final int menu_activity_camino_nuevo=0x7f0e0001;
-        public static final int menu_activity_etapa_seleccionada=0x7f0e0002;
-        public static final int menu_activity_foto_capturada=0x7f0e0003;
-        public static final int menu_activity_foto_listado=0x7f0e0004;
-        public static final int menu_activity_foto_seleccionada=0x7f0e0005;
-        public static final int menu_activity_menu_principal=0x7f0e0006;
-        public static final int menu_activity_parada_seleccionada=0x7f0e0007;
-        public static final int menu_activity_portada=0x7f0e0008;
-        public static final int menu_activity_prueba_posicionamiento=0x7f0e0009;
-        public static final int menu_activity_usuario_datos=0x7f0e000a;
-        public static final int menu_activity_usuario_nuevo=0x7f0e000b;
-        public static final int menu_activity_usuario_seleccion=0x7f0e000c;
-    }
     public static final class mipmap {
         public static final int fondo_default=0x7f030000;
         public static final int ic_launcher=0x7f030001;

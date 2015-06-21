@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -32,7 +31,7 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camino_nuevo);
 
-        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         Log.d(ActivityCaminoNuevo.CAMINO_NUEVO, this.usuarioSeleccionado.toString());
 
         ArrayList<String> nombresListaParadas = new ArrayList<String>();
@@ -52,7 +51,7 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
 
     public void menuPrincipal(View view) {
         Intent i = new Intent(ActivityCaminoNuevo.this, ActivityMenuPrincipal.class);
-        i.putExtra("seleccionarUsuario", this.usuarioSeleccionado);
+        i.putExtra("usuarioSeleccionado", this.usuarioSeleccionado);
         startActivity(i);
     }
 
@@ -106,14 +105,14 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
             GestionFicherosConfigs.escribirUsuarios(this.usuarioSeleccionado, getBaseContext());
 
             Intent i = new Intent(ActivityCaminoNuevo.this, ActivityMenuPrincipal.class);
-            i.putExtra("seleccionarUsuario", (Serializable) this.usuarioSeleccionado);
+            i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         } else {
             Toast.makeText(this, "Introduzca todos los datos del formulario correctamente.",
                     Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(ActivityCaminoNuevo.this, ActivityCaminoNuevo.class);
-            i.putExtra("seleccionarUsuario", (Serializable) this.usuarioSeleccionado);
+            i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         }
     }
@@ -127,7 +126,7 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         GestionFicherosConfigs.escribirUsuarios(this.usuarioSeleccionado, getBaseContext());
 
         Intent i = new Intent(ActivityCaminoNuevo.this, ActivityMenuPrincipal.class);
-        i.putExtra("seleccionarUsuario", this.usuarioSeleccionado);
+        i.putExtra("usuarioSeleccionado", this.usuarioSeleccionado);
         startActivity(i);
     }
 

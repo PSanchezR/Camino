@@ -10,8 +10,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -22,7 +20,7 @@ import java.io.PrintWriter;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Foto capturada
+ * Captura de fotos
  *
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
@@ -50,9 +48,7 @@ public class ActivityFotoCapturada extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foto_capturada);
-
-        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
-
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         this.fotoCapturada = (ImageView) this.findViewById(R.id.imageViewFoto);
     }
 
@@ -61,8 +57,7 @@ public class ActivityFotoCapturada extends ActionBarActivity {
         File imageFolder = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camino/");
         PrintWriter out = null;
 
-        this.nombreArchivo = this.usuarioSeleccionado.getNombre() + "_" + GestionFicherosConfigs.
-                getFechaHoraActual();
+        this.nombreArchivo = this.usuarioSeleccionado.getNombre() + "_" + GestionFicherosConfigs.getFechaHoraActual();
         this.archivoFoto = new File(imageFolder, this.nombreArchivo + ".png");
         this.archivoCoords = new File(imageFolder, this.nombreArchivo + ".dat");
 
@@ -83,8 +78,6 @@ public class ActivityFotoCapturada extends ActionBarActivity {
                 this.fotoSubida = false;
 
                 Uri uri = Uri.fromFile(this.archivoFoto);
-
-                i.putExtra("seleccionarUsuario", this.usuarioSeleccionado);
                 i.putExtra(MediaStore.EXTRA_OUTPUT, uri);
                 startActivityForResult(i, 1);
             } else {

@@ -3,8 +3,6 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -43,7 +41,7 @@ public class ActivityCaminoActual extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camino_actual);
 
-        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         ListView lista = (ListView) findViewById(R.id.listViewListaEtapas);
         ArrayAdapter<String> adaptador;
 
@@ -86,7 +84,7 @@ public class ActivityCaminoActual extends ActionBarActivity {
                 }
 
                 Intent i = new Intent(ActivityCaminoActual.this, ActivityEtapaSeleccionada.class);
-                i.putExtra("seleccionarUsuario", usuarioSeleccionado);
+                i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
                 i.putExtra("etapaSeleccionada", etapa);
                 startActivity(i);
             }
@@ -95,7 +93,7 @@ public class ActivityCaminoActual extends ActionBarActivity {
 
     public void menuPrincipal(View view) {
         Intent i = new Intent(ActivityCaminoActual.this, ActivityMenuPrincipal.class);
-        i.putExtra("seleccionarUsuario", this.usuarioSeleccionado);
+        i.putExtra("usuarioSeleccionado", this.usuarioSeleccionado);
         startActivity(i);
     }
 

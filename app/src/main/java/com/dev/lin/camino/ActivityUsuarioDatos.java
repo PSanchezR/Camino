@@ -3,8 +3,6 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,7 +34,7 @@ public class ActivityUsuarioDatos extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_datos);
 
-        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
 
         ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + this.usuarioSeleccionado.
                 getNombre());
@@ -66,7 +64,7 @@ public class ActivityUsuarioDatos extends ActionBarActivity {
                         GestionFicherosConfigs.escribirUsuarios(usuarioSeleccionado, getBaseContext());
 
                         Intent i = new Intent(ActivityUsuarioDatos.this, ActivityCaminoActual.class);
-                        i.putExtra("seleccionarUsuario", (Serializable) usuarioSeleccionado);
+                        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
                         startActivity(i);
                     }
                 }
@@ -109,7 +107,7 @@ public class ActivityUsuarioDatos extends ActionBarActivity {
         GestionFicherosConfigs.escribirUsuarios(this.usuarioSeleccionado, getBaseContext());
 
         Intent i = new Intent(ActivityUsuarioDatos.this, ActivityMenuPrincipal.class);
-        i.putExtra("seleccionarUsuario", this.usuarioSeleccionado);
+        i.putExtra("usuarioSeleccionado", this.usuarioSeleccionado);
         startActivity(i);
     }
 }

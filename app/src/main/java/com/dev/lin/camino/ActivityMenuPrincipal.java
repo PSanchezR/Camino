@@ -3,8 +3,6 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,59 +31,52 @@ public class ActivityMenuPrincipal extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
 
-        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
 
         ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + " " +
                 this.usuarioSeleccionado.getNombre());
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_menu_principal, menu);
-        return true;
-    }
-
     public void datosUsuario(View view) {
         Intent i = new Intent(ActivityMenuPrincipal.this, ActivityUsuarioDatos.class);
-        i.putExtra("seleccionarUsuario", (Serializable) this.usuarioSeleccionado);
+        i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
         startActivity(i);
     }
 
     public void caminoNuevo(View view) {
         Intent i = new Intent(ActivityMenuPrincipal.this, ActivityCaminoNuevo.class);
-        i.putExtra("seleccionarUsuario", (Serializable) this.usuarioSeleccionado);
+        i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
         startActivity(i);
     }
 
     public void caminoActual(View view) {
         if (usuarioSeleccionado.getCaminoActual() != null) {
             Intent i = new Intent(ActivityMenuPrincipal.this, ActivityCaminoActual.class);
-            i.putExtra("seleccionarUsuario", (Serializable) this.usuarioSeleccionado);
+            i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         } else {
             Toast.makeText(this, "No tiene asignado un camino actual", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(ActivityMenuPrincipal.this, ActivityMenuPrincipal.class);
-            i.putExtra("seleccionarUsuario", (Serializable) this.usuarioSeleccionado);
+            i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         }
     }
 
     public void probarGPS(View view) {
         Intent i = new Intent(ActivityMenuPrincipal.this, ActivityPruebaPosicionamiento.class);
-        i.putExtra("seleccionarUsuario", (Serializable) this.usuarioSeleccionado);
+        i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
         startActivity(i);
     }
 
-    public void fotoGeoposicion(View view) {
+    public void capturarFoto(View view) {
         Intent i = new Intent(ActivityMenuPrincipal.this, ActivityFotoCapturada.class);
-        i.putExtra("seleccionarUsuario", (Serializable) this.usuarioSeleccionado);
+        i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
         startActivity(i);
     }
 
-    public void mostrarGaleria(View view) {
+    public void listarFotos(View view) {
         Intent i = new Intent(ActivityMenuPrincipal.this, ActivityFotoListado.class);
-        i.putExtra("seleccionarUsuario", (Serializable) this.usuarioSeleccionado);
+        i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
         startActivity(i);
     }
 }
