@@ -21,18 +21,24 @@ import java.util.Iterator;
  * @author Pablo Sánchez Robles
  */
 public class ActivityUsuarioNuevo extends ActionBarActivity {
-    protected String archivo = "usuarios.dat";
-    protected Usuario usuario;
-    protected Spinner listaComplexion;
-    protected String[] valoresComplexion = {"Nada deportista", "Poco deportista", "Deportista Amateur", "Deportista profesional"};
+    private static final String USUARIO_NUEVO = "UsuarioNuevo";
+
+    private Usuario usuario = null;
+
+    private Spinner listaComplexion = null;
+    private String[] valoresComplexion = {"Nada deportista", "Poco deportista", "Deportista Amateur",
+            "Deportista profesional"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_nuevo);
-        ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, valoresComplexion);
-        listaComplexion = (Spinner) findViewById(R.id.spinnerComplexion);
-        listaComplexion.setAdapter(adaptador);
+
+        ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item,
+                this.valoresComplexion);
+
+        this.listaComplexion = (Spinner) findViewById(R.id.spinnerComplexion);
+        this.listaComplexion.setAdapter(adaptador);
     }
 
     public void crearUsuario(View view) {
@@ -40,36 +46,38 @@ public class ActivityUsuarioNuevo extends ActionBarActivity {
         int altura = Integer.parseInt(((EditText) findViewById(R.id.editTextAltura)).getText().toString());
         int peso = Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText().toString());
         int complexion = ((Spinner) findViewById(R.id.spinnerComplexion)).getSelectedItemPosition();
-        int anioDeNacimiento = Integer.parseInt(((EditText) findViewById(R.id.editTextAnioNacimiento)).getText().toString());
+        int anioDeNacimiento = Integer.parseInt(((EditText) findViewById(R.id.editTextAnioNacimiento)).
+                getText().toString());
         double kmMax = 0;
 
         if (existeUsuario(nombre)) {
-            Toast.makeText(this, "Ya existe un usuario con ese nombre. Pruebe con otro.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ya existe un usuario con ese nombre. Pruebe con otro.",
+                    Toast.LENGTH_SHORT).show();
         } else {
 
-            Usuario usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
+            this.usuario = new Usuario(nombre, altura, peso, complexion, anioDeNacimiento);
 
-            if (GestionConfigFicheros.escribirUsuarios(usuario, getBaseContext()) == 0) {
+            if (GestionFicherosConfigs.escribirUsuarios(this.usuario, getBaseContext()) == 0) {
                 Toast.makeText(this, "Usuario guardado correctamente.", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "El usuario no ha sido creado.", Toast.LENGTH_SHORT).show();
             }
         }
 
-        GestionConfigFicheros.leerUsuarios(getBaseContext());
+        GestionFicherosConfigs.leerUsuarios(getBaseContext());
         menuUsuarios();
     }
 
 
     public boolean existeUsuario(String nombre) {
         boolean comp = false;
-        ArrayList<Usuario> usuarios = new ArrayList<Usuario>(GestionConfigFicheros.leerUsuarios(getBaseContext()));
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>(GestionFicherosConfigs.leerUsuarios(getBaseContext()));
         Iterator<Usuario> itr = usuarios.iterator();
 
         while (itr.hasNext() && !comp) {
-            Usuario usuario = itr.next();
+            Usuario usu = itr.next();
 
-            comp = (usuario.getNombre()).equals(nombre);
+            comp = (usu.getNombre()).equals(nombre);
         }
 
         return comp;
@@ -78,27 +86,5 @@ public class ActivityUsuarioNuevo extends ActionBarActivity {
     public void menuUsuarios() {
         Intent intent = new Intent(ActivityUsuarioNuevo.this, ActivityUsuarioSeleccionado.class);
         startActivity(intent);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_usuario_nuevo, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

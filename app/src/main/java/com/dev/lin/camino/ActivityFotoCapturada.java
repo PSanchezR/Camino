@@ -22,34 +22,38 @@ import java.io.PrintWriter;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Captura de fotos
+ * Foto capturada
  *
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
 public class ActivityFotoCapturada extends ActionBarActivity {
-    private String nombreArchivo = null;
+    private static final String FOTO_CAPTURADA = "FotoCapturada";
+
     private Usuario usuarioSeleccionado = null;
-    private ImageView fotoCapturada = null;
     private File archivoFoto = null;
+
     private boolean estadoRed = false;
     private boolean fotoSubida = false;
-
     private double latitud = 0.0;
     private double longitud = 0.0;
-    private Coordenadas coords = null;
+    private String nombreArchivo = null;
     private String cadenaCoords = null;
+
+    private Coordenadas coords = null;
+
+    private ImageView fotoCapturada = null;
     private File archivoCoords = null;
     private Location origen = null;
-
-    private static final String FOTO_CAPTURADA = "FotoCapturada";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foto_capturada);
-        usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        fotoCapturada = (ImageView) this.findViewById(R.id.imageViewFoto);
+
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
+
+        this.fotoCapturada = (ImageView) this.findViewById(R.id.imageViewFoto);
     }
 
     public void sacarFoto(View view) {
@@ -57,35 +61,38 @@ public class ActivityFotoCapturada extends ActionBarActivity {
         File imageFolder = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camino/");
         PrintWriter out = null;
 
-        nombreArchivo = usuarioSeleccionado.getNombre() + "_" + GestionConfigFicheros.getFechaHoraActual();
-        archivoFoto = new File(imageFolder, nombreArchivo + ".png");
-        archivoCoords = new File(imageFolder, nombreArchivo + ".dat");
+        this.nombreArchivo = this.usuarioSeleccionado.getNombre() + "_" + GestionFicherosConfigs.
+                getFechaHoraActual();
+        this.archivoFoto = new File(imageFolder, this.nombreArchivo + ".png");
+        this.archivoCoords = new File(imageFolder, this.nombreArchivo + ".dat");
 
         try {
             out = new PrintWriter(Environment.getExternalStorageDirectory() +
-                    "/DCIM/Camino/" + nombreArchivo + ".dat");
+                    "/DCIM/Camino/" + this.nombreArchivo + ".dat");
 
-            coords = new Coordenadas();
-            origen = coords.getCoordenadas(this.getBaseContext());
+            this.coords = new Coordenadas();
+            this.origen = this.coords.getCoordenadas(this.getBaseContext());
 
-            if (origen != null) {
-                latitud = origen.getLatitude();
-                longitud = origen.getLongitude();
+            if (this.origen != null) {
+                this.latitud = this.origen.getLatitude();
+                this.longitud = this.origen.getLongitude();
 
-                cadenaCoords = latitud + "," + longitud;
-                out.print(cadenaCoords);
+                this.cadenaCoords = this.latitud + "," + this.longitud;
+                out.print(this.cadenaCoords);
 
-                fotoSubida = false;
+                this.fotoSubida = false;
 
-                Uri uri = Uri.fromFile(archivoFoto);
+                Uri uri = Uri.fromFile(this.archivoFoto);
+
+                i.putExtra("seleccionarUsuario", this.usuarioSeleccionado);
                 i.putExtra(MediaStore.EXTRA_OUTPUT, uri);
                 startActivityForResult(i, 1);
             } else {
                 Toast.makeText(this, "No hay conexión GPS ni conexión a internet disponibles para " +
-                        "obtener coords de la foto.", Toast.LENGTH_SHORT).show();
+                        "obtener coordenadas de la foto.", Toast.LENGTH_SHORT).show();
             }
         } catch (FileNotFoundException e) {
-            Toast.makeText(this, "No se puede crear el archivo con las coords de la foto.",
+            Toast.makeText(this, "No se puede crear el archivo con las coordenadas de la foto.",
                     Toast.LENGTH_SHORT).show();
         } finally {
             if (out != null) {
@@ -95,18 +102,18 @@ public class ActivityFotoCapturada extends ActionBarActivity {
     }
 
     public void enviarFoto(View view) {
-        if (!fotoSubida) {
-            estadoRed = GestionConfigFicheros.comprobarConexion(this.getBaseContext());
+        if (!this.fotoSubida) {
+            this.estadoRed = GestionFicherosConfigs.comprobarConexion(this.getBaseContext());
 
-            if (estadoRed) {
+            if (this.estadoRed) {
                 AsyncTaskArchivosSubir task = new AsyncTaskArchivosSubir();
 
                 try {
-                    if (archivoFoto != null) {
+                    if (this.archivoFoto != null) {
                         Toast.makeText(this, "Subiendo foto al servidor.", Toast.LENGTH_SHORT).show();
-                        fotoSubida = task.execute(archivoFoto, archivoCoords).get();
+                        this.fotoSubida = task.execute(this.archivoFoto, this.archivoCoords).get();
 
-                        if (fotoSubida) {
+                        if (this.fotoSubida) {
                             Toast.makeText(this, "Foto subida al servidor.", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(this, "No se ha podido subir la foto al servidor.",
@@ -131,30 +138,8 @@ public class ActivityFotoCapturada extends ActionBarActivity {
     protected void onActivityResult(int solicitud, int resultado, Intent datos) {
         if (solicitud == 1 && resultado == RESULT_OK) {
             Bitmap bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory() +
-                    "/DCIM/Camino/" + nombreArchivo + ".png");
-            fotoCapturada.setImageBitmap(bitmap);
+                    "/DCIM/Camino/" + this.nombreArchivo + ".png");
+            this.fotoCapturada.setImageBitmap(bitmap);
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_foto_capturada, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

@@ -24,40 +24,49 @@ import java.util.Iterator;
  * @author Pablo Sánchez Robles
  */
 public class ActivityUsuarioDatos extends ActionBarActivity {
-    private static final String DATOS_USUARIO = "DatosUsuario";
-    protected String[] valoresComplexion = {"Nada deportista", "Poco deportista", "Deportista Amateur", "Deportista profesional"};
+    private static final String USUARIO_DATOS = "UsuarioDatos";
+
     private Usuario usuarioSeleccionado = null;
-    private ArrayAdapter<String> adapter;
+
+    protected String[] valoresComplexion = {"Nada deportista", "Poco deportista", "Deportista Amateur",
+            "Deportista profesional"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_datos);
 
-        usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
 
-        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + usuarioSeleccionado.getNombre());
-        ((EditText) findViewById(R.id.editTextAltura)).setText("" + usuarioSeleccionado.getAltura());
-        ((EditText) findViewById(R.id.editTextPeso)).setText("" + usuarioSeleccionado.getPeso());
-        ((TextView) findViewById(R.id.textViewDistanciaMax)).setText("   " + usuarioSeleccionado.getKmMaximos() + " Kms");
+        ((TextView) findViewById(R.id.textViewNombre)).setText("Usuario: " + this.usuarioSeleccionado.
+                getNombre());
+        ((EditText) findViewById(R.id.editTextAltura)).setText("" + this.usuarioSeleccionado.getAltura());
+        ((EditText) findViewById(R.id.editTextPeso)).setText("" + this.usuarioSeleccionado.getPeso());
+        ((TextView) findViewById(R.id.textViewDistanciaMax)).setText("   " + this.usuarioSeleccionado.
+                getKmMaximos() + " Kms");
 
-        ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, valoresComplexion);
+        ArrayAdapter adaptadorComplexion = new ArrayAdapter<String>(this,
+                R.layout.support_simple_spinner_dropdown_item, this.valoresComplexion);
         Spinner spinnerComplexion = (Spinner) findViewById(R.id.spinnerComplexion);
-        spinnerComplexion.setAdapter(adaptador);
-        spinnerComplexion.setSelection(usuarioSeleccionado.getComplexion());
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cargarCaminos());
+        spinnerComplexion.setAdapter(adaptadorComplexion);
+        spinnerComplexion.setSelection(this.usuarioSeleccionado.getComplexion());
+
+        ArrayAdapter<String> adaptadorCaminos = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, this.cargarCaminos());
         ListView lista = (ListView) findViewById(R.id.listViewMisCaminos);
-        lista.setAdapter(adapter);
+        lista.setAdapter(adaptadorCaminos);
         lista.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     public void onItemClick(AdapterView<?> a, View v, int position, long id) {
 
-                       /* Cuando se seleccione un camino pasa caminoFrances.xml ser el actual. */
+                        // Cuando se seleccione un camino pasa a ser el actual.
                         String seleccionado = (String) a.getItemAtPosition(position);
                         usuarioSeleccionado.setCaminoActual(buscarCamino(seleccionado));
-                        GestionConfigFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+
+                        GestionFicherosConfigs.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+
                         Intent i = new Intent(ActivityUsuarioDatos.this, ActivityCaminoActual.class);
-                        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
+                        i.putExtra("seleccionarUsuario", (Serializable) usuarioSeleccionado);
                         startActivity(i);
                     }
                 }
@@ -65,13 +74,13 @@ public class ActivityUsuarioDatos extends ActionBarActivity {
     }
 
     public Camino buscarCamino(String nombre) {
-        Camino c;
+        Camino camino;
 
         Iterator<Camino> itr = this.usuarioSeleccionado.getMisCaminos().iterator();
         while (itr.hasNext()) {
-            c = itr.next();
-            if (c.getNombre().equals(nombre)) {
-                return c;
+            camino = itr.next();
+            if (camino.getNombre().equals(nombre)) {
+                return camino;
             }
         }
         return null;
@@ -79,12 +88,7 @@ public class ActivityUsuarioDatos extends ActionBarActivity {
 
     public ArrayList<String> cargarCaminos() {
         ArrayList<String> nombresCaminos = new ArrayList<String>();
-        ArrayList<Camino> caminos = usuarioSeleccionado.getMisCaminos();
-        /*Iterator<Camino> itr = caminos.iterator();
-        while (itr.hasNext()) {
-            Camino camino = itr.next();
-            nombresCaminos.add(camino.getNombre());
-        }*/
+        ArrayList<Camino> caminos = this.usuarioSeleccionado.getMisCaminos();
 
         for (int i = 0; i < caminos.size(); i++) {
             nombresCaminos.add(caminos.get(i).getNombre());
@@ -95,37 +99,17 @@ public class ActivityUsuarioDatos extends ActionBarActivity {
 
     //Método que edita los cambios del usuario seleccionado y guarda los mismos en el fichero de usuarios.
     public void aplicarCambios(View view) {
-        usuarioSeleccionado.setAltura(Integer.parseInt(((EditText) findViewById(R.id.editTextAltura)).getText() + ""));
-        usuarioSeleccionado.setPeso(Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).getText() + ""));
-        usuarioSeleccionado.setComplexion(((Spinner) findViewById(R.id.spinnerComplexion)).getSelectedItemPosition());
-        usuarioSeleccionado.calcularKmMaximos();
-        GestionConfigFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+        this.usuarioSeleccionado.setAltura(Integer.parseInt(((EditText) findViewById(R.id.editTextAltura)).
+                getText() + ""));
+        this.usuarioSeleccionado.setPeso(Integer.parseInt(((EditText) findViewById(R.id.editTextPeso)).
+                getText() + ""));
+        this.usuarioSeleccionado.setComplexion(((Spinner) findViewById(R.id.spinnerComplexion)).
+                getSelectedItemPosition());
+        this.usuarioSeleccionado.calcularKmMaximos();
+        GestionFicherosConfigs.escribirUsuarios(this.usuarioSeleccionado, getBaseContext());
 
         Intent i = new Intent(ActivityUsuarioDatos.this, ActivityMenuPrincipal.class);
-        i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
+        i.putExtra("seleccionarUsuario", this.usuarioSeleccionado);
         startActivity(i);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_usuario_datos, menu);
-
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

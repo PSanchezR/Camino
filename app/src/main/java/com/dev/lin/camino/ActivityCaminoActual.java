@@ -15,7 +15,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -31,25 +30,26 @@ import java.util.Iterator;
  * @author Pablo Sánchez Robles
  */
 public class ActivityCaminoActual extends ActionBarActivity {
-    private static final String DATOS_PARADA = "DatosParada";
-    private GoogleMap map;
-    private Marker inicio;
-    private Marker fin;
+    private static final String CAMINO_ACTUAL = "CaminoActual";
+
+    private Usuario usuarioSeleccionado = null;
+
     private ArrayList<String> nombresEtapas = new ArrayList<String>();
-    private Usuario usuario;
+
+    private GoogleMap mapa = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camino_actual);
 
-        usuario = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
         ListView lista = (ListView) findViewById(R.id.listViewListaEtapas);
         ArrayAdapter<String> adaptador;
 
         DecimalFormat df = new DecimalFormat("##.##");
         df.setRoundingMode(RoundingMode.UP);
-        ArrayList<Etapa> listaEtapas = usuario.getCaminoActual().getListaEtapas();
+        ArrayList<Etapa> listaEtapas = this.usuarioSeleccionado.getCaminoActual().getListaEtapas();
 
         this.dibujarMapaCamino(listaEtapas);
 
@@ -58,10 +58,10 @@ public class ActivityCaminoActual extends ActionBarActivity {
 
         while (itr.hasNext()) {
             etapa = itr.next();
-            nombresEtapas.add(etapa.getNombre() + ":\n" + df.format(etapa.getDistancia()) + " km");
+            this.nombresEtapas.add(etapa.getNombre() + ":\n" + df.format(etapa.getDistancia()) + " km");
         }
 
-        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresEtapas);
+        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.nombresEtapas);
         lista.setAdapter(adaptador);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -69,9 +69,10 @@ public class ActivityCaminoActual extends ActionBarActivity {
             public void onItemClick(AdapterView<?> padre, View vista, int posicion, long id) {
                 String[] nombreEtapa = nombresEtapas.get(posicion).split(":\n");
                 String[] nombreParada = nombreEtapa[0].split(" - ");
-                Toast.makeText(getApplicationContext(), "Seleccionado: " + nombreEtapa[0], Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Seleccionado: " + nombreEtapa[0], Toast.LENGTH_SHORT)
+                        .show();
 
-                ArrayList<Etapa> listaEtapas = usuario.getCaminoActual().getListaEtapas();
+                ArrayList<Etapa> listaEtapas = usuarioSeleccionado.getCaminoActual().getListaEtapas();
                 Iterator<Etapa> itr2 = listaEtapas.iterator();
                 Etapa etapa = null;
                 boolean encontrado = false;
@@ -85,6 +86,7 @@ public class ActivityCaminoActual extends ActionBarActivity {
                 }
 
                 Intent i = new Intent(ActivityCaminoActual.this, ActivityEtapaSeleccionada.class);
+                i.putExtra("seleccionarUsuario", usuarioSeleccionado);
                 i.putExtra("etapaSeleccionada", etapa);
                 startActivity(i);
             }
@@ -92,9 +94,8 @@ public class ActivityCaminoActual extends ActionBarActivity {
     }
 
     public void menuPrincipal(View view) {
-        Usuario usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         Intent i = new Intent(ActivityCaminoActual.this, ActivityMenuPrincipal.class);
-        i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
+        i.putExtra("seleccionarUsuario", this.usuarioSeleccionado);
         startActivity(i);
     }
 
@@ -123,36 +124,14 @@ public class ActivityCaminoActual extends ActionBarActivity {
         PolylineOptions puntos = new PolylineOptions();
         puntos.addAll(listaCoordsParadas);
 
-        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).getMap();
-        map.clear();
+        this.mapa = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).getMap();
+        this.mapa.clear();
 
-        map.addMarker(new MarkerOptions().position(posInicial).title("Inicio"));
-        map.addMarker(new MarkerOptions().position(posFinal).title("Fin"));
+        this.mapa.addMarker(new MarkerOptions().position(posInicial).title("Inicio"));
+        this.mapa.addMarker(new MarkerOptions().position(posFinal).title("Fin"));
 
-        map.addPolyline(puntos);
+        this.mapa.addPolyline(puntos);
 
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 7.0f));
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_camino_actual, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        this.mapa.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 7.0f));
     }
 }

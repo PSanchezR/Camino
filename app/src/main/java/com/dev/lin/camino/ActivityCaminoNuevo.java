@@ -17,26 +17,26 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 /**
- * Datos de un nuevo camino
+ * Nuevo camino de la Ruta de Santiago a realizar
  *
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
 public class ActivityCaminoNuevo extends ActionBarActivity {
-    private static final String DATOS_USUARIO = "DatosUsuario";
-    private static final String DATOS_PARADA = "DatosParada";
-    private Usuario usuarioSeleccionado;
+    private static final String CAMINO_NUEVO = "CaminoNuevo";
+
+    private Usuario usuarioSeleccionado = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camino_nuevo);
 
-        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
-        Log.d(ActivityCaminoNuevo.DATOS_USUARIO, usuarioSeleccionado.toString());
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
+        Log.d(ActivityCaminoNuevo.CAMINO_NUEVO, this.usuarioSeleccionado.toString());
 
         ArrayList<String> nombresListaParadas = new ArrayList<String>();
-        Iterator<Parada> itr = GestionConfigFicheros.listaParadasCaminoFrances.iterator();
+        Iterator<Parada> itr = GestionFicherosConfigs.listaParadasCaminoFrances.iterator();
 
         while (itr.hasNext()) {
             Parada parada = itr.next();
@@ -44,14 +44,15 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
             nombresListaParadas.add(parada.getNombre());
         }
 
-        ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, nombresListaParadas);
+        ArrayAdapter adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item,
+                nombresListaParadas);
         Spinner spinnerInicio = (Spinner) findViewById(R.id.spinnerParadaInicio);
         spinnerInicio.setAdapter(adaptador);
     }
 
     public void menuPrincipal(View view) {
         Intent i = new Intent(ActivityCaminoNuevo.this, ActivityMenuPrincipal.class);
-        i.putExtra("usuarioSeleccionado", this.usuarioSeleccionado);
+        i.putExtra("seleccionarUsuario", this.usuarioSeleccionado);
         startActivity(i);
     }
 
@@ -64,8 +65,10 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         ArrayList<Etapa> listaEtapas = new ArrayList<Etapa>();
         Camino camino = null;
 
-        if (((EditText) findViewById(R.id.editTextNumDias)).getText().toString().isEmpty() || Integer.parseInt(((EditText) findViewById(R.id.editTextNumDias)).getText().toString()) < 2) {
-            Toast.makeText(this, "El número de días para hacer el camino tiene que ser mayor que 1.", Toast.LENGTH_SHORT).show();
+        if (((EditText) findViewById(R.id.editTextNumDias)).getText().toString().isEmpty() ||
+                Integer.parseInt(((EditText) findViewById(R.id.editTextNumDias)).getText().toString()) < 2) {
+            Toast.makeText(this, "El número de días para hacer el camino tiene que ser mayor que 1.",
+                    Toast.LENGTH_SHORT).show();
             correcto = false;
         } else {
             numDias = Integer.parseInt(((EditText) findViewById(R.id.editTextNumDias)).getText().toString());
@@ -79,14 +82,17 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         }
 
         if ((((EditText) findViewById(R.id.editTextDistanciaMax)).getText()).toString().equals("")) {
-            Toast.makeText(this, "Sin número de KMs diarios introducido. Distancia recomendada: " + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sin número de KMs diarios introducido. Distancia recomendada: "
+                    + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
             correcto = false;
 
         } else {
-            distanciaDiaria = Integer.parseInt((((EditText) findViewById(R.id.editTextDistanciaMax)).getText()).toString());
+            distanciaDiaria = Integer.parseInt((((EditText) findViewById(R.id.editTextDistanciaMax)).
+                    getText()).toString());
 
-            if (distanciaDiaria > usuarioSeleccionado.getKmMaximos()) {
-                Toast.makeText(this, "Distancia diaria mayor que la recomendada. Distancia recomendada: " + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
+            if (distanciaDiaria > this.usuarioSeleccionado.getKmMaximos()) {
+                Toast.makeText(this, "Distancia diaria mayor que la recomendada. Distancia recomendada: "
+                        + this.usuarioSeleccionado.getKmMaximos() + " km.", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -97,33 +103,36 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
 
             //Primera prueba estableciendo un único camino
             this.usuarioSeleccionado.addCamino(camino);
-            GestionConfigFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+            GestionFicherosConfigs.escribirUsuarios(this.usuarioSeleccionado, getBaseContext());
 
             Intent i = new Intent(ActivityCaminoNuevo.this, ActivityMenuPrincipal.class);
-            i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
+            i.putExtra("seleccionarUsuario", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         } else {
-            Toast.makeText(this, "Introduzca todos los datos del formulario correctamente.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Introduzca todos los datos del formulario correctamente.",
+                    Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(ActivityCaminoNuevo.this, ActivityCaminoNuevo.class);
-            i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
+            i.putExtra("seleccionarUsuario", (Serializable) this.usuarioSeleccionado);
             startActivity(i);
         }
     }
 
     public void crearCaminoFrances(View view) {
-        Camino camino = new Camino("Camino franćes de " + this.usuarioSeleccionado.getNombre(), this.crearEtapasCaminoFrances());
+        Camino camino = new Camino("Camino franćes de " + this.usuarioSeleccionado.getNombre(),
+                this.crearEtapasCaminoFrances());
         this.usuarioSeleccionado.addCamino(camino);
         Toast.makeText(this, "Añadido el camino francés.", Toast.LENGTH_SHORT).show();
 
-        GestionConfigFicheros.escribirUsuarios(usuarioSeleccionado, getBaseContext());
+        GestionFicherosConfigs.escribirUsuarios(this.usuarioSeleccionado, getBaseContext());
 
         Intent i = new Intent(ActivityCaminoNuevo.this, ActivityMenuPrincipal.class);
-        i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
+        i.putExtra("seleccionarUsuario", this.usuarioSeleccionado);
         startActivity(i);
     }
 
-    public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String paradaComienzo, String nombreCamino, int kmMax) {
+    public ArrayList<Etapa> crearEtapasCaminoNuevo(int dias, String paradaComienzo, String nombreCamino,
+                                                   int kmMax) {
         ArrayList<Etapa> listaEtapas = new ArrayList<Etapa>();
         ArrayList<Integer> listaParadasEtapa = new ArrayList<Integer>();
         Double distancia = 0.0;
@@ -132,7 +141,7 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         boolean semaforo = true;
         boolean inicio = false;
 
-        Iterator<Parada> itr = GestionConfigFicheros.listaParadasCaminoFrances.iterator();
+        Iterator<Parada> itr = GestionFicherosConfigs.listaParadasCaminoFrances.iterator();
         Parada parada = null;
 
         // Nos situamos en el inicio del camino
@@ -148,12 +157,14 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         while (dias > 0) {
             semaforo = true;
             while (semaforo) {
-                if (GestionConfigFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente() + distancia <= kmMax) {
+                if (GestionFicherosConfigs.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente()
+                        + distancia <= kmMax) {
 
                     listaParadasEtapa.add(ordenParada);
-                    distancia += GestionConfigFicheros.listaParadasCaminoFrances.get(ordenParada).getDistSiguiente();
+                    distancia += GestionFicherosConfigs.listaParadasCaminoFrances.get(ordenParada).
+                            getDistSiguiente();
 
-                    if (ordenParada == GestionConfigFicheros.listaParadasCaminoFrances.size() - 1) {
+                    if (ordenParada == GestionFicherosConfigs.listaParadasCaminoFrances.size() - 1) {
                         dias = 0;
                         distancia = 9999.0;
                         ordenParada--;
@@ -161,10 +172,14 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
                         ordenParada++;
                     }
                 } else {
-                    //Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la parada mas cercana que sí tenga alojamientos.
-                    while (!GestionConfigFicheros.listaParadasCaminoFrances.get(listaParadasEtapa.get(listaParadasEtapa.size() - 1)).getHotel() &&
-                            !GestionConfigFicheros.listaParadasCaminoFrances.get(listaParadasEtapa.get(listaParadasEtapa.size() - 1)).getAlbergue()) {
-                        distancia -= GestionConfigFicheros.listaParadasCaminoFrances.get(ordenParada).getDistAnterior();
+                    //Si en la parada final no hay sitio donde dormir hacemos backtracking hasta la
+                    // parada mas cercana que sí tenga alojamientos.
+                    while (!GestionFicherosConfigs.listaParadasCaminoFrances.get(listaParadasEtapa.
+                            get(listaParadasEtapa.size() - 1)).getHotel() &&
+                            !GestionFicherosConfigs.listaParadasCaminoFrances.get(listaParadasEtapa.
+                                    get(listaParadasEtapa.size() - 1)).getAlbergue()) {
+                        distancia -= GestionFicherosConfigs.listaParadasCaminoFrances.get(ordenParada).
+                                getDistAnterior();
                         listaParadasEtapa.remove(listaParadasEtapa.size() - 1);
                         ordenParada--;
                     }
@@ -192,7 +207,8 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         Etapa etapa_02 = new Etapa(2, indiceParadasEtapa02);
         listaEtapas.add(etapa_02);
 
-        ArrayList<Integer> indiceParadasEtapa03 = new ArrayList<Integer>(Arrays.asList(9, 10, 11, 12, 13, 14, 15, 16));
+        ArrayList<Integer> indiceParadasEtapa03 = new ArrayList<Integer>(Arrays.asList(9, 10, 11, 12, 13, 14, 15,
+                16));
         Etapa etapa_03 = new Etapa(3, indiceParadasEtapa03);
         listaEtapas.add(etapa_03);
 
@@ -204,7 +220,8 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         Etapa etapa_05 = new Etapa(5, indiceParadasEtapa05);
         listaEtapas.add(etapa_05);
 
-        ArrayList<Integer> indiceParadasEtapa06 = new ArrayList<Integer>(Arrays.asList(26, 27, 28, 29, 30, 31, 32, 33));
+        ArrayList<Integer> indiceParadasEtapa06 = new ArrayList<Integer>(Arrays.asList(26, 27, 28, 29, 30, 31, 32,
+                33));
         Etapa etapa_06 = new Etapa(6, indiceParadasEtapa06);
         listaEtapas.add(etapa_06);
 
@@ -280,35 +297,43 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         Etapa etapa_24 = new Etapa(24, indiceParadasEtapa24);
         listaEtapas.add(etapa_24);
 
-        ArrayList<Integer> indiceParadasEtapa25 = new ArrayList<Integer>(Arrays.asList(106, 107, 108, 109, 110, 111, 112, 113, 114));
+        ArrayList<Integer> indiceParadasEtapa25 = new ArrayList<Integer>(Arrays.asList(106, 107, 108, 109, 110, 111,
+                112, 113, 114));
         Etapa etapa_25 = new Etapa(25, indiceParadasEtapa25);
         listaEtapas.add(etapa_25);
 
-        ArrayList<Integer> indiceParadasEtapa26 = new ArrayList<Integer>(Arrays.asList(114, 115, 116, 117, 118, 119, 120, 121));
+        ArrayList<Integer> indiceParadasEtapa26 = new ArrayList<Integer>(Arrays.asList(114, 115, 116, 117, 118, 119,
+                120, 121));
         Etapa etapa_26 = new Etapa(26, indiceParadasEtapa26);
         listaEtapas.add(etapa_26);
 
-        ArrayList<Integer> indiceParadasEtapa27 = new ArrayList<Integer>(Arrays.asList(121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131));
+        ArrayList<Integer> indiceParadasEtapa27 = new ArrayList<Integer>(Arrays.asList(121, 122, 123, 124, 125, 126,
+                127, 128, 129, 130, 131));
         Etapa etapa_27 = new Etapa(27, indiceParadasEtapa27);
         listaEtapas.add(etapa_27);
 
-        ArrayList<Integer> indiceParadasEtapa28 = new ArrayList<Integer>(Arrays.asList(131, 132, 133, 134, 135, 136, 137, 138, 139));
+        ArrayList<Integer> indiceParadasEtapa28 = new ArrayList<Integer>(Arrays.asList(131, 132, 133, 134, 135, 136,
+                137, 138, 139));
         Etapa etapa_28 = new Etapa(28, indiceParadasEtapa28);
         listaEtapas.add(etapa_28);
 
-        ArrayList<Integer> indiceParadasEtapa29 = new ArrayList<Integer>(Arrays.asList(139, 140, 141, 142, 143, 144, 145, 146, 147, 148));
+        ArrayList<Integer> indiceParadasEtapa29 = new ArrayList<Integer>(Arrays.asList(139, 140, 141, 142, 143, 144,
+                145, 146, 147, 148));
         Etapa etapa_29 = new Etapa(29, indiceParadasEtapa29);
         listaEtapas.add(etapa_29);
 
-        ArrayList<Integer> indiceParadasEtapa30 = new ArrayList<Integer>(Arrays.asList(148, 149, 150, 151, 152, 153, 154, 155, 156));
+        ArrayList<Integer> indiceParadasEtapa30 = new ArrayList<Integer>(Arrays.asList(148, 149, 150, 151, 152, 153,
+                154, 155, 156));
         Etapa etapa_30 = new Etapa(30, indiceParadasEtapa30);
         listaEtapas.add(etapa_30);
 
-        ArrayList<Integer> indiceParadasEtapa31 = new ArrayList<Integer>(Arrays.asList(156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166));
+        ArrayList<Integer> indiceParadasEtapa31 = new ArrayList<Integer>(Arrays.asList(156, 157, 158, 159, 160, 161,
+                162, 163, 164, 165, 166));
         Etapa etapa_31 = new Etapa(31, indiceParadasEtapa31);
         listaEtapas.add(etapa_31);
 
-        ArrayList<Integer> indiceParadasEtapa32 = new ArrayList<Integer>(Arrays.asList(166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177));
+        ArrayList<Integer> indiceParadasEtapa32 = new ArrayList<Integer>(Arrays.asList(166, 167, 168, 169, 170, 171,
+                172, 173, 174, 175, 176, 177));
         Etapa etapa_32 = new Etapa(32, indiceParadasEtapa32);
         listaEtapas.add(etapa_32);
 
@@ -317,20 +342,5 @@ public class ActivityCaminoNuevo extends ActionBarActivity {
         listaEtapas.add(etapa_33);
 
         return listaEtapas;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

@@ -9,16 +9,16 @@ import android.util.Log;
 import android.widget.Toast;
 
 /**
- * Coordenadas
+ * Coordenadas de las fotos capturadas
  *
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
 public class Coordenadas implements LocationListener {
+    private static final String COORDENADAS = "Coordenadas";
+
     private LocationManager locationManager;
     private Location coordenadas;
-
-    private static final String COORDS_GPS = "Coordenadas";
 
     public Coordenadas() {
         this.locationManager = null;
@@ -27,32 +27,32 @@ public class Coordenadas implements LocationListener {
 
     public Location getCoordenadas(Context ctx) {
         try {
-            locationManager = (LocationManager) ctx.getSystemService(Context.LOCATION_SERVICE);
+            this.locationManager = (LocationManager) ctx.getSystemService(Context.LOCATION_SERVICE);
 
-            boolean estadoGPS = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-            boolean estadoRed = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+            boolean estadoGPS = this.locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+            boolean estadoRed = this.locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
             if (estadoGPS) {
-                if (coordenadas == null) {
-                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+                if (this.coordenadas == null) {
+                    this.locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
                     Toast.makeText(ctx, "Conexión GPS disponible.", Toast.LENGTH_SHORT).show();
-                    if (locationManager != null) {
-                        coordenadas = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    if (this.locationManager != null) {
+                        this.coordenadas = this.locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                     }
                 }
             } else if (estadoRed) {
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
+                this.locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
                 Toast.makeText(ctx, "Conexión a internet disponible.", Toast.LENGTH_SHORT).show();
 
-                if (locationManager != null) {
-                    coordenadas = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                if (this.locationManager != null) {
+                    this.coordenadas = this.locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                 }
             }
         } catch (Exception e) {
-            Log.e(Coordenadas.COORDS_GPS, "Error obteniendo coords: " + e.getMessage());
+            Log.e(Coordenadas.COORDENADAS, "Error obteniendo coordenadas: " + e.getMessage());
         }
 
-        return coordenadas;
+        return this.coordenadas;
     }
 
     @Override

@@ -54,9 +54,10 @@ public class Etapa implements Serializable {
     public ArrayList<Parada> getListaParadas() {
         ArrayList<Parada> listaParadas = new ArrayList<Parada>();
 
-        Iterator<Parada> itr = GestionConfigFicheros.listaParadasCaminoFrances.iterator();
-        Parada paradaInicio = GestionConfigFicheros.listaParadasCaminoFrances.get(this.indiceParadas.get(0) - 1);
-        Parada paradaFin = GestionConfigFicheros.listaParadasCaminoFrances.get(this.indiceParadas.get(this.indiceParadas.size() - 2));
+        Iterator<Parada> itr = GestionFicherosConfigs.listaParadasCaminoFrances.iterator();
+        Parada paradaInicio = GestionFicherosConfigs.listaParadasCaminoFrances.get(this.indiceParadas.get(0) - 1);
+        Parada paradaFin = GestionFicherosConfigs.listaParadasCaminoFrances.get(this.indiceParadas.
+                get(this.indiceParadas.size() - 2));
 
         boolean dentro = false;
         Parada parada = null;
@@ -107,7 +108,8 @@ public class Etapa implements Serializable {
 
     @Override
     public String toString() {
-        String cadena = "Etapa:\nOrden: " + this.orden + "\tNombre: " + this.nombre + "\nDistancia: " + this.distancia;
+        String cadena = "Etapa:\nOrden: " + this.orden + "\tNombre: " + this.nombre + "\nDistancia: " +
+                this.distancia;
 
         Iterator<Parada> itr = this.getListaParadas().iterator();
         while (itr.hasNext()) {

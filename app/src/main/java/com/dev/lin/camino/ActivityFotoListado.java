@@ -22,13 +22,18 @@ import java.util.concurrent.ExecutionException;
  * @author Pablo Sánchez Robles
  */
 public class ActivityFotoListado extends ActionBarActivity {
-    private ArrayList<String> listaFotos = new ArrayList<String>();
     private static final String FOTO_LISTADO = "FotoListado";
+
+    private Usuario usuarioSeleccionado = null;
+
+    private ArrayList<String> listaFotos = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foto_listado);
+
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
 
         ListView lista = (ListView) findViewById(R.id.listViewListaFotos);
         ArrayAdapter<String> adaptador;
@@ -44,10 +49,10 @@ public class ActivityFotoListado extends ActionBarActivity {
             while (itr.hasNext()) {
                 String nombre = itr.next();
                 Log.d(ActivityFotoListado.FOTO_LISTADO, "Archivo recibido: " + nombre);
-                listaFotos.add(nombre);
+                this.listaFotos.add(nombre);
             }
 
-            adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaFotos);
+            adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.listaFotos);
             lista.setAdapter(adaptador);
 
             lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -58,6 +63,7 @@ public class ActivityFotoListado extends ActionBarActivity {
                     Log.d(ActivityFotoListado.FOTO_LISTADO, "Foto seleccionada: " + fotoSeleccionada);
 
                     Intent i = new Intent(ActivityFotoListado.this, ActivityFotoSeleccionada.class);
+                    i.putExtra("seleccionarUsuario", usuarioSeleccionado);
                     i.putExtra("fotoSeleccionada", fotoSeleccionada);
                     startActivity(i);
                 }
@@ -67,27 +73,5 @@ public class ActivityFotoListado extends ActionBarActivity {
         } catch (ExecutionException e) {
             Log.e(ActivityFotoListado.FOTO_LISTADO, "Error de ejecución: " + e.getMessage());
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_menu_principal, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

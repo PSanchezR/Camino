@@ -13,19 +13,21 @@ import android.widget.FrameLayout;
 import java.io.File;
 
 /**
- * Datos de la portada de la aplicación
+ * Portada de la aplicación
  *
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
 public class ActivityPortada extends ActionBarActivity {
+    private static final String PORTADA = "Portada";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_portada);
 
-        GestionConfigFicheros.generarParadasListadoCaminoFrances("caminoFrances.xml", getBaseContext());
+        GestionFicherosConfigs.generarParadasListadoCaminoFrances("caminoFrances.xml", getBaseContext());
+
         File imageFolder = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camino/");
         imageFolder.mkdirs();
 
@@ -39,27 +41,5 @@ public class ActivityPortada extends ActionBarActivity {
                 return false;
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_portada, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

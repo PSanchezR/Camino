@@ -15,7 +15,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -23,38 +22,43 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * Datos de la etapa seleccionada del Camino de Santiago
+ * Etapa seleccionada del camino actual
  *
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
 public class ActivityEtapaSeleccionada extends ActionBarActivity {
+    private static final String ETAPA_SELECCIONADA = "EtapaSeleccionada";
+
+    private Usuario usuarioSeleccionado = null;
     private Etapa etapaSeleccionada = null;
+
     private ArrayList<String> nombresParadas = new ArrayList<String>();
-    private GoogleMap map;
-    private Marker inicio;
-    private Marker fin;
+
+    private GoogleMap mapa = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_etapa_seleccionada);
-        etapaSeleccionada = (Etapa) getIntent().getSerializableExtra("etapaSeleccionada");
+
+        this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("seleccionarUsuario");
+        this.etapaSeleccionada = (Etapa) getIntent().getSerializableExtra("etapaSeleccionada");
 
         ListView lista = (ListView) findViewById(R.id.listViewListaParadas);
         ArrayAdapter<String> adaptador;
 
-        ArrayList<Parada> listaParadas = etapaSeleccionada.getListaParadas();
+        ArrayList<Parada> listaParadas = this.etapaSeleccionada.getListaParadas();
 
         Iterator<Parada> itr = listaParadas.iterator();
         Parada parada = null;
 
         while (itr.hasNext()) {
             parada = itr.next();
-            nombresParadas.add(parada.getNombre());
+            this.nombresParadas.add(parada.getNombre());
         }
 
-        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresParadas);
+        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.nombresParadas);
         lista.setAdapter(adaptador);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -67,15 +71,17 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
                         parada.getInternet()};
 
                 Intent i = new Intent(ActivityEtapaSeleccionada.this, ActivityParadaSeleccionada.class);
+                i.putExtra("seleccionarUsuario", usuarioSeleccionado);
                 i.putExtra("paradaSeleccionada", elementos);
                 startActivity(i);
             }
         });
 
-        ((TextView) findViewById(R.id.textViewNombre)).setText("Etapa " + etapaSeleccionada.getOrden() + ": " + etapaSeleccionada.getNombre());
-        String[] nombreParada = etapaSeleccionada.getNombre().split(" - ");
+        ((TextView) findViewById(R.id.textViewNombre)).setText("Etapa " + this.etapaSeleccionada.getOrden()
+                + ": " + this.etapaSeleccionada.getNombre());
+        String[] nombreParada = this.etapaSeleccionada.getNombre().split(" - ");
 
-        ArrayList<LatLng> listaCoordsParadas = new ArrayList<LatLng>(etapaSeleccionada.getListaCoordsParadas());
+        ArrayList<LatLng> listaCoordsParadas = new ArrayList<LatLng>(this.etapaSeleccionada.getListaCoordsParadas());
 
         LatLng posInicial = listaCoordsParadas.get(0);
         LatLng posFinal = listaCoordsParadas.get(listaCoordsParadas.size() - 1);
@@ -83,36 +89,14 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
         PolylineOptions puntos = new PolylineOptions();
         puntos.addAll(listaCoordsParadas);
 
-        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).getMap();
-        map.clear();
+        this.mapa = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).getMap();
+        this.mapa.clear();
 
-        map.addMarker(new MarkerOptions().position(posInicial).title(nombreParada[0]));
-        map.addMarker(new MarkerOptions().position(posFinal).title(nombreParada[1]));
+        this.mapa.addMarker(new MarkerOptions().position(posInicial).title(nombreParada[0]));
+        this.mapa.addMarker(new MarkerOptions().position(posFinal).title(nombreParada[1]));
 
-        map.addPolyline(puntos);
+        this.mapa.addPolyline(puntos);
 
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 11.0f));
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_etapa_seleccionada, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        this.mapa.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 11.0f));
     }
 }

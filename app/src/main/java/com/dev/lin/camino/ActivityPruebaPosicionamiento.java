@@ -19,61 +19,47 @@ import java.util.Date;
  * @author Pablo Sánchez Robles
  */
 public class ActivityPruebaPosicionamiento extends ActionBarActivity {
-    double latitud;
-    double longitud;
-    float distancia;
-    Coordenadas coordenadas;
-    Location origen;
-    Location destino;
-    LatLng coordsDestino;
+    private static final String PRUEBA_POSICIONAMIENTO = "PruebaPosicionamiento";
+
+    double latitud = 0.0;
+    double longitud = 0.0;
+    float distancia = 0.0f;
+
+    Coordenadas coordenadas = null;
+    LatLng coordsDestino = null;
+    Location origen = null;
+    Location destino = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prueba_posicionamiento);
 
-        coordenadas = new Coordenadas();
-        origen = coordenadas.getCoordenadas(this.getBaseContext());
+        this.coordenadas = new Coordenadas();
+        this.origen = this.coordenadas.getCoordenadas(this.getBaseContext());
 
-        if (origen != null) {
-            latitud = origen.getLatitude();
-            longitud = origen.getLongitude();
+        if (this.origen != null) {
+            this.latitud = this.origen.getLatitude();
+            this.longitud = this.origen.getLongitude();
 
-            coordsDestino = GestionConfigFicheros.listaParadasCaminoFrances.get(0).getListaCoords().get(GestionConfigFicheros.listaParadasCaminoFrances.get(0).getListaCoords().size() - 1);
-            destino = new Location("Destino");
-            destino.setLatitude(coordsDestino.latitude);
-            destino.setLongitude(coordsDestino.longitude);
-            destino.setTime(new Date().getTime());
+            this.coordsDestino = GestionFicherosConfigs.listaParadasCaminoFrances.get(0).getListaCoords().
+                    get(GestionFicherosConfigs.listaParadasCaminoFrances.get(0).getListaCoords().size() - 1);
+            this.destino = new Location("Destino");
+            this.destino.setLatitude(this.coordsDestino.latitude);
+            this.destino.setLongitude(this.coordsDestino.longitude);
+            this.destino.setTime(new Date().getTime());
 
-            distancia = origen.distanceTo(destino);
+            this.distancia = this.origen.distanceTo(this.destino);
 
-            ((TextView) findViewById(R.id.textViewOrigen)).setText("Coordenadas actuales: " + latitud + "," + longitud);
-            ((TextView) findViewById(R.id.textViewDestino)).setText("Coordenadas coordsDestino: " + coordsDestino.latitude + "," + coordsDestino.longitude);
-            ((TextView) findViewById(R.id.textViewDistancia)).setText("Distancia: " + distancia / 1000 + "km");
+            ((TextView) findViewById(R.id.textViewOrigen)).setText("Coordenadas actuales: " + this.latitud +
+                    "," + this.longitud);
+            ((TextView) findViewById(R.id.textViewDestino)).setText("Coordenadas coordsDestino: " +
+                    this.coordsDestino.latitude + "," + this.coordsDestino.longitude);
+            ((TextView) findViewById(R.id.textViewDistancia)).setText("Distancia: " + this.distancia / 1000
+                    + "km");
         } else {
-            Toast.makeText(this, "No hay conexión GPS ni conexión a internet disponibles.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No hay conexión GPS ni conexión a internet disponibles.",
+                    Toast.LENGTH_SHORT).show();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_prueba_posicionamiento, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

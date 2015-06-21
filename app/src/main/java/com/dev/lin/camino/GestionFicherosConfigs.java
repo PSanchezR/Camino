@@ -27,16 +27,17 @@ import java.util.Date;
 import java.util.Iterator;
 
 /**
- * Gestión de los ficheros con los datos de usuario
+ * Gestión de los ficheros con los datos de usuario y obtención de configuraciones
  *
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
 
-public class GestionConfigFicheros {
+public class GestionFicherosConfigs {
     private static final String ESCRIBIR_USUARIOS = "EscribirUsuarios";
     private static final String LEER_USUARIOS = "LeerUsuarios";
     private static final String DATOS_PARADA = "DatosParada";
+
     public static ArrayList<Parada> listaParadasCaminoFrances = new ArrayList<Parada>();
 
     public static int escribirUsuarios(Usuario usuario, Context ctx) {
@@ -49,16 +50,18 @@ public class GestionConfigFicheros {
             fos = ctx.openFileOutput(filename, Context.MODE_PRIVATE);
 
             oos = new ObjectOutputStream(fos);
-            Log.v(GestionConfigFicheros.ESCRIBIR_USUARIOS, "Se ha creado un archivo nuevo.");
+            Log.v(GestionFicherosConfigs.ESCRIBIR_USUARIOS, "Se ha creado un archivo nuevo.");
 
             oos.writeObject(usuario);
             oos.flush();
 
             res = 0;
         } catch (FileNotFoundException e) {
-            Log.e(GestionConfigFicheros.ESCRIBIR_USUARIOS, "Error: archivo no encontrado.\n\t" + e.getMessage());
+            Log.e(GestionFicherosConfigs.ESCRIBIR_USUARIOS, "Error: archivo no encontrado.\n\t" +
+                    e.getMessage());
         } catch (IOException e) {
-            Log.e(GestionConfigFicheros.ESCRIBIR_USUARIOS, "Error: problema de entrada salida.\n\t" + e.getMessage());
+            Log.e(GestionFicherosConfigs.ESCRIBIR_USUARIOS, "Error: problema de entrada salida.\n\t" +
+                    e.getMessage());
         } finally {
             try {
                 if (fos != null) {
@@ -67,7 +70,8 @@ public class GestionConfigFicheros {
                     oos.close();
                 }
             } catch (IOException e) {
-                Log.e(GestionConfigFicheros.ESCRIBIR_USUARIOS, "Error: fallo al cerrar el flujo de escritura.\n\t" + e.getMessage());
+                Log.e(GestionFicherosConfigs.ESCRIBIR_USUARIOS, "Error: fallo al cerrar el flujo de " +
+                        "escritura.\n\t" + e.getMessage());
             }
         }
 
@@ -92,20 +96,23 @@ public class GestionConfigFicheros {
 
                     while (true) {
                         Usuario usuario = (Usuario) ois.readObject();
-                        //Log.d(GestionConfigFicheros.LEER_USUARIOS, usuario.toString());
+                        //Log.d(GestionFicherosConfigs.LEER_USUARIOS, usuario.toString());
                         usuarios.add(usuario);
                     }
                 } catch (EOFException e) {
-                    Log.d(GestionConfigFicheros.LEER_USUARIOS, "Fin de archivo.\n\t" + e.getMessage());
+                    Log.d(GestionFicherosConfigs.LEER_USUARIOS, "Fin de archivo.\n\t" + e.getMessage());
                     e.printStackTrace();
                 } catch (FileNotFoundException e) {
-                    Log.e(GestionConfigFicheros.LEER_USUARIOS, "Error: archivo no encontrado.\n\t" + e.getMessage());
+                    Log.e(GestionFicherosConfigs.LEER_USUARIOS, "Error: archivo no encontrado.\n\t"
+                            + e.getMessage());
                     e.printStackTrace();
                 } catch (IOException e) {
-                    Log.e(GestionConfigFicheros.LEER_USUARIOS, "Error: problema de entrada/salida.\n\t" + e.getMessage());
+                    Log.e(GestionFicherosConfigs.LEER_USUARIOS, "Error: problema de entrada/salida.\n\t"
+                            + e.getMessage());
                     e.printStackTrace();
                 } catch (ClassNotFoundException e) {
-                    Log.e(GestionConfigFicheros.LEER_USUARIOS, "Error: no se han podido recuperar los usuarios.\n\t" + e.getMessage());
+                    Log.e(GestionFicherosConfigs.LEER_USUARIOS, "Error: no se han podido recuperar los " +
+                            "usuarios.\n\t" + e.getMessage());
                     e.printStackTrace();
                 } finally {
                     try {
@@ -115,7 +122,8 @@ public class GestionConfigFicheros {
                             ois.close();
                         }
                     } catch (IOException e) {
-                        Log.e(GestionConfigFicheros.LEER_USUARIOS, "Error: fallo al cerrar el flujo de lectura.\n\t" + e.getMessage());
+                        Log.e(GestionFicherosConfigs.LEER_USUARIOS, "Error: fallo al cerrar el flujo de " +
+                                "lectura.\n\t" + e.getMessage());
                         e.printStackTrace();
                     }
                 }
@@ -126,12 +134,12 @@ public class GestionConfigFicheros {
     }
 
     public static void generarParadasListadoCaminoFrances(String archivoCamino, Context ctx) {
-        Iterator<Parada> itr = GestionConfigFicheros.parsearArchivoCamino(archivoCamino, ctx).iterator();
+        Iterator<Parada> itr = GestionFicherosConfigs.parsearArchivoCamino(archivoCamino, ctx).iterator();
         Parada parada;
 
         while (itr.hasNext()) {
             parada = itr.next();
-            GestionConfigFicheros.listaParadasCaminoFrances.add(parada);
+            GestionFicherosConfigs.listaParadasCaminoFrances.add(parada);
         }
     }
 
@@ -212,7 +220,8 @@ public class GestionConfigFicheros {
 
                         break;
                     case XmlPullParser.END_TAG:
-                        Parada parada = new Parada(orden, nombre, listaCoords, distAnterior, distSiguiente, comida, hotel, albergue, farmacia, banco, internet);
+                        Parada parada = new Parada(orden, nombre, listaCoords, distAnterior, distSiguiente,
+                                comida, hotel, albergue, farmacia, banco, internet);
                         paradas.add(parada);
                         listaCoords.clear();
                         break;
@@ -221,9 +230,11 @@ public class GestionConfigFicheros {
                 eventType = parser.next();
             }
         } catch (XmlPullParserException e) {
-            Log.e(GestionConfigFicheros.DATOS_PARADA, "Error en el procesador del archivo XML: " + e.getMessage());
+            Log.e(GestionFicherosConfigs.DATOS_PARADA, "Error en el procesador del archivo XML: "
+                    + e.getMessage());
         } catch (IOException e) {
-            Log.e(GestionConfigFicheros.DATOS_PARADA, "Error de entrada/salida en el archivo XML: " + e.getMessage());
+            Log.e(GestionFicherosConfigs.DATOS_PARADA, "Error de entrada/salida en el archivo XML: "
+                    + e.getMessage());
         }
 
         return paradas;

@@ -18,62 +18,63 @@ import java.io.IOException;
  * @author Pablo Sánchez Robles
  */
 public class AsyncTaskArchivosSubir extends AsyncTask<File, Void, Boolean> {
+    private static final String ARCHIVOS_SUBIR = "ArchivosSubir";
+
     private FTPClient cliente = null;
-    private static final String SUBIDA_ARCHIVOS = "ArchivosSubir";
 
     public Boolean doInBackground(File... archivos) {
         int reply;
         boolean resultado = false;
         BufferedInputStream bis = null;
 
-        cliente = new FTPClient();
+        this.cliente = new FTPClient();
 
         try {
-            cliente.connect(ActivityMenuPrincipal.SERVIDOR, ActivityMenuPrincipal.PUERTO);
-            cliente.login(ActivityMenuPrincipal.USUARIO, ActivityMenuPrincipal.PASS);
-            cliente.changeWorkingDirectory(ActivityMenuPrincipal.DIRECTORIO);
+            this.cliente.connect(ActivityMenuPrincipal.SERVIDOR, ActivityMenuPrincipal.PUERTO);
+            this.cliente.login(ActivityMenuPrincipal.USUARIO, ActivityMenuPrincipal.PASS);
+            this.cliente.changeWorkingDirectory(ActivityMenuPrincipal.DIRECTORIO);
 
-            reply = cliente.getReplyCode();
+            reply = this.cliente.getReplyCode();
 
             if (FTPReply.isPositiveCompletion(reply)) {
-                Log.d(AsyncTaskArchivosSubir.SUBIDA_ARCHIVOS, "Conexión realizada con éxito.");
+                Log.d(AsyncTaskArchivosSubir.ARCHIVOS_SUBIR, "Conexión realizada con éxito.");
 
-                cliente.setFileType(org.apache.commons.net.ftp.FTP.BINARY_FILE_TYPE);
-                cliente.enterLocalPassiveMode();
+                this.cliente.setFileType(org.apache.commons.net.ftp.FTP.BINARY_FILE_TYPE);
+                this.cliente.enterLocalPassiveMode();
 
                 for (int i = 0; i < archivos.length; i++) {
                     bis = new BufferedInputStream(new FileInputStream(archivos[i]));
 
-                    Log.d(AsyncTaskArchivosSubir.SUBIDA_ARCHIVOS, "Archivo a subir: " + archivos[i].getName());
-                    resultado = cliente.storeFile(archivos[i].getName(), bis);
+                    Log.d(AsyncTaskArchivosSubir.ARCHIVOS_SUBIR, "Archivo a subir: " + archivos[i].getName());
+                    resultado = this.cliente.storeFile(archivos[i].getName(), bis);
 
                     if (resultado) {
-                        Log.d(AsyncTaskArchivosSubir.SUBIDA_ARCHIVOS, archivos[i].getName() +
+                        Log.d(AsyncTaskArchivosSubir.ARCHIVOS_SUBIR, archivos[i].getName() +
                                 " subido con éxito al servidor.");
                     } else {
-                        Log.d(AsyncTaskArchivosSubir.SUBIDA_ARCHIVOS, "No se ha podido subir + "
+                        Log.d(AsyncTaskArchivosSubir.ARCHIVOS_SUBIR, "No se ha podido subir + "
                                 + archivos[i].getName() + " al servidor.");
                     }
 
                     bis.close();
-                    Log.e(AsyncTaskArchivosSubir.SUBIDA_ARCHIVOS, "Cerrado flujo de entrada.");
+                    Log.e(AsyncTaskArchivosSubir.ARCHIVOS_SUBIR, "Cerrado flujo de entrada.");
                 }
 
-                cliente.logout();
+                this.cliente.logout();
             } else {
-                Log.d(AsyncTaskArchivosSubir.SUBIDA_ARCHIVOS, "Conexión rechazada por el servidor.");
-                cliente.disconnect();
+                Log.d(AsyncTaskArchivosSubir.ARCHIVOS_SUBIR, "Conexión rechazada por el servidor.");
+                this.cliente.disconnect();
             }
         } catch (IOException e) {
-            Log.e(AsyncTaskArchivosSubir.SUBIDA_ARCHIVOS, "Error de entrada/salida: " + e.getMessage());
+            Log.e(AsyncTaskArchivosSubir.ARCHIVOS_SUBIR, "Error de entrada/salida: " + e.getMessage());
         } finally {
             try {
-                if (cliente.isConnected()) {
-                    cliente.disconnect();
-                    Log.e(AsyncTaskArchivosSubir.SUBIDA_ARCHIVOS, "Desconectado del servidor.");
+                if (this.cliente.isConnected()) {
+                    this.cliente.disconnect();
+                    Log.e(AsyncTaskArchivosSubir.ARCHIVOS_SUBIR, "Desconectado del servidor.");
                 }
             } catch (IOException e) {
-                Log.e(AsyncTaskArchivosSubir.SUBIDA_ARCHIVOS, "Error de entrada/salida: " + e.getMessage());
+                Log.e(AsyncTaskArchivosSubir.ARCHIVOS_SUBIR, "Error de entrada/salida: " + e.getMessage());
             }
         }
 

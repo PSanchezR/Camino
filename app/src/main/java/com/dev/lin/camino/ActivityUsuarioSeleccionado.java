@@ -21,99 +21,80 @@ import java.util.Iterator;
  * @author Pablo Sánchez Robles
  */
 public class ActivityUsuarioSeleccionado extends ActionBarActivity {
-    static ArrayList<Usuario> usuarios;//Lista de objetos usuario que se leerán desde fichero.
+    private static final String USUARIO_SELECCIONADO = "UsuarioSeleccionado";
 
-    private ArrayAdapter<String> adapter; //Adaptador para pasar los nombres caminoFrances.xml un listview
-    private String seleccionado = null;
     private Usuario usuarioSeleccionado = null;
-    private ArrayList<String> nombresUsuarios = new ArrayList<String>();// Lista de nombres de usuario
 
-    //Este método carga los usuarios leidos del fichero en la ListView
-    public void cargarUsuarios() {
-        this.usuarios = new ArrayList<Usuario>(GestionConfigFicheros.leerUsuarios(getBaseContext()));
+    private String nombreUsuario = null;
 
-        Iterator<Usuario> itr = usuarios.iterator();
-
-        while (itr.hasNext()) {
-            Usuario usuario = itr.next();
-
-            nombresUsuarios.add(usuario.getNombre());
-        }
-
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresUsuarios);
-        ListView lista = (ListView) findViewById(R.id.listViewListaUsuarios);
-        lista.setAdapter(adapter);
-    }
+    private ArrayList<String> nombresUsuarios = new ArrayList<String>();
+    private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_seleccionado);
 
-        cargarUsuarios();
-        usuarioSeleccionado();
+        this.cargarUsuarios();
+        this.seleccionarUsuario();
     }
 
-    public void nuevoUsuario(View view) {
-        Intent i = new Intent(ActivityUsuarioSeleccionado.this, ActivityUsuarioNuevo.class);
-        i.putExtra("usuarios", (Serializable) usuarios);
-        startActivity(i);
-    }
+    //Este método carga los usuarios leidos del fichero en la ListView
+    public void cargarUsuarios() {
+        this.usuarios = new ArrayList<Usuario>(GestionFicherosConfigs.leerUsuarios(getBaseContext()));
 
-    public void buscarUsuario() {
-        boolean comp = false;
-        Iterator<Usuario> itr = usuarios.iterator();
+        Iterator<Usuario> itr = this.usuarios.iterator();
 
-        while (itr.hasNext() && !comp) {
+        while (itr.hasNext()) {
             Usuario usuario = itr.next();
 
-            comp = (usuario.getNombre()).equals(seleccionado);
-
-            if (comp) {
-                usuarioSeleccionado = usuario;
-            }
+            this.nombresUsuarios.add(usuario.getNombre());
         }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+                this.nombresUsuarios);
+        ListView lista = (ListView) findViewById(R.id.listViewListaUsuarios);
+        lista.setAdapter(adapter);
     }
 
-    public void usuarioSeleccionado() {
+    public void seleccionarUsuario() {
         ListView lista = (ListView) findViewById(R.id.listViewListaUsuarios);
         ArrayAdapter<String> adaptador;
-        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresUsuarios);
+        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.nombresUsuarios);
         lista.setAdapter(adaptador);
 
         lista.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                        seleccionado = (String) a.getItemAtPosition(position);
+                        nombreUsuario = (String) a.getItemAtPosition(position);
                         buscarUsuario();
                         Intent i = new Intent(ActivityUsuarioSeleccionado.this, ActivityMenuPrincipal.class);
 
-                        i.putExtra("usuarioSeleccionado", (Serializable) usuarioSeleccionado);
+                        i.putExtra("seleccionarUsuario", (Serializable) usuarioSeleccionado);
                         startActivity(i);
                     }
                 }
         );
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_usuario_seleccion, menu);
-        return true;
+    public void nuevoUsuario(View view) {
+        Intent i = new Intent(ActivityUsuarioSeleccionado.this, ActivityUsuarioNuevo.class);
+        i.putExtra("usuarios", (Serializable) this.usuarios);
+        startActivity(i);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    private void buscarUsuario() {
+        boolean comp = false;
+        Iterator<Usuario> itr = this.usuarios.iterator();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        while (itr.hasNext() && !comp) {
+            Usuario usuario = itr.next();
+
+            comp = (usuario.getNombre()).equals(this.nombreUsuario);
+
+            if (comp) {
+                this.usuarioSeleccionado = usuario;
+            }
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }

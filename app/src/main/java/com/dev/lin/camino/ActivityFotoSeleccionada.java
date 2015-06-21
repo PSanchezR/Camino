@@ -15,7 +15,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.BufferedReader;
@@ -26,50 +25,49 @@ import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Listado de fotos en el servidor
+ * Foto geoposicionada y mapa situado en esas coordenadas
  *
  * @author German Martínez Maldonado
  * @author Pablo Sánchez Robles
  */
 public class ActivityFotoSeleccionada extends ActionBarActivity {
-    private String fotoSeleccionada = null;
-    private File archivo = null;
-    private boolean fotoDescargada = false;
-    private boolean estadoRed = false;
-
-    private Bitmap bitmap = null;
-    private ImageView fotoCapturada = null;
-
-    private GoogleMap map = null;
-    private Marker inicio = null;
-
     private static final String FOTO_SELECCIONADA = "FotoSeleccionada";
+
+    private String fotoSeleccionada = null;
+
+    private boolean estadoRed = false;
+    private boolean fotoDescargada = false;
+
+    private File archivoCoords = null;
+    private ImageView fotoCapturada = null;
+    private Bitmap bitmap = null;
+    private GoogleMap mapa = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foto_seleccionada);
-        fotoCapturada = (ImageView) this.findViewById(R.id.imageViewFoto);
 
-        fotoSeleccionada = (String) getIntent().getSerializableExtra("fotoSeleccionada");
+        this.fotoSeleccionada = (String) getIntent().getSerializableExtra("fotoSeleccionada");
 
-        estadoRed = GestionConfigFicheros.comprobarConexion(this.getBaseContext());
+        this.fotoCapturada = (ImageView) this.findViewById(R.id.imageViewFoto);
+        this.estadoRed = GestionFicherosConfigs.comprobarConexion(this.getBaseContext());
 
-        if (estadoRed) {
+        if (this.estadoRed) {
             AsyncTaskArchivosDescargar task = new AsyncTaskArchivosDescargar();
 
             try {
-                fotoDescargada = task.execute(fotoSeleccionada).get();
+                this.fotoDescargada = task.execute(this.fotoSeleccionada).get();
 
-                if (fotoDescargada) {
-                    archivo = new File(Environment.getExternalStorageDirectory() +
-                            "/DCIM/Camino/" + fotoSeleccionada + ".dat");
-                    bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory() +
-                            "/DCIM/Camino/" + fotoSeleccionada + ".png");
-                    fotoCapturada.setImageBitmap(bitmap);
+                if (this.fotoDescargada) {
+                    this.archivoCoords = new File(Environment.getExternalStorageDirectory() +
+                            "/DCIM/Camino/" + this.fotoSeleccionada + ".dat");
+                    this.bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory() +
+                            "/DCIM/Camino/" + this.fotoSeleccionada + ".png");
+                    this.fotoCapturada.setImageBitmap(this.bitmap);
 
                     try {
-                        FileReader lector = new FileReader(archivo.getAbsolutePath());
+                        FileReader lector = new FileReader(this.archivoCoords.getAbsolutePath());
                         BufferedReader br = new BufferedReader(lector);
                         String texto = br.readLine();
                         br.close();
@@ -78,12 +76,13 @@ public class ActivityFotoSeleccionada extends ActionBarActivity {
                         LatLng posInicial = new LatLng(Float.parseFloat(coordenadas[0]),
                                 Float.parseFloat(coordenadas[1]));
 
-                        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).getMap();
-                        map.clear();
+                        this.mapa = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).
+                                getMap();
+                        this.mapa.clear();
 
-                        map.addMarker(new MarkerOptions().position(posInicial).title(fotoSeleccionada));
+                        this.mapa.addMarker(new MarkerOptions().position(posInicial).title(this.fotoSeleccionada));
 
-                        map.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 11.0f));
+                        this.mapa.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 11.0f));
                     } catch (FileNotFoundException e) {
                         Log.e(ActivityFotoSeleccionada.FOTO_SELECCIONADA, "Archivo no encontrado: "
                                 + e.getMessage());
@@ -103,27 +102,5 @@ public class ActivityFotoSeleccionada extends ActionBarActivity {
         } else {
             Toast.makeText(this, "No hay conexión a internet.", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_foto_seleccionada, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify caminoFrances.xml parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
