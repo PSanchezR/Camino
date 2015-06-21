@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayoutMenuPrincipal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.dev.lin.camino.ActivityMenuPrincipal">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearLayoutMenuPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutCabecera"
+            android:layout_width="fill_parent"
+            android:layout_height="105dp"
+            android:layout_weight="0.65"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="&lt;Usuario>"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutBotonera"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonUsuarioDatos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
+                android:onClick="datosUsuario"
+                android:text="Datos usuario" />
+
+
+            <Button
+                android:id="@+id/buttonCaminoNuevo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
+                android:onClick="caminoNuevo"
+                android:text="Camino nuevo" />
+
+            <Button
+                android:id="@+id/buttonCaminoActual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
+                android:onClick="caminoActual"
+                android:text="Camino actual" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPie"
+            android:layout_width="fill_parent"
+            android:layout_height="145dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/pruebaGPS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
+                android:onClick="probarGPS"
+                android:text="Probar GPS" />
+
+            <Button
+                android:id="@+id/buttonFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
+                android:onClick="capturarFoto"
+                android:text="Hacer foto" />
+
+            <Button
+                android:id="@+id/buttonGaleria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
+                android:onClick="listarFotos"
+                android:text="Lista fotos" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

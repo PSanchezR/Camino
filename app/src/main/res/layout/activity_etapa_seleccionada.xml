@@ -62,6 +62,15 @@
                 android:layout_weight="0.43" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/buttonDistancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="distanciaADestino"
+            android:text="distancia a destino"
+            android:background="@drawable/btn_style" />
+
     </LinearLayout>
 
 </RelativeLayout>
