@@ -35,14 +35,12 @@ public class Coordenadas implements LocationListener {
             if (estadoGPS) {
                 if (this.coordenadas == null) {
                     this.locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-                    Toast.makeText(ctx, "Conexión GPS disponible.", Toast.LENGTH_SHORT).show();
                     if (this.locationManager != null) {
                         this.coordenadas = this.locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                     }
                 }
             } else if (estadoRed) {
                 this.locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
-                Toast.makeText(ctx, "Conexión a internet disponible.", Toast.LENGTH_SHORT).show();
 
                 if (this.locationManager != null) {
                     this.coordenadas = this.locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);

@@ -82,8 +82,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/btn_style"
-                android:onClick="probarGPS"
-                android:text="Probar GPS" />
+                android:onClick="obtenerCoordenadas"
+                android:text="Obtener coordenadas" />
 
             <Button
                 android:id="@+id/buttonFoto"

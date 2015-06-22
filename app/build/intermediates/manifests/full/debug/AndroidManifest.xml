@@ -92,9 +92,6 @@
         <activity
             android:name="com.dev.lin.camino.ActivityUsuarioSeleccionado"
             android:label="Selección de usuario" />
-        <activity
-            android:name="com.dev.lin.camino.ActivityPruebaPosicionamiento"
-            android:label="Prueba de GPS" />
     </application>
 
 </manifest>

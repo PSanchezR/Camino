@@ -1,6 +1,7 @@
 package com.dev.lin.camino;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -62,10 +63,23 @@ public class ActivityMenuPrincipal extends ActionBarActivity {
         }
     }
 
-    public void probarGPS(View view) {
-        Intent i = new Intent(ActivityMenuPrincipal.this, ActivityPruebaPosicionamiento.class);
-        i.putExtra("usuarioSeleccionado", (Serializable) this.usuarioSeleccionado);
-        startActivity(i);
+    public void obtenerCoordenadas(View view) {
+        double latitud;
+        double longitud;
+
+        Coordenadas coordenadas = new Coordenadas();
+        Location origen = coordenadas.getCoordenadas(this.getBaseContext());
+
+        if (origen != null) {
+            latitud = origen.getLatitude();
+            longitud = origen.getLongitude();
+
+            Toast.makeText(this, "Coordenadas actuales: " + latitud + "," + longitud,
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "No hay conexión GPS ni conexión a internet disponibles.",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void capturarFoto(View view) {
