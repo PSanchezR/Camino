@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -112,9 +113,10 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
         this.mapa.addPolyline(puntos);
 
         this.mapa.animateCamera(CameraUpdateFactory.newLatLngZoom(posInicial, 11.0f));
+        calcularDistancia();
     }
 
-    public void notificacion()
+    public void notificacionDistanciaDestino()
     {
         int notificationId = 001;
 
@@ -122,22 +124,28 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
         viewIntent.putExtra("Aviso distancia", 1);
         PendingIntent viewPendingIntent =
                 PendingIntent.getActivity(this, 0, viewIntent, 0);
+        Intent i = new Intent(ActivityEtapaSeleccionada.this, ActivityEtapaSeleccionada.class);
+        i.putExtra("usuarioSeleccionado", usuarioSeleccionado);
+        i.putExtra("etapaSeleccionada", etapaSeleccionada);
+
+        PendingIntent pendingIntent =
+                PendingIntent.getActivity(this, 0, i, 0);
 
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.mipmap.portada)
                         .setContentTitle(etapaSeleccionada.getListaParadas().get(etapaSeleccionada.getListaParadas().size() - 1).getNombre() + " a:")
-                        .setContentText("" + distancia / 1000 + " kms.")
-                        .setContentIntent(viewPendingIntent);
+                        .setContentText("" + Math.rint((distancia / 10)) / 100 + " kms.")
+                        .setContentIntent(viewPendingIntent)
+                        .addAction(R.mipmap.portada,"Recalcular distancia",pendingIntent);
 
-        // Get an instance of the NotificationManager service
         NotificationManagerCompat notificationManager =
                 NotificationManagerCompat.from(this);
 
-        // Build the notification and issues it with notification manager.
         notificationManager.notify(notificationId, notificationBuilder.build());
     }
-    public void distanciaADestino(View view)
+
+    public void calcularDistancia()
     {
         this.coordenadas = new Coordenadas();
         this.origen = this.coordenadas.getCoordenadas(this.getBaseContext());
@@ -153,11 +161,17 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
             this.destino.setLongitude(this.coordsDestino.longitude);
             this.destino.setTime(new Date().getTime());
             this.distancia = this.origen.distanceTo(this.destino);
-            notificacion();
+            notificacionDistanciaDestino();
         }else
         {
             Toast.makeText(this, "No hay conexión GPS ni conexión a internet disponibles, o no es posible obtener su posición actual.",
                     Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+    public void distanciaADestino(View view)
+    {
+        calcularDistancia();
     }
 }
