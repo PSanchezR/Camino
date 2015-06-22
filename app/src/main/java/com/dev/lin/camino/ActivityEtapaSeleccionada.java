@@ -169,9 +169,4 @@ public class ActivityEtapaSeleccionada extends ActionBarActivity {
         }
 
     }
-
-    public void distanciaADestino(View view)
-    {
-        calcularDistancia();
-    }
 }
