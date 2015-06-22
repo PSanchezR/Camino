@@ -18,7 +18,6 @@ public class Etapa implements Serializable {
     private String nombre;
     private double distancia;
     private ArrayList<Integer> indiceParadas;
-    private Parada paradaInicio, paradaFin;
 
     public Etapa(int orden, ArrayList<Integer> indiceParadas) {
         this.orden = orden;
@@ -39,10 +38,6 @@ public class Etapa implements Serializable {
             this.distancia += parada.getDistAnterior();
         }
     }
-
-    public Parada getParadaFin(){return paradaFin;}
-
-    public Parada getParadaInicio(){return paradaInicio;}
 
     public int getOrden() {
         return this.orden;
