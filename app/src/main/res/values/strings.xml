@@ -1,18 +1,19 @@
 <resources>
     <string name="app_name">Camino</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main">KKKKK</string>
-    <string name="title_activity_etapa_seleccion">Etapa</string>
-    <string name="title_activity_usuario_seleccion">Seleccion_Usuario</string>
-    <string name="title_activity_camino_actual">Camino_Actual</string>
-    <string name="title_activity_usuario_nuevo">Formulario_Nuevo_Usuario</string>
-    <string name="title_activity_menu_principal">MenuPrincipal</string>
-    <string name="title_activity_camino_nuevo">Nuevo_Camino</string>
-    <string name="title_activity_sf">sf</string>
-    <string name="title_activity_usuario_datos">datos_usuario</string>
-    <string name="title_activity_datos__usuario">Datos_Usuario</string>
-    <string name="title_activity_foto_geoposicionada">fotoGeoposicionada</string>
-    <string name="title_activity_activityfoto_geoposicionada">ActivityfotoGeoposicionada</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+
+    <string name="title_activity_camino_actual">Camino actual</string>
+    <string name="title_activity_camino_nuevo">Camino nuevo</string>
+    <string name="title_activity_etapa_seleccionada">Etapa seleccionada</string>
+    <string name="title_activity_foto_capturada">Foto capturada</string>
+    <string name="title_activity_foto_listado">Foto listado</string>
+    <string name="title_activity_foto_seleccionada">Foto seleccionada</string>
+    <string name="title_activity_menu_principal">Menu Principal</string>
+    <string name="title_activity_parada_seleccionada">Parada seleccionada</string>
+    <string name="title_activity_portada">Portada</string>
+    <string name="title_activity_usuario_datos">Usuario datos</string>
+    <string name="title_activity_usuario_nuevo">Usuario nuevo</string>
+    <string name="title_activity_usuario_seleccionadao">Usuario seleccionado</string>
 </resources>

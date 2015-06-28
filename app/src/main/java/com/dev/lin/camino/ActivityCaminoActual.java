@@ -3,6 +3,7 @@ package com.dev.lin.camino;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -122,8 +123,17 @@ public class ActivityCaminoActual extends ActionBarActivity {
         PolylineOptions puntos = new PolylineOptions();
         puntos.addAll(listaCoordsParadas);
 
-        this.mapa = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).getMap();
-        this.mapa.clear();
+        try{
+            if (this.mapa == null){
+                this.mapa = ((MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa)).getMap();
+            } else {
+                this.mapa.clear();
+            }
+        } catch (Exception e){
+            Log.e(ActivityCaminoActual.CAMINO_ACTUAL, "Error: al cargar mapa." + e.getMessage());
+        }
+
+        mapa.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
         this.mapa.addMarker(new MarkerOptions().position(posInicial).title("Inicio"));
         this.mapa.addMarker(new MarkerOptions().position(posFinal).title("Fin"));
