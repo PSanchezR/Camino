@@ -1,6 +1,8 @@
 -- Merging decision tree log ---
 manifest
 ADDED from AndroidManifest.xml:2:1
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
 	package
 		ADDED from AndroidManifest.xml:3:5
 		INJECTED from AndroidManifest.xml:0:0
@@ -13,8 +15,6 @@ ADDED from AndroidManifest.xml:2:1
 		ADDED from AndroidManifest.xml:4:5
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
-	xmlns:android
-		ADDED from AndroidManifest.xml:2:11
 uses-sdk
 ADDED from AndroidManifest.xml:7:5
 MERGED from com.android.support:appcompat-v7:21.0.3:15:5
@@ -113,10 +113,10 @@ ADDED from AndroidManifest.xml:11:5
 		ADDED from AndroidManifest.xml:12:9
 uses-feature#0x00020000
 ADDED from AndroidManifest.xml:15:5
-	android:glEsVersion
-		ADDED from AndroidManifest.xml:16:9
 	android:required
 		ADDED from AndroidManifest.xml:17:9
+	android:glEsVersion
+		ADDED from AndroidManifest.xml:16:9
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from AndroidManifest.xml:20:5
 	android:name
@@ -285,16 +285,16 @@ MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
-	android:value
-		ADDED from AndroidManifest.xml:48:13
 	android:name
 		ADDED from AndroidManifest.xml:47:13
+	android:value
+		ADDED from AndroidManifest.xml:48:13
 meta-data#com.google.android.maps.v2.API_KEY
 ADDED from AndroidManifest.xml:49:9
-	android:value
-		ADDED from AndroidManifest.xml:51:13
 	android:name
 		ADDED from AndroidManifest.xml:50:13
+	android:value
+		ADDED from AndroidManifest.xml:51:13
 activity#com.dev.lin.camino.ActivityPortada
 ADDED from AndroidManifest.xml:53:9
 	android:label
