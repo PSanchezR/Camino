@@ -9,42 +9,51 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:id="@+id/lay">
 
         <ImageView
             android:id="@+id/imageViewFoto"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="380dp"
             android:layout_weight="0.77" />
 
-        <GridLayout
+        <FrameLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical">
+            android:layout_height="60dp">
 
-            <ImageButton
-                android:id="@+id/buttonFoto"
+            <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/btn_style"
-                android:onClick="sacarFoto"
-                android:text="+"
-                android:textSize="30dp"
-                android:src="@mipmap/ic_action_add"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal|top"
                 android:layout_row="0"
-                android:layout_column="1" />
+                android:layout_column="1">
 
-            <ImageButton
-                android:id="@+id/buttonEnviar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_style"
-                android:onClick="enviarFoto"
-                android:layout_row="0"
-                android:layout_column="3"
-                android:src="@mipmap/ic_action_send" />
+                <ImageButton
+                    android:id="@+id/buttonFoto"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_style"
+                    android:onClick="sacarFoto"
+                    android:text="+"
+                    android:textSize="30dp"
+                    android:src="@mipmap/ic_action_add"
+                    android:layout_row="0"
+                    android:layout_column="1" />
 
-        </GridLayout>
+                <ImageButton
+                    android:id="@+id/buttonEnviar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_style"
+                    android:onClick="enviarFoto"
+                    android:layout_row="0"
+                    android:layout_column="3"
+                    android:src="@mipmap/ic_action_send"
+                    android:layout_marginLeft="50dp" />
+
+            </GridLayout>
+        </FrameLayout>
     </LinearLayout>
 </RelativeLayout>

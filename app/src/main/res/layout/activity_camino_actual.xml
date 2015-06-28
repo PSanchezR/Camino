@@ -35,7 +35,7 @@
             <ImageButton
                 android:id="@+id/buttonMenuPrincipal"
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:onClick="menuPrincipal"
                 android:background="@drawable/btn_style"

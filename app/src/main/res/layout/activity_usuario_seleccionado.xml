@@ -30,14 +30,14 @@
         <ListView
             android:id="@+id/listViewListaUsuarios"
             android:layout_width="match_parent"
-            android:layout_height="360dp"
+            android:layout_height="300dp"
             android:layout_weight="0.05"
             android:choiceMode="singleChoice" />
 
         <ImageButton
             android:id="@+id/buttonNuevoUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:onClick="nuevoUsuario"
             android:background="@drawable/btn_style"

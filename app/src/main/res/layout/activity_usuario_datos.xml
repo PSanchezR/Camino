@@ -39,8 +39,8 @@
 
             <ImageButton
                 android:id="@+id/buttonAplicarCambios"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:visibility="visible"
                 android:textSize="25dp"
                 android:background="@drawable/btn_style"
@@ -164,8 +164,8 @@
 
             <ImageButton
                 android:id="@+id/buttonEliminarCamino"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@mipmap/ic_action_cancel"
                 android:background="@drawable/btn_style" />
