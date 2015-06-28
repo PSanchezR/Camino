@@ -145,15 +145,15 @@
                 </TableRow>
             </TableLayout>
 
-            <Button
+            <ImageButton
                 android:id="@+id/buttonCrearUsuario"
-                android:layout_width="54dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:onClick="crearUsuario"
                 android:text="+"
                 android:background="@drawable/btn_style"
-                android:textSize="35dp" />
+                android:src="@mipmap/ic_action_add" />
         </LinearLayout>
 
     </LinearLayout>

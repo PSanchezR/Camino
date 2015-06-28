@@ -33,19 +33,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
-                android:layout_weight="1.02"
+                android:layout_weight="0.96"
                 android:text="&lt;Usuario>"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/buttonAplicarCambios"
-                style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:onClick="aplicarCambios"
-                android:text="Aplicar cambios"
+                android:layout_height="wrap_content"
                 android:visibility="visible"
-                android:background="@drawable/btn_style" />
+                android:textSize="25dp"
+                android:background="@drawable/btn_style"
+                android:src="@mipmap/ic_action_add" />
         </LinearLayout>
 
         <TableLayout
@@ -161,14 +160,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="83dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="1.03" />
+                android:layout_weight="0.49" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/buttonEliminarCamino"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Eliminar camino"
+                android:src="@mipmap/ic_action_cancel"
                 android:background="@drawable/btn_style" />
         </LinearLayout>
 

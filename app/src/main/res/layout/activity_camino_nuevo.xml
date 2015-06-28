@@ -32,16 +32,17 @@
                 android:text="Introduzca los datos:"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/buttonMenuPrincipal"
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="85dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="0"
                 android:onClick="menuPrincipal"
                 android:text="Menu"
-                android:background="@drawable/btn_style" />
+                android:background="@drawable/btn_style"
+                android:src="@mipmap/ic_action_back" />
         </GridLayout>
 
         <TableLayout
@@ -144,14 +145,15 @@
             android:orientation="vertical"
             android:weightSum="1">
 
-            <Button
+            <ImageButton
                 android:id="@+id/buttonCrearCaminoNuevo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:onClick="crearCaminoNuevo"
                 android:text="Crear camino"
-                android:background="@drawable/btn_style" />
+                android:background="@drawable/btn_style"
+                android:src="@mipmap/ic_action_add" />
         </LinearLayout>
 
         <LinearLayout
@@ -165,7 +167,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Pulse el botón &quot;camino clásico&quot; para realizar el camino francés completo con las etapas clásicas. Son 33 etapas."
+                android:text="Pulse el botón &quot;clásico&quot; para realizar el camino francés completo con las etapas clásicas. Son 33 etapas."
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <Button
@@ -174,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:onClick="crearCaminoFrances"
-                android:text="Camino Clásico"
+                android:text="Clásico"
                 android:background="@drawable/btn_style" />
         </LinearLayout>
     </LinearLayout>

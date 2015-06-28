@@ -21,8 +21,7 @@
         <LinearLayout
             android:id="@+id/linearLayoutCabecera"
             android:layout_width="fill_parent"
-            android:layout_height="105dp"
-            android:layout_weight="0.65"
+            android:layout_height="168dp"
             android:orientation="vertical">
 
             <TextView
@@ -34,74 +33,83 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayoutBotonera"
-            android:layout_width="fill_parent"
+        <GridLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:id="@+id/lay"
+            android:rowCount="3"
+            android:columnCount="2"
+            android:columnOrderPreserved="false">
 
-            <Button
+            <ImageButton
                 android:id="@+id/buttonUsuarioDatos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/btn_style"
                 android:onClick="datosUsuario"
-                android:text="Datos usuario" />
+                android:text="Datos usuario"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:src="@mipmap/ic_action_user"/>
 
-
-            <Button
+            <ImageButton
                 android:id="@+id/buttonCaminoNuevo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/btn_style"
                 android:onClick="caminoNuevo"
-                android:text="Camino nuevo" />
+                android:layout_column="1"
+                android:src="@mipmap/ic_action_add" />
 
-            <Button
-                android:id="@+id/buttonCaminoActual"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/btn_style"
-                android:onClick="caminoActual"
-                android:text="Camino actual" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayoutPie"
-            android:layout_width="fill_parent"
-            android:layout_height="145dp"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/pruebaGPS"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/btn_style"
-                android:onClick="obtenerCoordenadas"
-                android:text="Obtener coordenadas" />
-
-            <Button
+            <ImageButton
                 android:id="@+id/buttonFoto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/btn_style"
                 android:onClick="capturarFoto"
-                android:text="Hacer foto" />
+                android:text="Hacer foto"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:src="@mipmap/ic_action_camera" />
 
-            <Button
+            <ImageButton
+                android:id="@+id/pruebaGPS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
+                android:onClick="obtenerCoordenadas"
+                android:text="Obtener coordenadas"
+                android:layout_column="1"
+                android:src="@mipmap/ic_action_location_2" />
+
+            <ImageButton
                 android:id="@+id/buttonGaleria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/btn_style"
                 android:onClick="listarFotos"
-                android:text="Lista fotos" />
-        </LinearLayout>
+                android:text="Lista fotos"
+                android:layout_column="0"
+                android:layout_row="2"
+                android:src="@mipmap/ic_action_picture" />
+
+            <ImageButton
+                android:id="@+id/buttonCaminoActual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_style"
+                android:onClick="caminoActual"
+                android:text="+"
+                android:layout_column="1"
+                android:src="@mipmap/ic_action_arrow_right" />
+
+        </GridLayout>
+
     </LinearLayout>
 </RelativeLayout>

@@ -31,17 +31,17 @@
             android:id="@+id/listViewListaUsuarios"
             android:layout_width="match_parent"
             android:layout_height="360dp"
-            android:layout_weight="0.51"
+            android:layout_weight="0.05"
             android:choiceMode="singleChoice" />
 
-        <Button
+        <ImageButton
             android:id="@+id/buttonNuevoUsuario"
-            android:layout_width="46dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:onClick="nuevoUsuario"
-            android:text="+"
             android:background="@drawable/btn_style"
-            android:textSize="35dp" />
+            android:text="+"
+            android:src="@mipmap/ic_action_add" />
     </LinearLayout>
 </RelativeLayout>

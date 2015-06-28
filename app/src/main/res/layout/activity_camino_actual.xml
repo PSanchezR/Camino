@@ -32,14 +32,14 @@
                 android:text="Camino actual"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/buttonMenuPrincipal"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="menuPrincipal"
-                android:text="Menu"
-                android:background="@drawable/btn_style" />
+                android:background="@drawable/btn_style"
+                android:src="@mipmap/ic_action_back" />
         </GridLayout>
 
         <LinearLayout
