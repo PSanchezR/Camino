@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.io.File;
@@ -30,7 +31,7 @@ public class ActivityFotoCapturada extends ActionBarActivity {
 
     private Usuario usuarioSeleccionado = null;
     private File archivoFoto = null;
-
+   // private ProgressBar progress;
     private boolean estadoRed = false;
     private boolean fotoSubida = false;
     private double latitud = 0.0;
@@ -50,6 +51,7 @@ public class ActivityFotoCapturada extends ActionBarActivity {
         setContentView(R.layout.activity_foto_capturada);
         this.usuarioSeleccionado = (Usuario) getIntent().getSerializableExtra("usuarioSeleccionado");
         this.fotoCapturada = (ImageView) this.findViewById(R.id.imageViewFoto);
+        //progress = (ProgressBar)this.findViewById(R.id.progressBar);
     }
 
     public void sacarFoto(View view) {
@@ -95,6 +97,11 @@ public class ActivityFotoCapturada extends ActionBarActivity {
     }
 
     public void enviarFoto(View view) {
+
+       // progress.isIndeterminate();
+        //progress.setVisibility(View.GONE);
+
+        //progress.setVisibility(View.VISIBLE);
         if (!this.fotoSubida) {
             this.estadoRed = GestionFicherosConfigs.comprobarConexion(this.getBaseContext());
 
@@ -126,6 +133,7 @@ public class ActivityFotoCapturada extends ActionBarActivity {
         } else {
             Toast.makeText(this, "Esta foto ya ha sido subida al servidor.", Toast.LENGTH_SHORT).show();
         }
+        //progress.setVisibility(View.INVISIBLE);
     }
 
     protected void onActivityResult(int solicitud, int resultado, Intent datos) {

@@ -15,12 +15,12 @@
         <ImageView
             android:id="@+id/imageViewFoto"
             android:layout_width="match_parent"
-            android:layout_height="380dp"
+            android:layout_height="360dp"
             android:layout_weight="0.77" />
 
         <FrameLayout
             android:layout_width="fill_parent"
-            android:layout_height="60dp">
+            android:layout_height="80dp">
 
             <GridLayout
                 android:layout_width="wrap_content"
@@ -54,6 +54,16 @@
                     android:layout_marginLeft="50dp" />
 
             </GridLayout>
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                android:layout_gravity="center_horizontal|bottom"
+                android:visibility="gone" />
+
         </FrameLayout>
     </LinearLayout>
 </RelativeLayout>
