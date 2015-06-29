@@ -17,5 +17,5 @@ La aplicación usa el **servicio web de Google** para obtener los mapas de **Goo
 
 También se conecta a un servidor propio por **FTP** mediante la librería **Apache Commons Net** para subir y descargar las fotos que se hacen con la propia aplicación, esta librería ya está incluida en la aplicación dado que su licencia librería **Apache License v2** es compatible con la licencia **GNU GPL v3** de nuestra aplicación, permitiendo ambas la libre distribución.  
 
-Para usar ambas funcionalidades lo único necesario es de disponer de **conexión a Internet** desde el dispositivo móvil.
+Para poder usar todas las funcionalidades lo único necesario es de disponer de **conexión a Internet** desde el dispositivo móvil y tener instaladas las aplicaciones **Google Play Services** y **Android Wear**.
 
