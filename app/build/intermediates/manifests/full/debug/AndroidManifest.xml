@@ -61,14 +61,6 @@
         <activity
             android:name="com.dev.lin.camino.ActivityFotoSeleccionada"
             android:label="Foto seleccionada" />
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBZSPA7u9Nrp-P3BEH7Mv9o2_a3f092S4A" />
-
         <activity
             android:name="com.dev.lin.camino.ActivityMenuPrincipal"
             android:label="Menú principal" />
@@ -84,6 +76,13 @@
         <activity
             android:name="com.dev.lin.camino.ActivityUsuarioSeleccionado"
             android:label="Selección de usuario" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBZSPA7u9Nrp-P3BEH7Mv9o2_a3f092S4A" />
     </application>
 
 </manifest>

@@ -57,7 +57,7 @@ public class Etapa implements Serializable {
         Iterator<Parada> itr = GestionFicherosConfigs.listaParadasCaminoFrances.iterator();
         Parada paradaInicio = GestionFicherosConfigs.listaParadasCaminoFrances.get(this.indiceParadas.get(0) - 1);
         Parada paradaFin = GestionFicherosConfigs.listaParadasCaminoFrances.get(this.indiceParadas.
-                get(this.indiceParadas.size() - 2));
+                get(this.indiceParadas.size() - 1));
 
         boolean dentro = false;
         Parada parada = null;

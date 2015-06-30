@@ -41,10 +41,10 @@
                 android:id="@+id/buttonAplicarCambios"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:visibility="visible"
-                android:textSize="25dp"
                 android:background="@drawable/btn_style"
-                android:src="@mipmap/ic_action_add" />
+                android:src="@mipmap/ic_action_add"
+                android:textSize="25dp"
+                android:visibility="visible" />
         </LinearLayout>
 
         <TableLayout
@@ -107,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="2"
-                    android:text="Complexión:"
+                    android:text="\nComplexión:"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <Spinner
@@ -144,7 +144,7 @@
         <LinearLayout
             android:id="@+id/linearLayoutMisCaminos"
             android:layout_width="match_parent"
-            android:layout_height="232dp"
+            android:layout_height="143dp"
             android:orientation="vertical"
             android:weightSum="1">
 
@@ -162,14 +162,15 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.49" />
 
-            <ImageButton
-                android:id="@+id/buttonEliminarCamino"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@mipmap/ic_action_cancel"
-                android:background="@drawable/btn_style" />
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/buttonEliminarCamino"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn_style"
+            android:src="@mipmap/ic_action_cancel" />
 
     </LinearLayout>
 </RelativeLayout>
